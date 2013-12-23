@@ -1,0 +1,16 @@
+<br><br>
+<h1>Editing Events/Dates for:<br>
+	<%= @campaign.name %></h1>
+	
+  <%= render 'nav/side_nav' %>
+  
+  <%= render 'training_form' %>
+  <%= render 'gathering_form' %>
+  <%= render 'mailing_calls_form' %>
+
+
+<%= link_to 'Back', user_campaign_events_path(@user, @campaign) %>
+
+<script>
+	$('.first_fieldset').addClass('small-10 columns pull-2');
+</script

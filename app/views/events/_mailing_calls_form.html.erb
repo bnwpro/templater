@@ -1,0 +1,154 @@
+<%= form_for([@user, @campaign, @event]) do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= field_set_tag 'Mailings & Calls' do %>
+	  <div class="row">
+		  
+		  <div class="large-6 columns"> <!-- LEFT COLUMNS -->
+			  
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :mail_fact_sheet, "Mail Fact Sheet", :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-3 columns">
+					    <%= f.text_field :mail_fact_sheet, :class => 'date-picker', :value => (formatted_date(f.object.mail_fact_sheet) if f.object.mail_fact_sheet) %>
+						<%= f.hidden_field :mail_fact_sheet, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :mail_rmng_info_pkts, "Mail Remaining Info Packets", :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-3 columns">
+					    <%= f.text_field :mail_rmng_info_pkts, :class => 'date-picker', :value => (formatted_date(f.object.mail_rmng_info_pkts) if f.object.mail_rmng_info_pkts) %>
+						<%= f.hidden_field :mail_rmng_info_pkts, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :mail_ac_invt, "Mail AC Invitations", :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-3 columns">
+					    <%= f.text_field :mail_ac_invt, :class => 'date-picker', :value => (formatted_date(f.object.mail_ac_invt) if f.object.mail_ac_invt) %>
+						<%= f.hidden_field :mail_ac_invt, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :mail_newsletter, "Mail Newsletter", :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-3 columns">
+					    <%= f.text_field :mail_newsletter, :class => 'date-picker', :value => (formatted_date(f.object.mail_newsletter) if f.object.mail_newsletter) %>
+						<%= f.hidden_field :mail_newsletter, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :mail_spc_event_invt, "Mail Special Event Invitations", :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-3 columns">
+					    <%= f.text_field :mail_spc_event_invt, :class => 'date-picker', :value => (formatted_date(f.object.mail_spc_event_invt) if f.object.mail_spc_event_invt) %>
+						<%= f.hidden_field :mail_spc_event_invt, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :mail_commt_card, "Mail Commitment Cards", :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-3 columns">
+					    <%= f.text_field :mail_commt_card, :class => 'date-picker', :value => (formatted_date(f.object.mail_commt_card) if f.object.mail_commt_card) %>
+						<%= f.hidden_field :mail_commt_card, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  
+		  </div> <!-- END LEFT COLUMNS -->
+		  
+		  
+		  <div class="large-6 columns"> <!-- RIGHT COLUMNS -->
+			  
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :setup_info_booth, "Setup Information Booth", :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-3 columns">
+					    <%= f.text_field :setup_info_booth, :class => 'date-picker', :value => (formatted_date(f.object.setup_info_booth) if f.object.setup_info_booth) %>
+						<%= f.hidden_field :setup_info_booth, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :info_calls_dates, "Information Calls", :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-3 columns">
+					    <%= f.text_field :info_calls_dates, :class => 'date-picker', :value => (formatted_smalldate(f.object.info_calls_dates) if f.object.info_calls_dates) %>
+						<%= f.hidden_field :info_calls_dates, :class => 'alt_time_to_db' %>
+				  </div>
+				   <div class="small-3 columns">
+					    <%= f.text_field :info_calls_end, :class => 'date-picker', :value => (formatted_smalldate(f.object.info_calls_end) if f.object.info_calls_end) %>
+						<%= f.hidden_field :info_calls_end, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :special_event_calls_dates, "Special Event Calls", :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-3 columns">
+					    <%= f.text_field :special_event_calls_dates, :class => 'date-picker', :value => (formatted_smalldate(f.object.special_event_calls_dates) if f.object.special_event_calls_dates) %>
+						<%= f.hidden_field :special_event_calls_dates, :class => 'alt_time_to_db' %>
+				  </div>
+				   <div class="small-3 columns">
+					    <%= f.text_field :special_event_calls_end, :class => 'date-picker', :value => (formatted_smalldate(f.object.special_event_calls_end) if f.object.special_event_calls_end) %>
+						<%= f.hidden_field :special_event_calls_end, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :celebration_wknd_calls_dates, "Celebration Weekend Calls", :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-3 columns">
+					    <%= f.text_field :celebration_wknd_calls_dates, :class => 'date-picker', :value => (formatted_smalldate(f.object.celebration_wknd_calls_dates) if f.object.celebration_wknd_calls_dates) %>
+						<%= f.hidden_field :celebration_wknd_calls_dates, :class => 'alt_time_to_db' %>
+				  </div>
+				   <div class="small-3 columns">
+					    <%= f.text_field :celebration_wknd_calls_end, :class => 'date-picker', :value => (formatted_smalldate(f.object.celebration_wknd_calls_end) if f.object.celebration_wknd_calls_end) %>
+						<%= f.hidden_field :celebration_wknd_calls_end, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :ac_res_calls_dates, "AC Reservation Calls", :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-3 columns">
+					    <%= f.text_field :ac_res_calls_dates, :class => 'date-picker', :value => (formatted_smalldate(f.object.ac_res_calls_dates) if f.object.ac_res_calls_dates) %>
+						<%= f.hidden_field :ac_res_calls_dates, :class => 'alt_time_to_db' %>
+				  </div>
+				   <div class="small-3 columns">
+					    <%= f.text_field :ac_res_calls_end, :class => 'date-picker', :value => (formatted_smalldate(f.object.ac_res_calls_end) if f.object.ac_res_calls_end) %>
+						<%= f.hidden_field :ac_res_calls_end, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  
+		  </div> <!-- END RIGHT COLUMNS -->
+		  
+		  <hr>
+		  <div class="actions">
+		    <%= f.submit %>
+		  </div>
+		  
+	  </div> <!-- END WEKKENDS & GATHEINGS FIELDSET -->
+  <% end %>
+  
+  <hr>
+  <br>
+		  
+<% end %>

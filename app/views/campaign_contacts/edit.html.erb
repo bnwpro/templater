@@ -1,0 +1,8 @@
+<h1>Editing Contacts for: <%= @campaign.name %><br> Consultant: <%= @user.name %></h1>
+
+<%= render 'nav/side_nav' %>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', [@user, @campaign, @campaign_contact] %> |
+<%= link_to 'Back', user_campaign_campaign_contacts_path(@user, @campaign) %>

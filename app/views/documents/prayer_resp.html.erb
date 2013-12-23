@@ -1,0 +1,178 @@
+<%= wicked_pdf_stylesheet_link_tag "documents" %>
+<p id="notice"><%= notice %></p>
+
+<!-- PAGE 1 -->
+<div id="page_1" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<h2>PRAYER LEADER</h2>
+	<p>The Prayer Leader is responsible for enlisting a team that will develop prayer activities for the campaign. During the campaign all parishioners will be invited to enter into a season of prayer – seeking God’s will as it relates to their campaign commitment. The prayer they are invited to pray is: “Lord, what do You want to do, through me, to fulfill Your will for my parish and our archdiocese?”</p>
+
+	<h3>Responsibilities:</h3>
+
+	<ul class="page_data" data-mercury="full">
+		<li>Attend Leadership Team Training, Leadership Team Report meetings and Prayer Team Training</li>
+		<li>Attend Advance Commitment Gathering</li>
+		<li>Serve as a prayer support group for the Leadership Team</li>
+		<li>Develop Campaign Prayer Calendar</li>
+		<li>Create activities and resources to involve the entire parish community in prayer</li>
+		<li>Include the campaign prayer and intercessions at the weekend Masses</li>
+		<li>Meet and coordinate with Pastor, Liturgy Director, Liturgy Committee, and Choirs to make sure stewardship prayers and themes are reflected in announcements, prayers, readings, intercessions and music</li>
+		<li>Publicly support the campaign for the parish and archdiocese</li>
+		<li>Prayerfully consider a sacrificial, financial commitment to the campaign</li>
+	</ul>
+	<br><br>
+	<div id="date_list" class="border-box-radius">
+		<h4>**MEETINGS YOU SHOULD ATTEND**</h4>
+
+		<div class="left-column">
+			<%= formatted_date(@campaign.event.leadership_team_trng) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_1) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %><br>
+			<%= formatted_date(@campaign.event.ac_gather_1) %><br>
+			<%= formatted_date_to_tomorrow(@campaign.event.weekend_4_dates) %>
+		</div>
+		
+		<div class="center-column">
+			<%= formatted_time(@campaign.event.leadership_team_trng) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_rpt_mtg_1) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_rpt_mtg_2) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_rpt_mtg_3) %><br>
+			<%= formatted_time(@campaign.event.ac_gather_1) %><br>
+		</div>
+
+		<div id="list_data" class="right-column" data-mercury="full">
+			<span>Leadership Team Training</span><br>
+			<span>Leadership Team Report Meeting #1</span><br>
+			<span>Leadership Team Report Meeting #2</span><br>
+			Leadership Team Report Meeting #3<br>
+			Advance Commitment Gathering<br>
+			<strong>Commitment Weekend &amp; Parish-Wide Event</strong>
+		</div>
+	</div>
+</div> <!-- END PAGE 1 -->
+
+<!-- PAGE 2 -->
+<div id="page_2" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<h2>- Timetable For Completing Your Tasks -</h2>
+	<h3><%= formatted_date(@campaign.event.leadership_team_trng) %><br>
+	Leadership Team Training and Individual Team Meetings</h3>
+	<ul class="page_data" data-mercury="full">
+		<li>Attend Prayer Team Training - <strong><%= formatted_time(@campaign.event.prayer_ldr_trng) %></strong></li>
+		<li>Attend Leadership Team Training - <strong><%= formatted_time(@campaign.event.leadership_team_trng) %></strong></li>
+		<li>Review your workbook and place the dates and times of the meetings you will attend on your personal calendar</li>
+	</ul>
+	<br><br>
+	<div class="border-box">
+		<h3>Between Leadership Team Training and<br>
+			Leadership Team Report Meeting #1 on<br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_1) %>
+		</h3>
+		<ul class="box-data">
+			<li>Organize prayer team and hold first meeting to incorporate campaign prayer into regularly scheduled meetings (Appendix A)</li>
+			<li>Develop various prayer activities throughout campaign with a specific focus on a parish-wide emphasis during the Inspiration Phase (Appendix B)</li>
+			<li>Create Daily Prayer Calendar (Appendix C)</li>
+			<li>Utilize Daily Prayer Guide (Appendix D)</li>
+			<li>Develop and use Stewardship Intercessions as soon as possible (Appendix E)</li>
+			<li>One of the other teams for the campaign is the Contact Team. As part of their responsibilities, they will be contacting every household in the parish and inviting prayer intentions. After their first call, the Contact Team will send you prayer intentions they have received. You will want to prepare for this assignment:
+				<ul>
+					<li>Study the campaign calendar and note when the Contact Team will make their first call</li>
+					<li>Recruit a team of dedicated parishioners who will pray daily as these requests are received</li>
+					<li>Prepare this team to receive these intentions. Note the periods when prayer intentions are expected to arrive. Set up a “prayer chain” or some other method to maintain communication with your team</li>
+				</ul>
+				
+			</li>
+			<li>Prepare to present prayer plan to Leadership Team</li>
+			<li>Support your parish and the campaign in your own prayers (Appendix D)</li>
+		</ul>
+	</div>
+</div> <!-- END PAGE 2 -->
+
+<!-- PAGE 3 -->
+<div id="page_3" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br><br>
+	<h2><%= formatted_date(@campaign.event.leadership_team_rpt_mtg_1) %></h2>
+	<h3>Leadership Team Report #1 and Individual Team Meetings</h3>
+	<ul class="page_data">
+		<li>Attend Leadership Team Report #1 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_1) %></strong>
+			<ul>
+				<li>Report on progress and plans</li>
+			</ul>
+		</li>
+	</ul>
+	<br>
+	<div class="border-box">
+		<h3>Between Leadership Team Report #1 and<br>
+			Leadership Team Report #2 on <%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %>
+		</h3>
+		<ul class="page_data">
+			<li>Implement Stewardship Prayer as soon as possible</li>
+			<li>Begin using Stewardship Intercessions as soon as possible</li>
+			<li>Prepare to implement parish-wide prayer emphasis for Inspiration Phase</li>
+			<li>Continue to support your parish and the campaign in your own prayers</li>
+		</ul>
+	</div>
+	<br>
+	<h2><%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %></h2>
+	<h3>Leadership Team Report #2 and Individual Team Meetings</h3>
+	<ul class="page_data">
+		<li>Attend Leadership Team Report #2 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_2) %></strong>
+			<ul>
+				<li>Report on progress and plans</li>
+			</ul>
+		</li>
+	</ul>
+	<br>
+	<div class="border-box">
+		<h3>Between Leadership Team Report #2 and<br>
+			Leadership Team Report #3 on <%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %>
+		</h3>
+		<ul class="page_data">
+			<li>Implement Prayer Calendar</li>
+			<li>Continue to support your parish and the campaign in your own prayers</li>
+			<li>Contact Team members will soon complete their first round of calls for Information Distribution Weekend. Be prepared to receive prayer intentions and add them to your daily prayers and the prayers of who have agreed to pray for the parish through this campaign.</li>
+		</ul>
+	</div>
+</div> <!-- END PAGE 3 -->
+
+<!-- PAGE 4 -->
+<div id="page_4" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br>
+	<h2><%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %></h2>
+	<h3>Leadership Team Report #3 and Individual Team Meetings</h3>
+	<ul class="page_data">
+		<li>Attend Leadership Team Report Meeting #3 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_3) %></strong>
+			<ul>
+				<li>Report on progress and plans</li>
+			</ul>
+		</li>
+	</ul>
+	<div class="border-box">
+		<h3 class="left">Following Leadership Team Report #3</h3>
+		<ul class="page_data">
+			<li>Continue to encourage every member of the parish to pray the campaign prayer-encouraging them to seek God’s will for their life as it relates to God’s will for the parish</li>
+			<li>Implement Prayer Activity</li>
+			<li>Continue to support your parish and the campaign in your own prayers</li>
+		</ul>
+	</div>
+	<br>
+	<h2><%= formatted_datetime(@campaign.event.ac_gather_1) %></h2>
+	<h3>Advance Commitment Gathering</h3>
+	<ul class="page_data">
+		<li>Attend an Advance Commitment Gathering</li>
+	</ul>
+	<br>
+	<h2><%= formatted_date_to_tomorrow(@campaign.event.weekend_4_dates) %></h2>
+	<h3>Commitment Weekend</h3>
+	<ul class="page_data">
+		<li>Plan to attend Mass this weekend. Do not neglect the privilege of worshiping this week! If you have not done so, prayerfully complete your commitment card</li>
+		<li>Continue to support your parish and the campaign in your own prayers</li>
+	</ul>
+	<br>
+	<h2><%= formatted_date_to_tomorrow(@campaign.event.celebration_mass_dates) %></h2>
+	<h3>Attend a Celebration Weekend Mass</h3>
+	<h5><em>"Thank you for making a difference in the life of your parish and in the success of this campaign."</em></h5>
+</div>

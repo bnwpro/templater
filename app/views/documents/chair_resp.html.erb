@@ -1,0 +1,348 @@
+<%= wicked_pdf_stylesheet_link_tag "documents" %>
+<p id="notice"><%= notice %></p>
+
+<!-- PAGE 1 -->
+<div id="page_1" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<h2>CAMPAIGN CHAIR</h2>
+	<p>The Campaign Chair works with the Pastor to lead, represent and promote the campaign. The Campaign Chair will moderate Leadership Team meetings, oversee and support assigned campaign teams, and speak publicly for the campaign.</p>
+
+	<h3>Responsibilities:</h3>
+	<ul class="page_data">
+		<li>Attend Leadership Team Training, Leadership Team Report Meetings and the meetings of assigned campaign teams</li>
+		<li>Attend Advance Commitment Gathering</li>
+		<li>Moderate Leadership Team Meetings</li>
+		<li>Oversee and support campaign teams to ensure timely completion of assigned tasks</li>
+		<li>Write articles/letters as requested</li>
+		<li>Be prepared to publically speak for campaign as requested</li>
+		<li>Publicly support the campaign for the parish and archdiocese</li>
+		<li>Prayerfully consider a sacrificial, financial commitment to the campaign</li>
+	</ul>
+	<div id="date_list" class="border-box-radius">
+		<h4>**MEETINGS YOU SHOULD ATTEND**</h4>
+
+		<div class="left-column">
+			<%= formatted_date(@campaign.event.campaign_admin_trng) %><br>
+			<%= formatted_date(@campaign.event.involvement_ldr_trng) %><br>
+			<%= formatted_date(@campaign.event.pastor_cmp_mtg_1) %><br>
+			<%= formatted_date(@campaign.event.print_vis_comm_mtg_1) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_trng) %><br>
+			<%= formatted_date(@campaign.event.pacesetter_gift_pln_mtg_1) %><br>
+			<%= formatted_date(@campaign.event.ac_mtg_1) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_1) %><br>
+			<%= formatted_date(@campaign.event.pacesetter_gift_pln_mtg_2) %><br>
+			<%= formatted_date(@campaign.event.ac_mtg_2) %><br>
+			<%= formatted_date(@campaign.event.pastor_cmp_mtg_2) %><br>
+			<%= formatted_date(@campaign.event.contact_team_trng_1) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %><br>
+			<%= formatted_date(@campaign.event.ac_mtg_3) %><br>
+			<%= formatted_date(@campaign.event.follow_up_mtg) %><br>
+			<%= formatted_date(@campaign.event.pacesetter_gift_pln_mtg_3) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %><br>
+			<%= formatted_date(@campaign.event.ac_gather_1) %><br>
+			<%= formatted_date_to_tomorrow(@campaign.event.weekend_4_dates) %>
+		</div>
+		
+		<div class="center-column">
+			<%= formatted_time(@campaign.event.campaign_admin_trng) %><br>
+			<%= formatted_time(@campaign.event.involvement_ldr_trng) %><br>
+			<%= formatted_time(@campaign.event.pastor_cmp_mtg_1) %><br>
+			<%= formatted_time(@campaign.event.print_vis_comm_mtg_1) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_trng) %><br>
+			<%= formatted_time(@campaign.event.pacesetter_gift_pln_mtg_1) %><br>
+			<%= formatted_time(@campaign.event.ac_mtg_1) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_rpt_mtg_1) %><br>
+			<%= formatted_time(@campaign.event.pacesetter_gift_pln_mtg_2) %><br>
+			<%= formatted_time(@campaign.event.ac_mtg_2) %><br>
+			<%= formatted_time(@campaign.event.pastor_cmp_mtg_2) %><br>
+			<%= formatted_time(@campaign.event.contact_team_trng_1) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_rpt_mtg_2) %><br>
+			<%= formatted_time(@campaign.event.ac_mtg_3) %><br>
+			<%= formatted_time(@campaign.event.follow_up_mtg) %><br>
+			<%= formatted_time(@campaign.event.pacesetter_gift_pln_mtg_3) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_rpt_mtg_3) %><br>
+			<%= formatted_time(@campaign.event.ac_gather_1) %><br>
+		</div>
+
+		<div id="list_data" class="right-column" data-mercury="full">
+			<span>Campaign Administrator Training</span><br>
+			<span>Involvement Leader Training</span><br>
+			<span>Pastor &amp; Campaign Chairs w/Consultant</span><br>
+			<span>Print &amp; Visual Leaders</span><br>
+			<span>Leadership Team Training</span><br>
+			<span>Pacesetter Gifts Meeting #1</span><br>
+			<span>Advance Commitment Meeting #1</span><br>
+			Leadership Team Report Meeting #1<br>
+			Pacesetter Gifts Meeting #2<br>
+			Advance Commitment Meeting #2<br>
+			<span>Pastor &amp; Campaign Chairs w/Consultant</span><br>
+			Contact Team Training<br>
+			Leadership Team Report Meeting #2<br>
+			Advance Commitment Meeting #3<br>
+			Follow-Up Team Training<br>
+			Pacesetter Gifts Meeting #3<br>
+			Leadership Team Report Meeting #3<br>
+			Advance Commitment Gathering<br>
+			<strong>Commitment Weekend &amp; Parish-Wide Event</strong>
+		</div>
+	</div>
+</div> <!-- END PAGE 1 -->
+
+<!-- PAGE 2 -->
+<div id="page_2" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br>
+	<h2>- Timetable For Completing Your Tasks -</h2>
+	<br>
+	<h3><%= formatted_date(@campaign.event.leadership_team_trng) %><br><br>
+	Leadership Team Training and Individual Team Meetings</h3>
+	<br>
+	<ul class="page_data" data-mercury="full">
+		<li>Attend meeting with Campaign Administrator and Involvement Leader - <strong><%= formatted_time(@campaign.event.campaign_admin_trng) %></strong>/<strong><%= formatted_time(@campaign.event.involvement_ldr_trng) %></strong></li>
+		<li>Attend Pastor and Campaign Chairs Meeting w/Consultant - <strong><%= formatted_time(@campaign.event.pastor_cmp_mtg_1) %></strong></li>
+		<li>Attend meeting with Print and Visual Leaders - <strong><%= formatted_time(@campaign.event.print_vis_comm_mtg_1) %></strong></li>
+		<li>Attend the meetings of the campaign teams for which you have oversight</li>
+		<li>Attend Leadership Team Training - <strong><%= formatted_time(@campaign.event.leadership_team_trng) %></strong></li>
+		<li>Welcome and thank attendees
+			<ul>
+				<li>Emphasize the importance of the campaign and:
+					<ul>
+						<li>Its importance to the parish</li>
+						<li>Its importance to the archdiocese</li>
+						<li>The opportunity for spiritual growth</li>
+						<li>Studying the manual and other material</li>
+					</ul>
+				</li>
+				<li>Give credibility to the Consultant and encourage team leaders to call the Consultant when there are questions</li>
+				<li>Be positive</li>
+				<li>Encourage people to pray & consider a sacrificial financial commitment</li>
+			</ul>
+		</li>
+		<li>Attend Advance Commitment Meeting - <strong><%= formatted_time(@campaign.event.ac_mtg_1) %></strong></li>
+		<li>Attend Pacesetter Gift Meeting - <strong><%= formatted_time(@campaign.event.pacesetter_gift_pln_mtg_1) %></strong></li>
+		<li>Review your workbook and place the dates and times of the meetings you will attend on your personal calendar</li>
+		<li>Work with the Campaign Administrator to be sure the Special Edition Newsletter is mailed or distributed</li>
+	</ul>
+</div> <!-- END PAGE 2 -->
+
+<!-- PAGE 3 -->
+<div id="page_3" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br>
+	<div class="border-box">
+		<h3>Between Leadership Team Training and<br>
+			Report Meeting #1 on <%= formatted_date(@campaign.event.leadership_team_rpt_mtg_1) %>
+		</h3>
+		<ul class="box-data">
+			<li>Send a thank-you to all the leaders who attended or have committed to serve (Appendix A)</li>
+			<li>Assist the Pastor in introducing the Leadership Team during the Masses on the weekend following Leadership Team Training</li>
+			<li>Prepare Brochure letter and email to Print Leader prior to Leadership Team Report #1 (Appendix B)</li>
+			<li>Check with Campaign Administrator and Involvement Leader and review:
+				<ul>
+					<li>Enlistment progress for all teams</li>
+					<li>Materials for upcoming Contact Team Assistant training are ready</li>
+					<li>Meeting reminders are sent out via email or standard mail</li>
+				</ul>
+			</li>
+			<li>Monitor progress of Pacesetter Gifts and Advance Commitment teams. Notify the Consultant if any issues arise within these two teams</li>
+			<li>Within five days after Leadership Team Training, contact the campaign teams you are supporting. Encourage and support the campaign teams that have been assigned to you. (Appendix C)</li>
+			<li>Assist the Pastor in enlisting people to give lay witness talks during the Inspiration Phase</li>
+			<li>Begin preparing your own testimonial (Appendix D)</li>
+		</ul>
+	</div>
+	<br><br>
+	<h2><%= formatted_date(@campaign.event.leadership_team_rpt_mtg_1) %></h2>
+	<h3>Leadership Team Report #1 and Individual Team Meetings</h3>
+	<br>
+	<ul class="page_data">
+		<li>Attend the meetings of the campaign teams you are supporting (Appendix B)</li>
+		<li>Attend Leadership Team Report Meeting #1 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_1) %></strong></li>
+		<li>Moderate the report section of Leadership Team Report Meeting #1 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_1) %></strong>
+			<ul>
+				<li>Let teams know when budget requests should be finalized, if applicable</li>
+				<li>Encourage leaders to be praying about their prayerful, financial commitment</li>
+				<li>Be positive</li>
+				<li>Encourage people to continue to pray</li>
+			</ul>
+		</li>
+		<li>Attend Pacesetter Gifts and/or Advance Commitment Team meetings - <strong><%= formatted_time(@campaign.event.pacesetter_gift_pln_mtg_1) %></strong>/<strong><%= formatted_time(@campaign.event.ac_mtg_1) %></strong></li>
+	</ul>
+</div> <!-- END PAGE 3 -->
+
+<!-- PAGE 4 -->
+<div id="page_4" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br><br><br>
+	<div class="border-box">
+		<h3>Between Leadership Team Report #1 and<br>
+			Leadership Team Report #2 on <%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %>
+		</h3>
+		<ul class="page_data">
+			<li>Within five days, check with the campaign teams you are supporting (Appendix C)</li>
+			<li>Check on budget requests, as appropriate</li>
+			<li>Check on event planning and enlistment progress</li>
+			<li>Check with the Print Leader to be sure the production of print materials are on schedule</li>
+			<li>Monitor progress of Pacesetter Gifts and Advance Commitment team progress. Notify the Consultant if any issues arise within these two teams</li>
+			<li>Help the Pastor enlist people for lay witness talks (Appendix D)</li>
+			<li>Determine contents of Information Packets (Appendix E). Consult with the Pastor</li>
+			<li>Verify that Campaign Administrator has sent meeting reminders to Leadership Team Members</li>
+			<li>Finalize your testimonial/lay witness talk</li>
+		</ul>
+	</div>
+	<br><br>
+	<h2><%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %></h2>
+	<h3>Leadership Team Report #2 and Individual Team Meetings</h3>
+	<br>
+	<ul class="page_data">
+		<li>Attend Pastor and Campaign Chairs Meeting w/Consultant - <strong><%= formatted_time(@campaign.event.info_team_trng_1) %></strong></li>
+		<li>Attend campaign team meetings, as assigned</li>
+		<li>Attend Contact Team Training - <strong><%= formatted_time(@campaign.event.contact_team_trng_1) %></strong>. &nbsp;Because this is the largest team of volunteers in the campaign, it is especially important for a Campaign Chair to attend Contact Team Training and introduce the Consultant</li>
+		<li>Attend Leadership Team Report Meeting #2 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_2) %></strong></li>
+		<li>Moderate report portion of Leadership Team Report Meeting #2 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_2) %></strong></li>
+		<li>Share your personal witness talk at Report #2
+			<ul>
+				<li>Challenge people to prayerfully consider a sacrificial, financial commitment and remind them that initial commitments may be taken at Report #3, if requested by consultant</li>
+				<li>Be positive in your support of the campaign</li>
+			</ul>
+		</li>
+		<li>Attend Pacesetter Gifts and/or Advance Commitment Team meetings - <strong><%= formatted_time(@campaign.event.pacesetter_gift_pln_mtg_2) %></strong>/<strong><%= formatted_time(@campaign.event.ac_mtg_2) %></strong></li>
+	</ul>
+</div> <!-- END PAGE 4 -->
+
+<!-- PAGE 5 -->
+<div id="page_5" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br><br><br>
+	<div class="border-box">
+		<h3>Between Leadership Team Report #2 and<br>
+			Leadership Team Report #3 on <%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %>
+		</h3>
+		<ul class="page_data">
+			<li>Three days after Report Meeting #2 check with the campaign teams you are supporting (Appendix C)</li>
+			<li>At this point, campaign teams should have completed the planning for their events and activities. Be sure each group is on schedule</li>
+			<li>Monitor progress of Pacesetter Gifts and Advance Commitment team progress. Notify the Consultant if any issues arise within these two teams</li>
+			<li>Meet with the Campaign Administrator and Information Team Leaders. Review contents of information packets and review final preparations for packet distribution</li>
+			<li>With the Pastor, ensure that lay witness talks are scheduled for the appropriate Weekends of the Inspiration Phase</li>
+			<li>Prepare your remarks for Information Distribution Weekend announcement. If you do not make the announcement, be sure someone else is enlisted to do so (Appendix G)</li>
+		</ul>
+	</div>
+	<br><br><br><br>
+	<div class="border-box">
+		<h3 class="left">The Weekend before Information Weekend,<br>
+			<%= formatted_date_vari_begin(@campaign.event.information_act_dates) %> - <%= formatted_date_vari_end(@campaign.event.information_act_dates) %></h3>
+		<ul class="page_data">
+			<li>During each Mass on the weekend before Information Distribution, be sure an announcement is made to let people know that:
+				<ul>
+					<li>The Contact team will begin making their calls. Encourage people to be:
+						<ul>
+							<li>Gracious</li>
+							<li>Open</li>
+							<li>Prayerful</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>Information packets will be available the following week</li>
+		</ul>
+	</div>
+</div> <!-- END PAGE 5 -->
+
+<!-- PAGE 6 -->
+<div id="page_6" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br><br><br>
+	<div class="border-box">
+		<h3 class="left">The Week prior to Information Weekend,<br>
+			<%= formatted_date_vari_begin(@campaign.event.information_act_dates) %> - <%= formatted_date_vari_end(@campaign.event.information_act_dates) %></h3>
+		<ul class="page_data">
+			<li>Oversee Campaign Administrator’s and information Team’s preparations for distribution</li>
+			<li>Coordinate Mass announcements with pastor</li>
+		</ul>
+	</div>
+	<br><br><br>
+	<h3><%= formatted_date_vari_begin(@campaign.event.information_act_dates) %> - <%= formatted_date_vari_end(@campaign.event.information_act_dates) %><br><br>
+	Information Distribution Weekend</h3>
+	<br>
+	<ul class="page_data">
+		<li>Announce packet distribution (should take 1-2 minutes) (Appendix G)
+			<ul>
+				<li>Explain coupon and how distribution will be conducted</li>
+				<li>Hold up packet and explain contents</li>
+				<li>Encourage parishioners to pick up packets after Mass</li>
+				<li>Encourage parishioners to prayerfully study the contents of the packet</li>
+			</ul>
+		</li>
+	</ul>
+	<br><br><br>
+	<h2><%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %></h2>
+	<h3>Leadership Team Report #3 and Individual Team Meetings</h3>
+	<br>
+	<ul class="page_data">
+		<li>Attend Follow-Up meeting - <strong><%= formatted_time(@campaign.event.follow_up_mtg) %></strong></li>
+		<li>Attend Pacesetter Gifts and/or Advance Commitment Team meetings - <strong><%= formatted_time(@campaign.event.pacesetter_gift_pln_mtg_3) %></strong>/<strong><%= formatted_time(@campaign.event.ac_mtg_3) %></strong></li>
+		<li>Attend Leadership Team Report Meeting #3 - <strong><%= formatted_time(@campaign.event.ac_mtg_3) %></strong></li>
+		<li>Attend meetings of the teams you are supporting</li>
+		<li>Moderate report section of Leadership Team Report meeting
+			<ul>
+				<li>Plans of all campaign teams should be final, clear, and ready to go</li>
+				<li>Thank people for their excellent work and encourage them to complete all assigned tasks</li>
+			</ul>
+		</li>
+	</ul>
+</div> <!-- END PAGE 6 -->
+
+<!-- PAGE 7 -->
+<div id="page_7" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br><br><br>
+	<div class="border-box">
+		<h3 class="left">Following Leadership Team Report #3</h3>
+		<ul class="page_data">
+			<li>Contact those enlisted to give lay witness talks to be sure they are prepared and clear about times and dates</li>
+			<li>Attend Progress Report Meeting with Pacesetter Gift Team</li>
+			<li>Meet with the Advance Commitment campaign team to be sure invitations have been sent and that the gatherings are staffed and ready to go. Your consultant will provide guidelines and an agenda</li>
+			<li>On Weekend One announce the goal(s) and talk briefly about the case and the difference its completion will make to the parish and archdiocese (Appendix H)</li>
+			<li>During Masses on Weekend I make general invitation to Advance Commitment Gatherings</li>
+		</ul>
+	</div>
+	<br><br>
+	<h2><%= formatted_date(@campaign.event.ac_gather_1) %></h2>
+	<h3>Advance Commitment Gathering</h3>
+	<ul class="page_data">
+		<li>Plan to attend Advance Commitment Gathering</li>
+	</ul>
+	<br><br>
+	<div class="border-box">
+		<h3 class="left">Oversight Items from Advance Commitment Gatherings to<br>
+		Celebration Weekend on <%= formatted_date(@campaign.event.celebration_mass_dates) %></h3>
+		<ul class="page_data">
+			<li>Assist the Pastor with the Advance Commitment pledge announcement on Weekend IV</li>
+			<li>Assist the Pastor in developing a process for receiving commitments on Commitment Weekend</li>
+			<li>Track commitments received</li>
+			<li>Oversee Campaign Administrator in the task of mailing Commitment Cards and Letter from Pastor to all who have not made a commitment by the end of Commitment Masses</li>
+		</ul>
+	</div>
+</div> <!-- END PAGE 7 -->
+
+<!-- PAGE 8 -->
+<div id="page_8" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<h2><%= formatted_date_to_tomorrow(@campaign.event.weekend_4_dates) %></h2>
+	<h3>Commitment Weekend</h3>
+	<ul class="page_data">
+		<li>Plan to attend Mass this weekend. Do not neglect the privilege of worshiping this week! If you have not done so, prayerfully complete your commitment card</li>
+		<li>Continue to support your parish and the campaign in your own prayers</li>
+	</ul>
+	<br>
+	<h2><%= formatted_date_to_tomorrow(@campaign.event.celebration_mass_dates) %></h2>
+	<h3>Attend a Celebration Weekend Mass</h3>
+	<br><br>
+	<div class="border-box">
+		<h3 class="left">After Celebration Weekend Mass</h3>
+		<ul class="page_data">
+			<li>Assist Campaign Administrator with Thank-You Letters</li>
+		</ul>
+	</div>
+	<br><br>
+	<h5><em>"Thank you for making a difference in the life of your parish and in the success of this campaign."</em></h5>
+</div>

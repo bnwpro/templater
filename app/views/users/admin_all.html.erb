@@ -1,0 +1,22 @@
+<h3>Admin: All Campaigns Index</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Consultant</th>
+      <th>Campaign Name</th>
+      <th></th>
+	  <th></th>
+	  <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @campaigns.each do |campaign| %>
+      <tr>
+        <td><%= campaign.user.name %></td>
+        <td><%= campaign.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

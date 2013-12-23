@@ -1,0 +1,43 @@
+<h1>Listing contacts for: <%= @campaign.name %><br> Consultant: <%= @user.name %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Campaign</th>
+      <th>Description</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @campaign_contacts.each do |campaign_contact| %>
+      <tr>
+        <td><%= campaign_contact.campaign.name %></td>
+        <td><%= campaign_contact.description %></td>
+        <td><%= campaign_contact.name %></td>
+        <td><%= campaign_contact.address %></td>
+        <td><%= campaign_contact.city %></td>
+        <td><%= campaign_contact.state %></td>
+        <td><%= campaign_contact.zip %></td>
+        <td><%= campaign_contact.phone %></td>
+        <td><%= campaign_contact.email %></td>
+        <td><%= link_to 'Show', [@user, @campaign, campaign_contact] %></td>
+        <td><%= link_to 'Edit', edit_user_campaign_campaign_contact_path(@user, @campaign, campaign_contact) %></td>
+        <td><%= link_to 'Destroy', [@user, @campaign, campaign_contact], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Campaign contact', new_user_campaign_campaign_contact_path(@user, @campaign) %>

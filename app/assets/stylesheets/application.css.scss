@@ -1,0 +1,50 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ */
+@import "jquery.ui.datepicker";
+@import "jquery.ui.slider";
+@import "jquery-ui-timepicker-addon";
+@import "foundation_and_overrides";
+@import "top_nav_bar";
+@import "campaigns";
+@import "events";
+
+@mixin shadowed-boxes { 
+	-moz-box-shadow: 0 0 5px #888;
+	-webkit-box-shadow: 0 0 5px #888;
+	box-shadow: 0 0 5px #888;
+}
+.side-nav {
+	/*position: fixed;*/
+}
+body {
+	margin: 0 auto;
+	background: #eee;
+}
+select {
+	height: 500px;
+}
+table {
+	@include shadowed-boxes;
+	thead {
+		background: #77C9FF;
+	}
+	tbody {
+		background: #eee;
+	}
+}
+fieldset legend {
+	background: transparent;
+}
+.delete_link {
+	color: red;
+}

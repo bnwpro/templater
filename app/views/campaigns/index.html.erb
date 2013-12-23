@@ -1,0 +1,60 @@
+<br><br>
+<h1>Listing Campaigns for consultant:<br> <%= link_to @user.name, user_path(@user) %></h1>
+<h3><%= link_to '(+) Create New Campaign', new_user_campaign_path %></h3>
+
+<table>
+  <thead>
+    <tr>
+      <!--<th>Consultant</th>-->
+      <th>Campaign Name</th>
+      <th>Diocese</th>
+      <!--<th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>-->
+      <th>Contact name</th>
+      <th>Phone</th>
+      <th>Fax</th>
+      <th>Email</th>
+      <th>Url</th>
+      <th>Number of families</th>
+      <th>Contribution income</th>
+      <th>Has pacesetter</th>
+      <th>Standalone</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @campaigns.each do |campaign| %>
+      <tr>
+        <!--<td><%= campaign.user.name %></td>-->
+        <td><%= campaign.name %></td>
+        <td><%= campaign.diocese %></td>
+        <!--<td><%= campaign.address %></td>
+        <td><%= campaign.city %></td>
+        <td><%= campaign.state %></td>
+        <td><%= campaign.zip %></td>-->
+        <td><%= campaign.contact_name %></td>
+        <td><%= number_to_phone(campaign.phone, area_code: true) %></td>
+        <td><%= number_to_phone(campaign.fax, area_code: true) %></td>
+        <td><%= campaign.email %></td>
+        <td><%= campaign.url %></td>
+        <td><%= campaign.number_of_families %></td>
+        <td><%= number_to_currency(campaign.contribution_income) %></td>
+        <td><%= campaign.has_pacesetter %></td>
+        <td><%= campaign.standalone %></td>
+        <td><%= link_to 'Select', [@user, campaign] %></td>
+        <td><%= link_to 'Edit', edit_user_campaign_path(@user, campaign) %></td>
+        <td><%= link_to 'Delete', [@user, campaign], method: :delete, data: { confirm: 'Are you sure? This will delete all data associated with '+ campaign.name }, class: 'delete_link' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<script>
+	$('.edit_campaign_link, .view_all_link').hide();
+</script>
+
+<br>

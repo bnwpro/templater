@@ -1,0 +1,159 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Campaign:</strong>
+  <%= @campaign.name %>
+</p>
+
+<p>
+  <strong>Print contact name:</strong>
+  <%= @training_sheet.print_contact_name %>
+</p>
+
+<p>
+  <strong>Print contact phone:</strong>
+  <%= number_to_phone(@training_sheet.print_contact_phone, area_code: true) %>
+</p>
+
+<p>
+  <strong>Print contact email:</strong>
+  <%= @training_sheet.print_contact_email %>
+</p>
+
+<p>
+  <strong>Man ac:</strong>
+  <%= @training_sheet.man_ac %>
+</p>
+
+<p>
+  <strong>Man camp admin:</strong>
+  <%= @training_sheet.man_camp_admin %>
+</p>
+
+<p>
+  <strong>Man camp chair:</strong>
+  <%= @training_sheet.man_camp_chair %>
+</p>
+
+<p>
+  <strong>Man childs act:</strong>
+  <%= @training_sheet.man_childs_act %>
+</p>
+
+<p>
+  <strong>Man contact:</strong>
+  <%= @training_sheet.man_contact %>
+</p>
+
+<p>
+  <strong>Man follow up:</strong>
+  <%= @training_sheet.man_follow_up %>
+</p>
+
+<p>
+  <strong>Man info:</strong>
+  <%= @training_sheet.man_info %>
+</p>
+
+<p>
+  <strong>Man invlvm:</strong>
+  <%= @training_sheet.man_invlvm %>
+</p>
+
+<p>
+  <strong>Man pace gifts:</strong>
+  <%= @training_sheet.man_pace_gifts %>
+</p>
+
+<p>
+  <strong>Man prayer:</strong>
+  <%= @training_sheet.man_prayer %>
+</p>
+
+<p>
+  <strong>Man print comm:</strong>
+  <%= @training_sheet.man_print_comm %>
+</p>
+
+<p>
+  <strong>Man spc event:</strong>
+  <%= @training_sheet.man_spc_event %>
+</p>
+
+<p>
+  <strong>Man vis comm:</strong>
+  <%= @training_sheet.man_vis_comm %>
+</p>
+
+<p>
+  <strong>Man youth:</strong>
+  <%= @training_sheet.man_youth %>
+</p>
+
+<p>
+  <strong>Man pastor:</strong>
+  <%= @training_sheet.man_pastor %>
+</p>
+
+<p>
+  <strong>Ts ac1:</strong>
+  <%= @training_sheet.ts_ac1 %>
+</p>
+
+<p>
+  <strong>Ts ac2:</strong>
+  <%= @training_sheet.ts_ac2 %>
+</p>
+
+<p>
+  <strong>Ts ac3:</strong>
+  <%= @training_sheet.ts_ac3 %>
+</p>
+
+<p>
+  <strong>Ts ct1:</strong>
+  <%= @training_sheet.ts_ct1 %>
+</p>
+
+<p>
+  <strong>Ts ct2:</strong>
+  <%= @training_sheet.ts_ct2 %>
+</p>
+
+<p>
+  <strong>Ts ct3:</strong>
+  <%= @training_sheet.ts_ct3 %>
+</p>
+
+<p>
+  <strong>Ts ct4:</strong>
+  <%= @training_sheet.ts_ct4 %>
+</p>
+
+<p>
+  <strong>Ts ct5:</strong>
+  <%= @training_sheet.ts_ct5 %>
+</p>
+
+<p>
+  <strong>Ts ct6:</strong>
+  <%= @training_sheet.ts_ct6 %>
+</p>
+
+<p>
+  <strong>Ts ct7:</strong>
+  <%= @training_sheet.ts_ct7 %>
+</p>
+
+<p>
+  <strong>Ts it1:</strong>
+  <%= @training_sheet.ts_it1 %>
+</p>
+
+<p>
+  <strong>Ts it2:</strong>
+  <%= @training_sheet.ts_it2 %>
+</p>
+
+<%= link_to 'Edit', edit_user_campaign_training_sheet_path(@user, @campaign, @training_sheet) %> |
+<%= link_to 'Back', user_campaign_training_sheets_path(@user, @campaign) %>

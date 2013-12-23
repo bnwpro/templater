@@ -1,0 +1,99 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <fieldset>
+	  <legend>User Info</legend>
+	  <div class="row">
+		  <div class="large-6 columns">
+			  <div class="field">
+			    <%= f.label :first_name %><br>
+			    <%= f.text_field :first_name %>
+			  </div>
+		  </div>
+		  <div class="large-6 columns">
+			  <div class="field">
+			    <%= f.label :last_name %><br>
+			    <%= f.text_field :last_name %>
+			  </div>
+		  </div>
+	  </div>
+  
+	  <div class="row">
+		  <div class="large-6 columns">
+			  <div class="field">
+			    <%= f.label :email %><br>
+			    <%= f.email_field :email %>
+			  </div>
+		  </div>
+		  <div class="large-6 columns">
+			  <div class="field">
+			    <%= f.label :phone %><br>
+			    <%= f.text_field :phone %>
+			  </div>
+		  </div>
+	  </div>
+  
+	  <div class="row">
+		  <div class="large-5 columns">
+			  <div class="field">
+			    <%= f.label :city %><br>
+			    <%= f.text_field :city %>
+			  </div>
+		  </div>
+		  <div class="large-2 columns">
+			  <div class="field">
+			    <%= f.label :state %><br>
+			    <%= f.select :state, us_states, prompt: 'Select State' %>
+			  </div>
+		  </div>
+		  <div class="large-5 columns">
+			  <div class="field">
+			    <%= f.label :zip %><br>
+			    <%= f.text_field :zip %>
+			  </div>
+		  </div>
+	  </div>
+  
+	  <div class="row">
+		  <div class="large-3 columns">
+			  <div class="field">
+			    <%= f.label :password %><br>
+			    <%= f.text_field :password, placeholder: 'Enter a Password' %>
+			  </div>
+		  </div>
+	  </div>
+	  
+	  <div class="row">
+		  <div class="large-3 columns">
+			  <div class="field">
+			    <%= f.label :password_confirmation %><br>
+			    <%= f.text_field :password_confirmation, placeholder: 'Confirm Password' %>
+			  </div>
+		  </div>
+	  </div>
+  
+	  <div class="row">
+		  <div class="large-3 columns">
+			  <div class="field">
+			    <%= f.label :admin %><br>
+			    <%= f.select :admin, options_for_select([["no", "false"], ["yes", "true"]]) %>
+			  </div>
+		  </div>
+	  </div>
+  
+	  <br>
+  
+	  <div class="actions">
+	    <%= f.submit %>
+	  </div>
+	<% end %>
+</fieldset>

@@ -1,0 +1,524 @@
+<%= wicked_pdf_stylesheet_link_tag "documents" %>
+<p id="notice"><%= notice %></p>
+
+<!-- PAGE 1 -->
+<div id="page_1" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<h2>CAMPAIGN ADMINISTRATOR</h2>
+	<p>The Campaign Administrator will support the work of everyone who participates. No position or person in the campaign will have more impact upon its overall success than your position. Eventually, everyone who participates will depend upon you for assistance, information, resources, and assignments. The quality of your work will enhance the work of others.</p>
+
+	<h3>Responsibilities:</h3>
+	<span>Attend Leadership Team Training, Leadership Report Meetings and other scheduled meetings as calendared</span>
+	<ul class="page_data">
+		<li>Attend Advance Commitment Gathering</li>
+		<li>Secure Room Assignments for Campaign Meetings:
+			<ul>
+				<li>Work with your consultant to determine the size and number of rooms needed for each campaign session. Make sure adequate rooms are reserved on the parish calendar.</li>
+				<li>Remind all leaders of scheduled meetings a week ahead of time</li>
+				<li>On the weekend before team meetings, post signs at the parish indicating
+room assignments:</li>
+			</ul>
+		</li>
+	</ul>
+	
+	<div class="border-box cols-2-small">
+		<h6>Information Team Meeting</h6>
+		<ul>
+			<li><%= formatted_time(@campaign.event.info_team_trng_1) %></li>
+			<li>LOCATION</li>
+		</ul>
+		
+		<h6>Contact Team Meeting</h6>
+		<ul>
+			<li><%= formatted_time(@campaign.event.contact_team_trng_1) %></li>
+			<li>LOCATION</li>
+		</ul>
+		
+		<h6>Advance Commitment Meeting #2</h6>
+		<ul>
+			<li><%= formatted_time(@campaign.event.ac_mtg_2) %></li>
+			<li>LOCATION</li>
+		</ul>
+	</div>
+	
+	<ul class="page_data">
+		<li>Prepare Training Packets for Training Sessions:
+			<ul>
+				<li>You are provided with materials for Contact, Information, and Advance Commitment training sessions. Using these materials, create training packets for individuals who attend the training sessions.</li>
+				<li>In the appendices of your manual are worksheets for each training sessions.</li>
+			</ul>
+		</li>
+		<li>Prepare Campaign Mailings:
+			<ul>
+				<li>Please check to see if there are any special instructions from your archdiocese concerning parish printed materials. Though the archdiocese may have a plan to handle most of your mailings, you will be responsible for arranging the distribution or mailing of some items:
+					<ul>
+						<li>A Special Edition Newsletter (A template is available from your consultant)</li>
+						<li>Information Materials not distributed on Information Distribution Weekend</li>
+						<li>Advance Commitment Invitation letters</li>
+						
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div> <!-- END PAGE 1 -->
+
+<!-- PAGE 2 -->
+<div id="page_2" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br><br><br>
+	<ul class="page_data" data-mercury="full">
+		<li class="display-none">
+			<ul>
+				<li class="display-none">
+					<ul>
+						<li>Commitment Cards to families that did not make a commitment on Commitment Weekend</li>
+						<li>Thank-you and Confirmation Letters from your parish for commitments received</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li>Assist with Other Tasks:
+			<ul>
+				<li>Prepare calling lists for the Contact Team and other teams, as requested</li>
+				<li>Receive &amp; disburse Focus on Prayer sheets after Contact Team completes first wave of calls</li>
+				<li>Prepare Advance Commitment Gathering Lists and Materials</li>
+				<li>Tally reservation sheets for the Parish-Wide Event</li>
+				<li>Oversee the campaign calendar and assist Campaign Chair(s) and Consultant to keep everyone on task and on track</li>
+			</ul>
+		</li>
+		<li>You should attend the following meetings:
+			<ul>
+				<li>Leadership Team Training</li>
+				<li>Leadership Team Report Meetings</li>
+				<li>Contact Team Assistant Training</li>
+				<li>Contact Team Training</li>
+				<li>Information Team Training</li>
+				<li>Advance Commitment Gathering Hosts' Orientation Meeting</li>
+				<li>Follow-up Training</li>
+			</ul>
+		</li>
+		<li>Publicly support the campaign for the parish and archdiocese</li>
+		<li>Prayerfully consider a sacrificial financial commitment to the campaign</li>
+	</ul>
+</div> <!-- END PAGE 2 -->
+
+<!-- PAGE 3 -->
+<div id="page_3" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br><br><br>
+	<div id="date_list" class="border-box-radius">
+		<h4>**MEETINGS YOU SHOULD ATTEND**</h4>
+
+		<div class="left-column">
+			<%= formatted_date(@campaign.event.campaign_admin_trng) %><br>
+			<%= formatted_date(@campaign.event.involvement_ldr_trng) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_trng) %><br>
+			<%= formatted_date(@campaign.event.pacesetter_gift_pln_mtg_1) %><br>
+			<%= formatted_date(@campaign.event.ac_mtg_1) %><br>
+			<%= formatted_date(@campaign.event.contact_team_asst_trng_1) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_1) %><br>
+			<%= formatted_date(@campaign.event.pacesetter_gift_pln_mtg_2) %><br>
+			<%= formatted_date(@campaign.event.ac_mtg_2) %><br>
+			<%= formatted_date(@campaign.event.info_team_trng_1) %><br>
+			<%= formatted_date(@campaign.event.contact_team_trng_1) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %><br>
+			<%= formatted_date(@campaign.event.pacesetter_gift_pln_mtg_3) %><br>
+			<%= formatted_date(@campaign.event.ac_mtg_3) %><br>
+			<%= formatted_date(@campaign.event.follow_up_mtg) %><br>
+			<%= formatted_date(@campaign.event.pacesetter_gift_rpt_mtg) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %><br>
+			<%= formatted_date(@campaign.event.ac_host_orient) %><br>
+			<%= formatted_date(@campaign.event.ac_gather_1) %><br>
+			<%= formatted_date_to_tomorrow(@campaign.event.weekend_4_dates) %>
+		</div>
+		
+		<div class="center-column">
+			<%= formatted_time(@campaign.event.campaign_admin_trng) %><br>
+			<%= formatted_time(@campaign.event.involvement_ldr_trng) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_trng) %><br>
+			<%= formatted_time(@campaign.event.pacesetter_gift_pln_mtg_1) %><br>
+			<%= formatted_time(@campaign.event.ac_mtg_1) %><br>
+			<%= formatted_time(@campaign.event.contact_team_asst_trng_1) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_rpt_mtg_1) %><br>
+			<%= formatted_time(@campaign.event.pacesetter_gift_pln_mtg_2) %><br>
+			<%= formatted_time(@campaign.event.ac_mtg_2) %><br>
+			<%= formatted_time(@campaign.event.info_team_trng_1) %><br>
+			<%= formatted_time(@campaign.event.contact_team_trng_1) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_rpt_mtg_2) %><br>
+			<%= formatted_time(@campaign.event.pacesetter_gift_pln_mtg_3) %><br>
+			<%= formatted_time(@campaign.event.ac_mtg_3) %><br>
+			<%= formatted_time(@campaign.event.follow_up_mtg) %><br>
+			<%= formatted_time(@campaign.event.pacesetter_gift_rpt_mtg) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_rpt_mtg_3) %><br>
+			<%= formatted_time(@campaign.event.ac_host_orient) %><br>
+			<%= formatted_time(@campaign.event.ac_gather_1) %><br>
+		</div>
+
+		<div id="list_data" class="right-column" data-mercury="full">
+			<span>Campaign Administrator Training</span><br>
+			<span>Involvement Leader Training</span><br>
+			<span>Leadership Team Training</span><br>
+			<span>Pacesetter Gifts Meeting #1</span><br>
+			<span>Advance Commitment Meeting #1</span><br>
+			<span>Contact Team Assistant Training</span><br>
+			Leadership Team Report Meeting #1<br>
+			Pacesetter Gifts Meeting #2<br>
+			Advance Commitment Meeting #2<br>
+			Information Distribution Team training<br>
+			Contact Team Training<br>
+			Leadership Team Report Meeting #2<br>
+			Pacesetter Gifts Meeting #3<br>
+			Advance Commitment Meeting #3<br>
+			Follow-Up Team Training<br>
+			Pacesetter Gifts Meeting #4<br>
+			Leadership Team Report Meeting #3<br>
+			Advance Commitment Host Orientation<br>
+			Advance Commitment Gathering<br>
+			<strong>Commitment Weekend &amp; Parish-Wide Event</strong>
+		</div>
+	</div>
+</div> <!-- END PAGE 3 -->
+
+<!-- PAGE 4 -->
+<div id="page_4" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br>
+	<h2>- Timetable For Completing Your Tasks -</h2>
+	<br>
+	<h3><%= formatted_date(@campaign.event.leadership_team_trng) %><br><br>
+	Leadership Team Training and Individual Team Meetings</h3>
+	<br>
+	<ul class="page_data" data-mercury="full">
+		<li>Attend Campaign Administrator Training with your consultant - <strong><%= formatted_time(@campaign.event.campaign_admin_trng) %></strong></li>
+		<li>Review responsibilities and tasks for your position</li>
+		<li>Review your workbook and place the dates and times of the meetings you will attend on your personal calendar</li>
+		<li>If requested, complete the meeting room worksheet with your consultant who will provide you the appropriate form (Appendix A)</li>
+		<li>Become familiar with the mailing schedule and requirements for your campaign</li>
+		<li>Review the packet assembly worksheets and training materials</li>
+		<li>Attend Leadership Team Training - <strong><%= formatted_time(@campaign.event.leadership_team_trng) %></strong></li>
+		<li>Attend Advance Commitment Meeting - <strong><%= formatted_time(@campaign.event.ac_mtg_1) %></strong></li>
+		<li>Attend Pacesetter Gift Meeting - <strong><%= formatted_time(@campaign.event.pacesetter_gift_pln_mtg_1) %></strong></li>
+		<li>If requested by your consultant, collect bio sheets from all leaders and compile the
+Leadership Team roster. E-mail them to your consultant: <strong><%= @user.email %></strong></li>
+	</ul>
+	<br><br>
+	<div class="border-box">
+		<h3>Between Leadership Team Training and<br>
+			Report Meeting #1 on <%= formatted_date(@campaign.event.leadership_team_rpt_mtg_1) %>
+		</h3>
+		<ul class="box-data">
+			<li>Review your Campaign Manual</li>
+			<li>Assemble training packets prior to Contact Assistant Training (Appendix D, Worksheets, Page 1)</li>
+			<li>One week before Leadership Team Report #1, contact all team leaders to remind them of the upcoming meetings</li>
+			<li>On the weekend before Leadership Team Report #1, prepare and post directional signs to meetings</li>
+			<li>On the day of the meetings, make certain that the rooms are prepared</li>
+		</ul>
+	</div>
+</div> <!-- END PAGE 4 -->
+
+<!-- PAGE 5 -->
+<div id="page_5" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br>
+	<h2><%= formatted_date(@campaign.event.leadership_team_rpt_mtg_1) %></h2>
+	<h3>Leadership Team Report #1 and Individual Team Meetings</h3>
+	<br>
+	<ul class="page_data">
+		<li>Bring training packets to Contact Team Assistant Training - <strong><%= formatted_time(@campaign.event.contact_team_asst_trng_1) %></strong>
+			<ul>
+				<li>Be prepared to assist the consultant with the distribution of materials at the training</li>
+				<li>Collect attendance forms, Appendix B, at Contact Assistant Training and give them to Involvement Leader(s)</li>
+			</ul>
+		</li>
+		<li>Attend Leadership Team Report Meeting #1 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_1) %></strong>
+			<ul>
+				<li>Be prepared with questions/concerns about your position</li>
+			</ul>
+		</li>
+	</ul>
+	<br>
+	<div class="border-box">
+		<h3>Between Leadership Team Report #1 and<br>
+			Leadership Team Report #2 on <%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %>
+		</h3>
+		<ul class="page_data">
+			<li>Prepare for Contact Team Training
+				<ul>
+					<li>Prepare calling lists for the entire Contact Team (Appendix D, Worksheets, Page 2)</li>
+					<li>If you have not already done so, prepare packets for Contact Team training (Appendix D, Worksheets, Page 3)</li>
+				</ul>
+			</li>
+			<li>Prepare packets for Information Team training (Appendix D, Worksheets, Page 4)</li>
+			<li>One week before Leadership Team Report #2, contact all team leaders to remind them of the upcoming meetings</li>
+			<li>Meet with parish office staff to discuss mailing needs and bulletin inserts.
+				<br>Establish, or use existing volunteer team, to assist with campaign mailings and bulletins. Check regarding deadlines for materials to go in the bulletin. Please inform the team and the consultant of any deadlines and the correct procedure to submit materials for the bulletin. You will need to prepare this team to assist you with the three major mailings that occur later in the campaign:
+				<ol>
+					<li>Information Packets after Information Distribution Weekend(s)</li>
+					<li>Advance Commitment Invitations</li>
+					<li>Commitment Cards after Commitment Weekend (Appendix D, Worksheets, Page 5)</li>
+				</ol>
+			</li>
+		</ul>
+	</div>
+</div> <!-- END PAGE 5 -->
+
+<!-- PAGE 6 -->
+<div id="page_6" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br>
+	<h2><%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %></h2>
+	<h3>Leadership Team Report #2 and Individual Team Meetings</h3>
+	<br>
+	<ul class="page_data">
+		<li>Bring training packets for Information Team training - <strong><%= formatted_time(@campaign.event.info_team_trng_1) %></strong>
+			<ul>
+				<li>Be prepared to assist the consultant with the distribution of materials at Information Team Training</li>
+				<li>Collect attendance forms at Information Team Training and give them to Involvement Leader(s)</li>
+			</ul>
+		</li>
+		<li>Bring training packets to Contact Team Training - <strong><%= formatted_time(@campaign.event.contact_team_trng_1) %></strong>
+			<ul>
+				<li>Be prepared to assist the consultant with the distribution of materials at Contact Team Training</li>
+				<li>Collect attendance forms at Contact Team Training and give them to Involvement Leader(s)</li>
+			</ul>
+		</li>
+		<li>Attend Leadership Team Report #2 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_2) %></strong>
+			<ul>
+				<li>Be prepared with questions/concerns about your position.</li>
+			</ul>
+		</li>
+		<li>Bring materials to Advance Commitment Training Meeting and/or Pacesetter Gift Training - <strong><%= formatted_time(@campaign.event.ac_mtg_1) %></strong> / <strong><%= formatted_time(@campaign.event.pacesetter_gift_pln_mtg_1) %></strong>
+			<ul>
+				<li>Alert the Pastor and Advance Commitment Leaders as to the need to produce the letters of invitation for the Advance Commitment Gathering (Appendix J, K)</li>
+				<li>You will not be expected to stay unless you are requested to do so by the consultant</li>
+			</ul>
+		</li>
+	</ul>
+	<br><br>
+	<div class="border-box">
+		<h3>Between Leadership Team Report #2 and<br>
+			Leadership Team Report #3 on <%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %>
+		</h3>
+		<ul class="page_data">
+			<li>Follow up with Contact Leaders to be sure all packets and call lists are distributed</li>
+			<li>Check with parish office regarding insertion of campaign announcements in parish bulletin</li>
+			<li>Check with the Print Team: Confirm the date that materials for Information Packets will arrive at the parish for distribution</li>
+		</ul>
+	</div>
+</div> <!-- END PAGE 6 -->
+
+<!-- PAGE 7 -->
+<div id="page_7" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br><br><br>
+	<div class="border-box">
+		<h3 class="left">One Week Before Leadership Team Report #3,<br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %></h3>
+		<ul class="page_data">
+			<li>The meetings around Leadership Team Report #3 are often the least attended meetings. However, this is a critical meeting as it is the last time the team will meet for training, and it is the last opportunity to make certain all is ready for the Inspiration Period, Commitment Weekend, and the Parish-Wide Event.<br>
+				THEREFORE:
+				<ul>
+					<li>One week before Leadership Team Report #3, contact all team leaders to remind them of the upcoming meetings</li>
+					<li>Send out reminders to all Leadership Team members of the upcoming meetings</li>
+					<li>Encourage all leaders to attend.</li>
+				</ul>
+			</li>
+			<li>Prepare materials for Advance Commitment Training and Host Orientation (Appendix D, Worksheets, Page 7)</li>
+		</ul>
+	</div>
+	<br><br>
+	<div class="border-box">
+		<h3 class="left">The Weekend before Information Calls (Calls #1)</h3>
+		<ul class="page_data">
+			<li>Remind the priest who is celebrating Mass to announce that parishioners will be receiving calls from the Contact Team regarding upcoming Information Distribution Weekends.</li>
+		</ul>
+	</div>
+	<br><br>
+	<div class="border-box">
+		<h3 class="left">At Beginning of Week of Information Calls (Calls #1),<br>
+			<%= formatted_date_vari_begin(@campaign.event.info_calls_dates) %> - <%= formatted_date_vari_end(@campaign.event.info_calls_end) %>
+		</h3>
+		<ul>
+			<li>Work with the Information Team to assemble packets for Information Distribution Weekend (Appendix E, F)</li>
+			<li>Make certain that Information Packet Pick-up Coupons are reproduced in sufficient quantity for each Mass (Appendix G)</li>
+			<li>Assist Contact Team and Prayer Team in collection of prayer requests (Appendix C, Focus on Prayer) for the Prayer Team</li>
+			<li>Remind your Mailing Team of the upcoming mailing of remaining Information Packets</li>
+			<li>Request a set of mailing labels from parish office to enable you to prepare packets</li>
+		</ul>
+	</div>
+</div> <!-- END PAGE 7 -->
+
+<!-- PAGE 8 -->
+<div id="page_8" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br>
+	<h2>Information Distribution Weekend</h2>
+	<ul class="page_data">
+		<li>During Information Weekend Distribution, make certain that:
+			<ul>
+				<li>Tables and materials are at distribution points before first weekend Mass</li>
+				<li>Materials are replenished at distribution points between Masses</li>
+				<li>Pencils and Packet Pick-up Coupons (Appendix G) are replenished in the church between each Mass</li>
+				<li>Priest celebrating each Mass is reminded to announce Information Distribution</li>
+				<li>Completed Coupons from Information Team Leaders are collected</li>
+			</ul>
+		</li>
+		<li>No later than Tuesday following Information Distribution Weekend, gather your mailing team and mail remaining packets to those who did not turn in a coupon.</li>
+	</ul>
+	<br><br>
+	<h2>Town Hall Meetings (optional, Appendix I)</h2>
+	<ul class="page_data">
+		<li>As soon as possible, make certain that the space, date, and time for the Town Hall meetings are reserved on the parish calendar</li>
+		<li>One week before the meeting, check with the Information Team to be certain that the room preparations are handled. Check these things:
+			<ul>
+				<li>Will there be ample chairs for those who need to sit? Who is setting up the room?</li>
+				<li>Will A/V equipment be available for any visual presentation? Who is taking care of that?</li>
+				<li>What materials will be needed for the meeting?</li>
+			</ul>
+		</li>
+	</ul>
+	<br><br>
+	<h2><%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %></h2>
+	<h3>Leadership Team Report #3 and Individual Team Meetings</h3>
+	<ul class="page_data">
+		<li>Attend the Follow-Up Team Training so that you are informed of the strategy for parish follow-up - <strong><%= formatted_time(@campaign.event.follow_up_mtg) %></strong></li>
+		<li>If requested, attend Pacesetter Gifts Report Meeting - <strong><%= formatted_time(@campaign.event.pacesetter_gift_rpt_mtg) %></strong></li>
+		<li>Attend Leadership Team Report #3 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_3) %></strong></li>
+		<li>Assist Consultant and Advance Commitment Team Leaders with Advance Commitment Reservation Call Training and Host Orientation - <strong><%= formatted_time(@campaign.event.ac_host_orient) %></strong></li>
+	</ul>
+</div> <!-- END PAGE 8 -->
+
+<!-- PAGE 9 -->
+<div id="page_9" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br><br>
+	<div class="border-box">
+		<h3 class="left">One Week Before Advance Commitment Gathering,<br>
+			<%= formatted_date(@campaign.event.ac_gather_1) %></h3>
+		<ul class="page_data">
+			<li>Prepare Advance Commitment Gathering packets for Hosts according to the following procedure:
+				<ul>
+					<li>Reconfirm the attendance lists with Advance Commitment leaders</li>
+					<li>Prepare name tags and sign-in sheets for each gathering</li>
+					<li>Prepare Commitment Card sets for Advance Commitment Gathering.<br>
+						Prepare enough commitment card sets for every attendee. Have a few extra available<br>
+Each set contains the following:
+						<ul>
+							<li>Take a #10 envelope and insert into it:
+								<ul>
+									<li>Gift Profile Chart</li>
+									<li>"Creative Strategies in Giving"</li>
+									<li>Commitment card</li>
+									<li>#9 Return envelope</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>Place attendance list, sign-in sheet, commitment card sets, name badges, and some pencils in a large manila envelope</li>
+					<li>Distribute these Advance Commitment Gathering packets</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<h2><%= formatted_date(@campaign.event.ac_gather_1) %><br>
+		<%= formatted_time(@campaign.event.ac_gather_1) %></h2>
+	<h3>Advance Commitment Gathering</h3>
+	<ul class="page_data">
+		<li>Plan to attend Advance Commitment Gathering</li>
+	</ul>
+	<div class="border-box">
+		<h3 class="left">Three Weeks Before Parish-Wide Event</h3>
+		<ul class="page_data">
+			<li>Prepare reminder envelope (envelope #2 from Contact Team Training) for Contact Team:
+				<ul>
+					<li>Make certain that instructions for Call #2 and calling sheets are in each envelope</li>
+					<li>Secure a one-page summary of:
+						<ul>
+							<li>the Children's Activities that are planned for the Parish-Wide Event from the Children's Activity Team</li>
+							<li>the Parish-Wide Event from Parish-Wide Event Team</li>
+							<li>Add these summaries to each envelope for each Contact Team Member</li>
+						</ul>
+					</li>
+					<li>Mail the reminder envelope to each Contact Team Member at least one week prior to when the calls are scheduled to begin</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div> <!-- END PAGE 9 -->
+
+<!-- PAGE 10 -->
+<div id="page_10" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br><br><br>
+	<div class="border-box">
+		<h3 class="left">One Week Before Commitment Weekend scheduled for<br>
+			<%= formatted_date(@campaign.event.weekend_4_dates) %></h3>
+		<ul class="page_data">
+			<li>Tally results of Parish-Wide Event Reservation Calls several days prior to the Parish-Wide Event and report results to the Parish-Wide Event Leaders</li>
+			<li>Prepare commitment cards for Commitment Weekend by placing each card in a #9 envelope (business reply envelope)</li>
+			<li>Make sure that cards and pens are in the pews before every Mass on Commitment Weekend</li>
+			<li>Notify your Mailing Team to be ready to assist with Commitment Card processing after Commitment Weekend</li>
+		</ul>
+	</div>
+	<br><br>
+	<h2><%= formatted_date_to_tomorrow(@campaign.event.weekend_4_dates) %></h2>
+	<h3>Commitment Weekend</h3>
+	<ul class="page_data">
+		<li>Plan to attend Mass this weekend. Do not neglect the privilege of worshiping this week! If you have not done so, prayerfully complete your commitment card</li>
+		<li>Continue to support your parish and the campaign in your own prayers</li>
+	</ul>
+	<div class="border-box">
+		<h3 class="left">The Week After Commitment Weekend</h3>
+		<ul class="page_data">
+			<li>Prepare remaining commitment card packets to be mailed:
+				<ul>
+					<li>Secure a list of families who have completed a commitment card from the parish office (business manager , parish treasurer, or financial secretary)</li>
+					<li>Using a black marker, cross out the names of families that have responded</li>
+					<li>Attach the mailing label to the front of a #10 envelope</li>
+					<li>Enclose in the #10 envelope a:
+						<ul>
+							<li>Letterfrompastor</li>
+							<li>Commitment Card</li>
+							<li>#9 business reply envelope</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>Mail the remaining Commitment Card packets</li>
+		</ul>
+	</div>
+</div> <!-- END PAGE 10 -->
+
+<!-- PAGE 11 -->
+<div id="page_11" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br><br><br>
+	<div class="border-box">
+		<h3 class="left">Two Weeks Before Celebration Weekend,<br>
+			<%= formatted_date_to_tomorrow(@campaign.event.celebration_mass_dates) %></h3>
+		<ul class="page_data">
+			<li>Prepare the second reminder envelope (#3) for each Contact Team Member:
+				<ul>
+					<li>Make certain that instructions for Call #3 and calling sheets are in each envelope</li>
+					<li>Mail reminder envelope #3 to Contact Team members at least one week prior to the first day Call #3 begins</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<br><br><br>
+	<h2><%= formatted_date_to_tomorrow(@campaign.event.celebration_mass_dates) %></h2>
+	<h3>Attend a Celebration Weekend Mass</h3>
+	<br><br>
+	<div class="border-box">
+		<h3 class="left">After Celebration Weekend Mass</h3>
+		<ul class="page_data">
+			<li>Prepare the second reminder envelope (#3) for each Contact Team Member:
+				<ul>
+					<li>Mail Confirmation Letters to all families who completed a commitment card. There is a sample letter in the Pastor's manual (PAS A, page 14) and you can request it electronically from your consultant</li>
+		</ul>
+	</div>
+	<br><br>
+	<h5><em>"Thank you for making a difference in the life of your parish and in the success of this campaign."</em></h5>
+</div>

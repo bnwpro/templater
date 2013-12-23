@@ -1,0 +1,319 @@
+<%= form_for([@user, @campaign, @training_sheet]) do |f| %>
+  <% if @training_sheet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@training_sheet.errors.count, "error") %> prohibited this training_sheet from being saved:</h2>
+
+      <ul>
+      <% @training_sheet.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  
+	  <div class="row">
+		  <%= field_set_tag 'Print Contact Info', :class => '' do %>
+		  <div class="small-12 columns"> <!-- COLUMNS -->
+	  		  <div class="small-1 columns">
+		  		  <%= f.label :print_contact_name, 'Name', :class => 'right inline' %><br>
+			  </div>
+			  <div class="small-4 columns">
+		  		  <%= f.text_field :print_contact_name, placeholder: 'Enter full name' %>
+	  	      </div>
+	  		  <div class="small-1 columns">
+		  		  <%= f.label :print_contact_phone, 'Phone', :class => 'right inline' %><br>
+			  </div>
+			  <div class="small-2 columns">
+		  		  <%= f.text_field :print_contact_phone %>
+	  	      </div>
+	  		  <div class="small-1 columns">
+		  		  <%= f.label :print_contact_email, 'Email', :class => 'right inline' %><br>
+			  </div>
+			  <div class="small-3 columns">
+		  		  <%= f.text_field :print_contact_email %>
+	  	      </div>
+			
+		  </div> <!-- END COLUMNS -->
+		  
+		  <hr>
+		  <div class="actions">
+		    <%= f.submit %>
+		  </div>
+		  <div class="document_link">
+			  <%= link_to 'View Training Sheets Manifest', user_campaign_training_sheet_document_path(@user, @campaign, @training_sheet, 'test') %>
+		  </div>
+	  </div> <!-- END ROW -->
+  <% end %> <!-- END PRINT CONTACT FIELDSET -->
+  
+  <%= field_set_tag 'Manuals', :class => '' do %>
+	  <div class="row">
+		  <div class="small-4 columns"> <!-- LEFT COLUMNS -->
+			  
+		  	  <div class="row field">
+		  		  <div class="small-7 columns">
+			  		    <%= f.label :man_ac, 'Advance Commitment', :class => 'right inline' %><br>
+		  	      </div>
+		  		  <div class="small-3 pull-2 columns">
+			  		    <%= f.number_field :man_ac, :min => 0 %>
+		  	      </div>
+			  </div> <!-- END ROW -->
+		  	  <div class="row field">
+		  		  <div class="small-7 columns">
+			  		    <%= f.label :man_camp_admin, "Campaign Adminstrator", :class => 'right inline' %><br>
+		  	      </div>
+		  		  <div class="small-3 pull-2 columns">
+			  		    <%-# f.number_field :man_camp_admin, :value => (f.object.man_camp_admin? ? f.object.man_camp_admin : 1) -%>
+						<%= f.number_field :man_camp_admin, :min => 0 %>
+		  	      </div>
+			  </div> <!-- END ROW -->
+		  	  <div class="row field">
+		  		  <div class="small-7 columns">
+			  		    <%= f.label :man_camp_chair, "Campaign Chair", :class => 'right inline' %><br>
+		  	      </div>
+		  		  <div class="small-3 pull-2 columns">
+			  		    <%= f.number_field :man_camp_chair, :min => 0 %>
+		  	      </div>
+			  </div> <!-- END ROW -->
+		  	  <div class="row field">
+		  		  <div class="small-7 columns">
+			  		    <%= f.label :man_childs_act, "Children's Activity", :class => 'right inline' %><br>
+		  	      </div>
+		  		  <div class="small-3 pull-2 columns">
+			  		    <%= f.number_field :man_childs_act, :min => 0 %>
+		  	      </div>
+			  </div> <!-- END ROW -->
+		  	  <div class="row field">
+		  		  <div class="small-7 columns">
+			  		    <%= f.label :man_contact, "Contact", :class => 'right inline' %><br>
+		  	      </div>
+		  		  <div class="small-3 pull-2 columns">
+			  		    <%= f.number_field :man_contact, :min => 0 %>
+		  	      </div>
+			  </div> <!-- END ROW -->
+			
+		  </div> <!-- END LEFT COLUMNS -->
+		  
+		  <div class="small-4 columns"> <!-- CENTER COLUMNS -->
+			  
+		  	  <div class="row field">
+		  		  <div class="small-7 columns">
+			  		    <%= f.label :man_follow_up, "Follow-Up", :class => 'right inline' %><br>
+		  	      </div>
+		  		  <div class="small-3 pull-2 columns">
+			  		    <%= f.number_field :man_follow_up, :min => 0 %>
+		  	      </div>
+			  </div> <!-- END ROW -->
+		  	  <div class="row field">
+		  		  <div class="small-7 columns">
+			  		    <%= f.label :man_info, "Information", :class => 'right inline' %><br>
+		  	      </div>
+		  		  <div class="small-3 pull-2 columns">
+			  		    <%= f.number_field :man_info, :min => 0 %>
+		  	      </div>
+			  </div> <!-- END ROW -->
+		  	  <div class="row field">
+		  		  <div class="small-7 columns">
+			  		    <%= f.label :man_invlvm, "Involvement", :class => 'right inline' %><br>
+		  	      </div>
+		  		  <div class="small-3 pull-2 columns">
+			  		    <%= f.number_field :man_invlvm, :min => 0 %>
+		  	      </div>
+			  </div> <!-- END ROW -->
+		  	  <div class="row field">
+		  		  <div class="small-7 columns">
+			  		    <%= f.label :man_pace_gifts, "Pacesetter Gifts", :class => 'right inline' %><br>
+		  	      </div>
+		  		  <div class="small-3 pull-2 columns">
+			  		    <%= f.number_field :man_pace_gifts, :min => 0 %>
+		  	      </div>
+			  </div> <!-- END ROW -->
+		  	  <div class="row field">
+		  		  <div class="small-7 columns">
+			  		    <%= f.label :man_prayer, "Prayer", :class => 'right inline' %><br>
+		  	      </div>
+		  		  <div class="small-3 pull-2 columns">
+			  		    <%= f.number_field :man_prayer, :min => 0 %>
+		  	      </div>
+			  </div> <!-- END ROW -->
+			  
+		  </div> <!-- END CENTER COLUMNS -->
+		  
+		  <div class="small-4 columns"> <!-- RIGHT COLUMNS -->
+			  
+		  	  <div class="row field">
+		  		  <div class="small-7 columns">
+			  		    <%= f.label :man_print_comm, "Print Communications", :class => 'right inline' %><br>
+		  	      </div>
+		  		  <div class="small-3 pull-2 columns">
+			  		    <%= f.number_field :man_print_comm, :min => 0 %>
+		  	      </div>
+			  </div> <!-- END ROW -->
+		  	  <div class="row field">
+		  		  <div class="small-7 columns">
+			  		    <%= f.label :man_spc_event, "Special Event", :class => 'right inline' %><br>
+		  	      </div>
+		  		  <div class="small-3 pull-2 columns">
+			  		    <%= f.number_field :man_spc_event, :min => 0 %>
+		  	      </div>
+			  </div> <!-- END ROW -->
+		  	  <div class="row field">
+		  		  <div class="small-7 columns">
+			  		    <%= f.label :man_vis_comm, "Visual Communications", :class => 'right inline' %><br>
+		  	      </div>
+		  		  <div class="small-3 pull-2 columns">
+			  		    <%= f.number_field :man_vis_comm, :min => 0 %>
+		  	      </div>
+			  </div> <!-- END ROW -->
+		  	  <div class="row field">
+		  		  <div class="small-7 columns">
+			  		    <%= f.label :man_youth, "Youth", :class => 'right inline' %><br>
+		  	      </div>
+		  		  <div class="small-3 pull-2 columns">
+			  		    <%= f.number_field :man_youth, :min => 0 %>
+		  	      </div>
+			  </div> <!-- END ROW -->
+		  	  <div class="row field">
+		  		  <div class="small-7 columns">
+			  		    <%= f.label :man_pastor, "Pastor", :class => 'right inline' %><br>
+		  	      </div>
+		  		  <div class="small-3 pull-2 columns">
+			  		    <%= f.number_field :man_pastor, :min => 0 %>
+		  	      </div>
+			  </div> <!-- END ROW -->
+			  
+		  </div> <!-- END RIGHT COLUMNS -->
+		  
+		  <hr>
+		  <div class="actions">
+		    <%= f.submit 'Save' %>
+		  </div>
+		  <div class="document_link">
+			  <%= link_to 'View Training Sheets Manifest', user_campaign_training_sheet_document_path(@user, @campaign, @training_sheet, 'test') %>
+		  </div>
+	  </div> <!-- END Manuals FIELDSET -->
+  <% end %> <!-- END FIELDSET -->
+  
+  <%= field_set_tag 'Training Sheets' do %>
+      
+	  <div class="row">
+		  <div class="small-12 columns"> <!-- COLUMNS -->
+			  <%= field_set_tag 'Advance Commitment' do %>
+		  	  <div class="row field">
+		  		  <div class="small-1 columns">
+			  		    <%= f.number_field :ts_ac1, :min => 0 %><br>
+		  	      </div>
+		  		  <div class="small-11 columns">
+			  		    <%= f.label :ts_ac1, 'AC1 - Advance Commitment Team', :class => 'left inline' %>
+		  	      </div>
+			  </div> <!-- END ROW -->
+		  	  <div class="row field">
+		  		  <div class="small-1 columns">
+			  		    <%= f.number_field :ts_ac2, :min => 0 %><br>
+		  	      </div>
+		  		  <div class="small-11 columns">
+			  		    <%= f.label :ts_ac2, 'AC2 - Calls for Advance Commitment Gatherings', :class => 'left inline' %>
+		  	      </div>
+			  </div> <!-- END ROW -->
+		  	  <div class="row field">
+		  		  <div class="small-1 columns">
+			  		    <%= f.number_field :ts_ac3, :min => 0 %><br>
+		  	      </div>
+		  		  <div class="small-11 columns">
+			  		    <%= f.label :ts_ac3, 'AC3 - Advance Commitment Gathering Reservation Sheet', :class => 'left inline' %>
+		  	      </div>
+			  </div> <!-- END ROW -->
+			  <% end %> <!-- END FIELDSET -->
+			  
+			  <%= field_set_tag 'Contact Team' do %>
+		  	  <div class="row field">
+		  		  <div class="small-1 columns">
+			  		    <%= f.number_field :ts_ct1, :min => 0 %><br>
+		  	      </div>
+		  		  <div class="small-11 columns">
+			  		    <%= f.label :ts_ct1, 'CT1 - Contact Team', :class => 'left inline' %>
+		  	      </div>
+			  </div> <!-- END ROW -->
+		  	  <div class="row field">
+		  		  <div class="small-1 columns">
+			  		    <%= f.number_field :ts_ct2, :min => 0 %><br>
+		  	      </div>
+		  		  <div class="small-11 columns">
+			  		    <%= f.label :ts_ct2, 'CT2 - Contact Team Assistant Training Instructions', :class => 'left inline' %>
+		  	      </div>
+			  </div> <!-- END ROW -->
+		  	  <div class="row field">
+		  		  <div class="small-1 columns">
+			  		    <%= f.number_field :ts_ct3, :min => 0 %><br>
+		  	      </div>
+		  		  <div class="small-11 columns">
+			  		    <%= f.label :ts_ct3, 'CT3 - Team Leader\'s Guide for Team Assistant Training', :class => 'left inline' %>
+		  	      </div>
+			  </div> <!-- END ROW -->
+		  	  <div class="row field">
+		  		  <div class="small-1 columns">
+			  		    <%= f.number_field :ts_ct4, :min => 0 %><br>
+		  	      </div>
+		  		  <div class="small-11 columns">
+			  		    <%= f.label :ts_ct4, 'CT4 - Steps to Successful Information Distribution Calls', :class => 'left inline' %>
+		  	      </div>
+			  </div> <!-- END ROW -->
+		  	  <div class="row field">
+		  		  <div class="small-1 columns">
+			  		    <%= f.number_field :ts_ct5, :min => 0 %><br>
+		  	      </div>
+		  		  <div class="small-11 columns">
+			  		    <%= f.label :ts_ct5, 'CT5 - Steps to Successful Special Event Calls', :class => 'left inline' %>
+		  	      </div>
+			  </div> <!-- END ROW -->
+		  	  <div class="row field">
+		  		  <div class="small-1 columns">
+			  		    <%= f.number_field :ts_ct6, :min => 0 %><br>
+		  	      </div>
+		  		  <div class="small-11 columns">
+			  		    <%= f.label :ts_ct6, 'CT6 - Special Event Response Sheet', :class => 'left inline' %>
+		  	      </div>
+			  </div> <!-- END ROW -->
+		  	  <div class="row field">
+		  		  <div class="small-1 columns">
+			  		    <%= f.number_field :ts_ct7, :min => 0 %><br>
+		  	      </div>
+		  		  <div class="small-11 columns">
+			  		    <%= f.label :ts_ct7, 'CT7 - Steps to Successful Celebration Weekend Calls', :class => 'left inline' %>
+		  	      </div>
+			  </div> <!-- END ROW -->
+			  <% end %> <!-- END FIELDSET -->
+			  
+			  <%= field_set_tag 'Information Team' do %>
+		  	  <div class="row field">
+		  		  <div class="small-1 columns">
+			  		    <%= f.number_field :ts_it1, :min => 0 %><br>
+		  	      </div>
+		  		  <div class="small-11 columns">
+			  		    <%= f.label :ts_it1, 'IN1 - Information Distribution Team', :class => 'left inline' %>
+		  	      </div>
+			  </div> <!-- END ROW -->
+		  	  <div class="row field">
+		  		  <div class="small-1 columns">
+			  		    <%= f.number_field :ts_it2, :min => 0 %><br>
+		  	      </div>
+		  		  <div class="small-11 columns">
+			  		    <%= f.label :ts_it2, 'IN2 - Steps to Successful Information Distribution', :class => 'left inline' %>
+		  	      </div>
+			  </div> <!-- END ROW -->
+			  <% end %> <!-- END FIELDSET -->
+		
+		  </div> <!-- END COLUMNS -->
+	  
+		  <hr>
+		  <div class="actions">
+		    <%= f.submit 'Save' %>
+		  </div>
+		  <div class="document_link">
+			  <%= link_to 'View Training Sheets Manifest', user_campaign_training_sheet_document_path(@user, @campaign, @training_sheet, 'test') %>
+		  </div>
+	  </div> <!-- END TRAINING SHEETS FIELDSET -->
+	  
+  <% end %> <!-- END FIELDSET -->
+  
+<% end %> <!-- END FORM -->

@@ -1,0 +1,202 @@
+<%= wicked_pdf_stylesheet_link_tag "documents" %>
+<p id="notice"><%= notice %></p>
+
+<!-- PAGE 1 -->
+<div id="page_1" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<h2>VISUAL COMMUNICATIONS LEADER</h2>
+	<p>The Visual Communications Leader is responsible for creating and producing a visual presentation to be used in the campaign. An archdiocesan visual presentation may or may not be available. Please check with your Consultant.</p>
+	<p>The strategy and process for producing a parish-based visual presentation is outlined in the Visual Communications Resource Guide provided by your Consultant. If you do not have such a guide, immediately request one through your Consultant. There is also a resource DVD that includes several sample DVD presentations from other parish campaigns.</p>
+	<p>At a strategic point in your campaign, you will also be asked to facilitate the showing of your archdiocesan DVD. Check with your Consultant and your Pastor about the timing and details for this presentation.</p>
+
+	<h3>Responsibilities:</h3>
+
+	<ul class="page_data" data-mercury="full">
+		<li>Attend Leadership Team Training, Leadership Team Report meetings and Print/Visual Communications meetings</li>
+		<li>Attend Advance Commitment Gatherings</li>
+		<li>As Visual Communications Leader, you will want to accomplish the following:
+			<ul>
+				<li>Build a team, as needed</li>
+				<li>Write and edit a visual presentation for your parish with focuses on parish history, ministries, people and the case statement for the campaign</li>
+				<li>If one is being used in the campaign, secure a copy of the archdiocesan DVD for your own reference as well as for showing at the appropriate time</li>
+				<li>Make and manage arrangements for any needed professional services/vendors</li>
+				<li>If producing materials other than those provided by the archdiocese, work with appropriate Staff and Campaign Chair(s) to establish a Visual Communications budget</li>
+			</ul>
+		</li>
+		<li>Publicly support the campaign for the parish and archdiocese</li>
+		<li>Prayerfully consider a sacrificial, financial commitment to the campaign</li>
+	</ul>
+</div> <!-- END PAGE 1 -->
+
+<!-- PAGE 2 -->
+<div id="page_2" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br><br><br><br>
+	<div id="date_list" class="border-box-radius">
+		<h4>**MEETINGS YOU SHOULD ATTEND**</h4>
+
+		<div class="left-column">
+			<%= formatted_date(@campaign.event.print_vis_comm_mtg_1) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_trng) %><br>
+			<%= formatted_date(@campaign.event.print_vis_comm_mtg_2) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_1) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %><br>
+			<%= formatted_date(@campaign.event.ac_gather_1) %><br>
+			<%= formatted_date_to_tomorrow(@campaign.event.weekend_4_dates) %>
+		</div>
+		
+		<div class="center-column">
+			<%= formatted_time(@campaign.event.print_vis_comm_mtg_1) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_trng) %><br>
+			<%= formatted_time(@campaign.event.print_vis_comm_mtg_2) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_rpt_mtg_1) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_rpt_mtg_2) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_rpt_mtg_3) %><br>
+			<%= formatted_time(@campaign.event.ac_gather_1) %><br>
+		</div>
+
+		<div id="list_data" class="right-column" data-mercury="full">
+			<span>Print and Visual Communications Training</span><br>
+			<span>Leadership Team Training</span><br>
+			<span>Print and Visual Communications Meeting</span><br>
+			<span>Leadership Team Report Meeting #1</span><br>
+			<span>Leadership Team Report Meeting #2</span><br>
+			Leadership Team Report Meeting #3<br>
+			Advance Commitment Gathering #1<br>
+			<strong>Commitment Weekend &amp; Parish-Wide Event</strong>
+		</div>
+	</div>
+	<br>
+	<h2>- Timetable For Completing Your Tasks -</h2>
+	<h3><%= formatted_date(@campaign.event.leadership_team_trng) %><br>
+	Leadership Team Training and Individual Team Meetings</h3>
+	<ul class="page_data" data-mercury="full">
+		<li>Attend Print and Visual Communications Training with your consultant - <strong><%= formatted_time(@campaign.event.print_vis_comm_mtg_1) %></strong></li>
+		<li>Review responsibilities and tasks of your position</li>
+		<li>Review your workbook and place the dates and times of the meetings you will attend on your personal calendar</li>
+		<li>Review with your Consultant the timeline needed to have your visual production ready by the Information Phase of the campaign</li>
+		<li>Determine if you need to recruit any team members. If you do recruit team members, please give the names of those you enlist to the Involvement Leader</li>
+		<li>If you have not already done so, review the Visual Communications Resource Guide with your Consultant</li>
+		<li>Attend Leadership Team Training - <strong><%= formatted_time(@campaign.event.leadership_team_trng) %></strong></li>
+	</ul>
+</div> <!-- END PAGE 2 -->
+
+<!-- PAGE 3 -->
+<div id="page_3" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br><br>
+	<div class="border-box">
+		<h3>Between Leadership Team Training and<br>
+			Report Meeting #1 on <%= formatted_date(@campaign.event.leadership_team_rpt_mtg_1) %>
+		</h3>
+		<ul class="box-data">
+			<li>Study the Visual Communications Resource Guide provided</li>
+			<li>Determine, with the advice of your Pastor and Campaign Chair(s), what medium would work best for your parish – DVD, Power Point, a Story Board at the back of the Church, etc.</li>
+			<li>Record the visual production and screening deadlines on your own personal calendar</li>
+			<li>Enlist additional team members, as needed</li>
+			<li>Determine the most effective and efficient methods for using people on your team. For instance, particular people may have certain roles (graphics, layout, writing, editing, and production)</li>
+			<li>If you choose to produce additional visual materials, please do the following::
+				<ul>
+					<li>Contact your Consultant for additional visual resources</li>
+					<li>When you receive these resources, review the examples</li>
+					<li>Select any other professional services needed</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<br><br>
+	<h2><%= formatted_date(@campaign.event.contact_team_asst_trng_1) %></h2>
+	<h3>Leadership Team Report #1 and Individual Team Meetings</h3>
+	<ul class="page_data">
+		<li>Attend Print and Visual Communications Meeting - <strong><%= formatted_time(@campaign.event.print_vis_comm_mtg_1) %></strong>
+			<ul>
+				<li>Review progress on work assignments with your Consultant</li>
+				<li>Focus on production deadlines: understand fully what must be done and by when each task must be completed</li>
+			</ul>
+		</li>
+		<li>Attend Leadership Team Report #1 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_1) %></strong>
+			<ul>
+				<li>Be prepared with questions/concerns about your position</li>
+				<li>Be prepared to report on the status of your team’s plans</li>
+			</ul>
+		</li>
+	</ul>
+</div> <!-- END PAGE 3 -->
+
+<!-- PAGE 4 -->
+<div id="page_4" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br><br>
+	<div class="border-box">
+		<h3>Between Leadership Team Report #1 and<br>
+			Leadership Team Report #2 on <%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %>
+		</h3>
+		<ul class="page_data">
+			<li>If you are requesting additional resources, prepare an expenditures request for your parish and submit it to the appropriate staff person. <strong>Remember:</strong> in most cases, additional materials not provided by your arch/diocese will be at the parish’s expense. If you are in doubt about the policies, check with your Consultant</li>
+		</ul>
+	</div>
+	<br><br>
+	<h2><%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %></h2>
+	<h3>Leadership Team Report #2 and Individual Team Meetings</h3>
+	<ul class="page_data">
+		<li>Attend Leadership Team Report Meeting #2 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_2) %></strong>
+			<ul>
+				<li>Be prepared to report on the status of your team’s plans</li>
+			</ul>
+		</li>
+	</ul>
+	<br><br>
+	<div class="border-box">
+		<h3>Between Leadership Team Report #2 and<br>
+			Leadership Team Report #3 on <%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %>
+		</h3>
+		<ul class="page_data">
+			<li>If you have not done so, and if it is being provided by the arch/diocese, secure a copy of the arch/diocesan DVD and discuss with your Pastor and/or Parish Staff about the appropriate venues for presenting this resource to the parish community.</li>
+		</ul>
+	</div>
+	<br><br>
+	<h2><%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %></h2>
+	<h3>Leadership Team Report #3 and Individual Team Meetings</h3>
+	<ul class="page_data">
+		<li>Attend Leadership Team Report #3 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_3) %></strong>
+			<ul>
+				<li>Be prepared to report on the status of your team’s plans</li>
+			</ul>
+		</li>
+	</ul>
+</div> <!-- END PAGE 4 -->
+
+<!-- PAGE 5 -->
+<div id="page_5" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br><br>
+	<div class="border-box">
+		<h3 class="left">Be Prepared to Utilize the Visual Production as Part of the<br>
+		Information Phase of the Campaign,<br>
+		<%= formatted_date_vari_begin(@campaign.event.information_act_dates) %> - <%= formatted_date_vari_end(@campaign.event.information_act_end) %></h3>
+		<ul class="page_data">
+			<li>Work with the Campaign Chair and Pastor to determine the process for showing/displaying the visual production</li>
+			<li>Arrange for any equipment needed for the above process</li>
+			<li>If appropriate, place the DVD or Power Point on the parish website</li>
+		</ul>
+	</div>
+	<br><br><br>
+	<h2><%= formatted_datetime(@campaign.event.ac_gather_1) %></h2>
+	<h3>Advance Commitment Gathering</h3>
+	<ul class="page_data">
+		<li>Plan to attend Advance Commitment Gathering</li>
+	</ul>
+	<br>
+	<h2><%= formatted_date_to_tomorrow(@campaign.event.weekend_4_dates) %></h2>
+	<h3>Commitment Weekend</h3>
+	<ul class="page_data">
+		<li>Plan to attend Mass this weekend. Do not neglect the privilege of worshiping this week! If you have not done so, prayerfully complete your commitment card</li>
+		<li>Continue to support your parish and the campaign in your own prayers</li>
+	</ul>
+	<br><br>
+	<h2><%= formatted_date_to_tomorrow(@campaign.event.celebration_mass_dates) %></h2>
+	<h3>Attend a Celebration Weekend Mass</h3>
+	<br>
+	<h5><em>"Thank you for making a difference in the life of your parish and in the success of this campaign."</em></h5>
+</div>

@@ -1,0 +1,21 @@
+<nav class="top-bar">
+	<ul class="title-area">
+		<li class="name">
+			<h1>Campaign/Manual Administration : <%= formatted_date_year(Time.now) %></h1>
+			<h1 class="username">Welcome: <%= @user.name %></h1>
+		</li>
+	</ul>
+	<!-- Right Nav Section -->
+	<ul class="right">
+		<% if @user.admin %>
+			<li class="divider"></li>
+			<li><%= link_to 'Administration', users_path, :class => 'edit_users_link' %></li>
+		<% end %>
+		<li class="divider"></li>
+		<li><%= link_to 'Edit Campaign Info', edit_user_campaign_path(@user, @campaign), :class => 'edit_campaign_link' %></li>
+		<li class="divider"></li>
+		<li><%= link_to 'View All Campaigns', user_campaigns_path, :class => 'view_all_link' %></li>
+		<li class="divider"></li>
+		<li><%= link_to 'Logout', logout_path %></li>
+	</ul>
+</nav>

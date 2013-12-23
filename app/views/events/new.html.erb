@@ -1,0 +1,9 @@
+<br><br>
+<h1>New Events/Dates for:<br>
+	<%= @campaign.name %></h1>
+
+<%= render 'training_form' %>
+<%= render 'gathering_form' %>
+<%= render 'mailing_calls_form' %>
+
+<%= link_to 'Back', user_campaign_events_path(@user, @campaign) %>

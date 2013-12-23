@@ -1,0 +1,67 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  campaign_id: 1
+  print_contact_name: MyString
+  print_contact_phone: MyString
+  print_contact_email: MyString
+  man_ac: 1
+  man_camp_admin: 1
+  man_camp_chair: 1
+  man_childs_act: 1
+  man_contact: 1
+  man_follow_up: 1
+  man_info: 1
+  man_invlvm: 1
+  man_pace_gifts: 1
+  man_prayer: 1
+  man_print_comm: 1
+  man_spc_event: 1
+  man_vis_comm: 1
+  man_youth: 1
+  man_pastor: 1
+  ts_ac1: 1
+  ts_ac2: 1
+  ts_ac3: 1
+  ts_ct1: 1
+  ts_ct2: 1
+  ts_ct3: 1
+  ts_ct4: 1
+  ts_ct5: 1
+  ts_ct6: 1
+  ts_ct7: 1
+  ts_it1: 1
+  ts_it2: 1
+
+two:
+  campaign_id: 1
+  print_contact_name: MyString
+  print_contact_phone: MyString
+  print_contact_email: MyString
+  man_ac: 1
+  man_camp_admin: 1
+  man_camp_chair: 1
+  man_childs_act: 1
+  man_contact: 1
+  man_follow_up: 1
+  man_info: 1
+  man_invlvm: 1
+  man_pace_gifts: 1
+  man_prayer: 1
+  man_print_comm: 1
+  man_spc_event: 1
+  man_vis_comm: 1
+  man_youth: 1
+  man_pastor: 1
+  ts_ac1: 1
+  ts_ac2: 1
+  ts_ac3: 1
+  ts_ct1: 1
+  ts_ct2: 1
+  ts_ct3: 1
+  ts_ct4: 1
+  ts_ct5: 1
+  ts_ct6: 1
+  ts_ct7: 1
+  ts_it1: 1
+  ts_it2: 1

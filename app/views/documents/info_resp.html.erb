@@ -1,0 +1,170 @@
+<%= wicked_pdf_stylesheet_link_tag "documents" %>
+<p id="notice"><%= notice %></p>
+
+<!-- PAGE 1 -->
+<div id="page_1" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<h2>INFORMATION LEADER</h2>
+	<p>The Information Leader is responsible for building a team that distributes information packets to all the parish families on Information Distribution Weekend(s). The Campaign Administrator may seek the help of your team in assembling the packets. With your Pastor and Campaign Chair, you may be asked to coordinate Town Hall Meetings at one of the Information Weekends.</p>
+
+	<h3>Responsibilities:</h3>
+
+	<ul class="page_data" data-mercury="full">
+		<li>Attend Leadership Team Training, Leadership Team Report meetings &amp; Information Team Training</li>
+		<li>Attend Advance Commitment Gathering</li>
+		<li>Enlist team members to serve on the Information Team</li>
+		<li>If requested, work with the Campaign Administrator to assemble Information Packets</li>
+		<li>Distribute Information packets after all Masses on Information Weekend(s)</li>
+		<li>Assist with other information sharing strategies that may be developed by the Leadership Team, such as Town Hall Meetings</li>
+		<li>Publicly support the campaign for the parish and archdiocese</li>
+		<li>Prayerfully consider a sacrificial, financial commitment to the campaign</li>
+	</ul>
+	<br><br>
+	<div id="date_list" class="border-box-radius">
+		<h4>**MEETINGS YOU SHOULD ATTEND**</h4>
+
+		<div class="left-column">
+			<%= formatted_date(@campaign.event.leadership_team_trng) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_1) %><br>
+			<%= formatted_date(@campaign.event.info_team_trng_1) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %><br>
+			<%= formatted_date(@campaign.event.ac_gather_1) %><br>
+			<%= formatted_date_to_tomorrow(@campaign.event.weekend_4_dates) %>
+		</div>
+		
+		<div class="center-column">
+			<%= formatted_time(@campaign.event.leadership_team_trng) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_rpt_mtg_1) %><br>
+			<%= formatted_time(@campaign.event.info_team_trng_1) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_rpt_mtg_2) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_rpt_mtg_3) %><br>
+			<%= formatted_time(@campaign.event.ac_gather_1) %><br>
+		</div>
+
+		<div id="list_data" class="right-column" data-mercury="full">
+			<span>Leadership Team Training</span><br>
+			<span>Leadership Team Report Meeting #1</span><br>
+			<span>Information Team Training</span><br>
+			<span>Leadership Team Report Meeting #2</span><br>
+			Leadership Team Report Meeting #3<br>
+			Advance Commitment Gathering #1<br>
+			<strong>Commitment Weekend &amp; Parish-Wide Event</strong>
+		</div>
+	</div>
+</div> <!-- END PAGE 1 -->
+
+<!-- PAGE 2 -->
+<div id="page_2" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<h2>- Timetable For Completing Your Tasks -</h2>
+	<h3><%= formatted_date(@campaign.event.leadership_team_trng) %><br>
+	Leadership Team Training and Individual Team Meetings</h3>
+	<ul class="page_data" data-mercury="full">
+		<li>Attend Leadership Team Training - <strong><%= formatted_time(@campaign.event.leadership_team_trng) %></strong></li>
+		<li>Review your workbook and place the dates and times of the meetings you will attend on your personal calendar</li>
+		<li>Begin enlisting your Information Team members using the Involvement Form to track results and update the Involvement Leader</li>
+		<li>With the other Information Leaders, select a spokesperson for Report Meetings #’s 1, 2, and 3</li>
+	</ul>
+	<br><br>
+	<div class="border-box">
+		<h3>Between Leadership Team Training and<br>
+			Leadership Team Report Meeting #1 on<br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_1) %>
+		</h3>
+		<ul class="box-data">
+			<li>Complete the enlistment of the Information Team</li>
+			<li>Provide the names of the team members you enlisted to the Involvement Leader</li>
+		</ul>
+	</div>
+	<br><br>
+	<h2><%= formatted_date(@campaign.event.leadership_team_rpt_mtg_1) %></h2>
+	<h3>Leadership Team Report #1 and Individual Team Meetings</h3>
+	<ul class="page_data">
+		<li>Attend Leadership Team Report #1 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_1) %></strong>
+			<ul>
+				<li>Report on progress and plans</li>
+			</ul>
+		</li>
+	</ul>
+	<br>
+	<div class="border-box">
+		<h3>Between Leadership Team Report #1 and<br>
+			Leadership Team Report #2 on <%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %>
+		</h3>
+		<ul class="page_data">
+			<li>Monitor Involvement and complete the enlistment of your team if you do not have sufficient members</li>
+			<li>3 to 4 days ahead of Information Team Training, call your team members to remind them of Information Team Training on <strong><%= formatted_datetime(@campaign.event.info_team_trng_1) %></strong></li>
+		</ul>
+	</div>
+</div> <!-- END PAGE 2 -->
+
+<!-- PAGE 3 -->
+<div id="page_3" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br><br>
+	<h2><%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %></h2>
+	<h3>Leadership Team Report #2 and Individual Team Meetings</h3>
+	<ul class="page_data">
+		<li>Attend Information Team Training - <strong><%= formatted_time(@campaign.event.info_team_trng_1) %></strong></li>
+		<li>Attend Leadership Team Report #2 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_2) %></strong>
+			<ul>
+				<li>Report on the progress of your team</li>
+			</ul>
+		</li>
+		<li>Be prepared to train any members who were not able to attend Information Team Training</li>
+	</ul>
+	<br>
+	<div class="border-box">
+		<h3>Between Leadership Team Report #2 and<br>
+			Leadership Team Report #3 on <%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %>
+		</h3>
+		<ul class="page_data">
+			<li>If requested, work with the Campaign Administrator to assemble the Information Packets and encourage sufficient attendance from your team to help assemble</li>
+			<li>Prepare for any additional information sharing strategies, such as Town Hall Meetings (Appendices A - C)</li>
+		</ul>
+	</div>
+	<br><br><br>
+	<div class="border-box">
+		<h3 class="left">Information Distribution Weekend, <%= formatted_date_vari_begin(@campaign.event.information_act_dates) %> - <%= formatted_date_vari_end(@campaign.event.information_act_dates) %>, <br>
+			and Following</h3>
+		<ul class="page_data">
+			<li>Distribute the Information packets following every Mass during Information Distribution Weekend(s) <strong><%= formatted_date(@campaign.event.weekend_1_dates) %></strong></li>
+			<li>Assist as needed with any additional information-sharing strategies</li>
+			<li>If needed, assist with the mailing of remaining packets to households that did not pick one up after Mass</li>
+		</ul>
+	</div>
+	<br><br>
+	<h2><%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %></h2>
+	<h3>Leadership Team Report #3 and Individual Team Meetings</h3>
+	<ul class="page_data">
+		<li>Attend Leadership Team Report #3 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_3) %></strong>
+			<ul>
+				<li>Report on the progress of your team</li>
+			</ul>
+		</li>
+	</ul>
+</div> <!-- END PAGE 3 -->
+
+<!-- PAGE 4 -->
+<div id="page_4" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br>
+	<h2><%= formatted_datetime(@campaign.event.ac_gather_1) %></h2>
+	<h3>Advance Commitment Gathering</h3>
+	<ul class="page_data">
+		<li>Plan to attend Advance Commitment Gathering</li>
+	</ul>
+	<br>
+	<h2><%= formatted_date_to_tomorrow(@campaign.event.weekend_4_dates) %></h2>
+	<h3>Commitment Weekend</h3>
+	<ul class="page_data">
+		<li>Plan to attend Mass this weekend. Do not neglect the privilege of worshiping this week! If you have not done so, prayerfully complete your commitment card</li>
+		<li>Continue to support your parish and the campaign in your own prayers</li>
+	</ul>
+	<br>
+	<h2><%= formatted_date_to_tomorrow(@campaign.event.celebration_mass_dates) %></h2>
+	<h3>Attend a Celebration Weekend Mass</h3>
+	<br>
+	<h5><em>"Thank you for making a difference in the life of your parish and in the success of this campaign."</em></h5>
+</div>

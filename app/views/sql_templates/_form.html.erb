@@ -1,0 +1,41 @@
+<%= form_for(@sql_template) do |f| %>
+  <% if @sql_template.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sql_template.errors.count, "error") %> prohibited this sql_template from being saved:</h2>
+
+      <ul>
+      <% @sql_template.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </div>
+  <div class="field">
+    <%= f.label :path %><br>
+    <%= f.text_field :path %>
+  </div>
+  <div class="field">
+    <%= f.label :format %><br>
+    <%= f.select :format, options_for_select(%w[html pdf json]) %>
+  </div>
+  <div class="field">
+    <%= f.label :locale %><br>
+    <%= f.select :locale, options_for_select(%w[en es]) %>
+  </div>
+  <div class="field">
+    <%= f.label :handler %><br>
+    <%= f.select :handler, options_for_select(%w[erb builder rjs]) %>
+  </div>
+  <div class="field">
+    <%= f.label :partial %><br>
+    <%= f.check_box :partial %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

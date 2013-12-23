@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+  <head>
+  	<meta charset="utf-8" />
+
+  	<!-- Uncomment to make IE8 render like IE7 -->
+  	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+
+  	<!-- Set the viewport width to device width for mobile -->
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  	<title><%= content_for?(:title) ? yield(:title) : "Campaigns" %></title>
+  	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "application", "campaigns", "data-turbolinks-track" => true %>
+	
+  	<%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+	  <%= render partial: "campaigns/top_nav" %>
+	  
+	  <div class="row">
+
+    	  <%= yield %>
+		  
+	  </div>
+	  <script>
+		  	var num = 1
+		  	$('.contact_number span').each(function() {
+		  		$(this).prepend('#' + num);
+		  		num ++;
+		  		console.log(num);
+		  	});
+			
+		  $(function() {
+		    var fieldsCount,
+		        maxFieldsCount = 2,
+		        $addLink = $('a.add_nested_fields');
+  
+		    function toggleAddLink() {
+		      $addLink.toggle(fieldsCount <= maxFieldsCount)
+		    }
+
+		    $(document).on('nested:fieldAdded', function() {
+		      fieldsCount += 1;
+		      toggleAddLink();
+		    });
+
+		    $(document).on('nested:fieldRemoved', function() {
+		      fieldsCount -= 1;
+		      toggleAddLink();
+		    });  
+
+		    // count existing nested fields after page was loaded
+		    fieldsCount = $('form .fields').length;
+		    toggleAddLink();
+		  });
+		  
+		  function updateNumbers() {
+			  var leaders = parseInt($('.ts_num').data('value'));
+			  alert(leaders);
+			  var enlistment = $(this).val();
+			  $('.enlisted_num').text(enlistment);
+			  var sum = Number(leaders) + Number(enlistment);
+			  $('.total_team').text(sum);
+		  };
+		  
+		  //$('.enlistment_num').change(updateNumbers);
+		  
+		  $('.edit_enlistment').on('ajax:success', function(event, xhr, settings) {
+			  alert('Enlistment data saved!');
+			  updateNumbers();
+		  });
+	  </script>
+  </body>
+</html>

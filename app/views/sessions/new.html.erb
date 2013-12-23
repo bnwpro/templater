@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+<h3>O'Meara, Ferguson, Whalen and Conway<br>
+	Capital Stewardship Campaign Manual Generation Portal</h3>
+<div class="login_form">
+	<%= form_tag sessions_path do %>
+	<fieldset>
+	  <legend>User Info</legend>
+		<div class="row">
+		  <div class="small-4 columns">
+			  <div class="field">
+		    	  <%= label_tag :email %><br />
+		    	  <%= text_field_tag :email, params[:email] %>
+			  </div>
+		  </div>
+	  </div>
+	  <div class="row">
+		  <div class="small-4 columns">
+			  <div class="field">
+		    	  <%= label_tag :password %><br />
+		    	  <%= password_field_tag :password %>
+			  </div>
+		  </div>
+	  </div>
+	  <br>
+	  <div class="row">
+		  <div class="actions">
+		  	<%= button_tag "Log in" %>
+		  </div>
+	  </div>
+		<% end %>
+	</fieldset>
+</div>

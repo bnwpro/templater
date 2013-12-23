@@ -1,0 +1,14 @@
+<br><br>
+<h1>Editing Training Sheet data-set for:<br>
+	<%= @campaign.name %></h1>
+
+<%= render 'nav/side_nav' %>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', [@user, @campaign, @training_sheet] %> |
+<%= link_to 'Back', user_campaign_training_sheets_path(@user, @campaign) %>
+
+<script>
+	$('.first_fieldset').addClass('pull-1');
+</script

@@ -1,0 +1,372 @@
+<%= form_for([@user, @campaign, @event]) do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= field_set_tag 'Training & Meetings', :class => 'first_fieldset' do %>
+	  <div class="row">
+		  
+		  <div class="large-6 columns"> <!-- LEFT COLUMNS -->
+			  
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :leadership_team_trng, 'Leadership Team Training', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :leadership_team_trng, :class => 'datetime-picker', :value => (formatted_datetime(f.object.leadership_team_trng) if f.object.leadership_team_trng) %>
+						<%= f.hidden_field :leadership_team_trng, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :campaign_admin_trng, 'Campaign Admin Training', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :campaign_admin_trng, :class => 'datetime-picker', :value => (formatted_datetime(f.object.campaign_admin_trng) if f.object.campaign_admin_trng) %>
+						<%= f.hidden_field :campaign_admin_trng, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :involvement_ldr_trng, 'Involvement Leader Training', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :involvement_ldr_trng, :class => 'datetime-picker', :value => (formatted_datetime(f.object.involvement_ldr_trng) if f.object.involvement_ldr_trng) %>
+						<%= f.hidden_field :involvement_ldr_trng, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :pastor_cmp_mtg_1, 'Pastor/Campaign Meeting #1', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :pastor_cmp_mtg_1, :class => 'datetime-picker', :value => (formatted_datetime(f.object.pastor_cmp_mtg_1) if f.object.pastor_cmp_mtg_1) %>
+						<%= f.hidden_field :pastor_cmp_mtg_1, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :prayer_ldr_trng, 'Prayer Leader Training', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :prayer_ldr_trng, :class => 'datetime-picker', :value => (formatted_datetime(f.object.prayer_ldr_trng) if f.object.prayer_ldr_trng) %>
+						<%= f.hidden_field :prayer_ldr_trng, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :print_vis_comm_mtg_1, 'Print/Visual Comms Meeting #1', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :print_vis_comm_mtg_1, :class => 'datetime-picker', :value => (formatted_datetime(f.object.print_vis_comm_mtg_1) if f.object.print_vis_comm_mtg_1) %>
+						<%= f.hidden_field :print_vis_comm_mtg_1, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :event_ldr_trng, 'Event Leader Training', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :event_ldr_trng, :class => 'datetime-picker', :value => (formatted_datetime(f.object.event_ldr_trng) if f.object.event_ldr_trng) %>
+						<%= f.hidden_field :event_ldr_trng, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :childrens_act_ldr_trng, "Children's Activity Leader Training", :class => 'right inline smaller-text' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :childrens_act_ldr_trng, :class => 'datetime-picker', :value => (formatted_datetime(f.object.childrens_act_ldr_trng) if f.object.childrens_act_ldr_trng) %>
+						<%= f.hidden_field :childrens_act_ldr_trng, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :contact_ldr_trng, 'Contact Leader Training', :class => 'right inline clear' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :contact_ldr_trng, :class => 'datetime-picker', :value => (formatted_datetime(f.object.contact_ldr_trng) if f.object.contact_ldr_trng) %>
+						<%= f.hidden_field :contact_ldr_trng, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :info_ldr_trng, 'Information Leader Training', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :info_ldr_trng, :class => 'datetime-picker', :value => (formatted_datetime(f.object.info_ldr_trng) if f.object.info_ldr_trng) %>
+						<%= f.hidden_field :info_ldr_trng, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :youth_act_ldr_cons_mtg, 'Youth Activities Leader Mtg w/Cons', :class => 'right inline smaller-text' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :youth_act_ldr_cons_mtg, :class => 'datetime-picker', :value => (formatted_datetime(f.object.youth_act_ldr_cons_mtg) if f.object.youth_act_ldr_cons_mtg) %>
+						<%= f.hidden_field :youth_act_ldr_cons_mtg, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :ac_mtg_1, "AC Meeting #1", :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :ac_mtg_1, :class => 'datetime-picker', :value => (formatted_datetime(f.object.ac_mtg_1) if f.object.ac_mtg_1) %>
+						<%= f.hidden_field :ac_mtg_1, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :pacesetter_gift_pln_mtg_1, 'Pacesetter Gift Planning Mtg #1', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :pacesetter_gift_pln_mtg_1, :class => 'datetime-picker', :value => (formatted_datetime(f.object.pacesetter_gift_pln_mtg_1) if f.object.pacesetter_gift_pln_mtg_1) %>
+						<%= f.hidden_field :pacesetter_gift_pln_mtg_1, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :intro_ldrshp_team_dates, 'Introduce Leadership Team', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-3 columns">
+					    <%= f.text_field :intro_ldrshp_team_dates, :class => 'date-picker', :value => (formatted_smalldate(f.object.intro_ldrshp_team_dates) if f.object.intro_ldrshp_team_dates) %>
+						<%= f.hidden_field :intro_ldrshp_team_dates, :class => 'alt_time_to_db' %>
+				  </div>
+				   <div class="small-3 columns">
+					    <%= f.text_field :intro_ldrshp_team_end, :class => 'date-picker', :value => (formatted_smalldate(f.object.intro_ldrshp_team_end) if f.object.intro_ldrshp_team_end) %>
+						<%= f.hidden_field :intro_ldrshp_team_end, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :leadership_team_rpt_mtg_1, 'Leadership Team Report Mtg #1', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :leadership_team_rpt_mtg_1, :class => 'datetime-picker', :value => (formatted_datetime(f.object.leadership_team_rpt_mtg_1) if f.object.leadership_team_rpt_mtg_1) %>
+						<%= f.hidden_field :leadership_team_rpt_mtg_1, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :pastor_cmp_mtg_2, "Pastor/Campaign Meeting #2", :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :pastor_cmp_mtg_2, :class => 'datetime-picker', :value => (formatted_datetime(f.object.pastor_cmp_mtg_2) if f.object.pastor_cmp_mtg_2) %>
+						<%= f.hidden_field :pastor_cmp_mtg_2, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :print_vis_comm_mtg_2, 'Print/Visual Comms Mtg #2', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :print_vis_comm_mtg_2, :class => 'datetime-picker', :value => (formatted_datetime(f.object.print_vis_comm_mtg_2) if f.object.print_vis_comm_mtg_2) %>
+						<%= f.hidden_field :print_vis_comm_mtg_2, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :contact_team_asst_trng_1, 'Contact Team Assists Training #1', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :contact_team_asst_trng_1, :class => 'date-picker', :value => (formatted_datetime(f.object.contact_team_asst_trng_1) if f.object.contact_team_asst_trng_1) %>
+						<%= f.hidden_field :contact_team_asst_trng_1, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :contact_team_asst_trng_2, 'Contact Team Assists Training #2', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :contact_team_asst_trng_2, :class => 'datetime-picker', :value => (formatted_datetime(f.object.contact_team_asst_trng_2) if f.object.contact_team_asst_trng_2) %>
+						<%= f.hidden_field :contact_team_asst_trng_2, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :ac_mtg_2, "AC Meeting #2", :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :ac_mtg_2, :class => 'datetime-picker', :value => (formatted_datetime(f.object.ac_mtg_2) if f.object.ac_mtg_2) %>
+						<%= f.hidden_field :ac_mtg_2, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :pacesetter_gift_pln_mtg_2, 'Pacesetter Gift Planning Mtg #2', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :pacesetter_gift_pln_mtg_2, :class => 'date-picker', :value => (formatted_datetime(f.object.pacesetter_gift_pln_mtg_2) if f.object.pacesetter_gift_pln_mtg_2) %>
+						<%= f.hidden_field :pacesetter_gift_pln_mtg_2, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :leadership_team_rpt_mtg_2, 'Leadership Team Report Mtg #2', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :leadership_team_rpt_mtg_2, :class => 'datetime-picker', :value => (formatted_datetime(f.object.leadership_team_rpt_mtg_2) if f.object.leadership_team_rpt_mtg_2) %>
+						<%= f.hidden_field :leadership_team_rpt_mtg_2, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :pastor_cmp_mtg_3, "Pastor/Campaign Meeting #3", :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :pastor_cmp_mtg_3, :class => 'datetime-picker', :value => (formatted_datetime(f.object.pastor_cmp_mtg_3) if f.object.pastor_cmp_mtg_3) %>
+						<%= f.hidden_field :pastor_cmp_mtg_3, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  
+			  
+		  </div> <!-- END LEFT COLUMNS -->
+		  
+		  
+		  
+		  
+		  
+		  
+		  <div class="large-6 columns"> <!-- RIGHT COLUMNS -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :contact_team_trng_1, 'Contact Team Training #1', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :contact_team_trng_1, :class => 'datetime-picker', :value => (formatted_datetime(f.object.contact_team_trng_1) if f.object.contact_team_trng_1) %>
+						<%= f.hidden_field :contact_team_trng_1, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :contact_team_trng_2, 'Contact Team Training #2', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :contact_team_trng_2, :class => 'datetime-picker', :value => (formatted_datetime(f.object.contact_team_trng_2) if f.object.contact_team_trng_2) %>
+						<%= f.hidden_field :contact_team_trng_2, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :contact_team_trng_3, 'Contact Team Training #3', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :contact_team_trng_3, :class => 'datetime-picker', :value => (formatted_datetime(f.object.contact_team_trng_3) if f.object.contact_team_trng_3) %>
+						<%= f.hidden_field :contact_team_trng_3, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :info_team_trng_1, 'Information Team Training #1', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :info_team_trng_1, :class => 'datetime-picker', :value => (formatted_datetime(f.object.info_team_trng_1) if f.object.info_team_trng_1) %>
+						<%= f.hidden_field :info_team_trng_1, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :info_team_trng_2, 'Information Team Training #2', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :info_team_trng_2, :class => 'datetime-picker', :value => (formatted_datetime(f.object.info_team_trng_2) if f.object.info_team_trng_2) %>
+						<%= f.hidden_field :info_team_trng_2, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :ac_mtg_3, 'AC Meeting #3', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :ac_mtg_3, :class => 'datetime-picker', :value => (formatted_datetime(f.object.ac_mtg_3) if f.object.ac_mtg_3) %>
+						<%= f.hidden_field :ac_mtg_3, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :pacesetter_gift_pln_mtg_3, 'Pacesetter Gift Planning Mtg #3', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :pacesetter_gift_pln_mtg_3, :class => 'datetime-picker', :value => (formatted_datetime(f.object.pacesetter_gift_pln_mtg_3) if f.object.pacesetter_gift_pln_mtg_3) %>
+						<%= f.hidden_field :pacesetter_gift_pln_mtg_3, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :leadership_team_rpt_mtg_3, 'Leadership Team Report Mtg #3', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :leadership_team_rpt_mtg_3, :class => 'datetime-picker', :value => (formatted_datetime(f.object.leadership_team_rpt_mtg_3) if f.object.leadership_team_rpt_mtg_3) %>
+						<%= f.hidden_field :leadership_team_rpt_mtg_3, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :follow_up_mtg, 'Follow-up Meeting', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :follow_up_mtg, :class => 'datetime-picker', :value => (formatted_datetime(f.object.follow_up_mtg) if f.object.follow_up_mtg) %>
+						<%= f.hidden_field :follow_up_mtg, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :ac_host_orient, 'AC Host Orientation', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :ac_host_orient, :class => 'datetime-picker', :value => (formatted_datetime(f.object.ac_host_orient) if f.object.ac_host_orient) %>
+						<%= f.hidden_field :ac_host_orient, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :commit_wknd_mtg_pas_cons, 'Commit Wknd Mtg w/Pstr & Cons', :class => 'right inline smaller-text' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :commit_wknd_mtg_pas_cons, :class => 'datetime-picker', :value => (formatted_datetime(f.object.commit_wknd_mtg_pas_cons) if f.object.commit_wknd_mtg_pas_cons) %>
+						<%= f.hidden_field :commit_wknd_mtg_pas_cons, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :pacesetter_gift_rpt_mtg, 'Pacesetter Gift Report Meeting', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :pacesetter_gift_rpt_mtg, :class => 'datetime-picker', :value => (formatted_datetime(f.object.pacesetter_gift_rpt_mtg) if f.object.pacesetter_gift_rpt_mtg) %>
+						<%= f.hidden_field :pacesetter_gift_rpt_mtg, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :leadership_team_rpt_mtg_4, 'Leadership Team Report Mtg #4', :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-6 columns">
+					    <%= f.text_field :leadership_team_rpt_mtg_4, :class => 'datetime-picker', :value => (formatted_datetime(f.object.leadership_team_rpt_mtg_4) if f.object.leadership_team_rpt_mtg_4) %>
+						<%= f.hidden_field :leadership_team_rpt_mtg_4, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  
+			  
+		  </div> <!-- END RIGHT COLUMNS -->
+		  
+		  <hr>
+		  <div class="actions">
+		    <%= f.submit %>
+		  </div>
+		  
+	  </div> <!-- END TRAINING & MEETINGS FIELDSET -->
+  <% end %>
+  
+  <hr>
+  <br>
+		  
+<% end %>

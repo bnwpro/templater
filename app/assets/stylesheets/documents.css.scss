@@ -1,0 +1,149 @@
+// Place all the styles related to the documents controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+//$page-width: 595px;
+$A4-page-width: 210mm - 21mm;
+$A4-page-height: 297mm - 23mm; // tweak these for proper page size
+
+@mixin rounded-corners($radius) {
+	border-radius: $radius;
+	moz-border-radius: $radius;
+	webkit-border-radius: $radius;
+}
+@mixin box-shadow($value) {
+	box-shadow: $value;
+	-moz-box-shadow: $value;
+	-webkit-box-shadow: $value;
+}
+/*li:before {
+	content: "";
+}*/
+html {
+	/*background-color: #DDDDDD;*/
+}
+.doc-links {
+	position: fixed;
+}
+hr {
+	clear: both;
+	float: left;
+	width: 95%;
+	margin: 30px 0;
+}
+h2, h3, h4 {
+	text-align: center;
+}
+h5 {
+	text-align: center;
+	font-size: x-large;
+	font-weight: normal;
+}
+.print-page {
+	background-color: #FFFFFF;
+	margin: 0 auto;
+	padding: 10px 50px 0;
+	width: $A4-page-width;
+	height: $A4-page-height;
+	line-height: 1.5em;
+	page-break-after: always;
+	
+	h2 {
+		clear: right;
+	}
+}
+.print-page:last-of-type {
+	page-break-after: auto;
+}
+.border-box-radius {
+	height: auto;
+	border: 5px solid black;
+	@include rounded-corners(50px);
+}
+.border-box {
+	width: $A4-page-width - 20;
+	height: auto;
+	border: 1px solid black;
+	margin-left: 50px;
+	@include box-shadow(10px 10px 5px #888888);
+	
+	ul {
+		margin-right: .5em;
+	}
+}
+.cols-2-small {
+	position: relative;
+	left: 20%;
+	width: $A4-page-width - 100;
+	height: auto;
+	h6 {
+		font-size: large;
+		text-align: center;
+		margin: 5px auto;
+	}
+	ul {
+		list-style: none;
+		li {
+			display: inline;
+			margin: 0 10px 0 30px;
+		}
+	}
+}
+.page_data>li {
+	list-style-type: square;
+}
+#date_list {
+	/*position: absolute;*/
+	float: left;
+	width: $A4-page-width - 20;
+	height: auto;
+	padding: 25px;
+	padding-top: 5px;
+	line-height: 1.4em;
+	margin-bottom: 40px;
+	h4 {
+	text-decoration: underline;
+	}
+}
+#date_list:after {
+	clear: both;
+}
+.left-column {
+	margin-left: 10px;
+	float: left;
+	width: 30%;
+	font-weight: bold;
+}
+.center-column {
+	float: left;
+	width: 12%;
+	font-weight: bold;
+	text-align: right;
+}
+.right-column {
+	float: right;
+	width: 50%;
+}
+.box-data {
+	
+}
+.display-none {
+	list-style: none;
+}
+.logo {
+	float: right;
+	width: 25px;
+	height: 40px;
+}
+
+/* Per-Page Styles */
+
+#page_1 h3 {
+	text-align: left;
+}
+#page_2 h2 {
+	clear: both;
+}
+h3.left {
+	text-align: left;
+	margin-left: 10px;
+}

@@ -1,0 +1,175 @@
+<%= wicked_pdf_stylesheet_link_tag "documents" %>
+<p id="notice"><%= notice %></p>
+
+<!-- PAGE 1 -->
+<div id="page_1" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<h2>FOLLOW-UP LEADER</h2>
+	<p>The Follow-Up Leader responsible for maintaining the integration of the campaign in the parish’s life for a three-year period starting with the “Celebration Weekend Mass.” The team will accomplish this through the responsibilities listed below</p>
+
+	<h3>Responsibilities:</h3>
+
+	<ul class="page_data" data-mercury="full">
+		<li>Attend Leadership Team Training and Leadership Team Report meetings</li>
+		<li>Attend Follow-Up training as scheduled on block calendar</li>
+		<li>Attend Advance Commitment Gathering</li>
+		<li>Enlist a Follow-Up Team</li>
+		<li>Administer, and implement, the follow-up calendar</li>
+		<li>Maintain a regular flow of information to the parish so that the financial results of the campaign are evident to the parish</li>
+		<li>As prescribed by archdiocesan and parish policies, monitor giving and maintain communication with each donor</li>
+		<li>Find appropriate ways to express gratitude to all participants throughout the three years of follow up</li>
+		<li>Integrate involvement events for new members into the life of the parish so that they have an opportunity to become a part of the campaign</li>
+		<li>Plan periodic celebration events for the parish that focus on the accomplishments of the campaign case</li>
+		<li>If a plan exists, coordinate the parish follow-up plan with any archdiocesan follow-up plan</li>
+		<li>Publicly support the campaign for the parish and archdiocese</li>
+		<li>Prayerfully consider a sacrificial, financial commitment to the campaign</li>
+	</ul>
+	<br><br>
+	<div id="date_list" class="border-box-radius">
+		<h4>**MEETINGS YOU SHOULD ATTEND**</h4>
+
+		<div class="left-column">
+			<%= formatted_date(@campaign.event.leadership_team_trng) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_1) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %><br>
+			<%= formatted_date(@campaign.event.follow_up_mtg) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %><br>
+			<%= formatted_date(@campaign.event.ac_gather_1) %><br>
+			<%= formatted_date_to_tomorrow(@campaign.event.weekend_4_dates) %>
+		</div>
+		
+		<div class="center-column">
+			<%= formatted_time(@campaign.event.leadership_team_trng) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_rpt_mtg_1) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_rpt_mtg_2) %><br>
+			<%= formatted_time(@campaign.event.follow_up_mtg) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_rpt_mtg_3) %><br>
+			<%= formatted_time(@campaign.event.ac_gather_1) %><br>
+		</div>
+
+		<div id="list_data" class="right-column" data-mercury="full">
+			<span>Leadership Team Training</span><br>
+			<span>Leadership Team Report Meeting #1</span><br>
+			<span>Leadership Team Report Meeting #2</span><br>
+			<span>Follow-Up Team Training</span><br>
+			Leadership Team Report Meeting #3<br>
+			Advance Commitment Gathering #1<br>
+			<strong>Commitment Weekend &amp; Parish-Wide Event</strong>
+		</div>
+	</div>
+</div> <!-- END PAGE 1 -->
+
+<!-- PAGE 2 -->
+<div id="page_2" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<h2>- Timetable For Completing Your Tasks -</h2>
+	<h3><%= formatted_date(@campaign.event.leadership_team_trng) %><br>
+	Leadership Team Training and Individual Team Meetings</h3>
+	<ul class="page_data" data-mercury="full">
+		<li>Attend Leadership Team Training - <strong><%= formatted_time(@campaign.event.leadership_team_trng) %></strong></li>
+		<li>Review your workbook and place the dates and times of the meetings you will attend on your personal calendar</li>
+	</ul>
+	<br><br>
+	<div class="border-box">
+		<h3>Between Leadership Team Training and<br>
+			Leadership Team Report Meeting #1 on<br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_1) %>
+		</h3>
+		<ul class="box-data">
+			<li>Review your workbook and place the dates and times of the meetings you will attend on your personal calendar</li>
+			<li>Begin to enlist additional team members if advised by your consultant (Appendix A)</li>
+			<li>Begin development of the three-year Follow-Up Calendar based on the samples provided (Appendices B, C, D)</li>
+		</ul>
+	</div>
+	<br><br>
+	<h2><%= formatted_date(@campaign.event.leadership_team_rpt_mtg_1) %></h2>
+	<h3>Leadership Team Report #1 and Individual Team Meetings</h3>
+	<ul class="page_data">
+		<li>Attend Leadership Team Report #1 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_1) %></strong>
+			<ul>
+				<li>Report on progress and plans</li>
+			</ul>
+		</li>
+	</ul>
+	<br>
+	<div class="border-box">
+		<h3>Between Leadership Team Report #1 and<br>
+			Leadership Team Report #2 on <%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %>
+		</h3>
+		<ul class="page_data">
+			<li>Arrange a meeting with your Pastor and Campaign Chair to review the follow-up calendar</li>
+			<li>Revise the calendar based on the input from your meeting</li>
+		</ul>
+	</div>
+</div> <!-- END PAGE 2 -->
+
+<!-- PAGE 3 -->
+<div id="page_3" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br><br>
+	<h2><%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %></h2>
+	<h3>Leadership Team Report #2 and Individual Team Meetings</h3>
+	<ul class="page_data">
+		<li>Attend Leadership Team Report Meeting #2 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_2) %></strong>
+			<ul>
+				<li>Report on progress and plans</li>
+			</ul>
+		</li>
+	</ul>
+	<br><br>
+	<div class="border-box">
+		<h3>Between Leadership Team Report #2 and<br>
+			Leadership Team Report #3 on <%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %>
+		</h3>
+		<ul class="page_data">
+			<li>Continue to refine the follow-up Calendar</li>
+		</ul>
+	</div>
+	<br><br><br>
+	<h2><%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %></h2>
+	<h3>Leadership Team Report #3 and Individual Team Meetings</h3>
+	<br>
+	<ul class="page_data">
+		<li>Attend Follow-Up Team Training - <strong><%= formatted_time(@campaign.event.follow_up_mtg) %></strong></li>
+		<li>Attend Leadership Team Report #3 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_3) %></strong></li>
+		<li>Distribute a copy of the Follow-Up Calendar to all leaders</li>
+		<li>If you have not done so already, begin to enlist your Follow-Up Team using the Involvement Form</li>
+	</ul>
+	<br><br><br>
+	<div class="border-box">
+		<h3 class="left">Following Leadership Team Report #3, <%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %></h3>
+		<ul class="page_data">
+			<li>Finalize the enlistment of your team and give the results to the Involvement Leader</li>
+		</ul>
+	</div>
+</div> <!-- END PAGE 3 -->
+
+<!-- PAGE 4 -->
+<div id="page_4" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br>
+	<h2><%= formatted_datetime(@campaign.event.ac_gather_1) %></h2>
+	<h3>Advance Commitment Gathering</h3>
+	<ul class="page_data">
+		<li>Plan to attend Advance Commitment Gathering</li>
+	</ul>
+	<br>
+	<h2><%= formatted_date_to_tomorrow(@campaign.event.weekend_4_dates) %></h2>
+	<h3>Commitment Weekend</h3>
+	<ul class="page_data">
+		<li>Plan to attend Mass this weekend. Do not neglect the privilege of worshiping this week! If you have not done so, prayerfully complete your commitment card</li>
+		<li>Continue to support your parish and the campaign in your own prayers</li>
+	</ul>
+	<br>
+	<h2><%= formatted_date_to_tomorrow(@campaign.event.celebration_mass_dates) %></h2>
+	<h3>Attend a Celebration Weekend Mass</h3>
+	<br><br><br>
+	<div class="border-box">
+		<h3 class="left">Following Celebration Mass, &nbsp;<%= formatted_date_to_tomorrow(@campaign.event.celebration_mass_dates) %></h3>
+		<ul class="page_data">
+			<li>Begin to implement the follow-up Calendar</li>
+		</ul>
+	</div>
+	<br><br>
+	<h5><em>"Thank you for making a difference in the life of your parish and in the success of this campaign."</em></h5>
+</div>

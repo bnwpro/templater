@@ -1,0 +1,27 @@
+// Place all the styles related to the Events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.smaller-text {
+	font-size: smaller;
+}
+.smaller-text2 {
+	font-size: x-small;
+}
+.document_link {
+	float: left;
+	display: block;
+	line-height: 2em;
+}
+#resp-links {
+	float: left;
+	width: 50%;
+}
+#pdf-links {
+	float:right;
+}
+.saved {
+	float: left;
+	color: green;
+	font-weight: bold;
+	margin-right: 2em;
+}

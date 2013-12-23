@@ -1,0 +1,229 @@
+<%= wicked_pdf_stylesheet_link_tag "documents" %>
+<p id="notice"><%= notice %></p>
+
+<!-- PAGE 1 -->
+<div id="page_1" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<h2>PACESETTER GIFTS LEADERS</h2>
+	<p>The Pacesetter Gifts Leader is responsible for identification, review and development of appropriate strategies to challenge those people in the parish whose financial capacity and personal passion for the ministry of Jesus can have an impact on the parish’s and arch/diocese’s projects in extraordinary ways.</p>
+
+	<h3>Responsibilities:</h3>
+
+	<ul class="page_data" data-mercury="full">
+		<li>Attend Leadership Team Training, Leadership Team Report meetings and Pacesetter Team meetings</li>
+		<li>Attend Advance Commitment Gatherings</li>
+		<li>Prospect Review
+			<ul>
+				<li>Build a team for Prospect review</li>
+				<li>Provide input in Prospect Review</li>
+				<li>Strategize best approaches to prospects</li>
+			</ul>
+		</li>
+		<li>Prospect Visits
+			<ul>
+				<li>Build a team to conduct pacesetter visits</li>
+				<li>Orient visitors</li>
+				<li>Manage a small number of prospects</li>
+				<li>Move/manage assigned prospects through the following steps:
+					<ol>
+						<li>Get the appointment</li>
+						<li>Make “the ask”</li>
+						<li>Engage in follow-up conversations</li>
+						<li>Receive the commitment cards</li>
+						<li>Send thank you notes</li>
+					</ol>
+				</li>
+			</ul>
+		</li>
+		<li>Publicly support the campaign for the parish and archdiocese</li>
+		<li>Prayerfully consider a sacrificial, financial commitment to the campaign</li>
+	</ul>
+</div> <!-- END PAGE 1 -->
+
+<!-- PAGE 2 -->
+<div id="page_2" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br><br><br><br>
+	<div id="date_list" class="border-box-radius">
+		<h4>**MEETINGS YOU SHOULD ATTEND**</h4>
+
+		<div class="left-column">
+			<%= formatted_date(@campaign.event.leadership_team_trng) %><br>
+			<%= formatted_date(@campaign.event.pacesetter_gift_pln_mtg_1) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_1) %><br>
+			<%= formatted_date(@campaign.event.pacesetter_gift_pln_mtg_2) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %><br>
+			<%= formatted_date(@campaign.event.pacesetter_gift_pln_mtg_3) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %><br>
+			<%= formatted_date(@campaign.event.ac_gather_1) %><br>
+			<%= formatted_date_to_tomorrow(@campaign.event.weekend_4_dates) %>
+		</div>
+		
+		<div class="center-column">
+			<%= formatted_time(@campaign.event.leadership_team_trng) %><br>
+			<%= formatted_time(@campaign.event.pacesetter_gift_pln_mtg_1) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_rpt_mtg_1) %><br>
+			<%= formatted_time(@campaign.event.pacesetter_gift_pln_mtg_2) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_rpt_mtg_2) %><br>
+			<%= formatted_time(@campaign.event.pacesetter_gift_pln_mtg_3) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_rpt_mtg_3) %><br>
+			<%= formatted_time(@campaign.event.ac_gather_1) %><br>
+		</div>
+
+		<div id="list_data" class="right-column" data-mercury="full">
+			<span>Leadership Team Training</span><br>
+			<span>Pacesetter Gifts Meeting #1</span><br>
+			<span>Leadership Team Report Meeting #1</span><br>
+			<span>Pacesetter Gifts Meeting #2</span><br>
+			<span>Leadership Team Report Meeting #2</span><br>
+			<span>Pacesetter Gifts Meeting #3</span><br>
+			Leadership Team Report Meeting #3<br>
+			Advance Commitment Gathering #1<br>
+			<strong>Commitment Weekend &amp; Parish-Wide Event</strong>
+		</div>
+	</div>
+	<br>
+	<h2>- Timetable For Completing Your Tasks -</h2>
+	<h3><%= formatted_date(@campaign.event.leadership_team_trng) %><br>
+	Leadership Team Training and Individual Team Meetings</h3>
+	<ul class="page_data" data-mercury="full">
+		<li>Attend Leadership Team Training - <strong><%= formatted_time(@campaign.event.leadership_team_trng) %></strong></li>
+		<li>Review your workbook and place the dates and times of the meetings you will attend on your personal calendar</li>
+		<li>Attend Pacesetter Gifts Meeting #1 - Orient and Calendar Pacesetter Gifts Process - <strong><%= formatted_time(@campaign.event.pacesetter_gift_pln_mtg_1) %></strong>
+			<ul>
+				<li>Review process and due dates with your consultant (Appendix A)</li>
+			</ul>
+		</li>
+	</ul>
+</div> <!-- END PAGE 2 -->
+
+<!-- PAGE 3 -->
+<div id="page_3" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br><br>
+	<div class="border-box">
+		<h3>Between Leadership Team Training and<br>
+			Report Meeting #1 on <%= formatted_date(@campaign.event.leadership_team_rpt_mtg_1) %>
+		</h3>
+		<ul class="box-data">
+			<li>Meet with the Pastor to obtain lists of individuals who could potentially make Pacesetter Gifts to the campaign</li>
+			<li>Prospect Review—Meet with Pastor, Campaign Chair(s) and select group of 6-8 knowledgeable parishioners to identify Pacesetter Prospects (Appendix B)</li>
+			<li>Begin identifying and recruiting Pacesetter Solicitors</li>
+			<li>Finalize with Pastor and Campaign Chair(s) the project details and costs</li>
+			<li>Determine dates for Pacesetter Awareness Gatherings (Optional)</li>
+		</ul>
+	</div>
+	<br><br>
+	<h2><%= formatted_date(@campaign.event.contact_team_asst_trng_1) %></h2>
+	<h3>Leadership Team Report #1 and Individual Team Meetings</h3>
+	<ul class="page_data">
+		<li>Attend Leadership Team Report Meeting #1 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_1) %></strong>
+			<ul>
+				<li>Report on progress and plans</li>
+			</ul>
+		</li>
+		<li>Attend Pacesetter Gifts Meeting #2 - <strong><%= formatted_time(@campaign.event.pacesetter_gift_pln_mtg_2) %></strong>
+			<ul>
+				<li>Report on Pacesetter Prospect List</li>
+				<li>Report on potential/actual Pacesetter Solicitors</li>
+				<li>Strategize for best ways to approach Pacesetter Prospects—Awareness Events/individual visits</li>
+				<li>Discuss Prospect Information Packet (Appendix C)</li>
+			</ul>
+		</li>
+	</ul>
+	<br>
+	<div class="border-box">
+		<h3>Between Leadership Team Report #1 and<br>
+			Leadership Team Report #2 on <%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %>
+		</h3>
+		<ul class="page_data">
+			<li>Prioritize list of Pacesetter Prospects</li>
+			<li>Finalize list of Pacesetter Solicitors, recruit them, and inform them about upcoming Pacesetter Solicitor Training</li>
+			<li>Work on contents of Prospect Information Packet (Appendix C)</li>
+			<li>If scheduled prepare and mail invitations to Pacesetter Awareness Gathering or dinner (Appendix D & E)</li>
+		</ul>
+	</div>
+</div> <!-- END PAGE 3 -->
+
+<!-- PAGE 4 -->
+<div id="page_4" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br><br>
+	<h2><%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %></h2>
+	<h3>Leadership Team Report #2 and Individual Team Meetings</h3>
+	<ul class="page_data">
+		<li>Attend Leadership Team Report Meeting #2 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_2) %></strong></li>
+		<li>Attend Pacesetter Gifts Meeting as requested by Consultant
+			<ul>
+				<li>Finalize Pacesetter Gifts goal</li>
+				<li>Train solicitors</li>
+				<li>Finalize Awareness Event dates, location, food, hosts, agenda <strong>(Optional)</strong></li>
+				<li>Assign Pacesetter Prospects to Pacesetter Solicitors</li>
+			</ul>
+		</li>
+	</ul>
+	<br><br>
+	<div class="border-box">
+		<h3>Between Leadership Team Report #2 and<br>
+			Leadership Team Report #3 on <%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %>
+		</h3>
+		<ul class="page_data">
+			<li>If scheduled, attend Pacesetter Awareness Gathering _________________</li>
+			<li>If necessary, finish assigning Pacesetter Prospects to Pacesetter Solicitors</li>
+			<li>Complete Prospect Information Packet</li>
+			<li>Begin making appointments, information visits, pledge visits</li>
+			<li>Track each Pacesetter Prospect in the process (Appendix F)</li>
+		</ul>
+	</div>
+	<br>
+	<h2><%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %></h2>
+	<h3>Leadership Team Report #3 and Individual Team Meetings</h3>
+	<br>
+	<ul class="page_data">
+		<li>Attend Pacesetter Gifts Meeting #3 - <strong><%= formatted_time(@campaign.event.pacesetter_gift_pln_mtg_3) %></strong>
+			<ul>
+				<li>Report on pacesetter process and where each prospect is in the process</li>
+				<li>Develop a strategy, timetable and plan, to conclude any work that is not completed</li>
+				<li>Make plans for Pacesetter Prospects who are out of town/unreachable</li>
+			</ul>
+		</li>
+		<li>Attend Leadership Team Report Meeting #3 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_3) %></strong>
+			<ul>
+				<li>Report on progress and plans</li>
+			</ul>
+		</li>
+	</ul>
+</div> <!-- END PAGE 4 -->
+
+<!-- PAGE 5 -->
+<div id="page_5" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br><br>
+	<div class="border-box">
+		<h3 class="left">Following Leadership Team Report #3</h3>
+		<ul class="page_data">
+			<li>Continue making pacesetter visits</li>
+			<li>Continue tracking of Pacesetter Prospects</li>
+			<li>Finalize plans for pacesetters who are out of town/unreachable</li>
+			<li>Send personal “thank-you” notes to each pacesetter visited (Appendix G)</li>
+		</ul>
+	</div>
+	<br><br>
+	<h2><%= formatted_datetime(@campaign.event.ac_gather_1) %></h2>
+	<h3>Advance Commitment Gathering</h3>
+	<ul class="page_data">
+		<li>Plan to attend Advance Commitment Gathering</li>
+	</ul>
+	<br>
+	<h2><%= formatted_date_to_tomorrow(@campaign.event.weekend_4_dates) %></h2>
+	<h3>Commitment Weekend</h3>
+	<ul class="page_data">
+		<li>Plan to attend a Comitment Weekend Mass. Do not neglect the privilege of worshiping this week! If you have not done so, prayerfully complete your commitment card</li>
+		<li>Continue to support your parish and the campaign in your own prayers</li>
+	</ul>
+	<br><br>
+	<h2><%= formatted_date_to_tomorrow(@campaign.event.celebration_mass_dates) %></h2>
+	<h3>Attend a Celebration Weekend Mass</h3>
+	<br>
+	<h5><em>"Thank you for making a difference in the life of your parish and in the success of this campaign."</em></h5>
+</div>

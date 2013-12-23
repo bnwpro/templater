@@ -1,0 +1,52 @@
+<%= form_for([@user, @campaign, @campaign.gift_profile]) do |f| %>
+  <% if @gift_profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gift_profile.errors.count, "error") %> prohibited this Gift Profile from being saved:</h2>
+
+      <ul>
+      <% @gift_profile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="row">
+	  <div class="small-6 small-centered columns">
+		  <h5>Gift Profile Input Document</h5>
+		  <%= f.text_field :goal %>
+		  <h6>"Not Equal Gifts but Equal Sacrifice"</h6>
+	  </div>
+  </div>
+  
+  <div class="row">
+	  <div class="small-12 push-1 columns">
+		  <table>
+			  <thead>
+				  <tr>
+					  <th><%= @campaign.number_of_families %> : Families</th>
+					  <th>No. of Gifts at Level</th>
+					  <th>Gift Level</th>
+					  <th>Total at Level</th>
+					  <th>Cumulative Total</th>
+				  </tr>
+			  </thead>
+			  <%= render :partial => 'tier_1_section', :locals => { :f => f } %>
+			  <%= render :partial => 'tier_2_section', :locals => { :f => f } %>
+			  <%= render :partial => 'tier_3_section', :locals => { :f => f } %>
+		  </table>
+		  <hr>
+		  <div class="actions">
+		  	  <%= f.submit %>
+	  	  </div>
+	  </div>
+	  </div
+<% end %>
+<script>
+	$('input').focusout(function() {
+		input_value = $(this).val();
+		if (input_value == "") {
+			$(this).val(0);
+		};
+	});
+</script>

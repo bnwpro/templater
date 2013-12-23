@@ -1,0 +1,1 @@
+json.extract! @campaign, :user_id, :name, :diocese, :address, :city, :state, :zip, :contact_name, :phone, :fax, :email, :url, :number_of_families, :contribution_income, :has_pacesetter, :standalone, :created_at, :updated_at

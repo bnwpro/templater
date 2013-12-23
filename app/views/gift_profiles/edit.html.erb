@@ -1,0 +1,12 @@
+<h4>Editing Gift Profile data-set for: <%= @campaign.name %></h4>
+	
+	  <%= render 'nav/side_nav' %>
+	  
+      <%= render 'form' %>
+
+
+<%= link_to 'Cancel/Back', user_campaign_gift_profiles_path(@user, @campaign) %>
+
+<script>
+	$('.first_fieldset').addClass('small-10 columns pull-2');
+</script

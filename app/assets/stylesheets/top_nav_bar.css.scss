@@ -1,0 +1,23 @@
+nav li {
+	display: inline-block;
+	margin: 6px 20px 0 0;
+	a {
+		font-size: larger;
+		&:hover {
+			color: red;
+			text-decoration: underline;
+		}
+	}
+}
+.top-bar .title-area {
+	margin-left: 25px;
+	h1 {
+		color: #fff;
+	}
+	.username {
+		color: #000;
+	}
+}
+nav.divider {
+	background-color: #fff;
+}

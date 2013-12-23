@@ -1,0 +1,227 @@
+<%= wicked_pdf_stylesheet_link_tag "documents" %>
+<p id="notice"><%= notice %></p>
+
+<!-- PAGE 1 -->
+<div id="page_1" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<h2>INVOLVEMENT LEADER</h2>
+	<p>The Involvement Leader will monitor and oversee the recruitment of volunteers by team leaders and help promote the campaign by displaying and/or publishing the names of those volunteers who support the campaign through their time and talent.</p>
+
+	<h3>Responsibilities:</h3>
+
+	<ul class="page_data" data-mercury="full">
+		<li>Attend Leadership Team Training, Leadership Team Report meetings and Contact Team Meetings</li>
+		<li>Attend Advance Commitment Gatherings</li>
+		<li>Maintain, manage, and track the enlistment process:
+			<ul>
+				<li>Prepare 2-4 boxes. These boxes will be placed in strategic locations around the parish and school campus so that Leadership Team members and others can leave involvement results and other information</li>
+				<li>Create a grid, list or display showing the names of volunteers by campaign team</li>
+				<li>Monitor the efforts of campaign leaders and other volunteers to involve team members</li>
+				<li>Encourage team leaders and members throughout the involvement process</li>
+				<li>Maintain the Master Involvement List</li>
+			</ul>
+		</li>
+		<li>Publicly support the campaign for the parish and archdiocese</li>
+		<li>Prayerfully consider a sacrificial, financial commitment to the campaign</li>
+	</ul>
+	<br><br><br>
+	<div id="date_list" class="border-box-radius">
+		<h4>**MEETINGS YOU SHOULD ATTEND**</h4>
+
+		<div class="left-column">
+			<%= formatted_date(@campaign.event.involvement_ldr_trng) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_trng) %><br>
+			<%= formatted_date(@campaign.event.contact_team_asst_trng_1) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_1) %><br>
+			<%= formatted_date(@campaign.event.contact_team_trng_1) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %><br>
+			<%= formatted_date(@campaign.event.ac_gather_1) %><br>
+			<%= formatted_date_to_tomorrow(@campaign.event.weekend_4_dates) %>
+		</div>
+		
+		<div class="center-column">
+			<%= formatted_time(@campaign.event.involvement_ldr_trng) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_trng) %><br>
+			<%= formatted_time(@campaign.event.contact_team_asst_trng_1) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_rpt_mtg_1) %><br>
+			<%= formatted_time(@campaign.event.contact_team_trng_1) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_rpt_mtg_2) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_rpt_mtg_3) %><br>
+			<%= formatted_time(@campaign.event.ac_gather_1) %><br>
+		</div>
+
+		<div id="list_data" class="right-column" data-mercury="full">
+			<span>Involvement Leader Training</span><br>
+			<span>Leadership Team Training</span><br>
+			<span>Contact Team Assistant Training</span><br>
+			<span>Leadership Team Report Meeting #1</span><br>
+			<span>Contact Team Training</span><br>
+			<span>Leadership Team Report Meeting #2</span><br>
+			Leadership Team Report Meeting #3<br>
+			Advance Commitment Gathering #1<br>
+			<strong>Commitment Weekend &amp; Parish-Wide Event</strong>
+		</div>
+	</div>
+</div> <!-- END PAGE 1 -->
+
+<!-- PAGE 2 -->
+<div id="page_2" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br><br><br>
+	<h2>- Timetable For Completing Your Tasks -</h2>
+	<h3><%= formatted_date(@campaign.event.leadership_team_trng) %><br>
+	Leadership Team Training and Individual Team Meetings</h3>
+	<ul class="page_data" data-mercury="full">
+		<li>Attend Involvement Leader Training with Consultant and Campaign Administrator - <strong><%= formatted_time(@campaign.event.involvement_ldr_trng) %></strong></li>
+		<li>Attend Leadership Team Training - <strong><%= formatted_time(@campaign.event.leadership_team_trng) %></strong>
+			<ul>
+				<li>Before the Leadership Team Training session, secure a copy of the Master Involvement List from the parish staff. Provide a copy of this list to be used as a “working list,” available for each evening of meetings. Be sure and verify that all Leadership Team Leader names have been crossed out</li>
+			</ul>
+		</li>
+		<li>Review your workbook and place the dates and times of the meetings you will attend on your personal calendar</li>
+		<li>Place boxes in strategic locations around the church</li>
+		<li>Pick up the marked-up Master Involvement List when all meetings are over</li>
+	</ul>
+	<br><br>
+	<div class="border-box">
+		<h3>Between Leadership Team Training and<br>
+			Report Meeting #1 on <%= formatted_date(@campaign.event.leadership_team_rpt_mtg_1) %>
+		</h3>
+		<ul class="box-data">
+			<li>Track the involvement process. <strong>Maximum involvement is central to the success of the campaign. If the first round of enlistment is not successful, it impacts the remainder of the campaign.</strong>
+				<ul>
+					<li>Follow up with all campaign teams to be sure you are receiving completed involvement forms</li>
+					<li>Provide additional names to people who call and request</li>
+				</ul>
+			</li>
+			<li>Post a list of those who are currently involved in the campaign. It should be well done, easy to read and posted in a high traffic area such as the church gathering space. Additionally, a bulletin insert listing team leaders and members should be considered.</li>
+		</ul>
+	</div>
+</div> <!-- END PAGE 2 -->
+
+<!-- PAGE 3 -->
+<div id="page_3" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	
+	<br><br>
+	<h2><%= formatted_date(@campaign.event.contact_team_asst_trng_1) %></h2>
+	<h3>Leadership Team Report #1 and Individual Team Meetings</h3>
+	<ul class="page_data">
+		<li>Have the Master Involvement List available for this entire evening, beginning with Contact Team Assistant Training - <strong><%= formatted_time(@campaign.event.contact_team_asst_trng_1) %></strong></li>
+		<li>Attend Leadership Team Report #1 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_1) %></strong>
+			<ul>
+				<li>Give a report on the status of the enlistment process. Share total numbers involved, including the Leadership Team. Provide a breakdown by campaign teams.</li>
+			</ul>
+		</li>
+		<li>Pick up the Master Involvement List after the meetings are over</li>
+	</ul>
+	<br>
+	<div class="border-box">
+		<h3>Between Leadership Team Report #1 and<br>
+			Leadership Team Report #2 on <%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %>
+		</h3>
+		<ul class="page_data">
+			<li>Continue to monitor the involvement process
+				<ul>
+					<li>Follow up with all campaign teams to be sure you are getting Involvement Forms returned</li>
+					<li>Provide additional names to people who call</li>
+					<li><strong>Pay special attention to Contact Team Involvement. It is crucial that the Campaign Administrator have the exact number of members three days prior to Leadership Report Meeting #2, in order to prepare training packets and make calling assignments</strong></li>
+				</ul>
+			</li>
+			<li>Help the Campaign Administrator prepare calling assignments and training material for Contact Team Training</li>
+			<li>Update display listing volunteers</li>
+		</ul>
+	</div>
+	<br><br>
+	<h2><%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %></h2>
+	<h3>Leadership Team Report #2 and Individual Team Meetings</h3>
+	<ul class="page_data">
+		<li>Have the Master Involvement List available for the entire evening, beginning with<br>
+			Contact Team Training - <strong><%= formatted_time(@campaign.event.contact_team_trng_1) %></strong></li>
+		<li>Attend Contact Team Training to assist the Campaign Administrator with the distribution of materials and collection of reminder envelopes  - <strong><%= formatted_time(@campaign.event.contact_team_trng_1) %></strong></li>
+		<li>Attend Leadership Team Report Meeting #2 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_2) %></strong>
+			<ul>
+				<li>Give a report on the status of Involvement</li>
+			</ul>
+		</li>
+		<li>Pick up Master Involvement List after all meetings are over</li>
+	</ul>
+</div> <!-- END PAGE 3 -->
+
+<!-- PAGE 4 -->
+<div id="page_4" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br><br>
+	<div class="border-box">
+		<h3>Between Leadership Team Report #2 and<br>
+			Leadership Team Report #3 on <%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %>
+		</h3>
+		<ul class="page_data">
+			<li>Continue to monitor the involvement process
+				<ul>
+					<li>Follow up with all campaign teams to be sure you are getting involvement forms returned</li>
+					<li>Provide additional names for enlistment to any who call</li>
+					<li>Pay special attention to the Advance Commitment Involvement and work with the team to be sure it is large enough</li>
+				</ul>
+			</li>
+			<li>Update display listing volunteers</li>
+		</ul>
+	</div>
+	<br><br>
+	<h2><%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %></h2>
+	<h3>Leadership Team Report #3 and Individual Team Meetings</h3>
+	<br>
+	<ul class="page_data">
+		<li>Have the Master Involvement List available at all meetings</li>
+		<li>Attend Leadership Team Report #3 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_3) %></strong>
+			<ul>
+				<li>Give a report on the status of involvement</li>
+			</ul>
+		</li>
+		<li>Pick up Master Involvement List after all meetings are over</li>
+	</ul>
+	<br>
+	<h2><%= formatted_datetime(@campaign.event.ac_gather_1) %></h2>
+	<h3>Advance Commitment Gathering</h3>
+	<ul class="page_data">
+		<li>Plan to attend Advance Commitment Gathering</li>
+	</ul>
+	<br>
+	<h2><%= formatted_date_to_tomorrow(@campaign.event.weekend_4_dates) %></h2>
+	<h3>Commitment Weekend</h3>
+	<ul class="page_data">
+		<li>Plan to attend a Comitment Weekend Mass. Do not neglect the privilege of worshiping this week! If you have not done so, prayerfully complete your commitment card</li>
+	</ul>
+</div> <!-- END PAGE 4 -->
+
+<!-- PAGE 5 -->
+<div id="page_5" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br><br>
+		<div class="border-box">
+			<h3 class="left">At least one week before Celebration Weekend,<br>
+			<%= formatted_date_to_tomorrow(@campaign.event.weekend_4_dates) %></h3>
+			<ul class="page_data">
+				<li>Be sure your involvement records are complete and accurate. Provide a final copy to your Consultant as well as to the staff</li>
+				<li>Update display listing volunteers</li>
+				<li>Prepare a bulletin insert that reports on how many people are involved as volunteers in the campaign. This could include:
+					<ul>
+						<li>Total number of volunteers</li>
+						<li>Name of each volunteer</li>
+						<li>Team totals and members.</li>
+					</ul>
+				</li>
+				<li>Be available for the rest of the campaign to provide information and names</li>
+			</ul>
+		</div>
+	<br><br><br>
+	<h2><%= formatted_date_to_tomorrow(@campaign.event.celebration_mass_dates) %></h2>
+	<h3>Attend a Celebration Weekend Mass</h3>
+	<ul class="page_data">
+		<li>If needed, prepare a final involvement report to include when announcing the results of the campaign. Be sure to include all children, youth, and adults who were involved in the campaign.</li>
+		<li>Continue to support your parish and the campaign in your own prayers</li>
+	</ul>
+	<br>
+	<h5><em>"Thank you for making a difference in the life of your parish and in the success of this campaign."</em></h5>
+</div>

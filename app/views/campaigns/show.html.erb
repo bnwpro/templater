@@ -1,0 +1,76 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+	<div class="small-12 columns">
+		<h2><strong>Campaign Name: </strong><em><%= @campaign.name %></em></h2>
+	</div>
+</div>
+
+<div class="row">
+	<div class="small-3 columns">
+		<strong>Diocese: </strong><%= @campaign.diocese %>
+	</div>
+	<div class="small-3 columns">
+		<strong>Primary Contact: </strong><%= @campaign.contact_name %>
+	</div>
+	<div class="small-3 columns">
+		<strong>Phone: </strong><%= number_to_phone(@campaign.phone, area_code: true) %>
+	</div>
+	<div class="small-3 columns">
+		<strong>Email: </strong><%= @campaign.email %>
+	</div>
+</div>
+<br>
+<hr>
+<div class="row">
+	<%= render partial: "/nav/side_nav" %>
+	<div class="small-10 pull-2 columns">
+		<table>
+		    <thead>
+			    <h5>Campaign Contacts:</h5>
+		        <tr>
+			      <th>Description</th>
+			      <th>Name</th>
+			      <th>Phone</th>
+			      <th>Email</th>
+		        </tr>
+		    </thead>
+		    <tbody>
+		  	    <% @campaign.campaign_contacts.each do |contact|  %>
+				<tr>
+					<td><%= contact.description %></td>
+					<td><%= contact.name %></td>
+					<td><%= number_to_phone(contact.phone, area_code: true) %></td>
+					<td><%= contact.email %></td>
+				</tr>
+				<% end %>
+				<tr>
+					<td><strong>Print Contact</strong></td>
+					<td><%= @campaign.training_sheet.print_contact_name unless @campaign.training_sheet.nil? %></td>
+					<td><%= number_to_phone(@campaign.training_sheet.print_contact_phone, area_code: true) unless @campaign.training_sheet.nil? %></td>
+					<td><%= @campaign.training_sheet.print_contact_email unless @campaign.training_sheet.nil? %></td>
+				</tr>
+		    </tbody>
+		</table>
+	</div>
+	<div id="upload" class="small-3">
+		<% if File.exist?("pdfs/campaign_docs/#{@campaign.id}/block_calendar.pdf") %>
+			<span class="green">Block Clendar has been uploaded!</span>
+			<% else %>
+			<span class="red">Block Calendar not uploaded</span>
+		<% end %>
+		<br><br>
+		<%= form_for [@user, @campaign], :html => {:multipart => true} do |f| %>
+			<%= f.file_field :block_calendar %>
+			<%= f.submit "Upload Calendar", :remote => true %>
+		<% end %>
+	</div>
+</div>
+
+<div id="enlistment_form">
+<%= render 'enlistments/form' %>
+</div>
+
+<%-# link_to 'Edit', edit_user_campaign_path(@user, @campaign) -%>
+<%-# link_to 'Back', user_campaigns_path(@user) -%>
+<%-# link_to 'Events', user_campaign_events_path(@user, @campaign) -%>

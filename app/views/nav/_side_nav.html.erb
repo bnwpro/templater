@@ -1,0 +1,12 @@
+<div class="small-2 pull-2 columns">
+	<ul class="side-nav">
+		<li><strong>Navigation:</strong></li>
+		<li class="divider"></li>
+	    <li><%= nav_link_to 'Campaign Home', user_campaign_path(@user, @campaign), {}, {:wrapper => 'li'} %></li>
+	    <li class="divider"></li>
+	    <li><%= nav_link_to 'Training Sheets', user_campaign_training_sheets_path(@user, @campaign), {}, {:wrapper => 'li'} %></li>
+	    <li><%= nav_link_to 'Gift Profile', user_campaign_gift_profiles_path(@user, @campaign), {}, {:wrapper => 'li'} %></li>
+	    <li class=""><%= nav_link_to 'Responsibility', user_campaign_events_path(@user, @campaign), {}, {:wrapper => 'li', :controller_segment => 1} %></li>
+		<li class="divider"></li>
+	</ul>
+</div>

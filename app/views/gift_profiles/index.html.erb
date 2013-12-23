@@ -1,0 +1,30 @@
+<br><br>
+<h1>Gift Profile data for: <%= @campaign.name %></h1>
+<br>
+<div class="row">
+    <%= render 'nav/side_nav' %>
+	<div class="small-10 pull-2 columns">
+		<h3>Gift Profile Chart:</h3>
+		<table>
+		  <thead>
+		    <tr>
+		      <th>Goal</th>
+		      <th>Campaign</th>
+			  <th></th>
+		      <th></th>
+		    </tr>
+		  </thead>
+
+		  <tbody>
+		    <%-#<% @events.each do |event| -%>
+		      <tr>
+		        <td><%= number_to_currency(@gift_profile.goal) %></td>
+		        <td><%= @gift_profile.campaign.name %></td>
+		        <td><%= link_to 'Edit Gift Profile', edit_user_campaign_gift_profile_path(@user, @campaign, @gift_profile) %></td>
+		        <td><%= link_to 'Delete All', [@user, @campaign, @gift_profile], method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete_link' %></td>
+		      </tr>
+		    <%-#<% end -%>
+		  </tbody>
+		</table>
+	</div>
+</div>

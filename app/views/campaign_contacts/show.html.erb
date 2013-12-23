@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Campaign:</strong>
+  <%= @campaign_contact.campaign.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @campaign_contact.description %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @campaign_contact.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @campaign_contact.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @campaign_contact.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @campaign_contact.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @campaign_contact.zip %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @campaign_contact.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @campaign_contact.email %>
+</p>
+
+<%= link_to 'Edit', edit_user_campaign_campaign_contact_path(@user, @campaign, @campaign_contact) %> |
+<%= link_to 'Back', user_campaign_campaign_contacts_path(@user, @campaign) %>

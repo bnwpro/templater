@@ -1,0 +1,76 @@
+<span id="notice"><%= notice %></span>
+<br><br>
+<h1>Events/Dates and Responsibility Documents:<br>
+	<%= @campaign.name %>
+</h1>
+
+<div class="row">
+    <%= render 'nav/side_nav' %>
+	<div class="small-10 pull-2 columns">
+		<h3>Events/Dates:</h3>
+		<table>
+		  <thead>
+		    <tr>
+		      <th>Leadership Team Training</th>
+		      <th>Campaign</th>
+			  <th></th>
+		      <th></th>
+		    </tr>
+		  </thead>
+
+		  <tbody>
+		    <%-#<% @events.each do |event| -%>
+		      <tr>
+		        <td><%= formatted_datetime(@event.leadership_team_trng) %></td>
+		        <td><%= @event.campaign.name %></td>
+		        <td><%= link_to 'Add/Edit Events', edit_user_campaign_event_path(@user, @campaign, @event) %></td>
+		        <td><%= link_to 'Delete All', [@user, @campaign, @event], method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete_link' %></td>
+		      </tr>
+		    <%-#<% end -%>
+		  </tbody>
+		</table>
+		<br>
+		<div class="document_link">
+			<h3>Responsibility Documents:
+				<% if File.exist?("pdfs/campaign_docs/#{@campaign.id}/block_calendar.pdf") %>
+					(<span class="green">Block Clendar has been uploaded!</span>)
+					<% else %>
+					<span class="red">(<%= link_to "Block Calendar not uploaded", user_campaign_path(@user, @campaign), :class => 'red' %>)</span>
+				<% end %></h3>
+			<div id="resp-links">
+				<% if File.exist?("pdfs/campaign_docs/#{@campaign.id}/ac_resp.pdf") %>
+					<span class="saved">PDF Saved!</span>
+				<% end %>
+				<%= link_to 'Advance Commitment', user_campaign_event_document_path(@user, @campaign, @event, 'ac_resp') %><br>
+				<%= link_to 'Campaign Admin', user_campaign_event_document_path(@user, @campaign, @event, 'cadmin_resp') %><br>
+				<%= link_to 'Campaign Chair', user_campaign_event_document_path(@user, @campaign, @event, 'chair_resp') %><br>
+				<%= link_to "Children's Activity", user_campaign_event_document_path(@user, @campaign, @event, 'childs_act_resp') %><br>
+				<%= link_to "Contact", user_campaign_event_document_path(@user, @campaign, @event, 'contact_resp') %><br>
+				<%= link_to "Event", user_campaign_event_document_path(@user, @campaign, @event, 'event_resp') %><br>
+				<%= link_to "Follow-up", user_campaign_event_document_path(@user, @campaign, @event, 'follow_resp') %><br>
+				<%= link_to "Information", user_campaign_event_document_path(@user, @campaign, @event, 'info_resp') %><br>
+				<%= link_to "Involvement", user_campaign_event_document_path(@user, @campaign, @event, 'involve_resp') %><br>
+				<%= link_to "Pacesetter", user_campaign_event_document_path(@user, @campaign, @event, 'pacesetter_resp') %><br>
+				<%= link_to "Pastor", user_campaign_event_document_path(@user, @campaign, @event, 'pastor_resp') %><br>
+				<%= link_to "Prayer", user_campaign_event_document_path(@user, @campaign, @event, 'prayer_resp') %><br>
+				<%= link_to "Print Communications", user_campaign_event_document_path(@user, @campaign, @event, 'print_resp') %><br>
+				<%= link_to "Visual Communications", user_campaign_event_document_path(@user, @campaign, @event, 'visual_resp') %><br>
+				<%= link_to "Youth", user_campaign_event_document_path(@user, @campaign, @event, 'youth_resp') %><br>
+			</div>
+			<div class="pdf-links">
+				<%= link_to "Generate Manuals", documents_user_campaign_path(:user_id => @user.id, :campaign_id => @campaign.id, :id => @campaign.id, :format => 'pdf', :remote => true), :controller => "documents", :action => "generate", :format => 'pdf', id: "to_pdf", :remote => true %>
+				<br>
+				<% if show_pdfs_if_exist %>
+					<% @files.each do |path| %>
+					  <li><a href="<%= path %>">
+					  	<%= File.basename path %></a>
+					<% end %>
+				<% end %>
+			</div>
+	  	</div>
+	</div>
+	
+</div>
+
+<%-# link_to 'Back', user_campaigns_path(@user) -%>
+<%-# link_to 'New Event', new_user_campaign_event_path(@user, @campaign) -%>

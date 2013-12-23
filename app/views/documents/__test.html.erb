@@ -1,0 +1,75 @@
+<%= wicked_pdf_stylesheet_link_tag "pdf" %>
+<%= wicked_pdf_image_tag 'logo_bw.png' %>
+<p id="notice"><%= notice %></p>
+<div class="print-page">
+	<!--<%= image_tag "logo_bw.png", size: "25x40", alt: "logo" %>-->
+	<h2>ADVANCE COMMITMENT LEADER</h2>
+	<h6>Consultant: <%= @user.name %></h6>
+	<br>
+	<p>The Advance Commitment Team will plan and conduct Advance Commitment Gatherings that are designed to inform and inspire parish leaders to make their sacrificial commitment prior to the majority of the parish community. The total early commitments will be announced on Commitment Weekend to show that the leadership has stepped forward and that the campaign is poised for success.</p>
+
+	<h3>Responsibilities:</h3>
+
+	<ul id="page_data" data-mercury="full">
+		<li>Attend Leadership Team Training, Leadership Report meetings and Advance Commitment planning meetings</li>
+		<li>Attend Advance Commitment Gatherings</li>
+		<li>Coordinate Invitations and Gatherings with Pacesetter Gifts team</li>
+		<li>Prepare an invitation list that equal to 15%-25% of the parish households</li>
+		<li>Work with the Pastor and Campaign Chairs to determine times, locations and food for the gatherings</li>
+		<li>Enlist a team that is based on the instructions in Tab #5, Involvement. The team will:
+			<ul>
+				<li>Help plan, set up, and host the gathering(s)</li>
+				<li>Hand address Advance Commitment Gathering invitations</li>
+				<li>Make Advance Commitment Gathering reservation phone calls</li>
+				<li>After the Advance Commitment Gathering(s), send follow-up letters and or make follow-up calls</li>
+			</ul>
+		</li>
+		<li>Publicly support the campaign for the parish and arch/diocese</li>
+		<li>Prayerfully consider a sacrificial financial commitment to the campaign</li>
+	</ul>
+
+	<div id="date_list" class="border-box">
+		<h4>MEETINGS YOU SHOULD ATTEND</h4>
+
+		<div class="left-column">
+			<% @event do |event| %>
+			<%= formatted_date(event.leadership_team_trng) %> <br>
+			<%= formatted_date(event.ac_mtg_1) %> <br>
+			<%= formatted_date(event.leadership_team_rpt_mtg_1) %> <br>
+			<%= formatted_date(event.ac_mtg_2) %> <br>
+			<%= formatted_date(event.leadership_team_rpt_mtg_2) %> <br>
+			<%= formatted_date(event.ac_mtg_3) %> <br>
+			<%= formatted_date(event.leadership_team_rpt_mtg_3) %> <br>
+			<%= formatted_date(event.ac_host_orient) %> <br>
+			<%= formatted_date(event.ac_gather_1) %> <br>
+			<%= formatted_date(event.ac_gather_2) %> <br>
+		</div>
+		
+		<div class="center-column">
+			<%= formatted_time(event.leadership_team_trng) %> <br>
+			<%= formatted_time(event.ac_mtg_1) %> <br>
+			<%= formatted_time(event.leadership_team_rpt_mtg_1) %> <br>
+			<%= formatted_time(event.ac_mtg_2) %> <br>
+			<%= formatted_time(event.leadership_team_rpt_mtg_2) %> <br>
+			<%= formatted_time(event.ac_mtg_3) %> <br>
+			<%= formatted_time(event.leadership_team_rpt_mtg_3) %> <br>
+			<%= formatted_time(event.ac_host_orient) %> <br>
+			<%= formatted_time(event.ac_gather_1) %> <br>
+			<%= formatted_time(event.ac_gather_2) %> <br>
+			<% end %>
+		</div>
+
+		<div id="list_data" class="right-column" data-mercury="full">
+			Leadership Team Training <br>
+			Advance Commitment Meeting #1 <br>
+			Leadership Team Report Meeting #1 <br>
+			Advance Commitment Meeting #2 <br>
+			Leadership Team Report Meeting #2 <br>
+			Advance Commitment Meeting #3 <br>
+			Leadership Team Report Meeting #3 <br>
+			Advance Commitment Host Orientation <br>
+			Advance Commitment Gathering #1 <br>
+			Advance Commitment Gathering #2
+		</div>
+	</div>
+</div>

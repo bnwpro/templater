@@ -1,0 +1,158 @@
+<%= nested_form_for([@user, @campaign]) do |f| %>
+  <% if @campaign.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@campaign.errors.count, "error") %> prohibited this campaign from being saved:</h2>
+
+      <ul>
+      <% @campaign.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <fieldset>
+    <legend><%= @user.name %></legend>
+	
+    <div class="row">
+		<div class="large-6 columns">
+		  <div class="field">
+		    <%= f.label :campaign_name, 'Parish Name' %><br>
+		    <%= f.text_field :name, placeholder: 'Enter Name of Campaign' %>
+		  </div>
+	  </div>
+	  <div class="large-6 columns">
+		  <div class="field">
+		    <%= f.label :diocese %><br>
+		    <%= f.text_field :diocese %>
+		  </div>
+	  </div>
+	</div>
+	
+	<div class="row">
+		<div class="large-5 columns">
+		  <div class="field">
+		    <%= f.label :address %><br>
+		    <%= f.text_field :address %>
+		  </div>
+	  </div>
+	  <div class="large-3 columns">
+		  <div class="field">
+		    <%= f.label :city %><br>
+		    <%= f.text_field :city %>
+		  </div>
+	  </div>
+	  <div class="large-2 columns">
+		  <div class="field">
+		    <%= f.label :state %><br>
+		    <%= f.select :state, us_states, prompt: 'Select State' %>
+		  </div>
+	  </div>
+	  <div class="large-2 columns">
+		  <div class="field">
+		    <%= f.label :zip %><br>
+		    <%= f.text_field :zip %>
+		  </div>
+	  </div>
+	</div>
+	
+	<div class="row">
+		<div class="large-4 columns">
+		  <div class="field">
+		    <%= f.label :contact_name %><br>
+		    <%= f.text_field :contact_name %>
+		  </div>
+	  </div>
+	  <div class="large-4 columns">
+		  <div class="field">
+		    <%= f.label :phone %><br>
+		    <%= f.text_field :phone %>
+		  </div>
+	  </div>
+	  <div class="large-4 columns">
+		  <div class="field">
+		    <%= f.label :fax %><br>
+		    <%= f.text_field :fax %>
+		  </div>
+	  </div>
+	</div>
+	
+	<div class="row">
+		<div class="large-6 columns">
+		  <div class="field">
+		    <%= f.label :email %><br>
+		    <%= f.text_field :email %>
+		  </div>
+	  </div>
+	  <div class="large-6 columns">
+		  <div class="field">
+		    <%= f.label :url, 'URL' %><br>
+		    <%= f.text_field :url %>
+		  </div>
+	  </div>
+	</div>
+	
+	<div class="row">
+		<div class="large-3 columns">
+		  <div class="field">
+		    <%= f.label :number_of_families, 'Number of Families' %><br>
+		    <%= f.number_field :number_of_families %>
+		  </div>
+	  </div>
+	  <div class="large-3 columns pull-6">
+		  <div class="field">
+		    <%= f.label :contribution_income, 'Contribution Income' %><br>
+		    <%= f.text_field :contribution_income %>
+		  </div>
+	  </div>
+	</div>
+	
+	<div class="row">
+		<div class="large-2 columns">
+		  <div class="field">
+		    <%= f.label :has_pacesetter, 'Has Pacesetter?' %><br>
+		    <%= f.check_box :has_pacesetter %>
+		  </div>
+	  </div>
+	  
+	    <div class="large-3 columns">
+	  		<% if File.exist?("pdfs/campaign_docs/#{@campaign.id}/block_calendar.pdf") %>
+	  			<span class="green right">Block Clendar has been uploaded!</span>
+	  			<% else %>
+	  			<span class="red right">Block Calendar not uploaded</span>
+	  		<% end %>
+			<br><br>
+		    <div class="field">
+		    	<%= f.file_field :block_calendar %><br>
+				<%= f.submit "Upload", :remote => true %>
+		    </div>
+	    </div>
+		
+    </div>
+	
+	<div class="row">
+		<div class="large-2 columns">
+		    <div class="field">
+		        <%= f.label :standalone, 'Standalone Campaign?' %><br>
+		        <%= f.check_box :standalone %>
+		    </div>
+	  </div>
+	</div>
+	
+	<hr>
+	
+	<%= render :partial => '/nested_forms/campaign_contacts_form', :locals => { :f => f } %>
+	
+	
+	
+	<br>
+	<div class="row">
+		  <div class="actions">
+		    <%= f.submit %>
+		  </div>
+		<% end %>
+	</div>
+</fieldset>
+<script>
+	$('.edit_campaign_link').hide();
+</script>

@@ -1,0 +1,226 @@
+<h5>Enlistment Info:</h5>
+<%= form_for ([@user, @campaign, @campaign.enlistment]), :remote => true do |f| %>
+
+	<div class="row"> <!-- FIRST ROW -->
+		
+		<!-- ADVANCE COMMITMENT -->
+		<div class="small-4 columns enlistment_group"> <!-- LEFT SIDE COLUMNS -->
+		  <%= field_set_tag 'Advance Commitment' do %>
+		  <div class="row field">
+			  <div class="small-3 columns">
+		  		  <%= f.label @campaign.training_sheet.man_ac, :class => 'ts_num', :data => { :value => @campaign.training_sheet.man_ac } %><br>
+				  <%#= f.label @campaign.enlistment.vir_var -%>
+		      </div>
+			  <div class="small-9 columns">
+				  <span class="left inline">Leaders</span>
+		      </div>
+		  </div> <!-- END ROW -->
+		  <div class="row field">
+			  <div class="small-3 columns">
+		  		    <%= f.number_field :ac_enlist, :class => 'enlistment_num', :min => 0 %>
+		      </div>
+			  <div class="small-9 columns">
+		  		    <span class="left inline">Each Leader will Enlist</span>
+		      </div>
+		  </div> <!-- END ROW -->
+		  <div class="row field">
+			  <div class="small-3 columns">
+		  		    <%= f.label multiply(@campaign.training_sheet.man_ac, @campaign.enlistment.ac_enlist), :class => 'enlisted_num', :data => { :value => multiply(@campaign.training_sheet.man_ac, @campaign.enlistment.ac_enlist) } %><br>
+		      </div>
+			  <div class="small-9 columns">
+				  <span class="left inline">Total Enlisted</span>
+		      </div>
+		  </div> <!-- END ROW -->
+		  <div class="row field">
+			  <div class="small-3 columns">
+		  		    <%= f.label sum((multiply(@campaign.training_sheet.man_ac, @campaign.enlistment.ac_enlist)), @campaign.training_sheet.man_ac), :class => 'total_team' %><br>
+		      </div>
+			  <div class="small-9 columns">
+				  <span class="left inline">Total Team</span>
+		      </div>
+		  </div> <!-- END ROW -->
+		  <% end %> <!-- END FIELDSET -->
+	  </div> <!-- END LEFT SIDE COLUMNS -->
+	  
+	  <!-- CHILDREN'S ACTIVITY -->
+	  <div class="small-4 columns enlistment_group"> <!-- CENTER COLUMNS -->
+		  <%= field_set_tag 'Children\'s Activity' do %>
+		  <div class="row field">
+			  <div class="small-3 columns">
+		  		    <%= f.label @campaign.training_sheet.man_childs_act, :class => 'ts_num', :data => { :value => @campaign.training_sheet.man_childs_act } %><br>
+		      </div>
+			  <div class="small-9 columns">
+				  <span class="left inline">Leaders</span>
+		      </div>
+		  </div> <!-- END ROW -->
+		  <div class="row field">
+			  <div class="small-3 columns">
+		  		    <%= f.number_field :childs_act_enlist, :class => 'enlistment_num', :min => 0 %>
+		      </div>
+			  <div class="small-9 columns">
+		  		    <span class="left inline">Each Leader will Enlist</span>
+		      </div>
+		  </div> <!-- END ROW -->
+		  <div class="row field">
+			  <div class="small-3 columns">
+		  		    <%= f.label multiply(@campaign.training_sheet.man_childs_act, @campaign.enlistment.childs_act_enlist), :class => 'enlisted_num', :data => { :value => multiply(@campaign.training_sheet.man_childs_act, @campaign.enlistment.childs_act_enlist) } %><br>
+		      </div>
+			  <div class="small-9 columns">
+				  <span class="left inline">Total Enlisted</span>
+		      </div>
+		  </div> <!-- END ROW -->
+		  <div class="row field">
+			  <div class="small-3 columns">
+		  		    <%= f.label sum((multiply(@campaign.training_sheet.man_childs_act, @campaign.enlistment.childs_act_enlist)), @campaign.training_sheet.man_childs_act), :class => 'total_team' %><br>
+		      </div>
+			  <div class="small-9 columns">
+				  <span class="left inline">Total Team</span>
+		      </div>
+		  </div> <!-- END ROW -->
+		  <% end %> <!-- END FIELDSET -->
+	</div> <!-- END CENTER COLUMNS -->
+	  
+	<!-- SPECIAL EVENT -->
+  	<div class="small-4 columns enlistment_group"> <!-- RIGHT SIDE COLUMNS -->
+  	  <%= field_set_tag 'Special Event' do %>
+  	  <div class="row field">
+  		  <div class="small-3 columns">
+  	  		    <%= f.label @campaign.training_sheet.man_spc_event, :data => { :value => @campaign.training_sheet.man_spc_event } %><br>
+  	      </div>
+  		  <div class="small-9 columns">
+  			  <span class="left inline">Leaders</span>
+  	      </div>
+  	  </div> <!-- END ROW -->
+  	  <div class="row field">
+  		  <div class="small-3 columns">
+  	  		    <%= f.number_field :spc_event_enlist %>
+  	      </div>
+  		  <div class="small-9 columns">
+  	  		    <span class="left inline">Each Leader will Enlist</span>
+  	      </div>
+  	  </div> <!-- END ROW -->
+  	  <div class="row field">
+  		  <div class="small-3 columns">
+  	  		    <%= f.label multiply(@campaign.training_sheet.man_spc_event, @campaign.enlistment.spc_event_enlist) %><br>
+  	      </div>
+  		  <div class="small-9 columns">
+  			  <span class="left inline">Total Enlisted</span>
+  	      </div>
+  	  </div> <!-- END ROW -->
+  	  <div class="row field">
+  		  <div class="small-3 columns">
+  	  		    <%= f.label sum((multiply(@campaign.training_sheet.man_spc_event, @campaign.enlistment.spc_event_enlist)), @campaign.training_sheet.man_spc_event) %><br>
+  	      </div>
+  		  <div class="small-9 columns"> 
+  			  <span class="left inline">Total Team</span>
+  	      </div>
+  	  </div> <!-- END ROW -->
+  	  <% end %> <!-- END FIELDSET -->
+    </div> <!-- END RIGHT SIDE COLUMNS -->
+
+  </div> <!-- END FIRST ROW -->
+  
+  <div class="row"> <!-- SECOND ROW -->
+	  
+		<!-- CONTACT -->
+		<div class="small-4 columns enlistment_group"> <!-- LEFT SIDE COLUMNS -->
+		  <%= field_set_tag 'Contact' do %>
+		  <div class="row field">
+			  <div class="small-3 columns">
+		  		    <%= f.label @campaign.training_sheet.man_contact, :data => { :value => @campaign.training_sheet.man_contact } %><br>
+		      </div>
+			  <div class="small-9 columns">
+				  <span class="left inline">Leaders</span>
+		      </div>
+		  </div> <!-- END ROW -->
+		  <div class="row field">
+			  <div class="small-3 columns">
+		  		    <%= f.number_field :contact_enlist %>
+		      </div>
+			  <div class="small-9 columns">
+		  		    <span class="left inline">Each Leader will Enlist</span>
+		      </div>
+		  </div> <!-- END ROW -->
+		  <div class="row field">
+			  <div class="small-3 columns">
+		  		    <%= f.label multiply(@campaign.training_sheet.man_contact, @campaign.enlistment.contact_enlist) %><br>
+		      </div>
+			  <div class="small-9 columns">
+				  <span class="left inline">Total Enlisted for Training</span>
+		      </div>
+		  </div> <!-- END ROW -->
+		  <div class="row field">
+			  <div class="small-3 columns">
+		  		    <%= f.number_field :contact_each_enlist %>
+		      </div>
+			  <div class="small-9 columns">
+		  		    <span class="left inline">to be Enlisted by each</span>
+		      </div>
+		  </div> <!-- END ROW -->
+		  <div class="row field">
+			  <div class="small-3 columns">
+		  		    <%= f.label multiply((multiply(@campaign.training_sheet.man_contact, @campaign.enlistment.contact_enlist)), @campaign.enlistment.contact_each_enlist) %><br>
+		      </div>
+			  <div class="small-9 columns">
+				  <span class="left inline">Total Enlisted</span>
+		      </div>
+		  </div> <!-- END ROW -->
+		  <div class="row field">
+			  <div class="small-3 columns">
+		  		    <%= f.label sum((multiply((multiply(@campaign.training_sheet.man_contact, @campaign.enlistment.contact_enlist)), @campaign.enlistment.contact_each_enlist)), @campaign.training_sheet.man_contact) %><br>
+		      </div>
+			  <div class="small-9 columns">
+				  <span class="left inline">Total Team</span>
+		      </div>
+		  </div> <!-- END ROW -->
+		  <% end %> <!-- END FIELDSET -->
+	  </div> <!-- END LEFT SIDE COLUMNS -->
+  
+  	  <!-- INFORMATION -->
+	  <div class="small-4 columns enlistment_group"> <!-- CENTER COLUMNS -->
+		  <%= field_set_tag 'Information' do %>
+		  <div class="row field">
+			  <div class="small-3 columns">
+		  		    <%= f.label @campaign.training_sheet.man_info, :data => { :value => @campaign.training_sheet.man_info } %><br>
+		      </div>
+			  <div class="small-9 columns">
+				  <span class="left inline">Leaders</span>
+		      </div>
+		  </div> <!-- END ROW -->
+		  <div class="row field">
+			  <div class="small-3 columns">
+		  		    <%= f.number_field :info_enlist %>
+		      </div>
+			  <div class="small-9 columns">
+		  		    <span class="left inline">Each Leader will Enlist</span>
+		      </div>
+		  </div> <!-- END ROW -->
+		  <div class="row field">
+			  <div class="small-3 columns">
+		  		    <%= f.label multiply(@campaign.training_sheet.man_info, @campaign.enlistment.info_enlist) %><br>
+		      </div>
+			  <div class="small-9 columns">
+				  <span class="left inline">Total Enlisted</span>
+		      </div>
+		  </div> <!-- END ROW -->
+		  <div class="row field">
+			  <div class="small-3 columns">
+		  		    <%= f.label sum((multiply(@campaign.training_sheet.man_info, @campaign.enlistment.info_enlist)), @campaign.training_sheet.man_info) %><br>
+		      </div>
+			  <div class="small-9 columns">
+				  <span class="left inline">Total Team</span>
+		      </div>
+		  </div> <!-- END ROW -->
+	  	  <% end %> <!-- END FIELDSET -->
+		  <div class="actions">
+		    <%= f.submit %>
+		  </div>
+	  </div> <!-- END CENTER COLUMNS -->
+	
+	  <div class="small-4 columns"> <!-- RIGHT SIDE COLUMNS -->
+	  </div> <!-- END RIGHT SIDE COLUMNS -->
+	
+  </div> <!-- END SECOND ROW -->
+  
+  <hr>
+<% end %> <!-- END FORM -->

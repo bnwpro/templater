@@ -1,0 +1,175 @@
+<%= wicked_pdf_stylesheet_link_tag "documents" %>
+<p id="notice"><%= notice %></p>
+
+<!-- PAGE 1 -->
+<div id="page_1" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<h2>YOUTH LEADER</h2>
+	<p>The Youth Leader will integrate stewardship education into the religious education curriculum for youth, as well as involve the youth, 7th - 12th grades, in the campaign activities, the campaign liturgies and the Commitment Weekend and Parish-Wide Event activities.</p>
+
+	<h3>Responsibilities:</h3>
+
+	<ul class="page_data" data-mercury="full">
+		<li>**Attend Leadership Team Training, Leadership Team Report Meetings and Youth Team Meetings, <strong><%= formatted_date(@campaign.event.youth_act_ldr_cons_mtg) %></strong></li>
+		<li>Attend Advance Commitment Gatherings</li>
+		<li><strong>Review your archdiocesan requirements for volunteers working with youth. Make sure that all volunteers and committee members have met those requirements before enlisting them for your committee.</strong></li>
+		<li>Develop youth resources and/or activities that could include teaching curriculum, drama, video projects, prayer resources, youth commitment opportunities, or any other creative way to create teachable moments for youth</li>
+		<li>The Children's Team (Grades K-6 or K-8), Youth Team (Grades 7-12 or 9-12), and Parish-Wide Event Team work both individually and together to provide a meaningful experience for the children, teenagers and adults. In the youth work of the campaign, you will want to:
+			<ul>
+				<li>Build a team, as necessary</li>
+				<li>Develop resources and/or activities to create conversations and teachable moments for the youth</li>
+				<li>Train teachers and youth ministry volunteers to lead activities</li>
+				<li>Create and manage, if requested, youth activities at the Parish-Wide Event</li>
+			</ul>
+		</li>
+		<li>Publicly support the campaign for the parish and archdiocese</li>
+		<li>Prayerfully consider a sacrificial, financial commitment to the campaign</li>
+	</ul>
+</div> <!-- END PAGE 1 -->
+
+<!-- PAGE 2 -->
+<div id="page_2" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br><br><br><br>
+	<div id="date_list" class="border-box-radius">
+		<h4>**MEETINGS YOU SHOULD ATTEND**</h4>
+
+		<div class="left-column">
+			<%= formatted_date(@campaign.event.leadership_team_trng) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_1) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %><br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %><br>
+			<%= formatted_date_to_tomorrow(@campaign.event.youth_invlvm_wknd_dates) %><br>
+			<%= formatted_date(@campaign.event.ac_gather_1) %><br>
+			<%= formatted_date_to_tomorrow(@campaign.event.weekend_4_dates) %>
+		</div>
+		
+		<div class="center-column">
+			<%= formatted_time(@campaign.event.leadership_team_trng) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_rpt_mtg_1) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_rpt_mtg_2) %><br>
+			<%= formatted_time(@campaign.event.leadership_team_rpt_mtg_3) %><br>
+			<br>
+			<%= formatted_time(@campaign.event.ac_gather_1) %><br>
+		</div>
+
+		<div id="list_data" class="right-column" data-mercury="full">
+			<span>Leadership Team Training</span><br>
+			<span>Leadership Team Report Meeting #1</span><br>
+			<span>Leadership Team Report Meeting #2</span><br>
+			Leadership Team Report Meeting #3<br>
+			<strong>Youth Involvement Weekend</strong><br>
+			Advance Commitment Gathering #1<br>
+			<strong>Commitment Weekend &amp; Parish-Wide Event</strong>
+		</div>
+	</div>
+	<br>
+	<h2>- Timetable For Completing Your Tasks -</h2>
+	<h3><%= formatted_date(@campaign.event.leadership_team_trng) %><br>
+	Leadership Team Training and Individual Team Meetings</h3>
+	<ul class="page_data" data-mercury="full">
+		<li>Attend Leadership Team Training - <strong><%= formatted_time(@campaign.event.leadership_team_trng) %></strong></li>
+		<li>Attend Youth Leader Training with your consultant</li>
+		<li>Review your workbook and place the dates and times of the meetings you will attend on your personal calendar</li>
+	</ul>
+	<br>
+	<div class="border-box">
+		<h3>Between Leadership Team Training and<br>
+			Leadership Team Report Meeting #1 on<br>
+			<%= formatted_date(@campaign.event.leadership_team_rpt_mtg_1) %>
+		</h3>
+		<ul class="box-data">
+			<li>Meet with parish Youth Leader(s) to discuss present youth activities in the parish and possible campaign activities (Appendix A)</li>
+			<li>Begin discussing and planning Income/Outgo Survey (Appendix D)</li>
+			<li>Begin discussing and planning Youth Involvement Masses</li>
+			<li>Begin discussing and planning a Youth Commitment Event</li>
+		</ul>
+	</div>
+</div> <!-- END PAGE 2 -->
+
+<!-- PAGE 3 -->
+<div id="page_3" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br><br>
+	<h2><%= formatted_date(@campaign.event.contact_team_asst_trng_1) %></h2>
+	<h3>Leadership Team Report #1 and Individual Team Meetings</h3>
+	<ul class="page_data">
+		<li>Attend Leadership Team Report Meeting #1 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_1) %></strong>
+			<ul>
+				<li>Report on progress and plans</li>
+			</ul>
+		</li>
+	</ul>
+	<br>
+	<div class="border-box">
+		<h3>Between Leadership Team Report #1 and<br>
+			Leadership Team Report #2 on <%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %>
+		</h3>
+		<ul class="page_data">
+			<li>Meeting and Team Building for Youth Team (Appendix B)</li>
+			<li>If you have decided to recruit team members, please inform the Involvement Leader whenever a new person joins your team</li>
+			<li>Check status of Parish-Wide Event—check with Parish-Wide Event Leader(s) and Parish Staff to determine the nature of these Masses and celebrations (Appendix A)</li>
+		</ul>
+	</div>
+	<br><br>
+	<h2><%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %></h2>
+	<h3>Leadership Team Report #2 and Individual Team Meetings</h3>
+	<ul class="page_data">
+		<li>Attend Leadership Team Report Meeting #2 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_2) %></strong>
+			<ul>
+				<li>Report on progress and plans</li>
+			</ul>
+		</li>
+	</ul>
+	<br><br>
+	<div class="border-box">
+		<h3>Between Leadership Team Report #2 and<br>
+			Leadership Team Report #3 on <%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %>
+		</h3>
+		<ul class="page_data">
+			<li>Finalize plans for Youth Involvement Weekend and Commitment/Parish-Wide Event Weekend (Appendix E)</li>
+			<li>Finalize plans for Youth Commitment Event</li>
+			<li>Complete Budget Worksheet. Give completed budget request to the appropriate parish staff person and to the Campaign Chair(s) for approval (Appendix C)</li>
+			<li>E-mail your calendar of activities and events to the Pastor, Campaign Chair(s), Campaign Administrator, and your Consultant</li>
+		</ul>
+	</div>
+</div> <!-- END PAGE 3 -->
+
+<!-- PAGE 4 -->
+<div id="page_4" class="print-page">
+	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+	<br>
+	<h2><%= formatted_date(@campaign.event.leadership_team_rpt_mtg_3) %></h2>
+	<h3>Leadership Team Report #3 and Individual Team Meetings</h3>
+	<ul class="page_data">
+		<li>Attend Leadership Team Report #3 - <strong><%= formatted_time(@campaign.event.leadership_team_rpt_mtg_3) %></strong>
+			<ul>
+				<li>Report on progress and plans</li>
+			</ul>
+		</li>
+	</ul>
+	<div class="border-box">
+		<h3 class="left">Following Leadership Team Report #3</h3>
+		<ul class="page_data">
+			<li>If you have not already done so, finalize plans for Youth Involvement Weekend and Parish-Wide Event Weekend</li>
+			<li>Attend Youth Involvement Weekend <strong><%= formatted_date_to_tomorrow(@campaign.event.youth_invlvm_wknd_dates) %></strong></li>
+		</ul>
+	</div>
+	<br>
+	<h2><%= formatted_datetime(@campaign.event.ac_gather_1) %></h2>
+	<h3>Advance Commitment Gathering</h3>
+	<ul class="page_data">
+		<li>Plan to attend Advance Commitment Gathering</li>
+	</ul>
+	<br>
+	<h2><%= formatted_date_to_tomorrow(@campaign.event.weekend_4_dates) %></h2>
+	<h3>Commitment Weekend</h3>
+	<ul class="page_data">
+		<li>Plan to attend Mass this weekend. Do not neglect the privilege of worshiping this week! If you have not done so, prayerfully complete your commitment card</li>
+		<li>Continue to support your parish and the campaign in your own prayers</li>
+	</ul>
+	<br>
+	<h2><%= formatted_date_to_tomorrow(@campaign.event.celebration_mass_dates) %></h2>
+	<h3>Attend a Celebration Weekend Mass</h3>
+	<h5><em>"Thank you for making a difference in the life of your parish and in the success of this campaign."</em></h5>
+</div> <!-- END PAGE 4 -->

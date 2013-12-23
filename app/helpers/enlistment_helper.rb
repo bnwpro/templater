@@ -1,0 +1,2 @@
+module EnlistmentHelper
+end

@@ -1,0 +1,66 @@
+class AddColumnsToEvents < ActiveRecord::Migration
+  def change
+    add_column :events, :leadership_team_trng, :datetime
+    add_column :events, :campaign_admin_trng, :datetime
+    add_column :events, :involvement_ldr_trng, :datetime
+    add_column :events, :pastor_cmp_mtg_1, :datetime
+    add_column :events, :prayer_ldr_trng, :datetime
+    add_column :events, :print_vis_comm_mtg_1, :datetime
+    add_column :events, :event_ldr_trng, :datetime
+    add_column :events, :childrens_act_ldr_trng, :datetime
+    add_column :events, :contact_ldr_trng, :datetime
+    add_column :events, :info_ldr_trng, :datetime
+    add_column :events, :youth_act_ldr_cons_mtg, :datetime
+    add_column :events, :ac_mtg_1, :datetime
+    add_column :events, :pacesetter_gift_pln_mtg_1, :datetime
+    add_column :events, :intro_ldrshp_team_dates, :date
+    add_column :events, :leadership_team_rpt_mtg_1, :datetime
+    add_column :events, :pastor_cmp_mtg_2, :datetime
+    add_column :events, :print_vis_comm_mtg_2, :datetime
+    add_column :events, :contact_team_asst_trng_1, :datetime
+    add_column :events, :contact_team_asst_trng_2, :datetime
+    add_column :events, :ac_mtg_2, :datetime
+    add_column :events, :pacesetter_gift_pln_mtg_2, :datetime
+    add_column :events, :leadership_team_rpt_mtg_2, :datetime
+    add_column :events, :pastor_cmp_mtg_3, :datetime
+    add_column :events, :contact_team_trng_1, :datetime
+    add_column :events, :contact_team_trng_2, :datetime
+    add_column :events, :contact_team_trng_3, :datetime
+    add_column :events, :info_team_trng_1, :datetime
+    add_column :events, :info_team_trng_2, :datetime
+    add_column :events, :ac_mtg_3, :datetime
+    add_column :events, :pacesetter_gift_pln_mtg_3, :datetime
+    add_column :events, :leadership_team_rpt_mtg_3, :datetime
+    add_column :events, :follow_up_mtg, :datetime
+    add_column :events, :ac_host_orient, :datetime
+    add_column :events, :commit_wknd_mtg_pas_cons, :datetime
+    add_column :events, :pacesetter_gift_rpt_mtg, :datetime
+    add_column :events, :leadership_team_rpt_mtg_4, :datetime
+    add_column :events, :information_act_dates, :date
+    add_column :events, :weekend_1_dates, :date
+    add_column :events, :weekend_2_dates, :date
+    add_column :events, :ac_gather_1, :datetime
+    add_column :events, :ac_gather_2, :datetime
+    add_column :events, :ac_gather_3, :datetime
+    add_column :events, :ac_gather_4, :datetime
+    add_column :events, :youth_invlvm_wknd_dates, :date
+    add_column :events, :youth_commt_event, :date
+    add_column :events, :weekend_3_dates, :date
+    add_column :events, :weekend_4_dates, :date
+    add_column :events, :parish_wide_event_dates, :date
+    add_column :events, :celebration_mass_dates, :date
+    add_column :events, :mail_fact_sheet, :date
+    add_column :events, :mail_rmng_info_pkts, :date
+    add_column :events, :mail_ac_invt, :date
+    add_column :events, :mail_newsletter, :date
+    add_column :events, :mail_spc_event_invt, :date
+    add_column :events, :mail_commt_card, :date
+    add_column :events, :setup_info_booth, :date
+    add_column :events, :info_calls_dates, :date
+    add_column :events, :special_event_calls_dates, :date
+    add_column :events, :celebration_wknd_calls_dates, :date
+    add_column :events, :ac_res_calls_dates, :date
+    
+    add_index :events, :campaign_id
+  end
+end

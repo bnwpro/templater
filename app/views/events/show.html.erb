@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= formatted_datetime(@event.date) %>
+</p>
+
+<p>
+  <strong>Campaign:</strong>
+  <%= @campaign.name %>
+</p>
+
+<%= link_to 'Edit', edit_user_campaign_event_path(@user, @campaign, @event) %> |
+<%= link_to 'Back', user_campaign_events_path(@user, @campaign) %>

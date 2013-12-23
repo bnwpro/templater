@@ -1,0 +1,50 @@
+<tbody>
+  <tr>
+	  <td><%= subtract(@campaign.number_of_families, @gift_profile.t1_gifts_1) %></td>
+	  <td><%= f.number_field :t1_gifts_1, :min => 0 %></td>
+	  <td><%= f.number_field :t1_gift_amount_1, :min => 0 %></td>
+	  <td><%= number_to_currency(multiply(@gift_profile.t1_gifts_1, @gift_profile.t1_gift_amount_1)) %></td>
+	  <td><%= number_to_currency(total(@running_total)) %></td>
+  </tr>
+  <tr>
+	  <td><%= subtract(@families_total, @gift_profile.t1_gifts_2) %></td>
+	  <td><%= f.number_field :t1_gifts_2, :min => 0 %></td>
+	  <td><%= f.number_field :t1_gift_amount_2, :min => 0 %></td>
+	  <td><%= number_to_currency(multiply(@gift_profile.t1_gifts_2, @gift_profile.t1_gift_amount_2)) %></td>
+	  <td><%= number_to_currency(total(@running_total, @cumulative_total)) %></td>
+  </tr>
+  <tr>
+	  <td><%= subtract(@families_total, @gift_profile.t1_gifts_3) %></td>
+	  <td><%= f.number_field :t1_gifts_3, :min => 0 %></td>
+	  <td><%= f.number_field :t1_gift_amount_3, :min => 0 %></td>
+	  <td><%= number_to_currency(multiply(@gift_profile.t1_gifts_3, @gift_profile.t1_gift_amount_3)) %></td>
+	  <td><%= number_to_currency(total(@running_total, @cumulative_total)) %></td>
+  </tr>
+  <tr>
+	  <td><%= subtract(@families_total, @gift_profile.t1_gifts_4) %></td>
+	  <td><%= f.number_field :t1_gifts_4, :min => 0 %></td>
+	  <td><%= f.number_field :t1_gift_amount_4, :min => 0 %></td>
+	  <td><%= number_to_currency(multiply(@gift_profile.t1_gifts_4, @gift_profile.t1_gift_amount_4)) %></td>
+	  <td><%= number_to_currency(total(@running_total, @cumulative_total)) %></td>
+  </tr>
+  <tr>
+	  <td><%= subtract(@families_total, @gift_profile.t1_gifts_5) %></td>
+	  <td><%= f.number_field :t1_gifts_5, :min => 0 %></td>
+	  <td><%= f.number_field :t1_gift_amount_5, :min => 0 %></td>
+	  <td><%= number_to_currency(multiply(@gift_profile.t1_gifts_5, @gift_profile.t1_gift_amount_5)) %></td>
+	  <td><%= number_to_currency(total(@running_total, @cumulative_total)) %></td>
+  </tr>
+  <tr>
+	  <td><%= subtract(@families_total, @gift_profile.t1_gifts_6) %></td>
+	  <td><%= f.number_field :t1_gifts_6, :min => 0 %></td>
+	  <td><%= f.number_field :t1_gift_amount_6, :min => 0 %></td>
+	  <td><%= number_to_currency(multiply(@gift_profile.t1_gifts_6, @gift_profile.t1_gift_amount_6)) %></td>
+	  <td><%= number_to_currency(total(@running_total, @cumulative_total)) %></td>
+  </tr>
+  <tr>
+	  <td></td>
+	  <td><strong><%= @tier_1_gifts.sum %></strong> Commitments = </td>
+	  <td><%= number_to_currency(commitments(@tier_1_gifts, @tier_1_total_amount)) %> &nbsp;&nbsp;&nbsp;or</td>
+	  <td><strong><%= percent(commitments(@tier_1_gifts, @tier_1_total_amount)) %></strong> of Goal</td>
+  </tr>
+</tbody>
