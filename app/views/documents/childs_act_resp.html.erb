@@ -2,14 +2,14 @@
 <p id="notice"><%= notice %></p>
 
 <!-- PAGE 1 -->
-<div id="page_1" class="print-page">
-	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+<div id="page_1" class="print-page" data-mercury="full">
+	<hr><%= image_tag get_image_path, :alt => 'logo', :class => 'logo' %>
 	<h2>CHILDREN'S ACTIVITY LEADER</h2>
 	<p>The Children's Activity Leader has the opportunity to work with the elementary-age children of the parish. With your Pastor, Religious Education Leaders, Parish School personnel (if applicable) and the Campaign Chairs, you will help children understand stewardship and grow in their Catholic faith.</p>
 
 	<h3>Responsibilities:</h3>
 
-	<ul class="page_data" data-mercury="full">
+	<ul class="page_data">
 		<li>Attend Leadership Team Training, Leadership Team Report meetings and Children's Team Planning Meeting</li>
 		<li>Attend Advance Commitment Gatherings</li>
 		<li><strong>Review your archdiocesan requirements for volunteers working with children. Make sure that all volunteers and committee members have met those requirements before enlisting them for your committee.</strong></li>
@@ -48,7 +48,7 @@
 			<%= formatted_time(@campaign.event.ac_gather_1) %><br>
 		</div>
 
-		<div id="list_data" class="right-column" data-mercury="full">
+		<div id="list_data" class="right-column">
 			<span>Leadership Team Training</span><br>
 			<span>Leadership Team Report Meeting #1</span><br>
 			<span>Contact Team Training</span><br>
@@ -61,13 +61,13 @@
 </div> <!-- END PAGE 1 -->
 
 <!-- PAGE 2 -->
-<div id="page_2" class="print-page">
-	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+<div id="page_2" class="print-page" data-mercury="full">
+	<hr><%= image_tag get_image_path, :alt => 'logo', :class => 'logo' %>
 	<h2>- Timetable For Completing Your Tasks -</h2>
 	<br>
 	<h3><%= formatted_date(@campaign.event.leadership_team_trng) %><br>
 	Leadership Team Training and Individual Team Meetings</h3>
-	<ul class="page_data" data-mercury="full">
+	<ul class="page_data">
 		<li>Attend Leadership Team Training - <strong><%= formatted_time(@campaign.event.leadership_team_trng) %></strong></li>
 		<li>Review your workbook and place the dates and times of the meetings you will attend on your personal calendar</li>
 		<li>Begin enlisting your assistants using the Involvement Form by selecting names from the master list of parishioners</li>
@@ -103,8 +103,8 @@
 </div> <!-- END PAGE 2 -->
 
 <!-- PAGE 3 -->
-<div id="page_3" class="print-page">
-	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+<div id="page_3" class="print-page" data-mercury="full">
+	<hr><%= image_tag get_image_path, :alt => 'logo', :class => 'logo' %>
 	<br><br><br>
 	<div class="border-box">
 		<h3>Between Leadership Team Report #1 and<br>
@@ -153,8 +153,8 @@
 </div> <!-- END PAGE 3 -->
 
 <!-- PAGE 4 -->
-<div id="page_4" class="print-page">
-	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+<div id="page_4" class="print-page" data-mercury="full">
+	<hr><%= image_tag get_image_path, :alt => 'logo', :class => 'logo' %>
 	<br><br><br>
 	<div class="border-box">
 		<h3 class="left">Following Leadership Team Report #3</h3>

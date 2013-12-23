@@ -2,8 +2,8 @@
 <p id="notice"><%= notice %></p>
 
 <!-- PAGE 1 -->
-<div id="page_1" class="print-page">
-	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+<div id="page_1" class="print-page" data-mercury="full">
+	<hr><%= image_tag get_image_path, :alt => 'logo', :class => 'logo' %>
 	<h2>VISUAL COMMUNICATIONS LEADER</h2>
 	<p>The Visual Communications Leader is responsible for creating and producing a visual presentation to be used in the campaign. An archdiocesan visual presentation may or may not be available. Please check with your Consultant.</p>
 	<p>The strategy and process for producing a parish-based visual presentation is outlined in the Visual Communications Resource Guide provided by your Consultant. If you do not have such a guide, immediately request one through your Consultant. There is also a resource DVD that includes several sample DVD presentations from other parish campaigns.</p>
@@ -11,7 +11,7 @@
 
 	<h3>Responsibilities:</h3>
 
-	<ul class="page_data" data-mercury="full">
+	<ul class="page_data">
 		<li>Attend Leadership Team Training, Leadership Team Report meetings and Print/Visual Communications meetings</li>
 		<li>Attend Advance Commitment Gatherings</li>
 		<li>As Visual Communications Leader, you will want to accomplish the following:
@@ -29,8 +29,8 @@
 </div> <!-- END PAGE 1 -->
 
 <!-- PAGE 2 -->
-<div id="page_2" class="print-page">
-	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+<div id="page_2" class="print-page" data-mercury="full">
+	<hr><%= image_tag get_image_path, :alt => 'logo', :class => 'logo' %>
 	<br><br><br><br><br>
 	<div id="date_list" class="border-box-radius">
 		<h4>**MEETINGS YOU SHOULD ATTEND**</h4>
@@ -56,7 +56,7 @@
 			<%= formatted_time(@campaign.event.ac_gather_1) %><br>
 		</div>
 
-		<div id="list_data" class="right-column" data-mercury="full">
+		<div id="list_data" class="right-column">
 			<span>Print and Visual Communications Training</span><br>
 			<span>Leadership Team Training</span><br>
 			<span>Print and Visual Communications Meeting</span><br>
@@ -71,7 +71,7 @@
 	<h2>- Timetable For Completing Your Tasks -</h2>
 	<h3><%= formatted_date(@campaign.event.leadership_team_trng) %><br>
 	Leadership Team Training and Individual Team Meetings</h3>
-	<ul class="page_data" data-mercury="full">
+	<ul class="page_data">
 		<li>Attend Print and Visual Communications Training with your consultant - <strong><%= formatted_time(@campaign.event.print_vis_comm_mtg_1) %></strong></li>
 		<li>Review responsibilities and tasks of your position</li>
 		<li>Review your workbook and place the dates and times of the meetings you will attend on your personal calendar</li>
@@ -83,8 +83,8 @@
 </div> <!-- END PAGE 2 -->
 
 <!-- PAGE 3 -->
-<div id="page_3" class="print-page">
-	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+<div id="page_3" class="print-page" data-mercury="full">
+	<hr><%= image_tag get_image_path, :alt => 'logo', :class => 'logo' %>
 	<br><br><br>
 	<div class="border-box">
 		<h3>Between Leadership Team Training and<br>
@@ -125,8 +125,8 @@
 </div> <!-- END PAGE 3 -->
 
 <!-- PAGE 4 -->
-<div id="page_4" class="print-page">
-	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+<div id="page_4" class="print-page" data-mercury="full">
+	<hr><%= image_tag get_image_path, :alt => 'logo', :class => 'logo' %>
 	<br><br><br>
 	<div class="border-box">
 		<h3>Between Leadership Team Report #1 and<br>
@@ -168,8 +168,8 @@
 </div> <!-- END PAGE 4 -->
 
 <!-- PAGE 5 -->
-<div id="page_5" class="print-page">
-	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+<div id="page_5" class="print-page" data-mercury="full">
+	<hr><%= image_tag get_image_path, :alt => 'logo', :class => 'logo' %>
 	<br><br><br>
 	<div class="border-box">
 		<h3 class="left">Be Prepared to Utilize the Visual Production as Part of the<br>

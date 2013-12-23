@@ -60,7 +60,8 @@ class DocumentsController < ApplicationController
           :page_size                      => 'A4',
           :lowquality                     => false,
           :formats                        => :html,
-          :footer                         => {:content => render_to_string(:template => 'documents/footer.pdf.erb')}
+          #:margin                         => { :right => 20 },
+          :footer                         => {:content => render_to_string(:template => 'documents/footer.pdf.erb'), :right => '[page]' }
           #Manual.new.to_pdf(user, campaign)
       end
       format.js

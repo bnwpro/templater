@@ -2,8 +2,8 @@
 <p id="notice"><%= notice %></p>
 
 <!-- PAGE 1 -->
-<div id="page_1" class="print-page">
-	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+<div id="page_1" class="print-page" data-mercury="full">
+	<hr><%= image_tag get_image_path, :alt => 'logo', :class => 'logo' %>
 	<h2>EVENT LEADER</h2>
 	<p>The Event Leader plans the Advance Commitment Gathering and plans and hosts the parish-wide event(s) as well as decorates the location of the Parish-Wide Event for the campaign. The event may be for the following purposes:
 		<ul>
@@ -16,7 +16,7 @@
 
 	<h3>Responsibilities:</h3>
 
-	<ul class="page_data" data-mercury="full">
+	<ul class="page_data">
 		<li>Attend Leadership Team Training, Leadership Team Report Meetings and Parish-Wide Event Planning Meetings</li>
 		<li>Attend Advance Commitment Gatherings</li>
 		<li>Enlist a team of people who will help:
@@ -54,7 +54,7 @@
 			<%= formatted_time(@campaign.event.ac_gather_1) %><br>
 		</div>
 
-		<div id="list_data" class="right-column" data-mercury="full">
+		<div id="list_data" class="right-column">
 			<span>Leadership Team Training</span><br>
 			<span>Leadership Team Report Meeting #1</span><br>
 			<span>Contact Team Training</span><br>
@@ -67,13 +67,13 @@
 </div> <!-- END PAGE 1 -->
 
 <!-- PAGE 2 -->
-<div id="page_2" class="print-page">
-	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+<div id="page_2" class="print-page" data-mercury="full">
+	<hr><%= image_tag get_image_path, :alt => 'logo', :class => 'logo' %>
 	<h2>- Timetable For Completing Your Tasks -</h2>
 	<br>
 	<h3><%= formatted_date(@campaign.event.leadership_team_trng) %><br>
 	Leadership Team Training and Individual Team Meetings</h3>
-	<ul class="page_data" data-mercury="full">
+	<ul class="page_data">
 		<li>Attend Leadership Team Training - <strong><%= formatted_time(@campaign.event.leadership_team_trng) %></strong></li>
 		<li>Get names from the Master Involvement List so you can begin enlisting you team</li>
 		<li>Review your workbook and place the dates and times of the meetings you will attend
@@ -105,8 +105,8 @@ on your personal calendar</li>
 </div> <!-- END PAGE 2 -->
 
 <!-- PAGE 3 -->
-<div id="page_3" class="print-page">
-	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+<div id="page_3" class="print-page" data-mercury="full">
+	<hr><%= image_tag get_image_path, :alt => 'logo', :class => 'logo' %>
 	<br><br><br>
 	<div class="border-box">
 		<h3>Between Leadership Team Report #1 and<br>
@@ -150,8 +150,8 @@ on your personal calendar</li>
 </div> <!-- END PAGE 3 -->
 
 <!-- PAGE 4 -->
-<div id="page_4" class="print-page">
-	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+<div id="page_4" class="print-page" data-mercury="full">
+	<hr><%= image_tag get_image_path, :alt => 'logo', :class => 'logo' %>
 	<br><br><br>
 	<h2><%= formatted_date(@campaign.event.leadership_team_rpt_mtg_2) %></h2>
 	<h3>Leadership Team Report #2 and Individual Team Meetings</h3>
@@ -198,8 +198,8 @@ on your personal calendar</li>
 </div> <!-- END PAGE 4 -->
 
 <!-- PAGE 5 -->
-<div id="page_5" class="print-page">
-	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+<div id="page_5" class="print-page" data-mercury="full">
+	<hr><%= image_tag get_image_path, :alt => 'logo', :class => 'logo' %>
 	<br><br><br>
 	<div class="border-box">
 		<h3>Between Leadership Team Report #3 and<br>
@@ -245,8 +245,8 @@ on your personal calendar</li>
 </div> <!-- END PAGE 4 -->
 
 <!-- PAGE 5 -->
-<div id="page_5" class="print-page">
-	<hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :class => 'logo' %>
+<div id="page_5" class="print-page" data-mercury="full">
+	<hr><%= image_tag get_image_path, :alt => 'logo', :class => 'logo' %>
 	<br><br><br>
 	<h2><%= formatted_date_to_tomorrow(@campaign.event.weekend_4_dates) %></h2>
 	<h3>Commitment Weekend</h3>

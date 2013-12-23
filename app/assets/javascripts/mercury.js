@@ -365,7 +365,7 @@ window.Mercury = {
     // you can add classes to links or forms that you don't want this behavior added to.  Let's say you have links that
     // open a lightbox style window, and you don't want the targets of these to be set to _parent.  You can add classes
     // to this array, and they will be ignored when the hijacking is applied.
-    nonHijackableClasses: [],
+    nonHijackableClasses: ['mercury-ignored'],
 
 
     // ## Pasting & Sanitizing
@@ -451,14 +451,15 @@ window.Mercury = {
   debug: false
 
 };
+var logo;
 $(window).on('mercury:ready', function() {
   var edit_link = $('#mercury_iframe').contents().find('#edit_link');
   var data_entry_link = $('#mercury_iframe').contents().find('#data_entry_link');
   var to_pdf_link = $('#mercury_iframe').contents().find('#to_pdf');
-  var logo = $('#mercury_iframe').contents().find('.logo');
+  logo = $('#mercury_iframe').contents().find('.logo');
   edit_link.hide();
   to_pdf_link.hide();
-  logo.hide()
+  //logo.hide()
   data_entry_link.text('Cancel/Back');
   $(data_entry_link).click(function(){
       parent.history.back();
@@ -468,8 +469,9 @@ $(window).on('mercury:ready', function() {
 });
 
 $(window).on('mercury:saved', function() {
-	var logo = $('#mercury_iframe').contents().find('.logo');
-	logo.show();
+	//var logo = $('#mercury_iframe').contents().find('.logo');
+	$('.print-page img').remove();
+	$('.print-page hr').append(logo);
   //window.location = window.location.href.replace(/\/editor\//i, '/');
   Mercury.trigger('action', {action: 'exit'});
 });

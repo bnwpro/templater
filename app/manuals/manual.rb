@@ -46,6 +46,7 @@ class Manual < Prawn::Document
     #create_worksheets(worksheets_en)
     # TEMP
     #create_single_addendum(addendums_en)
+    
   end
   
   private
