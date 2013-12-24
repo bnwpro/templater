@@ -17,27 +17,41 @@ class DocumentsController < ApplicationController
   def generate
     user = @user
     campaign = @campaign
-    Document.first_two_only.each do |title|
-      name = "documents/"  + title
-      save_file = name.split('/')[-1]
-      respond_to do |format|
-        format.pdf do
-          render :pdf                       => title, #page name
-            :file                           => name,
-            #:layout                         => 'documents',
-            :disposition                    => 'attachment',
-            :save_to_file                   => Rails.root.join("pdfs/campaign_docs/#{campaign.id}/resp", "#{save_file}.pdf"),
-            :save_only                      => true,
-            :disable_internal_links         => true,
-            :disable_external_links         => true,
-            :page_size                      => 'A4',
-            :lowquality                     => false,
-            :formats                        => :html
-        end #end format.pdf
-      end  #end respond_to
-      # Insert code to refresh/updtae Saved PDF listing
-    end  #end Document.each
-    #Manual.new.to_pdf(user, campaign)
+    pdf_root_dir = "pdfs/campaign_docs"
+    campaign_root_dir = "pdfs/campaign_docs/#{campaign.id}"
+    resp_doc_dir = "pdfs/campaign_docs/#{campaign.id}/resp"
+    Dir.mkdir(pdf_root_dir) unless File.exists?(pdf_root_dir)
+    Dir.mkdir(campaign_root_dir) unless File.exists?(campaign_root_dir)
+    Dir.mkdir(resp_doc_dir) unless File.exists?(resp_doc_dir)
+    if File.exist?("#{doc_root_dir}/block_calendar.pdf")
+      Document.resp_doc.each do |title|
+        name = "documents/"  + title
+        save_file = name.split('/')[-1]
+        respond_to do |format|
+          format.pdf do
+            render :pdf                       => title, #page name
+              :file                           => name,
+              #:layout                         => 'documents',
+              :disposition                    => 'attachment',
+              :save_to_file                   => Rails.root.join("pdfs/campaign_docs/#{campaign.id}/resp", "#{save_file}.pdf"),
+              :save_only                      => true,
+              :disable_internal_links         => true,
+              :disable_external_links         => true,
+              :page_size                      => 'A4',
+              :lowquality                     => false,
+              :formats                        => :html,
+              :footer                         => { :right => "__________________________________________________________   #{save_file}onsibility - [page]" }
+          end #end format.pdf
+          #format.js
+        end  #end respond_to
+        #format.js
+        # Insert code to refresh/updtae Saved PDF listing
+      end  #end Document.each
+      Manual.new.to_pdf(user, campaign)
+    else
+      #flash[:notice] = "Block Calendar has not been uploaded.  Please upload your Block Calendar to continue."}
+      return
+    end
   end  #end generate
   
   def show
@@ -60,8 +74,8 @@ class DocumentsController < ApplicationController
           :page_size                      => 'A4',
           :lowquality                     => false,
           :formats                        => :html,
-          #:margin                         => { :right => 20 },
-          :footer                         => {:content => render_to_string(:template => 'documents/footer.pdf.erb'), :right => '[page]' }
+          :footer                         => { :right => "__________________________________________________________   #{save_file}onsibility - [page]" }
+          #:footer                         => {:content => render_to_string(:template => 'documents/footer.pdf.erb'), :center => '[page]' }
           #Manual.new.to_pdf(user, campaign)
       end
       format.js

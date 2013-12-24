@@ -11,11 +11,12 @@ jQuery(window).on('mercury:saved', function() {
   /*$('#to_pdf').show();
   link.show();*/
 });
+
 $(document).ready(function() {
 	var clone;
 	$('#add-page').click(function(e) {
 		e.preventDefault();
-		var new_page = $("<div id='page_6' class='print-page'><hr><%= wicked_pdf_image_tag 'logo_bw.png', :alt => 'logo', :id => 'logo' %></div>");
+		var new_page = $("<div id='page_6' class='print-page'><hr><%= image_tag get_image_path, :alt => 'logo', :id => 'logo' %></div>");
 		$(".print-page").last().append(new_page);
 		clone = $(".print-page").last().clone();
 	})
@@ -28,5 +29,12 @@ $(document).ready(function() {
 	$('#undo').click(function(e) {
 		e.preventDefault();
 		$(clone).add().appendTo(document.body);
+	})
+	
+	$('#to_pdf').on('ajax:success', function(e, data, staus, hxr) {
+		//var loc = window.location;
+		//var trim_url = loc.match(/^\/./);
+		//alert(window.location);
+		alert('PDF for this Responsibility document Saved!');
 	})
 })

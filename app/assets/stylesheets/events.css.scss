@@ -14,14 +14,20 @@
 }
 #resp-links {
 	float: left;
-	width: 50%;
+	width: 40%;
 }
 #pdf-links {
 	float:right;
+	width: 6%;
 }
 .saved {
 	float: left;
 	color: green;
 	font-weight: bold;
 	margin-right: 2em;
+}
+#progress-bar {
+	visibility: hidden;
+	width: 10px;
+	float: left;
 }

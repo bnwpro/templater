@@ -39,7 +39,7 @@
 				<% end %></h3>
 			<div id="resp-links">
 				<% if File.exist?("pdfs/campaign_docs/#{@campaign.id}/ac_resp.pdf") %>
-					<span class="saved">PDF Saved!</span>
+					<span class="saved">Saved!</span>
 				<% end %>
 				<%= link_to 'Advance Commitment', user_campaign_event_document_path(@user, @campaign, @event, 'ac_resp') %><br>
 				<%= link_to 'Campaign Admin', user_campaign_event_document_path(@user, @campaign, @event, 'cadmin_resp') %><br>
@@ -58,14 +58,24 @@
 				<%= link_to "Youth", user_campaign_event_document_path(@user, @campaign, @event, 'youth_resp') %><br>
 			</div>
 			<div class="pdf-links">
-				<%= link_to "Generate Manuals", documents_user_campaign_path(:user_id => @user.id, :campaign_id => @campaign.id, :id => @campaign.id, :format => 'pdf', :remote => true), :controller => "documents", :action => "generate", :format => 'pdf', id: "to_pdf", :remote => true %>
-				<br>
-				<% if show_pdfs_if_exist %>
-					<% @files.each do |path| %>
-					  <li><a href="<%= path %>">
-					  	<%= File.basename path %></a>
+				<div class="row">
+					<div class="small-3 columns">
+						<%= link_to "Generate Manuals", documents_user_campaign_path(:user_id => @user.id, :campaign_id => @campaign.id, :id => @campaign.id, :format => 'pdf', :remote => true), :controller => "documents", :action => "generate", :format => 'pdf', id: "to_pdf", :class => 'button small', :remote => true %>
+					</div>
+					<div class="small-4 columns">
+						<div class="progress round" id="progress-bar">
+							<span class="meter"></span>
+						</div>
+					</div>
+					<br><br>
+					<% if show_pdfs_if_exist %>
+						<% @files.each do |path| %>
+						  <li><a href="<%= path %>">
+						  	<%= File.basename path %></a>
+						<% end %>
 					<% end %>
-				<% end %>
+				</div>
+				
 			</div>
 	  	</div>
 	</div>
