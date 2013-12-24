@@ -23,7 +23,7 @@ class DocumentsController < ApplicationController
     Dir.mkdir(pdf_root_dir) unless File.exists?(pdf_root_dir)
     Dir.mkdir(campaign_root_dir) unless File.exists?(campaign_root_dir)
     Dir.mkdir(resp_doc_dir) unless File.exists?(resp_doc_dir)
-    if File.exist?("#{doc_root_dir}/block_calendar.pdf")
+    if File.exist?("#{campaign_root_dir}/block_calendar.pdf")
       Document.resp_doc.each do |title|
         name = "documents/"  + title
         save_file = name.split('/')[-1]

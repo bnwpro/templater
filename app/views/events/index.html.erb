@@ -67,20 +67,26 @@
 							<span class="meter"></span>
 						</div>
 					</div>
-					<br><br>
-					<% if show_pdfs_if_exist %>
-						<% @files.each do |path| %>
-						  <li><a href="<%= path %>">
-						  	<%= File.basename path %></a>
-						<% end %>
-					<% end %>
-				</div>
+				</div> <!-- END row -->
 				
-			</div>
-	  	</div>
-	</div>
+				<div class="row">
+					<div class="small-6 columns">
+						<br>
+						<% if show_pdfs_if_exist %>
+							<h3>PDF Manuals:</h3>
+							<% @files.each do |path| %>
+							  <li><a href="<%= path %>">
+							  	<%= File.basename path %></a>
+							<% end %>
+						<% end %>
+					</div>
+				</div> <!-- END row -->
+			</div> <!-- END "pdf-links" -->
+			
+	  	</div> <!-- END "document-link" -->
+	</div> <!-- END "small-10 pull-2 columns" -->
 	
-</div>
+</div> <!-- END row -->
 
 <%-# link_to 'Back', user_campaigns_path(@user) -%>
 <%-# link_to 'New Event', new_user_campaign_event_path(@user, @campaign) -%>

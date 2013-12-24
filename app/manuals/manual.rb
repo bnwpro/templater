@@ -49,8 +49,10 @@ class Manual < Prawn::Document
   
   private
   #TEMP Single Page function
-  def create_cover_page
-    Prawn::Document.generate("pdfs/cover_pages/AC.pdf", {:page_size => 'A4', :skip_page_creation => true}) do |pdf|
+  def create_master_program_manual(save_dir)
+    appendices_dir = "pdfs/templates/appendices"
+    manual_save_dir = save_dir+'/manuals'
+    Prawn::Document.generate("#{manual_save_dir}/Program Manager's Manual.pdf", {:page_size => 'A4', :skip_page_creation => true}) do |pdf|
       pdf.start_new_page(:template => "pdfs/templates/intro_pages/1_cover.pdf")
       pdf.fill_color "000000"
       pdf.bounding_box([100, 600], :width => 375) do
@@ -58,11 +60,73 @@ class Manual < Prawn::Document
         pdf.move_down 40
         pdf.text "#{campaign.city}, #{campaign.state}", :size => 24, :style => :normal, :align => :center
         pdf.move_down 40
-        pdf.text "Advance Commitment Leader Guide", :size => 32, :style => :bold, :align => :center
+        pdf.text "Master Program Manual", :size => 32, :style => :bold, :align => :center
       end
-      get_template_to_merge(pdf, "pdfs/campaign_docs/#{@campaign.id}/common_pages.pdf")
+      get_template_to_merge(pdf, "#{save_dir}/common_pages.pdf")
+      # "Advance Commitment Guide"
+      get_template_to_merge(pdf, "#{save_dir}/resp/ac_resp.pdf")
+      get_template_to_merge(pdf, "#{appendices_dir}/ac.pdf")
+      get_template_to_merge(pdf, "#{appendices_dir}/common/giving_potential.pdf")
+      add_giving_potential_data(pdf)
+      # "Campaign Administrator Guide"
+      get_template_to_merge(pdf, "#{save_dir}/resp/cadmin_resp.pdf")
+      get_template_to_merge(pdf, "#{appendices_dir}/cadmin_to_ws1.pdf")
+      add_cadmin_ws1_data(pdf)
+      get_template_to_merge(pdf, "#{appendices_dir}/cadmin_ws1_to_ws2.pdf")
+      add_cadmin_ws2_data(pdf)
+      get_template_to_merge(pdf, "#{appendices_dir}/cadmin_ws3.pdf")
+      add_cadmin_ws3_data(pdf)
+      get_template_to_merge(pdf, "#{appendices_dir}/cadmin_ws3_to_ws4.pdf")
+      add_cadmin_ws4_data(pdf)
+      get_template_to_merge(pdf, "#{appendices_dir}/cadmin_ws5.pdf")
+      add_cadmin_ws5_data(pdf)
+      get_template_to_merge(pdf, "#{appendices_dir}/cadmin_to_end.pdf")
+    # "Campaign Chair Guide"
+      get_template_to_merge(pdf, "#{save_dir}/resp/chair_resp.pdf")
+      get_template_to_merge(pdf, "#{appendices_dir}/chair.pdf")
+      get_template_to_merge(pdf, "#{appendices_dir}/common/giving_potential.pdf")
+      add_giving_potential_data(pdf)
+    # "Children Activity Leader Guide"
+      get_template_to_merge(pdf, "#{save_dir}/resp/childs_act_resp.pdf")
+      get_template_to_merge(pdf, "#{appendices_dir}/childs_act.pdf")
+    # "Contact Leader Guide"
+      get_template_to_merge(pdf, "#{save_dir}/resp/contact_resp.pdf")
+    # "Event Leader Guide"
+      get_template_to_merge(pdf, "#{save_dir}/resp/event_resp.pdf")
+      get_template_to_merge(pdf, "#{appendices_dir}/event.pdf")
+    # "Follow Up Leader Guide"
+      get_template_to_merge(pdf, "#{save_dir}/resp/follow_resp.pdf")
+      get_template_to_merge(pdf, "#{appendices_dir}/follow.pdf")
+    # "Information Leader Guide"
+      get_template_to_merge(pdf, "#{save_dir}/resp/info_resp.pdf")
+      get_template_to_merge(pdf, "#{appendices_dir}/info.pdf")
+    # "Involvement Leader Guide"
+      get_template_to_merge(pdf, "#{save_dir}/resp/involve_resp.pdf")
+    # "Pacesetter Leader Guide"
+      get_template_to_merge(pdf, "#{save_dir}/resp/pacesetter_resp.pdf")
+      get_template_to_merge(pdf, "#{appendices_dir}/pacesetter.pdf")
+      get_template_to_merge(pdf, "#{appendices_dir}/common/giving_potential.pdf")
+      add_giving_potential_data(pdf)
+    # "Pastor Guide"
+      get_template_to_merge(pdf, "#{save_dir}/resp/pastor_resp.pdf")
+      get_template_to_merge(pdf, "#{appendices_dir}/pastor.pdf")
+      get_template_to_merge(pdf, "#{appendices_dir}/common/giving_potential.pdf")
+      add_giving_potential_data(pdf)
+    # "Prayer Leader Guide"
+      get_template_to_merge(pdf, "#{save_dir}/resp/prayer_resp.pdf")
+      get_template_to_merge(pdf, "#{appendices_dir}/prayer.pdf")
+    # "Print Leader Guide"
+      get_template_to_merge(pdf, "#{save_dir}/resp/print_resp.pdf")
+    # "Visual Communications Leader Guide"
+      get_template_to_merge(pdf, "#{save_dir}/resp/visual_resp.pdf")
+      get_template_to_merge(pdf, "#{appendices_dir}/visual.pdf")
+    # "Youth Leader Guide"
+      get_template_to_merge(pdf, "#{save_dir}/resp/youth_resp.pdf")
+      get_template_to_merge(pdf, "#{appendices_dir}/youth.pdf")
     end
+    FileUtils.rm_rf(save_dir+'/resp')
   end
+  
   def create_cover_pages(manual_titles, save_dir)
     #manual_titles = ["Campaign Administrator Guide"]
     #save_dir = "pdfs/campaign_docs/#{campaign.id}/manuals"
@@ -148,7 +212,7 @@ class Manual < Prawn::Document
         end
       end
     end
-    FileUtils.rm_rf(save_dir+'/resp')
+    create_master_program_manual(save_dir)
   end
   
   # LOAD TEMPLATES: concat template and saved PDFs
