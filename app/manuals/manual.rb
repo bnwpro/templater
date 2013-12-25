@@ -31,7 +31,7 @@ class Manual < Prawn::Document
     begin  
       save_dir = "pdfs/campaign_docs/#{campaign.id}"
       Dir.mkdir(save_dir) unless File.exists?(save_dir)
-      
+      #create_print_manifest(save_dir)
       if File.exist?("#{save_dir}/block_calendar.pdf")
         create_common_pages(manual_common_pages_en, save_dir)
         #create_cover_page  #TEMP
@@ -40,6 +40,9 @@ class Manual < Prawn::Document
         create_worksheets(worksheets_en, save_dir)
         # TEMP
         #create_single_addendum(addendums_en)
+        create_master_program_manual(save_dir)
+        
+        create_print_manifest(save_dir)
       end
     rescue
       raise "Block Calendar has not been uploaded.  Please upload your Block Calendar to continue."
@@ -48,7 +51,48 @@ class Manual < Prawn::Document
   end
   
   private
-  #TEMP Single Page function
+  public
+  # Print Manifest
+  def create_print_manifest(save_dir)
+    manual_save_dir = save_dir+'/manuals'
+    data = [["Count", "Filename"], ["#{campaign.training_sheet.man_ac}", "Advance Commitment Leader Guide.pdf"],
+    ["#{campaign.training_sheet.man_camp_admin}", "Campaign Administrator Guide.pdf"],
+    ["#{campaign.training_sheet.man_camp_chair}", "Campaign Chair Guide.pdf"],
+    ["#{campaign.training_sheet.man_childs_act}", "Children's Activity Leader Guide.pdf"],
+    ["#{campaign.training_sheet.man_contact}", "Contact Leader Guide.pdf"],
+    ["#{campaign.training_sheet.man_spc_event}", "Event Leader Guide.pdf"],
+    ["#{campaign.training_sheet.man_follow_up}", "Follow Up Leader Guide.pdf"],
+    ["#{campaign.training_sheet.man_info}", "Information Leader Guide.pdf"],
+    ["#{campaign.training_sheet.man_invlvm}", "Involvement Leader Guide.pdf"],
+    ["#{campaign.training_sheet.man_pace_gifts}", "Pacesetter Leader Guide.pdf"],
+    ["#{campaign.training_sheet.man_pastor}", "Pastor Guide.pdf"],
+    ["#{campaign.training_sheet.man_prayer}", "Prayer Leader Guide.pdf"],
+    ["#{campaign.training_sheet.man_print_comm}", "Print Leader Guide.pdf"],
+    ["#{campaign.training_sheet.man_vis_comm}", "Visual Communications Leader Guide.pdf"],
+    ["#{campaign.training_sheet.man_youth}", "Youth Leader Guide.pdf"],
+    ["1", "Program Manager's Manual.pdf"],
+    ["#{campaign.training_sheet.ts_ac1}", "AC1.pdf - Salmon color paper"],
+    ["#{campaign.training_sheet.ts_ac2}", "AC2.pdf - Salmon color paper"],
+    ["#{campaign.training_sheet.ts_ac3}", "AC3.pdf - Salmon color paper"],
+    ["#{campaign.training_sheet.ts_ct1}", "CT1.pdf - Light Green color paper"],
+    ["#{campaign.training_sheet.ts_ct2}", "CT2.pdf - Light Green color paper"],
+    ["#{campaign.training_sheet.ts_ct3}", "CT3.pdf - White paper"],
+    ["#{campaign.training_sheet.ts_ct4}", "CT4.pdf - Light Green color paper"],
+    ["#{campaign.training_sheet.ts_ct5}", "CT5.pdf - Pink color paper"],
+    ["#{campaign.training_sheet.ts_ct6}", "CT6.pdf - Pink color paper"],
+    ["#{campaign.training_sheet.ts_ct7}", "CT7.pdf - Light Blue color paper"],
+    ["#{campaign.training_sheet.ts_it1}", "IN1.pdf - Yellow (canary) color paper"],
+    ["#{campaign.training_sheet.ts_it2}", "IN2.pdf - Yellow (canary) color paper"]]
+    Prawn::Document.generate("#{manual_save_dir}/PrintReport.pdf", {:page_size => 'A4', :skip_page_creation => true}) do |pdf|
+      pdf.start_new_page
+      pdf.draw_text "Print Report for: #{campaign.name}, #{campaign.city}", :at => [25, 780]
+      pdf.draw_text "Created: #{formatted_datetime_year(Time.now)}", :at => [300, 780]
+      pdf.move_down 10
+      pdf.table(data, :header => true)
+    end
+  end
+  
+  # Program Manager's Manual
   def create_master_program_manual(save_dir)
     appendices_dir = "pdfs/templates/appendices"
     manual_save_dir = save_dir+'/manuals'
@@ -123,7 +167,22 @@ class Manual < Prawn::Document
     # "Youth Leader Guide"
       get_template_to_merge(pdf, "#{save_dir}/resp/youth_resp.pdf")
       get_template_to_merge(pdf, "#{appendices_dir}/youth.pdf")
+      
+    # Worksheets
+      get_template_to_merge(pdf, "#{manual_save_dir}/AC1-en.pdf")
+      get_template_to_merge(pdf, "#{manual_save_dir}/AC2-en.pdf")
+      get_template_to_merge(pdf, "#{manual_save_dir}/AC3-en.pdf")
+      get_template_to_merge(pdf, "#{manual_save_dir}/CT1-en.pdf")
+      get_template_to_merge(pdf, "#{manual_save_dir}/CT2-en.pdf")
+      get_template_to_merge(pdf, "#{manual_save_dir}/CT3-en.pdf")
+      get_template_to_merge(pdf, "#{manual_save_dir}/CT4-en.pdf")
+      get_template_to_merge(pdf, "#{manual_save_dir}/CT5-en.pdf")
+      get_template_to_merge(pdf, "#{manual_save_dir}/CT6-en.pdf")
+      get_template_to_merge(pdf, "#{manual_save_dir}/CT7-en.pdf")
+      get_template_to_merge(pdf, "#{manual_save_dir}/IN1-en.pdf")
+      get_template_to_merge(pdf, "#{manual_save_dir}/IN2-en.pdf")
     end
+    
     FileUtils.rm_rf(save_dir+'/resp')
   end
   
@@ -212,7 +271,6 @@ class Manual < Prawn::Document
         end
       end
     end
-    create_master_program_manual(save_dir)
   end
   
   # LOAD TEMPLATES: concat template and saved PDFs

@@ -12,6 +12,7 @@ class DocumentsController < ApplicationController
     user = @user
     campaign = @campaign
     Manual.new.to_pdf(user, campaign)
+    #Manual.new.create_print_manifest(campaign, "pdfs/campaign_docs/#{@campaign.id}")
   end
   
   def generate
