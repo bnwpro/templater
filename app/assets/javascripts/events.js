@@ -49,6 +49,7 @@ $(document).ready(function() {
 		$('#progress-bar').css('width', '10px');
 		clearInterval(interval);
 		progress_bar_width = 10;
+		document.location.reload();
 	})
 	
 	var progress_bar_width = 10;

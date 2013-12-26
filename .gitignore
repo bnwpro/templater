@@ -17,3 +17,4 @@
 
 # Ignore PDF directory
 /pdfs
+.elasticbeanstalk/

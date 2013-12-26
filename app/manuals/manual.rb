@@ -33,6 +33,7 @@ class Manual < Prawn::Document
       Dir.mkdir(save_dir) unless File.exists?(save_dir)
       #create_print_manifest(save_dir)
       if File.exist?("#{save_dir}/block_calendar.pdf")
+        return
         create_common_pages(manual_common_pages_en, save_dir)
         #create_cover_page  #TEMP
         create_cover_pages(manual_titles_en, save_dir)
