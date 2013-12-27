@@ -1,0 +1,1 @@
+(function(){this.Mercury.dialogHandlers.formatblock=function(){return this.element.find("[data-tag]").on("click",function(t){var a;return a=jQuery(t.target).data("tag"),Mercury.trigger("action",{action:"formatblock",value:a})})}}).call(this);

@@ -1,7 +1,6 @@
 class CampaignContactsController < ApplicationController
   
   before_action :set_campaign_contact, only: [:show, :edit, :update, :destroy]
-  validates :email, format: /.+@.+\..+/i, uniqueness: true, length: { within: 5..50}
   
   before_filter :get_campaign_and_user
 
