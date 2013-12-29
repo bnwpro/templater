@@ -15,6 +15,9 @@ class GiftProfile < ActiveRecord::Base
   def cumulative_total
     @cumulative_total
   end
+  def tier_3_first_total
+    @tier_3_first_total
+  end
   
   def families_total=(val)
     @families_total = val
@@ -25,6 +28,9 @@ class GiftProfile < ActiveRecord::Base
   end
   def cumulative_total=(val)
     @cumulative_total = val
+  end
+  def tier_3_first_total=(val)
+    @tier_3_first_total = val
   end
   
   private
