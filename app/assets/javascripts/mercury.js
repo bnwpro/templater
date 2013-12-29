@@ -456,7 +456,7 @@ $(window).on('mercury:ready', function() {
   var edit_link = $('#mercury_iframe').contents().find('#edit_link');
   var data_entry_link = $('#mercury_iframe').contents().find('#data_entry_link');
   var to_pdf_link = $('#mercury_iframe').contents().find('#to_pdf');
-  logo = $('#mercury_iframe').contents().find('.logo');
+  //logo = $('#mercury_iframe').contents().find('.logo');
   edit_link.hide();
   to_pdf_link.hide();
   //logo.hide()

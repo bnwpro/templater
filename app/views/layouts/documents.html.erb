@@ -37,11 +37,10 @@
 	  <div class="doc-links">
   		  <%= link_to 'Edit Document', "/editor" + request.path, id: "edit_link", data: {save_url: mercury_update_campaign_url(@campaign), page: params[:id]} %> |
   		  <%= link_to 'All Documents', user_campaign_events_path(@user, @campaign), id: "data_entry_link" %> |
-  		  <%= link_to 'Generate PDF', {:controller => "documents", :action => "show", :format => 'pdf'}, id: "to_pdf", :remote => true %> |
-		  <%= link_to("Add Page","#", :id => "add-page") %> |
-		  <%= link_to("Remove Page","#", :id => "remove-page") %> |
-		  <%= link_to("Undo Last","#", :id => "undo") %>
-		  
+  		  <%# link_to 'Generate PDF', {:controller => "documents", :action => "show", :format => 'pdf'}, id: "to_pdf", :remote => true %>
+		  <%# link_to("Add Page","#", :id => "add-page") %>
+		  <%# link_to("Remove Page","#", :id => "remove-page") %>
+		  <%# link_to("Undo Last","#", :id => "undo") %>
 	  </div>
   	
 	  <div id="page_content" data-mercury="full">

@@ -28,7 +28,7 @@ class Manual < Prawn::Document
       "pdfs/templates/addendums/CT5-en.pdf", "pdfs/templates/addendums/CT6-en.pdf", "pdfs/templates/addendums/CT7-en.pdf",
       "pdfs/templates/addendums/IN1-en.pdf", "pdfs/templates/addendums/IN2-en.pdf"]
       
-    begin  
+    #begin  
       save_dir = "pdfs/campaign_docs/#{campaign.id}"
       Dir.mkdir(save_dir) unless File.exists?(save_dir)
       #create_print_manifest(save_dir)
@@ -45,14 +45,13 @@ class Manual < Prawn::Document
         
         create_print_manifest(save_dir)
       end
-    rescue
-      raise "Block Calendar has not been uploaded.  Please upload your Block Calendar to continue."
-      return
-    end
+      #rescue
+      #raise "Block Calendar has not been uploaded.  Please upload your Block Calendar to continue."
+      #return
+      #end
   end
   
   private
-  public
   # Print Manifest
   def create_print_manifest(save_dir)
     manual_save_dir = save_dir+'/manuals'
