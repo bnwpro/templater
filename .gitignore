@@ -18,5 +18,5 @@
 *.zip
 
 # Ignore PDF directory
-/pdfs
+/pdfs/campaign_docs
 .elasticbeanstalk/
