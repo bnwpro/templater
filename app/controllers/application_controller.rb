@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   #force_ssl
-  before_action :set_locale
+  #before_action :set_locale
   before_action :require_login
   
   private
