@@ -1,6 +1,6 @@
 module GiftProfilesHelper
   
-  attr_accessor :tier_3_first_total
+  #attr_accessor :tier_3_first_total
   
   def sum(*args)
     args.map.inject(:+)
@@ -22,7 +22,7 @@ module GiftProfilesHelper
   end
   
   def total_for_remainder(*args)
-    self.tier_3_first_total = total(*args)
+    @tier_3_first_total = total(*args)
   end
   
   def commitments(gifts, amount)
@@ -53,7 +53,7 @@ module GiftProfilesHelper
     gift_multiple = multiply(@gift_profile.t3_gifts_1, @gift_profile.t3_gift_amount_1)
     tier_3_adjusted_commitments = commitments(@tier_3_gifts, @tier_3_total_amount) - gift_multiple
     remainder = remainder_total_level + tier_3_adjusted_commitments
-    self.tier_3_first_total + remainder
+    @tier_3_first_total + remainder
   end
   
   def tier_3_plus_remainder
