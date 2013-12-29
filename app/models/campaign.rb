@@ -6,7 +6,7 @@ class Campaign < ActiveRecord::Base
   validates :email, format: /.+@.+\..+/i, length: { within: 5..50}, allow_blank: true
   validates :phone, :fax, numericality: true, allow_blank: true
   validates :zip, numericality: { only_integer: true }, length: { within: 5..10 }, allow_blank: true
-  validates_associated :campaign_contacts
+  #validates_associated :campaign_contacts
   #attr_accessor :block_calendar
   
   belongs_to :user
