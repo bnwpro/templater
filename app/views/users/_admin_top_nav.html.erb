@@ -1,0 +1,23 @@
+<nav class="top-bar" data-topbar>
+	<ul class="title-area">
+		<li class="name">
+			<h1>User Administration : <%= formatted_date_year(Time.now) %></h1>
+		</li>
+		<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+	</ul>
+	<!-- Right Nav Section -->
+	<section class="top-bar-section">
+		<ul class="right">
+			<li class="divider"></li>
+			<li><%= link_to 'Add New User', new_user_path %></li>
+			<li class="divider"></li>
+			<li><%= link_to 'View All Users', users_path %></li>
+			<li class="divider"></li>
+			<li><%= link_to 'View All Campaigns', campaigns_path %></li>
+			<li class="divider"></li>
+			<li><%= link_to 'Stored Templates', sql_templates_path %></li>
+			<li class="divider"></li>
+			<li><%= link_to 'Logout', logout_path %></li>
+		</ul>
+	</section>
+</nav>

@@ -19,5 +19,7 @@
 //= require foundation
 //= require jquery-ui-timepicker-addon
 //= require turbolinks
+$(document).ready(function() {
+	$(document).foundation();
+});
 
-$(document).foundation();

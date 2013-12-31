@@ -14,7 +14,7 @@
 @import "jquery.ui.slider";
 @import "jquery-ui-timepicker-addon";
 @import "foundation_and_overrides";
-@import "top_nav_bar";
+//@import "top_nav_bar";
 @import "campaigns";
 @import "events";
 
@@ -47,4 +47,7 @@ fieldset legend {
 }
 .delete_link {
 	color: red;
+}
+.red {
+	color: red !important;
 }
