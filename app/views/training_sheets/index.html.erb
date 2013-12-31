@@ -22,7 +22,7 @@
 			        <td><%= @training_sheet.print_contact_name %></td>
 			        <td><%= number_to_phone(@training_sheet.print_contact_phone, area_code: true) %></td>
 					<td><%= @training_sheet.print_contact_email %></td>
-	        		<td><%= link_to 'Add/Edit Training Sheets', edit_user_campaign_training_sheet_path(@user, @campaign, @training_sheet) %></td>
+	        		<td><%= link_to 'Add/Edit Training Sheet', edit_user_campaign_training_sheet_path(@user, @campaign, @training_sheet) %></td>
 	        		<td><%= link_to 'Delete All', [@user, @campaign, @training_sheet], method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete_link' %></td>
                 </tr>
 		    </tbody>
