@@ -48,7 +48,7 @@ class DocumentsController < ApplicationController
         #format.js
         # Insert code to refresh/updtae Saved PDF listing
       end  #end Document.each
-      #Manual.new.to_pdf(user, campaign)
+      Manual.new.to_pdf(user, campaign)
     else
       #flash[:notice] = "Block Calendar has not been uploaded.  Please upload your Block Calendar to continue."}
       return
