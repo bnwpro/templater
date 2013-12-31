@@ -2,8 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 //$page-width: 595px;
-$A4-page-width: 210mm - 21mm;
-$A4-page-height: 297mm - 23mm; // tweak these for proper page size
+$A4-page-width: 210mm;// - 21mm;
+$A4-page-height: 297mm;// - 23mm; // tweak these for proper page size
 
 @mixin rounded-corners($radius) {
 	border-radius: $radius;

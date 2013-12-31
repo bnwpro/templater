@@ -15,9 +15,4 @@
 /log/*.log
 /tmp
 
-*.zip
-
-# Ignore PDF directory
-/pdfs/campaign_docs/*
 .elasticbeanstalk/
-/public/pdfs/campaign_docs/*

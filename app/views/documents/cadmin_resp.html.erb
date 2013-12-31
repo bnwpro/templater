@@ -20,44 +20,32 @@ room assignments:</li>
 			</ul>
 		</li>
 	</ul>
-	
+	<br>
 	<div class="border-box cols-2-small">
 		<h6>Information Team Meeting</h6>
 		<ul>
 			<li><%= formatted_time(@campaign.event.info_team_trng_1) %></li>
-			<li>LOCATION</li>
+			<li>**LOCATION</li>
 		</ul>
 		
 		<h6>Contact Team Meeting</h6>
 		<ul>
 			<li><%= formatted_time(@campaign.event.contact_team_trng_1) %></li>
-			<li>LOCATION</li>
+			<li>**LOCATION</li>
 		</ul>
 		
 		<h6>Advance Commitment Meeting #2</h6>
 		<ul>
 			<li><%= formatted_time(@campaign.event.ac_mtg_2) %></li>
-			<li>LOCATION</li>
+			<li>**LOCATION</li>
 		</ul>
 	</div>
-	
+	<br><br>
 	<ul class="page_data">
 		<li>Prepare Training Packets for Training Sessions:
 			<ul>
 				<li>You are provided with materials for Contact, Information, and Advance Commitment training sessions. Using these materials, create training packets for individuals who attend the training sessions.</li>
 				<li>In the appendices of your manual are worksheets for each training sessions.</li>
-			</ul>
-		</li>
-		<li>Prepare Campaign Mailings:
-			<ul>
-				<li>Please check to see if there are any special instructions from your archdiocese concerning parish printed materials. Though the archdiocese may have a plan to handle most of your mailings, you will be responsible for arranging the distribution or mailing of some items:
-					<ul>
-						<li>A Special Edition Newsletter (A template is available from your consultant)</li>
-						<li>Information Materials not distributed on Information Distribution Weekend</li>
-						<li>Advance Commitment Invitation letters</li>
-						
-					</ul>
-				</li>
 			</ul>
 		</li>
 	</ul>
@@ -68,10 +56,13 @@ room assignments:</li>
 	<hr><%= image_tag get_image_path, :alt => 'logo', :class => 'logo' %>
 	<br><br><br><br>
 	<ul class="page_data">
-		<li class="display-none">
+		<li>Prepare Campaign Mailings:
 			<ul>
-				<li class="display-none">
+				<li>Please check to see if there are any special instructions from your archdiocese concerning parish printed materials. Though the archdiocese may have a plan to handle most of your mailings, you will be responsible for arranging the distribution or mailing of some items:
 					<ul>
+						<li>A Special Edition Newsletter (A template is available from your consultant)</li>
+						<li>Information Materials not distributed on Information Distribution Weekend</li>
+						<li>Advance Commitment Invitation letters</li>
 						<li>Commitment Cards to families that did not make a commitment on Commitment Weekend</li>
 						<li>Thank-you and Confirmation Letters from your parish for commitments received</li>
 					</ul>
@@ -421,13 +412,13 @@ Each set contains the following:
 			</li>
 		</ul>
 	</div>
-	
+	<br><br>
 	<h2><%= formatted_date(@campaign.event.ac_gather_1) %><br>
 		<%= formatted_time(@campaign.event.ac_gather_1) %></h2>
 	<h3>Advance Commitment Gathering</h3>
-	<!--<ul class="page_data">
+	<ul class="page_data">
 		<li>Plan to attend Advance Commitment Gathering</li>
-	</ul>-->
+	</ul>
 	<div class="border-box">
 		<h3 class="left">Three Weeks Before Parish-Wide Event</h3>
 		<ul class="page_data">
