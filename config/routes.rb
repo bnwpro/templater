@@ -1,4 +1,5 @@
 Templater::Application.routes.draw do
+  #match '*/public/*', to: '/', via: :get
 
   match 'login', to: 'sessions#new', via: [:get, :post]
   #match 'login/failed', to: redirect('/'), via: [:get, :post]

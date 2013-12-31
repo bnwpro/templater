@@ -1,6 +1,7 @@
 Templater::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  # Per Crafting Rails 4 Apps, p.55
+  config.action_view.cache_template_loading = false
   # Code is not reloaded between requests.
   config.cache_classes = true
 
