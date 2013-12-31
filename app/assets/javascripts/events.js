@@ -56,7 +56,7 @@ $(document).ready(function() {
 	function updateBar() {
 		$('#progress-bar').css('width', progress_bar_width+'px');
 		progress_bar_width += 10;
-		if (progress_bar_width) == 50 {
+		if (progress_bar_width == 50) {
 			progress_bar_width = 10;
 		}
 		return
