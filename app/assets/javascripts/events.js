@@ -31,7 +31,7 @@ $(document).ready(function() {
 		if (go == true) {
 			$('#progress-bar').css('visibility', 'visible');
 			$(function() {
-				interval = setInterval(updateBar, 2000);
+				interval = setInterval(updateBar, 250);
 			})
 		} else if (go == false) {
 			generate = false;
@@ -56,7 +56,7 @@ $(document).ready(function() {
 	function updateBar() {
 		$('#progress-bar').css('width', progress_bar_width+'px');
 		progress_bar_width += 10;
-		if (progress_bar_width == 50) {
+		if (progress_bar_width == 300) {
 			progress_bar_width = 10;
 		}
 		return

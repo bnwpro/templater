@@ -18,6 +18,6 @@
 *.zip
 
 # Ignore PDF directory
-/pdfs/campaign_docs/
+/pdfs/campaign_docs/*/*
 .elasticbeanstalk/
-/public/pdfs/campaign_docs/
+/public/pdfs/campaign_docs/*/*
