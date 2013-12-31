@@ -68,19 +68,36 @@
 						</div>
 					</div>
 				</div> <!-- END row -->
-				
+				<br>
 				<div class="row">
-					<div class="small-6 columns">
-						<br>
+					<div class="small-8 columns">
 						<% if show_pdfs_if_exist %>
-							<h3>PDF Manuals:</h3>
-							<% @files.each do |path| %>
-							  <li><a href="<%= path %>">
-							  	<%= File.basename path %></a>
-							<% end %>
-						<% end %>
-					</div>
+							<table>
+						  	    <thead>
+							       <tr>
+								      <th>PDF Manuals</th>
+									  <th></th>
+								      <th></th>
+							       </tr>
+							    </thead>
+							    <tbody>
+								    <% @files.each do |path| %>
+								  		<tr>
+									  	<td>
+											<li>
+												<a href="<%= path %>">
+										  	<%= File.basename path %></a>
+										</td>
+										<td>Rebuild</td>
+										<td>Send</td>
+								  		</tr>
+								    <% end %>
+							    </tbody>
+					  	  	</table>
+					    <% end %>
+					</div> <!-- END "small-6 columns" -->
 				</div> <!-- END row -->
+			  
 			</div> <!-- END "pdf-links" -->
 			
 	  	</div> <!-- END "document-link" -->

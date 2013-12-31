@@ -57,12 +57,12 @@ class Manual < Prawn::Document
   private
   def move_files_to_public(save_dir)
     origin = save_dir+'/manuals'
-    destination = 'public/'+origin
+    destination = "public/pdfs/campaign_docs/#{campaign.name}/manuals"
     #Dir.mkdir(File.join('public', 'pdfs', 'campaign_docs', "#{campaign.id}", 'manuals')) unless File.exists?(destination)
     Dir.mkdir('public/pdfs') unless File.exists?('public/pdfs')
     Dir.mkdir('public/pdfs/campaign_docs') unless File.exists?('public/pdfs/campaign_docs')
-    Dir.mkdir("public/pdfs/campaign_docs/#{campaign.id}") unless File.exists?("public/pdfs/campaign_docs/#{campaign.id}")
-    Dir.mkdir("public/pdfs/campaign_docs/#{campaign.id}/manuals") unless File.exists?("public/pdfs/campaign_docs/#{campaign.id}/manuals")
+    Dir.mkdir("public/pdfs/campaign_docs/#{campaign.name}") unless File.exists?("public/pdfs/campaign_docs/#{campaign.name}")
+    Dir.mkdir("public/pdfs/campaign_docs/#{campaign.name}/manuals") unless File.exists?("public/pdfs/campaign_docs/#{campaign.name}/manuals")
     Dir.glob(File.join(origin, '*')).each do |file|
       #if File.exists? File.join(destination, File.basename(file))
        # File.delete file, File.join(destination, File.basename(file))
