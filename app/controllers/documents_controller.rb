@@ -38,7 +38,7 @@ class DocumentsController < ApplicationController
               :save_only                      => true,
               :disable_internal_links         => true,
               :disable_external_links         => true,
-              :page_size                      => 'A4',
+              :page_size                      => 'Letter',
               :lowquality                     => false,
               :formats                        => :html,
               :footer                         => { :right => "__________________________________________________________   #{save_file}onsibility - [page]" }
@@ -72,7 +72,7 @@ class DocumentsController < ApplicationController
           :save_only                      => true,
           :disable_internal_links         => true,
           :disable_external_links         => true,
-          :page_size                      => 'A4',
+          :page_size                      => 'Letter',
           :lowquality                     => false,
           :formats                        => :html,
           :footer                         => { :right => "__________________________________________________________   #{save_file}onsibility - [page]" }

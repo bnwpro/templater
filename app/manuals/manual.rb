@@ -101,7 +101,7 @@ class Manual < Prawn::Document
     ["#{campaign.training_sheet.ts_ct7}", "CT7.pdf - Light Blue color paper"],
     ["#{campaign.training_sheet.ts_it1}", "IN1.pdf - Yellow (canary) color paper"],
     ["#{campaign.training_sheet.ts_it2}", "IN2.pdf - Yellow (canary) color paper"]]
-    Prawn::Document.generate("#{manual_save_dir}/PrintReport.pdf", {:page_size => 'A4', :skip_page_creation => true}) do |pdf|
+    Prawn::Document.generate("#{manual_save_dir}/PrintReport.pdf", {:page_size => 'LETTER', :skip_page_creation => true}) do |pdf|
       pdf.start_new_page
       pdf.draw_text "Print Report for: #{campaign.name}, #{campaign.city}", :at => [25, 780]
       pdf.draw_text "Created: #{formatted_datetime_year(Time.now)}", :at => [300, 780]
@@ -114,7 +114,7 @@ class Manual < Prawn::Document
   def create_master_program_manual(save_dir)
     appendices_dir = "pdfs/templates/appendices"
     manual_save_dir = save_dir+'/manuals'
-    Prawn::Document.generate("#{manual_save_dir}/Program Manager's Manual.pdf", {:page_size => 'A4', :skip_page_creation => true}) do |pdf|
+    Prawn::Document.generate("#{manual_save_dir}/Program Manager's Manual.pdf", {:page_size => 'LETTER', :skip_page_creation => true}) do |pdf|
       pdf.start_new_page(:template => "pdfs/templates/intro_pages/1_cover.pdf")
       pdf.fill_color "000000"
       pdf.bounding_box([100, 600], :width => 375) do
@@ -213,7 +213,7 @@ class Manual < Prawn::Document
     resp = Document.resp_doc
     name = resp.first
     manual_titles.each do |cover_page|
-      Prawn::Document.generate("#{manual_save_dir}/#{cover_page}.pdf", {:page_size => 'A4', :skip_page_creation => true}) do |pdf|
+      Prawn::Document.generate("#{manual_save_dir}/#{cover_page}.pdf", {:page_size => 'LETTER', :skip_page_creation => true}) do |pdf|
         pdf.start_new_page(:template => "pdfs/templates/intro_pages/1_cover.pdf")
         pdf.fill_color "000000"
         pdf.bounding_box([100, 600], :width => 375) do
@@ -295,7 +295,7 @@ class Manual < Prawn::Document
   def create_common_pages(manual_common_pages, save_dir)
     block_calendar = "#{save_dir}/block_calendar.pdf"
       
-    Prawn::Document.generate("#{save_dir}/common_pages.pdf", {:page_size => 'A4', :skip_page_creation => true}) do |pdf|
+    Prawn::Document.generate("#{save_dir}/common_pages.pdf", {:page_size => 'LETTER', :skip_page_creation => true}) do |pdf|
       get_template_to_merge(pdf, manual_common_pages[1]) # Index / Contact page
       add_contacts_data(pdf)
       
@@ -317,7 +317,7 @@ class Manual < Prawn::Document
   
   def create_single_addendum(addendums)
     doc_name_stripped = addendums[1].split('/')[-1]
-    Prawn::Document.generate("pdfs/campaign_docs/#{@campaign.id}/#{doc_name_stripped}", {:page_size => 'A4', :skip_page_creation => true}) do |pdf|
+    Prawn::Document.generate("pdfs/campaign_docs/#{@campaign.id}/#{doc_name_stripped}", {:page_size => 'LETTER', :skip_page_creation => true}) do |pdf|
       get_template_to_merge(pdf, addendums[1])
       add_AC2_data(pdf)
     end
@@ -327,7 +327,7 @@ class Manual < Prawn::Document
     worksheet_save_dir = save_dir+'/manuals'
     worksheets.each do |path_to_doc|
       doc_name_stripped = path_to_doc.split('/')[-1]
-      Prawn::Document.generate("#{worksheet_save_dir}/#{doc_name_stripped}", {:page_size => 'A4', :skip_page_creation => true}) do |pdf|
+      Prawn::Document.generate("#{worksheet_save_dir}/#{doc_name_stripped}", {:page_size => 'LETTER', :skip_page_creation => true}) do |pdf|
         get_template_to_merge(pdf, path_to_doc)
         case doc_name_stripped
         when "AC1-en.pdf"
