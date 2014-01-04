@@ -16,3 +16,8 @@
 /tmp
 
 .elasticbeanstalk/
+
+/public/pdfs/campaign_docs/*
+/pdfs/campaign_docs/*
+
+/config/initializers/aws-sdk.rb

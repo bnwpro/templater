@@ -23,7 +23,7 @@ Templater::Application.routes.draw do
     resources :campaigns do
       member do
         #get :generate, to: 'documents'
-        match 'documents', to: 'documents#generate', via: :get
+        match '/generate', to: 'documents#generate', via: :get
       end
       #resource :documents, only: :show
       #member { put :mercury_update }

@@ -60,7 +60,7 @@
 			<div class="pdf-links">
 				<div class="row">
 					<div class="small-3 columns">
-						<%= link_to "Generate Manuals", documents_user_campaign_path(:user_id => @user.id, :campaign_id => @campaign.id, :id => @campaign.id, :format => 'pdf', :remote => true), :controller => "documents", :action => "generate", :format => 'pdf', id: "to_pdf", :class => 'button small', :remote => true %>
+						<%= link_to "Generate Manuals", generate_user_campaign_path(@user, campaign_id: @campaign.id, id: @campaign, format: :pdf), remote: true, id: "to_pdf", class: "button small" %>
 					</div>
 					<div class="small-4 columns">
 						<div class="progress round" id="progress-bar">
@@ -71,13 +71,12 @@
 				<br>
 				<div class="row">
 					<div class="small-8 columns">
-						<% if show_pdfs_if_exist %>
+						<% if show_pdfs_if_exist_on_s3 %>
 							<table>
 						  	    <thead>
 							       <tr>
-								      <th>PDF Manuals</th>
+								      <th>PDF Manuals on S3</th>
 									  <th></th>
-								      <th></th>
 							       </tr>
 							    </thead>
 							    <tbody>
@@ -89,8 +88,7 @@
 										  	<%= File.basename path %></a>
 										</td>
 										<td>Rebuild</td>
-										<td>Send</td>
-								  		</tr>
+									</tr>
 								    <% end %>
 							    </tbody>
 					  	  	</table>

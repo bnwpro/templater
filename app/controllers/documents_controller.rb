@@ -18,14 +18,12 @@ class DocumentsController < ApplicationController
   def generate
     user = @user
     campaign = @campaign
-    pdf_root_dir = "pdfs/campaign_docs"
     campaign_root_dir = "pdfs/campaign_docs/#{campaign.id}"
     resp_doc_dir = "pdfs/campaign_docs/#{campaign.id}/resp"
-    Dir.mkdir(pdf_root_dir) unless File.exists?(pdf_root_dir)
-    Dir.mkdir(campaign_root_dir) unless File.exists?(campaign_root_dir)
-    Dir.mkdir(resp_doc_dir) unless File.exists?(resp_doc_dir)
-    if File.exist?("#{campaign_root_dir}/block_calendar.pdf")
-      Document.resp_doc.each do |title|
+    FileUtils.mkdir_p(resp_doc_dir)
+    block_calendar = "#{campaign_root_dir}/block_calendar.pdf"
+    if File.exist?(block_calendar)
+      Document.new.resp_doc.each do |title|
         name = "documents/"  + title
         save_file = name.split('/')[-1]
         respond_to do |format|
@@ -50,7 +48,10 @@ class DocumentsController < ApplicationController
       end  #end Document.each
       Manual.new.to_pdf(user, campaign)
     else
-      #flash[:notice] = "Block Calendar has not been uploaded.  Please upload your Block Calendar to continue."}
+      raise :error
+      flash.now[:error] = "Block Calendar has not been uploaded.  Please upload your Block Calendar to continue."
+      
+      #redirect_to user_campaign_path(@user, @campaign), notice: 'Block Calendar has not been uploaded.  Please upload your Block Calendar to continue.'
       return
     end
   end  #end generate
