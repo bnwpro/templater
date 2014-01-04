@@ -28,7 +28,7 @@ class Document
       "pdfs/templates/addendums/IN1-en.pdf", "pdfs/templates/addendums/IN2-en.pdf"]
   end
   
-  def first_two_only
-    @first_two_only = ["ac_resp", "cadmin_resp"]
+  def first_only
+    @first_two_only = ["ac_resp"]
   end
 end

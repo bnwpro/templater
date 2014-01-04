@@ -1,5 +1,14 @@
 class Campaign < ActiveRecord::Base
-  has_attached_file :block_calendar, :url => "pdfs/campaign_docs/:id/block_calendar.pdf", :path => ":rails_root/pdfs/campaign_docs/:id/block_calendar.pdf"
+  #has_attached_file :block_calendar, :url => "pdfs/campaign_docs/:id/block_calendar.pdf",
+  #  :path => ":rails_root/pdfs/campaign_docs/:id/block_calendar.pdf"
+  has_attached_file :block_calendar,
+    :access_key_id => 'AKIAJEKI32SC23T2AMFA', :secret_access_key => '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',
+    :storage => :s3,
+    :s3_protocol => 'https',
+    :s3_permissions => :public_read,
+    :bucket => 'ofwc_bc_directory',
+    :url => ':s3_path_url',
+    :path => 'block_calendar_cid_:id.pdf'
   validates_attachment :block_calendar, content_type: { content_type: "application/pdf" }
   
   validates :name, presence: true, uniqueness: { case_sensitive: false }

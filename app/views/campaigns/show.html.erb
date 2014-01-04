@@ -54,7 +54,8 @@
 		</table>
 	</div>
 	<div id="upload" class="small-3">
-		<% if File.exist?("pdfs/campaign_docs/#{@campaign.id}/block_calendar.pdf") %>
+		<%# if File.exist?("pdfs/campaign_docs/#{@campaign.id}/block_calendar.pdf") %>
+		<% if show_if_exists_on_s3? %>
 			<span class="green">Block Clendar has been uploaded!</span>
 			<% else %>
 			<span class="red">Block Calendar not uploaded</span>

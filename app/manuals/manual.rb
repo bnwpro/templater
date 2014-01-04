@@ -20,7 +20,7 @@ class Manual < Prawn::Document
     manual_campaign_docs_dir = File.join(campaign_dir, "manuals")
     FileUtils.mkdir_p(manual_campaign_docs_dir)
     
-    block_calendar = "#{campaign_dir}/block_calendar.pdf"
+    block_calendar = BlockCalendar.new.get_calendar_if_exists(id: @campaign.id)
     
     # TESTING AREA
     
@@ -65,33 +65,7 @@ class Manual < Prawn::Document
      
     S3Upload.new.send_to_s3(files: origin_docs, owner: _campaign_name_dir)
     
-    FileUtils.rm_rf File.join(campaign_dir, "resp")
-    FileUtils.rm_rf File.join(campaign_dir, "manuals")
-    FileUtils.rm File.join(campaign_dir, "common_pages.pdf")
-    FileUtils.rm File.join(campaign_dir, "common_pages_enlist.pdf")
-    FileUtils.rm File.join(campaign_dir, "giving_potential.pdf")
-  end
-  
-  def move_and_cleanup_files_(campaign_dir, manual_campaign_docs_dir)
-    origin = manual_campaign_docs_dir
-    _campaign_name_dir = "#{campaign.name.tr(" ", "_").dup}"
-    FileUtils.mkdir_p("public/pdfs/campaign_docs/#{_campaign_dir}/manuals")
-    destination = "public/pdfs/campaign_docs/#{_campaign_dir}/manuals"
-    Dir.glob(File.join(origin, '*')).each do |file|
-      #if File.exists? File.join(destination, File.basename(file))
-       # File.delete file, File.join(destination, File.basename(file))
-      #end
-      FileUtils.mv file, File.join(destination, File.basename(file))
-    end
-     FileUtils.rm_rf File.join(campaign_dir, "resp")
-     FileUtils.rm_rf File.join(campaign_dir, "manuals")
-     FileUtils.rm File.join(campaign_dir, "common_pages.pdf")
-     FileUtils.rm File.join(campaign_dir, "common_pages_enlist.pdf")
-     FileUtils.rm File.join(campaign_dir, "giving_potential.pdf")
-     
-     public_doc_dir = Dir.glob(File.join(destination, "*"))
-     
-     S3Upload.new.send_to_s3(files: public_doc_dir, owner: _campaign_name_dir)
+    FileUtils.rm_rf File.join(campaign_dir)
   end
   
   # TEMP

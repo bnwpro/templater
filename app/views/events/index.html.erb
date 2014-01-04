@@ -32,7 +32,7 @@
 		<br>
 		<div class="document_link">
 			<h3>Responsibility Documents:
-				<% if File.exist?("pdfs/campaign_docs/#{@campaign.id}/block_calendar.pdf") %>
+				<% if show_if_exists_on_s3? %>
 					(<span class="green">Block Calendar has been uploaded!</span>)
 					<% else %>
 					<span class="red">(<%= link_to "Block Calendar not uploaded", user_campaign_path(@user, @campaign), :class => 'red' %>)</span>

@@ -116,7 +116,7 @@
 	  </div>
 	  
 	    <div class="large-3 columns">
-	  		<% if File.exist?("pdfs/campaign_docs/#{@campaign.id}/block_calendar.pdf") %>
+	  		<% if show_if_exists_on_s3? %>
 	  			<span class="green right">Block Clendar has been uploaded!</span>
 	  			<% else %>
 	  			<span class="red right">Block Calendar not uploaded</span>

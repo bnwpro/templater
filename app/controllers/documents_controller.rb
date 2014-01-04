@@ -21,7 +21,8 @@ class DocumentsController < ApplicationController
     campaign_root_dir = "pdfs/campaign_docs/#{campaign.id}"
     resp_doc_dir = "pdfs/campaign_docs/#{campaign.id}/resp"
     FileUtils.mkdir_p(resp_doc_dir)
-    block_calendar = "#{campaign_root_dir}/block_calendar.pdf"
+    
+    block_calendar = BlockCalendar.new.get_calendar_if_exists(id: @campaign.id)
     if File.exist?(block_calendar)
       Document.new.resp_doc.each do |title|
         name = "documents/"  + title
