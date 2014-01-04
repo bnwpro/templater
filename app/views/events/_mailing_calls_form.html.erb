@@ -20,7 +20,7 @@
 				  <div class="small-6 columns">
 					    <%= f.label :mail_fact_sheet, "Mail Fact Sheet", :class => 'right inline' %><br>
 				  </div>
-				   <div class="small-3 columns">
+				   <div class="small-6 columns">
 					    <%= f.text_field :mail_fact_sheet, :class => 'date-picker', :value => (formatted_date(f.object.mail_fact_sheet) if f.object.mail_fact_sheet) %>
 						<%= f.hidden_field :mail_fact_sheet, :class => 'alt_time_to_db' %>
 				  </div>
@@ -29,7 +29,7 @@
 				  <div class="small-6 columns">
 					    <%= f.label :mail_rmng_info_pkts, "Mail Remaining Info Packets", :class => 'right inline' %><br>
 				  </div>
-				   <div class="small-3 columns">
+				   <div class="small-6 columns">
 					    <%= f.text_field :mail_rmng_info_pkts, :class => 'date-picker', :value => (formatted_date(f.object.mail_rmng_info_pkts) if f.object.mail_rmng_info_pkts) %>
 						<%= f.hidden_field :mail_rmng_info_pkts, :class => 'alt_time_to_db' %>
 				  </div>
@@ -38,7 +38,7 @@
 				  <div class="small-6 columns">
 					    <%= f.label :mail_ac_invt, "Mail AC Invitations", :class => 'right inline' %><br>
 				  </div>
-				   <div class="small-3 columns">
+				   <div class="small-6 columns">
 					    <%= f.text_field :mail_ac_invt, :class => 'date-picker', :value => (formatted_date(f.object.mail_ac_invt) if f.object.mail_ac_invt) %>
 						<%= f.hidden_field :mail_ac_invt, :class => 'alt_time_to_db' %>
 				  </div>
@@ -47,7 +47,7 @@
 				  <div class="small-6 columns">
 					    <%= f.label :mail_newsletter, "Mail Newsletter", :class => 'right inline' %><br>
 				  </div>
-				   <div class="small-3 columns">
+				   <div class="small-6 columns">
 					    <%= f.text_field :mail_newsletter, :class => 'date-picker', :value => (formatted_date(f.object.mail_newsletter) if f.object.mail_newsletter) %>
 						<%= f.hidden_field :mail_newsletter, :class => 'alt_time_to_db' %>
 				  </div>
@@ -56,7 +56,7 @@
 				  <div class="small-6 columns">
 					    <%= f.label :mail_spc_event_invt, "Mail Special Event Invitations", :class => 'right inline' %><br>
 				  </div>
-				   <div class="small-3 columns">
+				   <div class="small-6 columns">
 					    <%= f.text_field :mail_spc_event_invt, :class => 'date-picker', :value => (formatted_date(f.object.mail_spc_event_invt) if f.object.mail_spc_event_invt) %>
 						<%= f.hidden_field :mail_spc_event_invt, :class => 'alt_time_to_db' %>
 				  </div>
@@ -65,7 +65,7 @@
 				  <div class="small-6 columns">
 					    <%= f.label :mail_commt_card, "Mail Commitment Cards", :class => 'right inline' %><br>
 				  </div>
-				   <div class="small-3 columns">
+				   <div class="small-6 columns">
 					    <%= f.text_field :mail_commt_card, :class => 'date-picker', :value => (formatted_date(f.object.mail_commt_card) if f.object.mail_commt_card) %>
 						<%= f.hidden_field :mail_commt_card, :class => 'alt_time_to_db' %>
 				  </div>
@@ -80,7 +80,7 @@
 				  <div class="small-6 columns">
 					    <%= f.label :setup_info_booth, "Setup Information Booth", :class => 'right inline' %><br>
 				  </div>
-				   <div class="small-3 columns">
+				   <div class="small-6 columns">
 					    <%= f.text_field :setup_info_booth, :class => 'date-picker', :value => (formatted_date(f.object.setup_info_booth) if f.object.setup_info_booth) %>
 						<%= f.hidden_field :setup_info_booth, :class => 'alt_time_to_db' %>
 				  </div>
@@ -142,7 +142,8 @@
 		  
 		  <hr>
 		  <div class="actions">
-		    <%= f.submit %>
+		    <%= f.submit %> |
+			<%= link_to 'Cancel/Back', user_campaign_events_path(@user, @campaign) %>
 		  </div>
 		  
 	  </div> <!-- END WEKKENDS & GATHEINGS FIELDSET -->

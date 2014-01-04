@@ -25,7 +25,7 @@
 		  		  <%= f.label :print_contact_phone, 'Phone', :class => 'right inline' %><br>
 			  </div>
 			  <div class="small-2 columns">
-		  		  <%= f.text_field :print_contact_phone %>
+		  		  <%= f.text_field :print_contact_phone, placeholder: '10 Digits only, no spaces, () or -' %>
 	  	      </div>
 	  		  <div class="small-1 columns">
 		  		  <%= f.label :print_contact_email, 'Email', :class => 'right inline' %><br>
@@ -38,7 +38,8 @@
 		  
 		  <hr>
 		  <div class="actions">
-		    <%= f.submit %>
+		    <%= f.submit "Update Print Contact" %> |
+			<%= link_to 'Cancel/Back', user_campaign_path(@user, @campaign) %>
 		  </div>
 	  </div> <!-- END ROW -->
   <% end %> <!-- END PRINT CONTACT FIELDSET -->
@@ -183,7 +184,8 @@
 		  
 		  <hr>
 		  <div class="actions">
-		    <%= f.submit 'Save' %>
+		    <%= f.submit 'Save Manuals' %> |
+			<%= link_to 'Cancel/Back', user_campaign_path(@user, @campaign) %>
 		  </div>
 	  </div> <!-- END Manuals FIELDSET -->
   <% end %> <!-- END FIELDSET -->
@@ -301,7 +303,8 @@
 	  
 		  <hr>
 		  <div class="actions">
-		    <%= f.submit 'Save' %>
+		    <%= f.submit 'Save Training Sheets' %> |
+			<%= link_to 'Cancel/Back', user_campaign_path(@user, @campaign) %>
 		  </div>
 	  </div> <!-- END TRAINING SHEETS FIELDSET -->
 	  

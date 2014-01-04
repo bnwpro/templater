@@ -33,7 +33,7 @@
 				  <div class="small-6 columns">
 					    <%= f.label :weekend_1_dates, "Weekend I", :class => 'right inline' %><br>
 				  </div>
-				   <div class="small-3 columns">
+				   <div class="small-6 columns">
 					    <%= f.text_field :weekend_1_dates, :class => 'date-picker', :value => (formatted_date(f.object.weekend_1_dates) if f.object.weekend_1_dates) %>
 						<%= f.hidden_field :weekend_1_dates, :class => 'alt_time_to_db' %>
 				  </div>
@@ -42,7 +42,7 @@
 				  <div class="small-6 columns">
 					    <%= f.label :weekend_2_dates, "Weekend II", :class => 'right inline' %><br>
 				  </div>
-				   <div class="small-3 columns">
+				   <div class="small-6 columns">
 					    <%= f.text_field :weekend_2_dates, :class => 'date-picker', :value => (formatted_date(f.object.weekend_2_dates) if f.object.weekend_2_dates) %>
 						<%= f.hidden_field :weekend_2_dates, :class => 'alt_time_to_db' %>
 				  </div>
@@ -94,7 +94,7 @@
 				  <div class="small-6 columns">
 					    <%= f.label :youth_invlvm_wknd_dates, 'Youth Involvement Weekend', :class => 'right inline' %><br>
 				  </div>
-				   <div class="small-3 columns">
+				   <div class="small-6 columns">
 					    <%= f.text_field :youth_invlvm_wknd_dates, :class => 'date-picker', :value => (formatted_date(f.object.youth_invlvm_wknd_dates) if f.object.youth_invlvm_wknd_dates) %>
 						<%= f.hidden_field :youth_invlvm_wknd_dates, :class => 'alt_time_to_db' %>
 				  </div>
@@ -103,7 +103,7 @@
 				  <div class="small-6 columns">
 					    <%= f.label :youth_commt_event, 'Youth Commitment Event', :class => 'right inline' %><br>
 				  </div>
-				   <div class="small-3 columns">
+				   <div class="small-6 columns">
 					    <%= f.text_field :youth_commt_event, :class => 'date-picker', :value => (formatted_date(f.object.youth_commt_event) if f.object.youth_commt_event) %>
 						<%= f.hidden_field :youth_commt_event, :class => 'alt_time_to_db' %>
 				  </div>
@@ -112,7 +112,7 @@
 				  <div class="small-6 columns">
 					    <%= f.label :weekend_3_dates, "Weekend III", :class => 'right inline' %><br>
 				  </div>
-				   <div class="small-3 columns">
+				   <div class="small-6 columns">
 					    <%= f.text_field :weekend_3_dates, :class => 'date-picker', :value => (formatted_date(f.object.weekend_3_dates) if f.object.weekend_3_dates) %>
 						<%= f.hidden_field :weekend_3_dates, :class => 'alt_time_to_db' %>
 				  </div>
@@ -121,7 +121,7 @@
 				  <div class="small-6 columns">
 					    <%= f.label :weekend_4_dates, "Weekend IV", :class => 'right inline' %><br>
 				  </div>
-				   <div class="small-3 columns">
+				   <div class="small-6 columns">
 					    <%= f.text_field :weekend_4_dates, :class => 'date-picker', :value => (formatted_date(f.object.weekend_4_dates) if f.object.weekend_4_dates) %>
 						<%= f.hidden_field :weekend_4_dates, :class => 'alt_time_to_db' %>
 				  </div>
@@ -130,7 +130,7 @@
 				  <div class="small-6 columns">
 					    <%= f.label :parish_wide_event_dates, "Parish Wide Event", :class => 'right inline' %><br>
 				  </div>
-				   <div class="small-3 columns">
+				   <div class="small-6 columns">
 					    <%= f.text_field :parish_wide_event_dates, :class => 'date-picker', :value => (formatted_date(f.object.parish_wide_event_dates) if f.object.parish_wide_event_dates) %>
 						<%= f.hidden_field :parish_wide_event_dates, :class => 'alt_time_to_db' %>
 				  </div>
@@ -139,9 +139,22 @@
 				  <div class="small-6 columns">
 					    <%= f.label :celebration_mass_dates, "Celebrartion Mass/Service", :class => 'right inline' %><br>
 				  </div>
-				   <div class="small-3 columns">
+				   <div class="small-6 columns">
 					    <%= f.text_field :celebration_mass_dates, :class => 'date-picker', :value => (formatted_date(f.object.celebration_mass_dates) if f.object.celebration_mass_dates) %>
 						<%= f.hidden_field :celebration_mass_dates, :class => 'alt_time_to_db' %>
+				  </div>
+			  </div> <!-- END ROW -->
+			  <div class="row field">
+				  <div class="small-6 columns">
+					    <%= f.label :information_act_2_dates, "Information Activity #2", :class => 'right inline' %><br>
+				  </div>
+				   <div class="small-3 columns">
+					    <%= f.text_field :information_act_2_dates, :class => 'date-picker', :value => (formatted_smalldate(f.object.information_act_2_dates) if f.object.information_act_2_dates) %>
+						<%= f.hidden_field :information_act_dates, :class => 'alt_time_to_db' %>
+				  </div>
+				   <div class="small-3 columns">
+					    <%= f.text_field :information_act_2_end, :class => 'date-picker', :value => (formatted_smalldate(f.object.information_act_2_end) if f.object.information_act_2_end) %>
+						<%= f.hidden_field :information_act_2_end, :class => 'alt_time_to_db' %>
 				  </div>
 			  </div> <!-- END ROW -->
 			  
@@ -149,7 +162,8 @@
 		  
 		  <hr>
 		  <div class="actions">
-		    <%= f.submit %>
+		    <%= f.submit %> |
+			<%= link_to 'Cancel/Back', user_campaign_events_path(@user, @campaign) %>
 		  </div>
 		  
 	  </div> <!-- END WEKKENDS & GATHEINGS FIELDSET -->
