@@ -8,4 +8,13 @@ module DocumentsHelper
     #return trim_path
     'http://templater-env-9mvpzgknsa.elasticbeanstalk.com/assets/images/logo_bw.png'
   end
+  
+  def template_saved?
+    if SqlTemplate.exists?(:campaign_id => @campaign, :path => 'documents/'+params[:id])
+      @template = SqlTemplate.where(:campaign_id => @campaign, :path => 'documents/'+params[:id]).first
+    else
+      false
+    end
+  end
+  
 end

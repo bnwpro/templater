@@ -58,7 +58,7 @@ class SqlTemplatesController < ApplicationController
   def destroy
     @sql_template.destroy
     respond_to do |format|
-      format.html { redirect_to sql_templates_url }
+      format.html { redirect_to :back }
       format.json { head :no_content }
     end
   end

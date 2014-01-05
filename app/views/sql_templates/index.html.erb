@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <h1>Listing saved Campaign documents</h1>
 
-<table>
+<table id="template_table">
   <thead>
     <tr>
       <th>Body</th>
@@ -20,7 +20,7 @@
   <tbody>
     <% @sql_templates.each do |sql_template| %>
       <tr>
-        <td><%= raw sql_template.body %></td>
+        <td id="template_body"><%= raw sql_template.body %></td>
         <td><%= sql_template.path %></td>
         <td><%= sql_template.format %></td>
         <td><%= sql_template.locale %></td>

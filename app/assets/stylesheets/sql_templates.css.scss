@@ -2,9 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 td {
-	max-height: 100px;
+	max-height: 50px;
 }
 td:first-child {
 	width: 100px;
-	max-height: 100px;
+	max-height: 50px;
+}
+#template_body>td {
+	line-height: 50px;
+	width: 10px;
 }
