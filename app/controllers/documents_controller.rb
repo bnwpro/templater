@@ -22,7 +22,7 @@ class DocumentsController < ApplicationController
     resp_doc_dir = "pdfs/campaign_docs/#{campaign.id}/resp"
     FileUtils.mkdir_p(resp_doc_dir)
     
-    block_calendar = BlockCalendar.new.get_calendar_if_exists(id: @campaign.id)
+    block_calendar = BlockCalendar.new.get_calendar_if_exists?(id: @campaign.id)
     if File.exist?(block_calendar)
       Document.new.resp_doc.each do |title|
         name = "documents/"  + title
@@ -49,8 +49,8 @@ class DocumentsController < ApplicationController
       end  #end Document.each
       Manual.new.to_pdf(user, campaign)
     else
-      raise :error
-      flash.now[:error] = "Block Calendar has not been uploaded.  Please upload your Block Calendar to continue."
+      #raise :error
+      flash[:error] = "Block Calendar has not been uploaded.  Please upload your Block Calendar to continue."
       
       #redirect_to user_campaign_path(@user, @campaign), notice: 'Block Calendar has not been uploaded.  Please upload your Block Calendar to continue.'
       return
