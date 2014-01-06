@@ -20,7 +20,7 @@ module EventsHelper
     _campaign_name_dir = "#{@campaign.name.tr(" ", "_").dup}_#{@campaign.city.tr(" ", "_").dup}"
     company_suffix = "_ofwc"
     s3_campaign_bucket = _campaign_name_dir.downcase + company_suffix
-    
+    #puts s3_campaign_bucket
     s3 = AWS::S3.new#(:region => "us-east-1")
     
     bucket = s3.buckets[s3_campaign_bucket]
@@ -29,9 +29,9 @@ module EventsHelper
       bucket.objects.each do |pdf|
         @files << File.join(url, s3_campaign_bucket, pdf.key)
       end
-      return @filese
+      return @files
     else
-      return
+      return nil
     end
   end
   
