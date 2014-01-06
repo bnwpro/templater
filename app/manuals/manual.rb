@@ -60,7 +60,7 @@ class Manual < Prawn::Document
   private
   def move_and_cleanup_files(campaign_dir, manual_campaign_docs_dir)
     origin = manual_campaign_docs_dir
-    _campaign_name_dir = "#{campaign.name.tr(" ", "_").dup}"
+    _campaign_name_dir = "#{campaign.name.tr(" ", "_").dup}_#{@campaign.city.tr(" ", "_").dup}"
     origin_docs = Dir.glob(File.join(origin, "*"))
      
     S3Upload.new.send_to_s3(files: origin_docs, owner: _campaign_name_dir)
@@ -68,7 +68,7 @@ class Manual < Prawn::Document
     FileUtils.rm_rf File.join(campaign_dir)
   end
   
-  # TEMP
+  # TEMP/UNUSED
   def create_single_addendum(addendums)
     doc_name_stripped = addendums[1].split('/')[-1]
     Prawn::Document.generate("pdfs/campaign_docs/#{@campaign.id}/#{doc_name_stripped}", {:page_size => 'LETTER', :skip_page_creation => true}) do |pdf|
