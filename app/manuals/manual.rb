@@ -20,7 +20,7 @@ class Manual < Prawn::Document
     manual_campaign_docs_dir = File.join(campaign_dir, "manuals")
     FileUtils.mkdir_p(manual_campaign_docs_dir)
     
-    block_calendar = BlockCalendar.new.get_calendar_if_exists(id: @campaign.id)
+    block_calendar = BlockCalendar.new.get_calendar_if_exists?(id: @campaign.id)
     
     # TESTING AREA
     
