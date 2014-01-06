@@ -25,7 +25,7 @@ class DocumentsController < ApplicationController
     block_calendar = BlockCalendar.does_calendar_exist?(id: @campaign.id)
     #bc_key = block_calendar.key
     if (block_calendar)
-      Document.new.first_only.each do |title|
+      Document.new.resp_doc.each do |title|
         name = "documents/"  + title
         save_file = name.split('/')[-1]
         respond_to do |format|
@@ -51,7 +51,7 @@ class DocumentsController < ApplicationController
       Manual.new.to_pdf(user, campaign)
     else
       raise :error
-      flash[:error] = "Block Calendar has not been uploaded.  Please upload your Block Calendar to continue."
+      #flash[:error] = "Block Calendar has not been uploaded.  Please upload your Block Calendar to continue."
       
       #redirect_to user_campaign_path(@user, @campaign), notice: 'Block Calendar has not been uploaded.  Please upload your Block Calendar to continue.'
       return
