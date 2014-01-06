@@ -8,7 +8,8 @@ class Campaign < ActiveRecord::Base
     :s3_permissions => :public_read,
     :bucket => 'ofwc_bc_directory',
     :url => ':s3_path_url',
-    :path => 'block_calendar_cid_:id.pdf'
+    :path => 'block_calendar_cid_:id.pdf',
+    :copy_to_local_file => "pdfs/campaign_docs/:id/block_calendar.pdf"
   validates_attachment :block_calendar, content_type: { content_type: "application/pdf" }
   
   validates :name, presence: true, uniqueness: { case_sensitive: false }

@@ -20,18 +20,21 @@ class Manual < Prawn::Document
     manual_campaign_docs_dir = File.join(campaign_dir, "manuals")
     FileUtils.mkdir_p(manual_campaign_docs_dir)
     
-    block_calendar = BlockCalendar.new.get_calendar_if_exists?(id: @campaign.id)
+    BlockCalendar.new.get_calendar_if_exists(id: @campaign.id)
+    
+    block_calendar = File.join(campaign_dir, "block_calendar_cid_#{campaign.id}.pdf")
     
     # TESTING AREA
     
     #return
     
-    if File.exist?(block_calendar)
+    if (block_calendar)#File.exist?(block_calendar)
       
       CommonPages.new.create_common_pages(cal: block_calendar,
         manual_common_pages: manual_common_pages_en,
         campaign_dir: campaign_dir,
         user: user, campaign: campaign)
+      #return
       
       PositionManuals.new.create_cover_pages(manual_titles: manual_titles_en,
         campaign_dir: campaign_dir,
