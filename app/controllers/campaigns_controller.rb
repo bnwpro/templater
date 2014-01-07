@@ -58,7 +58,7 @@ class CampaignsController < ApplicationController
   # PATCH/PUT /campaigns/1.json
   def update
     @campaign = @user.campaigns.find(params[:id])
-    @campaign.block_calendar = params[:campaign][:block_calendar]
+    #@campaign.block_calendar = params[:campaign][:block_calendar] # Was deleting block calendar on update
     respond_to do |format|
       if @campaign.update(campaign_params)
         #format.html { redirect_to @campaign, notice: 'Campaign was successfully updated.' }
