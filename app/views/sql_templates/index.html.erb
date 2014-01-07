@@ -4,13 +4,13 @@
 <table id="template_table">
   <thead>
     <tr>
-      <th>Body</th>
-      <th>Path</th>
+      <!--<th>Body</th>-->
+	  <th>Campaign</th>
+      <th>Document</th>
       <th>Format</th>
       <th>Locale</th>
       <th>Handler</th>
       <th>Partial</th>
-	  <th>Campaign</th>
       <th></th>
       <th></th>
       <th></th>
@@ -20,13 +20,13 @@
   <tbody>
     <% @sql_templates.each do |sql_template| %>
       <tr>
-        <td id="template_body"><%= raw sql_template.body %></td>
-        <td><%= sql_template.path %></td>
+        <!--<td id="template_body"><%# raw sql_template.body %></td>-->
+		<td><%= sql_template.campaign.name %></td>
+        <td><%= sql_template.path.gsub("documents/", "") %></td>
         <td><%= sql_template.format %></td>
         <td><%= sql_template.locale %></td>
         <td><%= sql_template.handler %></td>
         <td><%= sql_template.partial %></td>
-		<td><%= sql_template.campaign_id %></td>
         <td><%= link_to 'Show', sql_template %></td>
         <td><%= link_to 'Edit', edit_sql_template_path(sql_template) %></td>
         <td><%= link_to 'Delete', sql_template, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete_link' %></td>
@@ -35,7 +35,5 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Sql template', new_sql_template_path %> |
-<%= link_to "Users", users_path %>
+<%# link_to 'New Sql template', new_sql_template_path %>
+<%# link_to "Users", users_path %>

@@ -81,6 +81,7 @@ class CampaignsController < ApplicationController
       #format.html { redirect_to campaigns_url }
       format.html { redirect_to user_campaigns_path(@user) }
       format.json { head :no_content }
+      format.js
     end
   end
   

@@ -14,8 +14,10 @@
   <tbody>
     <% @campaigns.each do |campaign| %>
       <tr>
-        <td><%= campaign.user.name %></td>
+		<td><%= campaign.user_id %></td>
         <td><%= campaign.name %></td>
+		<td><%= link_to 'View', user_campaign_path(campaign.user_id, campaign) %></td>
+		<td><%= link_to 'Delete', user_campaign_path(campaign.user_id, campaign), method: :delete, data: { confirm: 'Are you sure? This will delete all data associated with '+ campaign.name }, class: 'delete_link', remote: true %></td>
       </tr>
     <% end %>
   </tbody>
