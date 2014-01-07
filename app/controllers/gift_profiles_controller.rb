@@ -45,7 +45,7 @@ class GiftProfilesController < ApplicationController
 
     respond_to do |format|
       if @gift_profile.save
-        format.html { redirect_to user_campaign_gift_profiles_path(@user, @campaign), notice: 'Gift Profile was successfully created.' }
+        format.html { redirect_to user_campaign_path(@user, @campaign), notice: 'Gift Profile was successfully created.' }
         format.json { render action: 'show', status: :created, location: @gift_profile }
       else
         format.html { render action: 'new' }
@@ -60,7 +60,7 @@ class GiftProfilesController < ApplicationController
     @gift_profile = @campaign.gift_profile(params[:id])
     respond_to do |format|
       if @gift_profile.update(gift_profile_params)
-        format.html { redirect_to user_campaign_gift_profiles_path(@user, @campaign), notice: 'Gift Profile was successfully updated.' }
+        format.html { redirect_to user_campaign_path(@user, @campaign), notice: 'Gift Profile was successfully updated.' }
         format.js
         format.json { head :no_content }
       else

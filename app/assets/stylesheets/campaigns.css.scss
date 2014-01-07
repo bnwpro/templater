@@ -1,6 +1,11 @@
 // Place all the styles related to the Campaigns controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@mixin box-shadow($value) {
+	box-shadow: $value;
+	-moz-box-shadow: $value;
+	-webkit-box-shadow: $value;
+}
 table {
 }
 #upload {
@@ -13,4 +18,7 @@ table {
 }
 .red {
 	color: red;
+}
+.panel {
+	@include box-shadow(5px 5px 5px #888888);
 }

@@ -31,7 +31,7 @@
 		  
 		  <% if template_saved? %>
 		  
-		  	<%= link_to 'Revert to Default Template >', sql_template_path(:id => @template.id, :campaign_id => @campaign.id, :path => params[:id]), :confirm => "Are you sure you want to delete this stored document and revert to the original template? All edits to this document will be lost!", :class => :red, :remote => true, :method => :delete %>
+		  	<%= link_to 'Revert to Default Template >', sql_template_path(:id => @template.id, :campaign_id => @campaign.id, :path => params[:id]), :confirm => "Are you sure you want to delete this stored document and revert to the original template? All edits to this document will be lost!", :id => "revert_link", :class => :red, :remote => true, :method => :delete %>
 			
 		  <% end %>
 		  

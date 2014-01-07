@@ -23,8 +23,11 @@ html {
 }
 .doc-links {
 	position: fixed;
-	margin-left: 25px;
+	margin-left: 10px;
 	line-height: 50px;
+	@include box-shadow(7px 7px 5px #888888);
+	padding: 5px;
+	background-color: #f4f4f4;
 }
 .red {
 	color: red;

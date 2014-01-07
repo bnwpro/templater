@@ -39,7 +39,7 @@ class TrainingSheetsController < ApplicationController
 
     respond_to do |format|
       if @training_sheet.save
-        format.html { redirect_to user_campaign_training_sheets_path(@user, @campaign), notice: 'Training sheet was successfully created.' }
+        format.html { redirect_to user_campaign_path(@user, @campaign), notice: 'Training sheet was successfully created.' }
         format.json { render action: 'show', status: :created, location: @training_sheet }
       else
         format.html { render action: 'new' }
@@ -54,8 +54,9 @@ class TrainingSheetsController < ApplicationController
     @training_sheet = @campaign.training_sheet(params[:id])
     respond_to do |format|
       if @training_sheet.update(training_sheet_params)
-        format.html { redirect_to user_campaign_training_sheets_path(@user, @campaign), notice: 'Training sheet was successfully updated.' }
+        format.html { redirect_to user_campaign_path(@user, @campaign), notice: 'Training sheet was successfully updated.' }
         format.json { head :no_content }
+        format.js
       else
         format.html { render action: 'edit' }
         format.json { render json: @training_sheet.errors, status: :unprocessable_entity }

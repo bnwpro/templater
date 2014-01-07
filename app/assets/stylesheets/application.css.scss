@@ -18,10 +18,18 @@
 @import "campaigns";
 @import "events";
 
-@mixin shadowed-boxes { 
-	-moz-box-shadow: 0 0 5px #888;
-	-webkit-box-shadow: 0 0 5px #888;
-	box-shadow: 0 0 5px #888;
+@mixin shadowed-boxes($value) { 
+	-moz-box-shadow: $value;
+	-webkit-box-shadow: $value;
+	box-shadow: $value;
+}
+#notice {
+	/*border: 1px dashed green;*/
+	color: red;
+	font-weight: bold;
+	width: auto;
+	text-align: center;
+	@include shadowed-boxes(5px 5px 5px #888888);
 }
 .side-nav {
 	/*position: fixed;*/
@@ -34,7 +42,7 @@ select {
 	height: 500px;
 }
 table {
-	@include shadowed-boxes;
+	@include shadowed-boxes(0 0 5px #888);
 	thead {
 		background: #77C9FF;
 	}
@@ -56,4 +64,13 @@ fieldset legend {
 #sessions_logo {
 	width: 25px;
 	height: 40px;
+}
+/*.columns {
+	border: 1px solid red;
+}*/
+h4 {
+	text-align: center;
+}
+select {
+	max-height: 10px;
 }

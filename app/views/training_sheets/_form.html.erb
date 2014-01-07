@@ -185,7 +185,7 @@
 		  <hr>
 		  <div class="actions">
 		    <%= f.submit 'Save Manuals' %> |
-			<%= link_to 'Cancel/Back', user_campaign_path(@user, @campaign) %>
+			<%= link_to 'Cancel/Back', user_campaign_path(@user, @campaign), :remote => true %>
 		  </div>
 	  </div> <!-- END Manuals FIELDSET -->
   <% end %> <!-- END FIELDSET -->
