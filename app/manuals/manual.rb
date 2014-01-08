@@ -34,8 +34,8 @@ class Manual < Prawn::Document
         manual_common_pages: manual_common_pages_en,
         campaign_dir: campaign_dir,
         user: user, campaign: campaign)
-        move_and_cleanup_files(campaign_dir, manual_campaign_docs_dir)
-      return
+        #move_and_cleanup_files(campaign_dir, manual_campaign_docs_dir)
+      #return
       
       PositionManuals.new.create_cover_pages(manual_titles: manual_titles_en,
         campaign_dir: campaign_dir,
