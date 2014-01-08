@@ -45,7 +45,7 @@ $(document).ready(function() {
 		alert('PDFs rendered and saved!');
 	})
 	$('#to_pdf').on('ajax:complete', function(e, data, status, xhr) {
-		//$('#progress-bar').css('visibility', 'hidden');
+		$('#progress-bar').css('visibility', 'hidden');
 		$('#progress-bar').css('width', '10px');
 		clearInterval(interval);
 		progress_bar_width = 10;
