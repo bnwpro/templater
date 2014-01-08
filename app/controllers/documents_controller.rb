@@ -25,7 +25,7 @@ class DocumentsController < ApplicationController
     block_calendar = BlockCalendar.does_calendar_exist?(id: @campaign.id)
     #bc_key = block_calendar.key
     if (block_calendar)
-      Document.new.resp_doc.each do |title|
+      Document.new.first_only.each do |title|
         name = "documents/"  + title
         save_file = name.split('/')[-1]
         respond_to do |format|
