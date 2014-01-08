@@ -78,18 +78,18 @@ class MasterManual < Manual
       PdfMerger.get_template_to_merge(pdf: pdf, path: "#{appendices_dir}/youth.pdf")
       
     # Worksheets
-    #  PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_dir}/AC1-en.pdf")
-    #  PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_dir}/AC2-en.pdf")
-    #  PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_dir}/AC3-en.pdf")
-    #  PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_dir}/CT1-en.pdf")
-    #  PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_dir}/CT2-en.pdf")
-    #  PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_dir}/CT3-en.pdf")
-    #  PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_dir}/CT4-en.pdf")
-    #  PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_dir}/CT5-en.pdf")
-    #  PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_dir}/CT6-en.pdf")
-    #  PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_dir}/CT7-en.pdf")
-    #  PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_dir}/IN1-en.pdf")
-    #  PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_dir}/IN2-en.pdf")
+      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_dir}/AC1-en.pdf")
+      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_dir}/AC2-en.pdf")
+      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_dir}/AC3-en.pdf")
+      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_dir}/CT1-en.pdf")
+      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_dir}/CT2-en.pdf")
+      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_dir}/CT3-en.pdf")
+      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_dir}/CT4-en.pdf")
+      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_dir}/CT5-en.pdf")
+      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_dir}/CT6-en.pdf")
+      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_dir}/CT7-en.pdf")
+      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_dir}/IN1-en.pdf")
+      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_dir}/IN2-en.pdf")
     end
   end
 end
