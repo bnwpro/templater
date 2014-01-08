@@ -37,4 +37,12 @@ $(document).ready(function() {
 		//alert(window.location);
 		alert('PDF for this Responsibility document Saved!');
 	})
+	
+	/*$('#revert_link').on('ajax:error', function(e, data, status, xhr) {
+		alert('Document reversion failed! Are you connected to the internet? Please contact the System Administrator if this error persists.');
+	})*/
+	$('#revert_link').on('ajax:complete', function(e, data, status, xhr) {
+		alert('You are now using the original template for this document.');
+		document.location.reload();
+	})
 })

@@ -45,7 +45,7 @@ class Worksheets < Manual
     default_leading 5
     get_campaign_title(pdf)
     
-    pdf.bounding_box([250, 237], :width => 270) do
+    pdf.bounding_box([250, 225], :width => 270) do#was [250, 237]
       pdf.text "#{formatted_datetime_year(campaign.event.ac_mtg_3)}", :size => 10, :align => :left
       pdf.move_down 19
       pdf.text "#{formatted_datetime_year(campaign.event.ac_host_orient)}", :size => 10, :align => :left
@@ -85,7 +85,7 @@ class Worksheets < Manual
     self.get_campaign_title(pdf)
     
     pdf.text_box "#{formatted_datetime_year(campaign.event.contact_team_asst_trng_1)}", :at => [135, 572], :width => 270, :size => 12, :style => :bold, :align => :center
-    pdf.draw_text "#{campaign.enlistment.contact_each_enlist}", :at => [282, 500], :size => 11, :style => :bold
+    pdf.draw_text "#{campaign.enlistment.contact_each_enlist}", :at => [280, 500], :size => 11, :style => :bold#was [282, 500]
     pdf.draw_text "#{formatted_datetime_year(campaign.event.contact_team_trng_1)}", :at => [285, 361.5], :size => 11
     pdf.bounding_box([275, 298.5], :width => 270) do
       pdf.text "#{formatted_date_vari_begin(campaign.event.info_calls_dates)} - #{formatted_date_vari_end(campaign.event.info_calls_end)}", :size => 11, :align => :left
@@ -102,7 +102,7 @@ class Worksheets < Manual
     self.get_campaign_title(pdf)
     
     pdf.draw_text "#{formatted_date_vari_begin(campaign.event.info_calls_dates)} - #{formatted_date_vari_end(campaign.event.info_calls_end)}", :at => [210, 301.5], :size => 10, :style => :bold
-    pdf.draw_text "#{campaign.name}.", :at => [230.5, 138.5], :size => 9, :style => :bold_italic
+    pdf.draw_text "#{campaign.name}.", :at => [230.5, 145.5], :size => 9, :style => :bold_italic#was [230.5, 138.5]
     pdf.draw_text "#{formatted_date_vari_begin(campaign.event.information_act_dates)} - #{formatted_date_vari_end(campaign.event.information_act_end)},", :at => [74, 125], :size => 9, :style => :bold
   end
   def add_CT5_data(pdf)
@@ -110,7 +110,7 @@ class Worksheets < Manual
     
     pdf.draw_text "#{formatted_date_to_tomorrow(campaign.event.parish_wide_event_dates)}", :at => [293, 518], :size => 10, :style => :bold
     pdf.draw_text "#{formatted_date_vari_begin(campaign.event.special_event_calls_dates)} - #{formatted_date_vari_end(campaign.event.special_event_calls_end)}", :at => [245, 425.5], :size => 10, :style => :bold
-    pdf.draw_text "#{campaign.name}.", :at => [230.5, 381.5], :size => 9, :style => :bold_italic
+    pdf.draw_text "#{campaign.name}.", :at => [230.5, 388.5], :size => 9, :style => :bold_italic#was [230.5, 381.5]
   end
   def add_CT6_data(pdf)
     self.get_campaign_title(pdf)
@@ -119,7 +119,7 @@ class Worksheets < Manual
     self.get_campaign_title_no_loc(pdf)
     
     pdf.draw_text "#{formatted_date_vari_begin(campaign.event.celebration_wknd_calls_dates)} - #{formatted_date_vari_end(campaign.event.celebration_wknd_calls_end)}", :at => [247, 363], :size => 10, :style => :bold
-    pdf.draw_text "#{campaign.name}.", :at => [216, 281.5], :size => 9, :style => :bold_italic
+    pdf.draw_text "#{campaign.name}.", :at => [216, 288.5], :size => 9, :style => :bold_italic#was [216, 281.5]
     pdf.draw_text "#{formatted_date_to_tomorrow(campaign.event.celebration_mass_dates)}.", :at => [313.6, 210], :size => 9, :style => :bold_italic
   end
   def add_IN1_data(pdf)

@@ -8,14 +8,14 @@ class DocumentsController < ApplicationController
   render template: "documents/"+params[:page]
   end
   
-  def generate_
+  def generate
     user = @user
     campaign = @campaign
     Manual.new.to_pdf(user, campaign)
     #Manual.new.create_print_manifest(campaign, "pdfs/campaign_docs/#{@campaign.id}")
   end
   
-  def generate
+  def generate_
     user = @user
     campaign = @campaign
     campaign_root_dir = "pdfs/campaign_docs/#{campaign.id}"
