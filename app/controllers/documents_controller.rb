@@ -50,9 +50,9 @@ class DocumentsController < ApplicationController
       end  #end Document.each
       Manual.new.to_pdf(user, campaign)
     else
-      raise :error
-      #flash[:error] = "Block Calendar has not been uploaded.  Please upload your Block Calendar to continue."
       
+      flash.now[:error] = "Block Calendar has not been uploaded.  Please upload your Block Calendar to continue."
+      raise :error
       #redirect_to user_campaign_path(@user, @campaign), notice: 'Block Calendar has not been uploaded.  Please upload your Block Calendar to continue.'
       return
     end
