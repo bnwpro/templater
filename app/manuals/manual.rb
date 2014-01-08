@@ -18,9 +18,7 @@ class Manual < Prawn::Document
     campaign_docs_dir = "pdfs/campaign_docs"
     campaign_dir = File.join(campaign_docs_dir, "#{campaign.id}")
     manual_campaign_docs_dir = File.join(campaign_dir, "manuals")
-    worksheets_dir = File.join(campaign_dir, "worksheets")
     FileUtils.mkdir_p(manual_campaign_docs_dir)
-    FileUtils.mkdir(worksheets_dir)
     
     BlockCalendar.new.get_calendar_if_exists(id: @campaign.id)
     
@@ -50,12 +48,11 @@ class Manual < Prawn::Document
         campaign: campaign, delivery: "print")
   
       Worksheets.new.create_worksheets(worksheets: worksheets_en,
-        worksheets_dir: worksheets_dir,
+        manual_campaign_docs_dir: manual_campaign_docs_dir,
         campaign: campaign)
         
       MasterManual.new.create_master_program_manual(campaign_dir: campaign_dir,
-        manual_campaign_dir: manual_campaign_docs_dir,
-        worksheets_dir: worksheets_dir,
+        manual_campaign_docs_dir: manual_campaign_docs_dir,
         campaign: campaign)
       
       PrintManifest.new.create_print_manifest(data: campaign, path: campaign_dir)
@@ -68,7 +65,7 @@ class Manual < Prawn::Document
   def move_and_cleanup_files(campaign_dir, manual_campaign_docs_dir)
     origin = manual_campaign_docs_dir
     _campaign_name_dir = "#{campaign.name.tr(" ", "_").dup}_#{@campaign.city.tr(" ", "_").dup}"
-    origin_docs = Dir.glob(File.join(origin, "*/*"))
+    origin_docs = Dir.glob(File.join(origin, "*"))
      
     S3Upload.new.send_to_s3(files: origin_docs, owner: _campaign_name_dir)
     

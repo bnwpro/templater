@@ -4,12 +4,11 @@ class MasterManual < Manual
   
   def create_master_program_manual(options = {})
     campaign_dir = options[:campaign_dir]
-    manual_campaign_dir = options[:manual_campaign_dir]
-    worksheets_dir = options[:worksheets_dir]
+    manual_campaign_docs_dir = options[:manual_campaign_docs_dir]
     self.campaign = options[:campaign]
     appendices_dir = "pdfs/templates/appendices"
     
-    Prawn::Document.generate("#{manual_campaign_dir}/pr_Program_Manager's_Manual.pdf", {:page_size => 'LETTER', :skip_page_creation => true}) do |pdf|
+    Prawn::Document.generate("#{manual_campaign_docs_dir}/pr_Program_Manager's_Manual.pdf", {:page_size => 'LETTER', :skip_page_creation => true}) do |pdf|
       pdf.start_new_page(:template => "pdfs/templates/intro_pages/1_cover.pdf")
       pdf.fill_color "000000"
       pdf.bounding_box([100, 600], :width => 375) do
@@ -79,18 +78,18 @@ class MasterManual < Manual
       PdfMerger.get_template_to_merge(pdf: pdf, path: "#{appendices_dir}/youth.pdf")
       
     # Worksheets
-      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{worksheets_dir}/AC1-en.pdf")
-      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{worksheets_dir}/AC2-en.pdf")
-      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{worksheets_dir}/AC3-en.pdf")
-      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{worksheets_dir}/CT1-en.pdf")
-      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{worksheets_dir}/CT2-en.pdf")
-      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{worksheets_dir}/CT3-en.pdf")
-      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{worksheets_dir}/CT4-en.pdf")
-      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{worksheets_dir}/CT5-en.pdf")
-      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{worksheets_dir}/CT6-en.pdf")
-      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{worksheets_dir}/CT7-en.pdf")
-      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{worksheets_dir}/IN1-en.pdf")
-      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{worksheets_dir}/IN2-en.pdf")
+      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_docs_dir}/AC1-en.pdf")
+      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_docs_dir}/AC2-en.pdf")
+      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_docs_dir}/AC3-en.pdf")
+      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_docs_dir}/CT1-en.pdf")
+      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_docs_dir}/CT2-en.pdf")
+      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_docs_dir}/CT3-en.pdf")
+      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_docs_dir}/CT4-en.pdf")
+      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_docs_dir}/CT5-en.pdf")
+      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_docs_dir}/CT6-en.pdf")
+      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_docs_dir}/CT7-en.pdf")
+      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_docs_dir}/IN1-en.pdf")
+      PdfMerger.get_template_to_merge(pdf: pdf, path: "#{manual_campaign_docs_dir}/IN2-en.pdf")
     end
   end
 end

@@ -18,6 +18,5 @@ class S3Upload
       key = File.basename(pdfs)
       s3.buckets[campaign_bucket].objects[key].write(:file => pdfs, :acl => :public_read)
     end
-    
   end
 end

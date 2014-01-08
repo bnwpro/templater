@@ -4,12 +4,12 @@ class Worksheets < Manual
   
   def create_worksheets(options = {})
     worksheets = options[:worksheets]
-    worksheets_dir = options[:worksheets_dir]
+    manual_campaign_docs_dir = options[:manual_campaign_docs_dir]
     self.campaign = options[:campaign]
     
     worksheets.each do |path_to_doc|
       doc_name_stripped = path_to_doc.split('/')[-1]
-      Prawn::Document.generate("#{worksheets_dir}/#{doc_name_stripped}", {:page_size => 'LETTER', :skip_page_creation => true}) do |pdf|
+      Prawn::Document.generate("#{manual_campaign_docs_dir}/#{doc_name_stripped}", {:page_size => 'LETTER', :skip_page_creation => true}) do |pdf|
         PdfMerger.get_template_to_merge(pdf: pdf, path: path_to_doc)
         case doc_name_stripped
         when "AC1-en.pdf"
