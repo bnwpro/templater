@@ -42,14 +42,14 @@ class Manual < Prawn::Document
         manual_campaign_docs_dir: manual_campaign_docs_dir,
         campaign: campaign, delivery: "electronic")
       
-      PositionManuals.new.create_cover_pages(manual_titles: manual_titles_en,
-        campaign_dir: campaign_dir,
-        manual_campaign_docs_dir: manual_campaign_docs_dir,
-        campaign: campaign, delivery: "print")
+      #PositionManuals.new.create_cover_pages(manual_titles: manual_titles_en,
+      #  campaign_dir: campaign_dir,
+      #  manual_campaign_docs_dir: manual_campaign_docs_dir,
+      #  campaign: campaign, delivery: "print")
   
-      Worksheets.new.create_worksheets(worksheets: worksheets_en,
-        manual_campaign_docs_dir: manual_campaign_docs_dir,
-        campaign: campaign)
+      #Worksheets.new.create_worksheets(worksheets: worksheets_en,
+      #  manual_campaign_docs_dir: manual_campaign_docs_dir,
+      #  campaign: campaign)
         
       MasterManual.new.create_master_program_manual(campaign_dir: campaign_dir,
         manual_campaign_dir: manual_campaign_docs_dir,
