@@ -18,8 +18,9 @@ class Manual < Prawn::Document
     campaign_docs_dir = "pdfs/campaign_docs"
     campaign_dir = File.join(campaign_docs_dir, "#{campaign.id}")
     manual_campaign_docs_dir = File.join(campaign_dir, "manuals")
-    worksheets_dir = File.join(manual_campaign_docs_dir, "worksheets")
-    FileUtils.mkdir_p(worksheets_dir)
+    worksheets_dir = File.join(campaign_dir, "worksheets")
+    FileUtils.mkdir_p(manual_campaign_docs_dir)
+    FileUtils.mkdir(worksheets_dir)
     
     BlockCalendar.new.get_calendar_if_exists(id: @campaign.id)
     
@@ -27,7 +28,7 @@ class Manual < Prawn::Document
     
     # TESTING AREA
     
-    #return
+    return
     
     if (block_calendar)#File.exist?(block_calendar)
       

@@ -6,7 +6,7 @@ class S3Upload
     
     company_suffix = "_ofwc"
     
-    s3 = AWS::S3.new#(:region => "us-east-1")
+    s3 = AWS::S3.new(:region => "us-east-1")
     
     campaign_bucket = owner.downcase + company_suffix
     remote_bucket = s3.buckets[campaign_bucket]
