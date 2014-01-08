@@ -67,7 +67,7 @@ class Manual < Prawn::Document
   def move_and_cleanup_files(campaign_dir, manual_campaign_docs_dir)
     origin = manual_campaign_docs_dir
     _campaign_name_dir = "#{campaign.name.tr(" ", "_").dup}_#{@campaign.city.tr(" ", "_").dup}"
-    origin_docs = Dir.glob(File.join(origin, "*"))
+    origin_docs = Dir.glob(File.join(origin, "*/*"))
      
     S3Upload.new.send_to_s3(files: origin_docs, owner: _campaign_name_dir)
     
