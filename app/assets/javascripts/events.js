@@ -50,7 +50,7 @@ $(document).ready(function() {
 		clearInterval(interval);
 		progress_bar_width = 10;
 		document.location.reload();
-		alert('PDFs rendered and saved!');
+		//alert('PDFs rendered and saved!');
 	})
 	
 	var progress_bar_width = 10;
