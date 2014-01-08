@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   
   def admin_all
     @campaigns = Campaign.all
-    @user = User.all && @campaigns.find_by(params[:user_id])
+    #@user = User.all && @campaigns.find_by(params[:user_id])
   end
   
   # GET /users

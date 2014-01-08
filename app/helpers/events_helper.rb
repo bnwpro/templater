@@ -15,7 +15,7 @@ module EventsHelper
 		end
   end
   
-  def show_pdfs_if_exist_on_s3
+  def show_pdfs_if_exist_on_s3?
     url = "https://s3.amazonaws.com"
     _campaign_name_dir = "#{@campaign.name.tr(" ", "_").dup}_#{@campaign.city.tr(" ", "_").dup}"
     company_suffix = "_ofwc"
@@ -31,7 +31,7 @@ module EventsHelper
       end
       return @files
     else
-      return nil
+      return
     end
   end
   

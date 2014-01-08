@@ -18,7 +18,8 @@ class Manual < Prawn::Document
     campaign_docs_dir = "pdfs/campaign_docs"
     campaign_dir = File.join(campaign_docs_dir, "#{campaign.id}")
     manual_campaign_docs_dir = File.join(campaign_dir, "manuals")
-    FileUtils.mkdir_p(manual_campaign_docs_dir)
+    worksheets_dir = File.join(manual_campaign_docs_dir, "worksheets")
+    FileUtils.mkdir_p(worksheets_dir)
     
     BlockCalendar.new.get_calendar_if_exists(id: @campaign.id)
     
@@ -34,6 +35,7 @@ class Manual < Prawn::Document
         manual_common_pages: manual_common_pages_en,
         campaign_dir: campaign_dir,
         user: user, campaign: campaign)
+        #move_and_cleanup_files(campaign_dir, manual_campaign_docs_dir)
       #return
       
       PositionManuals.new.create_cover_pages(manual_titles: manual_titles_en,
@@ -47,11 +49,12 @@ class Manual < Prawn::Document
         campaign: campaign, delivery: "print")
   
       Worksheets.new.create_worksheets(worksheets: worksheets_en,
-        manual_campaign_docs_dir: manual_campaign_docs_dir,
+        worksheets_dir: worksheets_dir,
         campaign: campaign)
         
       MasterManual.new.create_master_program_manual(campaign_dir: campaign_dir,
         manual_campaign_dir: manual_campaign_docs_dir,
+        worksheets_dir: worksheets_dir,
         campaign: campaign)
       
       PrintManifest.new.create_print_manifest(data: campaign, path: campaign_dir)

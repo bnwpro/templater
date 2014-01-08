@@ -30,7 +30,7 @@
 		  </tbody>
 		</table>
 	</div> <!-- END small-12 columns -->
-	<div class="small-6 columns to-pdf">
+	<div id="pdf-links" class="small-6 columns to-pdf">
 		<div class="small-4 columns">
 			<%= link_to "Generate Manuals", generate_user_campaign_path(@user, campaign_id: @campaign.id, id: @campaign, format: :pdf), remote: true, id: "to_pdf", class: "button small" %>
 		</div>
@@ -53,7 +53,7 @@
 					<span class="red">(<%= link_to "Block Calendar not uploaded", user_campaign_path(@user, @campaign), :class => 'red' %>)</span>
 				<% end %>
 			</h3>
-			<div id="resp-links"class="small-6 columns panel">
+			<div id="resp-links" class="small-6 columns panel">
 				<% if File.exist?("pdfs/campaign_docs/#{@campaign.id}/ac_resp.pdf") %>
 					<span class="saved">Saved!</span>
 				<% end %>
@@ -74,7 +74,7 @@
 				<%= link_to "Youth", user_campaign_event_document_path(@user, @campaign, @event, 'youth_resp') %><br>
 			</div>
 			<div class="small-6 columns">
-				<% if show_pdfs_if_exist_on_s3 %>
+				<% if show_pdfs_if_exist_on_s3? %>
 					<table>
 				  	    <thead>
 					       <tr>
