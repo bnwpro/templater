@@ -18,6 +18,8 @@ class MasterManual < Manual
         pdf.move_down 40
         pdf.text "Master Program Manual", :size => 32, :style => :bold, :align => :center
       end
+    end
+  end
       PdfMerger.get_template_to_merge(pdf: pdf, path: "#{campaign_dir}/common_pages.pdf")
       PdfMerger.get_template_to_merge(pdf: pdf, path: "#{campaign_dir}/common_pages_enlist.pdf")
       # "Advance Commitment Guide"
