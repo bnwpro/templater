@@ -38,9 +38,9 @@ $(document).ready(function() {
 		}
 		return generate;
 	})
-	$('#to_pdf').on('ajax:error', function(e, data, status, xhr) {
+	/*$('#to_pdf').on('ajax:error', function(e, data, status, xhr) {
 		alert('There was an error while rendering PDFs.  Make sure the Block Calendar has been uploaded and that the Gift Profile data is complete.');
-	})
+	})*/
 	$('#to_pdf').on('ajax:success', function(e, data, status, xhr) {
 		alert('PDFs rendered and saved!');
 	})
@@ -50,7 +50,7 @@ $(document).ready(function() {
 		clearInterval(interval);
 		progress_bar_width = 10;
 		document.location.reload();
-		//alert('PDFs rendered and saved!');
+		alert('PDFs rendered and saved!');
 	})
 	
 	var progress_bar_width = 10;
