@@ -28,7 +28,7 @@ class Manual < Prawn::Document
     
     # TESTING AREA
     
-    return
+    #return
     
     if (block_calendar)#File.exist?(block_calendar)
       
