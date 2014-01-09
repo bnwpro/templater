@@ -30,6 +30,7 @@ class PositionManuals < Manual
           pdf.text "#{cover_page}", :size => 32, :style => :bold, :align => :center
         end
         PdfMerger.get_template_to_merge(pdf: pdf, path: "#{campaign_dir}/common_pages.pdf")
+        PdfMerger.get_template_to_merge(pdf: pdf, path: "#{campaign_dir}/common_pages_enlist.pdf") unless delivery_method == "print"
         
         case cover_page
         when "Advance Commitment Leader Guide"
@@ -38,19 +39,19 @@ class PositionManuals < Manual
           PdfMerger.get_template_to_merge(pdf: pdf, path: "#{campaign_dir}/giving_potential.pdf") unless delivery_method == "print"
         when "Campaign Administrator Guide"
           PdfMerger.get_template_to_merge(pdf: pdf, path: "#{campaign_dir}/resp/cadmin_resp.pdf")
-          if delivery_method == "electronic"
-            PdfMerger.get_template_to_merge(pdf: pdf, path: "#{appendices_dir}/cadmin_to_ws1.pdf")
-            Worksheets.new.add_cadmin_ws1_data(pdf, campaign)
-            PdfMerger.get_template_to_merge(pdf: pdf, path: "#{appendices_dir}/cadmin_ws1_to_ws2.pdf")
-            Worksheets.new.add_cadmin_ws2_data(pdf, campaign)
-            PdfMerger.get_template_to_merge(pdf: pdf, path: "#{appendices_dir}/cadmin_ws3.pdf")
-            Worksheets.new.add_cadmin_ws3_data(pdf, campaign)
-            PdfMerger.get_template_to_merge(pdf: pdf, path: "#{appendices_dir}/cadmin_ws3_to_ws4.pdf")
-            Worksheets.new.add_cadmin_ws4_data(pdf, campaign)
-            PdfMerger.get_template_to_merge(pdf: pdf, path: "#{appendices_dir}/cadmin_ws5.pdf")
-            Worksheets.new.add_cadmin_ws5_data(pdf, campaign)
-            PdfMerger.get_template_to_merge(pdf: pdf, path: "#{appendices_dir}/cadmin_to_end.pdf")
-          end
+          #if delivery_method == "electronic"
+          PdfMerger.get_template_to_merge(pdf: pdf, path: "#{appendices_dir}/cadmin_to_ws1.pdf")
+          Worksheets.new.add_cadmin_ws1_data(pdf, campaign)
+          PdfMerger.get_template_to_merge(pdf: pdf, path: "#{appendices_dir}/cadmin_ws1_to_ws2.pdf")
+          Worksheets.new.add_cadmin_ws2_data(pdf, campaign)
+          PdfMerger.get_template_to_merge(pdf: pdf, path: "#{appendices_dir}/cadmin_ws3.pdf")
+          Worksheets.new.add_cadmin_ws3_data(pdf, campaign)
+          PdfMerger.get_template_to_merge(pdf: pdf, path: "#{appendices_dir}/cadmin_ws3_to_ws4.pdf")
+          Worksheets.new.add_cadmin_ws4_data(pdf, campaign)
+          PdfMerger.get_template_to_merge(pdf: pdf, path: "#{appendices_dir}/cadmin_ws5.pdf")
+          Worksheets.new.add_cadmin_ws5_data(pdf, campaign)
+          PdfMerger.get_template_to_merge(pdf: pdf, path: "#{appendices_dir}/cadmin_to_end.pdf")
+            #end
         when "Campaign Chair Guide"
           PdfMerger.get_template_to_merge(pdf: pdf, path: "#{campaign_dir}/resp/chair_resp.pdf")
           PdfMerger.get_template_to_merge(pdf: pdf, path: "#{appendices_dir}/chair.pdf") unless delivery_method == "print"
