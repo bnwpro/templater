@@ -4,6 +4,7 @@
 
 $(document).ready(function() {
 	$('.datetime-picker').each(function() {
+		var alt_time = $(this).closest('div').find('.alt_time_to_db');
 		$(this).datetimepicker( {
 			showSecond: false,
 			dateFormat: 'MM, d',
@@ -11,18 +12,25 @@ $(document).ready(function() {
 			controlType: 'select',
 			//addSliderAccess: true,
 		    //sliderAccessArgs: { touchonly: false },
-			altField: $(this).closest('div').find('.alt_time_to_db'),
+			altField: alt_time,
 			altFieldTimeOnly: false,
 			altFormat: 'yy-mm-dd',
 			altTimeFormat: 'HH:mm:ss'
 		});
+		$(this).change(function() {
+			if (!$(this).val()) alt_time.val('');
+		})
 	});
 	$('.date-picker').each(function() {
+		var alt_time = $(this).closest('div').find('.alt_time_to_db');
 		$(this).datepicker( {
 			dateFormat: 'M, d',
-			altField: $(this).closest('div').find('.alt_time_to_db'),
+			altField: alt_time,
 			altFormat: 'yy-mm-dd'
 		});
+		$(this).change(function() {
+			if (!$(this).val()) alt_time.val('');
+		})
 	});
 		
 	$('#to_pdf').on('ajax:beforeSend', function(e, data, status, xhr) {
