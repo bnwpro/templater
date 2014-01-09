@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131222163313) do
+ActiveRecord::Schema.define(version: 20140109162210) do
 
   create_table "campaign_contacts", force: true do |t|
     t.integer  "campaign_id"
@@ -42,10 +42,10 @@ ActiveRecord::Schema.define(version: 20131222163313) do
     t.string   "fax"
     t.string   "email"
     t.string   "url"
-    t.integer  "number_of_families",                                  default: 0
-    t.decimal  "contribution_income",         precision: 7, scale: 2
-    t.boolean  "has_pacesetter",                                      default: true
-    t.boolean  "standalone",                                          default: false
+    t.integer  "number_of_families",                                   default: 0
+    t.decimal  "contribution_income",         precision: 14, scale: 2
+    t.boolean  "has_pacesetter",                                       default: true
+    t.boolean  "standalone",                                           default: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "block_calendar_file_name"
