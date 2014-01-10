@@ -25,10 +25,8 @@ class Manual < Prawn::Document
     block_calendar = File.join(campaign_dir, "block_calendar_cid_#{campaign.id}.pdf")
     
     # TESTING AREA
-    Worksheets.new.create_worksheets(worksheets: worksheets_en,
-      manual_campaign_docs_dir: manual_campaign_docs_dir,
-      campaign: campaign)
-    return
+    
+    #return
     
     if (block_calendar)#File.exist?(block_calendar)
       
