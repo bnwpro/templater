@@ -85,7 +85,7 @@ class CommonPages < Manual
   end
  
   def add_gift_profile_data(pdf)
-    pdf.bounding_box([135, 680], :width => 270) do
+    pdf.bounding_box([35, 680], :width => 470) do
       pdf.text "#{campaign.name}", :size => 18, :style => :bold, :align => :center
       pdf.move_down 5
       pdf.text "#{campaign.city}, #{campaign.state}", :size => 12, :style => :bold, :align => :center

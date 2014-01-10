@@ -67,7 +67,7 @@ class Worksheets < Manual
     pdf.draw_text "#{formatted_date(campaign.event.ac_res_calls_dates)}.", :at => [333, 533], :size => 10, :style => :bold
     pdf.draw_text "(from)", :at => [239, 418], :size => 9, :style => :italic
     pdf.draw_text "#{campaign.name}.", :at => [265, 428], :size => 9, :style => :bold_italic#was [265, 418]
-    pdf.draw_text "#{formatted_date_to_tomorrow(campaign.event.parish_wide_event_dates)}.", :at => [247, 113], :size => 11, :style => :bold
+    pdf.draw_text "#{formatted_date_to_tomorrow(campaign.event.parish_wide_event_dates)}.", :at => [247, 114], :size => 11, :style => :bold
   end
   def add_AC3_data(pdf)
     self.get_campaign_title_no_loc(pdf)
@@ -77,7 +77,7 @@ class Worksheets < Manual
     
     pdf.draw_text "#{formatted_datetime_year(campaign.event.contact_team_asst_trng_1)}", :at => [100, 107], :size => 10
     pdf.draw_text "#{formatted_datetime_year(campaign.event.contact_team_trng_1)}", :at => [315, 107], :size => 10
-    pdf.draw_text "#{formatted_date_vari_begin(campaign.event.info_calls_dates)} - #{formatted_date_vari_end(campaign.event.info_calls_end)}", :at => [285, 88], :size => 10
+    pdf.draw_text "#{formatted_date_vari_begin(campaign.event.info_calls_dates)} - #{formatted_date_vari_end(campaign.event.info_calls_end)}", :at => [285, 87], :size => 10
     pdf.draw_text "#{formatted_date_vari_begin(campaign.event.special_event_calls_dates)} - #{formatted_date_vari_end(campaign.event.special_event_calls_end)}", :at => [285, 72], :size => 10
     pdf.draw_text "#{formatted_date_vari_begin(campaign.event.celebration_wknd_calls_dates)} - #{formatted_date_vari_end(campaign.event.celebration_wknd_calls_end)}", :at => [272, 56], :size => 10
   end
@@ -85,7 +85,7 @@ class Worksheets < Manual
     self.get_campaign_title(pdf)
     
     pdf.text_box "#{formatted_datetime_year(campaign.event.contact_team_asst_trng_1)}", :at => [135, 572], :width => 270, :size => 12, :style => :bold, :align => :center
-    pdf.draw_text "#{campaign.enlistment.contact_each_enlist}", :at => [278, 500], :size => 11, :style => :bold#was [282, 500]
+    pdf.draw_text "#{campaign.enlistment.contact_each_enlist}", :at => [281, 500], :size => 11, :style => :bold#was [282, 500]
     pdf.draw_text "#{formatted_datetime_year(campaign.event.contact_team_trng_1)}", :at => [285, 361.5], :size => 11
     pdf.bounding_box([275, 298.5], :width => 270) do
       pdf.text "#{formatted_date_vari_begin(campaign.event.info_calls_dates)} - #{formatted_date_vari_end(campaign.event.info_calls_end)}", :size => 11, :align => :left
@@ -133,14 +133,14 @@ class Worksheets < Manual
   end
   
   def get_campaign_title(pdf)
-    pdf.bounding_box([135, 703], :width => 270) do
+    pdf.bounding_box([35, 703], :width => 470) do
       pdf.text "#{campaign.name}", :size => 18, :style => :bold, :align => :center
       pdf.move_down 1
       pdf.text "#{campaign.city}, #{campaign.state}", :size => 12, :style => :bold, :align => :center
     end
   end
   def get_campaign_title_no_loc(pdf)
-    pdf.bounding_box([135, 703], :width => 270) do
+    pdf.bounding_box([35, 703], :width => 470) do
       pdf.text "#{campaign.name}", :size => 18, :style => :bold, :align => :center
     end
   end
@@ -148,7 +148,7 @@ class Worksheets < Manual
   #Campaign Admin Worksheet Data for Appendix
   def add_cadmin_ws1_data(pdf, campaign)
     pdf.draw_text "#{campaign.training_sheet.man_contact}", :at => [94.5, 552.5], :size => 11, :style => :bold
-    pdf.draw_text "#{multiply(campaign.training_sheet.man_contact, campaign.enlistment.contact_enlist)}", :at => [91, 462.5], :size => 11, :style => :bold
+    pdf.draw_text "#{multiply(campaign.training_sheet.man_contact, campaign.enlistment.contact_enlist)}", :at => [94.5, 462.5], :size => 11, :style => :bold
     pdf.draw_text "#{campaign.enlistment.contact_each_enlist}", :at => [71.5, 418.5], :size => 11, :style => :bold
     pdf.draw_text "#{formatted_datetime_year(campaign.event.contact_team_asst_trng_1)}.", :at => [36.5, 272], :size => 11, :style => :bold
   end
@@ -157,7 +157,7 @@ class Worksheets < Manual
     pdf.draw_text "#{formatted_datetime_year(campaign.event.contact_team_trng_1)}", :at => [36.5, 363.5], :size => 11, :style => :bold
   end
   def add_cadmin_ws3_data(pdf, campaign)
-    pdf.draw_text "#{sum((multiply(campaign.training_sheet.man_info, campaign.enlistment.info_enlist)), campaign.training_sheet.man_info)}", :at => [91.5, 610], :size => 11, :style => :bold
+    pdf.draw_text "#{sum((multiply(campaign.training_sheet.man_info, campaign.enlistment.info_enlist)), campaign.training_sheet.man_info)}", :at => [91.5, 611], :size => 11, :style => :bold
     pdf.draw_text "#{formatted_datetime_year(campaign.event.info_team_trng_1)}", :at => [36.5, 523.5], :size => 11, :style => :bold
   end
   def add_cadmin_ws4_data(pdf, campaign)
@@ -167,9 +167,9 @@ class Worksheets < Manual
   end
   def add_cadmin_ws5_data(pdf, campaign)
     ac_total = "#{sum((multiply(campaign.training_sheet.man_ac, campaign.enlistment.ac_enlist)), campaign.training_sheet.man_ac)}"
-    pdf.draw_text ac_total, :at => [149, 482], :size => 11, :style => :bold
-    pdf.draw_text ac_total, :at => [174, 394], :size => 11
-    pdf.draw_text ac_total, :at => [149, 351.5], :size => 11, :style => :bold
+    pdf.draw_text ac_total, :at => [152.5, 482], :size => 11, :style => :bold
+    pdf.draw_text ac_total, :at => [177.5, 394], :size => 11
+    pdf.draw_text ac_total, :at => [152.5, 351.5], :size => 11, :style => :bold
     pdf.draw_text "#{formatted_datetime_year(campaign.event.ac_host_orient)}.", :at => [183, 118], :size => 11, :style => :bold
   end
 end

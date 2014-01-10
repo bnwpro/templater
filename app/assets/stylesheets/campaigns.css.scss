@@ -6,7 +6,8 @@
 	-moz-box-shadow: $value;
 	-webkit-box-shadow: $value;
 }
-table {
+td {
+	max-width: 300px;
 }
 #upload {
 	float: right;
