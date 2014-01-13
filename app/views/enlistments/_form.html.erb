@@ -224,3 +224,11 @@
   
   <hr>
 <% end %> <!-- END FORM -->
+<script>
+	$('input').focusout(function() {
+		input_value = $(this).val();
+		if (input_value == "") {
+			$(this).val(0);
+		};
+	});
+</script>
