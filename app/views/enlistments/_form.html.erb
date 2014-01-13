@@ -93,7 +93,7 @@
   	  </div> <!-- END ROW -->
   	  <div class="row field">
   		  <div class="small-3 columns">
-  	  		    <%= f.number_field :spc_event_enlist %>
+  	  		    <%= f.number_field :spc_event_enlist, :min => 0 %>
   	      </div>
   		  <div class="small-9 columns">
   	  		    <span class="left inline">Each Leader will Enlist</span>
@@ -135,7 +135,7 @@
 		  </div> <!-- END ROW -->
 		  <div class="row field">
 			  <div class="small-3 columns">
-		  		    <%= f.number_field :contact_enlist %>
+		  		    <%= f.number_field :contact_enlist, :min => 0 %>
 		      </div>
 			  <div class="small-9 columns">
 		  		    <span class="left inline">Each Leader will Enlist</span>
@@ -151,7 +151,7 @@
 		  </div> <!-- END ROW -->
 		  <div class="row field">
 			  <div class="small-3 columns">
-		  		    <%= f.number_field :contact_each_enlist %>
+		  		    <%= f.number_field :contact_each_enlist, :min => 0 %>
 		      </div>
 			  <div class="small-9 columns">
 		  		    <span class="left inline">to be Enlisted by each</span>
@@ -189,7 +189,7 @@
 		  </div> <!-- END ROW -->
 		  <div class="row field">
 			  <div class="small-3 columns">
-		  		    <%= f.number_field :info_enlist %>
+		  		    <%= f.number_field :info_enlist, :min => 0 %>
 		      </div>
 			  <div class="small-9 columns">
 		  		    <span class="left inline">Each Leader will Enlist</span>
