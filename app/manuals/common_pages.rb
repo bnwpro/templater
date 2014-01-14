@@ -224,9 +224,9 @@ class CommonPages < Manual
       pdf.move_down 6
       pdf.text "#{campaign.enlistment.campaign.enlistment.contact_each_enlist} Members", :align => :center, :size => size
       pdf.move_down 6
-      pdf.text "#{multiply((multiply(campaign.training_sheet.man_contact, campaign.enlistment.contact_enlist)), campaign.enlistment.contact_each_enlist)}", :align => :center, :size => size
+      pdf.text "#{contact_each_enlistment}", :align => :center, :size => size
       pdf.move_down 6
-      pdf.text "#{sum((multiply((multiply(campaign.training_sheet.man_contact, campaign.enlistment.contact_enlist)), campaign.enlistment.contact_each_enlist)), campaign.training_sheet.man_contact)}", :align => :center, :size => size
+      pdf.text "#{sum(multiply(campaign.training_sheet.man_contact, campaign.enlistment.contact_enlist),(multiply((multiply(campaign.training_sheet.man_contact, campaign.enlistment.contact_enlist)), campaign.enlistment.contact_each_enlist)), campaign.training_sheet.man_contact)}", :align => :center, :size => size
     end
     # INFORMATION TEAM
     pdf.bounding_box([157, 151], :width => 385) do

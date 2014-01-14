@@ -3,6 +3,7 @@ class Manual < Prawn::Document
   include ActionView::Helpers::NumberHelper
   include ApplicationHelper
   include GiftProfilesHelper
+  include EnlistmentHelper
   
   attr_accessor :user, :campaign
   
@@ -35,7 +36,7 @@ class Manual < Prawn::Document
         campaign_dir: campaign_dir,
         user: user, campaign: campaign)
         #move_and_cleanup_files(campaign_dir, manual_campaign_docs_dir)
-      #return
+      return
       
       PositionManuals.new.create_cover_pages(manual_titles: manual_titles_en,
         campaign_dir: campaign_dir,

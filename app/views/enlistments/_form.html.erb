@@ -17,7 +17,7 @@
 		  </div> <!-- END ROW -->
 		  <div class="row field">
 			  <div class="small-3 columns">
-		  		    <%= f.number_field :ac_enlist, :class => 'enlistment_num', :min => 0 %>
+		  		    <%= f.number_field :ac_enlist, :class => 'enlistment_num enlist', :min => 0 %>
 		      </div>
 			  <div class="small-9 columns">
 		  		    <span class="left inline">Each Leader will Enlist</span>
@@ -55,7 +55,7 @@
 		  </div> <!-- END ROW -->
 		  <div class="row field">
 			  <div class="small-3 columns">
-		  		    <%= f.number_field :childs_act_enlist, :class => 'enlistment_num', :min => 0 %>
+		  		    <%= f.number_field :childs_act_enlist, :class => 'enlistment_num enlist', :min => 0 %>
 		      </div>
 			  <div class="small-9 columns">
 		  		    <span class="left inline">Each Leader will Enlist</span>
@@ -93,7 +93,7 @@
   	  </div> <!-- END ROW -->
   	  <div class="row field">
   		  <div class="small-3 columns">
-  	  		    <%= f.number_field :spc_event_enlist, :min => 0 %>
+  	  		    <%= f.number_field :spc_event_enlist, :min => 0, :class => 'enlist' %>
   	      </div>
   		  <div class="small-9 columns">
   	  		    <span class="left inline">Each Leader will Enlist</span>
@@ -135,7 +135,7 @@
 		  </div> <!-- END ROW -->
 		  <div class="row field">
 			  <div class="small-3 columns">
-		  		    <%= f.number_field :contact_enlist, :min => 0 %>
+		  		    <%= f.number_field :contact_enlist, :min => 0, :class => 'enlist' %>
 		      </div>
 			  <div class="small-9 columns">
 		  		    <span class="left inline">Each Leader will Enlist</span>
@@ -151,7 +151,7 @@
 		  </div> <!-- END ROW -->
 		  <div class="row field">
 			  <div class="small-3 columns">
-		  		    <%= f.number_field :contact_each_enlist, :min => 0 %>
+		  		    <%= f.number_field :contact_each_enlist, :min => 0, :class => "contact_each_enlist" %>
 		      </div>
 			  <div class="small-9 columns">
 		  		    <span class="left inline">to be Enlisted by each</span>
@@ -159,15 +159,15 @@
 		  </div> <!-- END ROW -->
 		  <div class="row field">
 			  <div class="small-3 columns">
-		  		    <%= f.label multiply((multiply(@campaign.training_sheet.man_contact, @campaign.enlistment.contact_enlist)), @campaign.enlistment.contact_each_enlist) %><br>
+		  		    <%= f.label contact_each_enlistment %><br>
 		      </div>
 			  <div class="small-9 columns">
-				  <span class="left inline">Total Enlisted</span>
+				  <span class="left inline">Total Enlisted (<em>at this level</em>)</span>
 		      </div>
 		  </div> <!-- END ROW -->
 		  <div class="row field">
 			  <div class="small-3 columns">
-		  		    <%= f.label sum((multiply((multiply(@campaign.training_sheet.man_contact, @campaign.enlistment.contact_enlist)), @campaign.enlistment.contact_each_enlist)), @campaign.training_sheet.man_contact) %><br>
+		  		    <%= f.label sum(multiply(@campaign.training_sheet.man_contact, @campaign.enlistment.contact_enlist),(multiply((multiply(@campaign.training_sheet.man_contact, @campaign.enlistment.contact_enlist)), @campaign.enlistment.contact_each_enlist)), @campaign.training_sheet.man_contact) %><br>
 		      </div>
 			  <div class="small-9 columns">
 				  <span class="left inline">Total Team</span>
@@ -189,7 +189,7 @@
 		  </div> <!-- END ROW -->
 		  <div class="row field">
 			  <div class="small-3 columns">
-		  		    <%= f.number_field :info_enlist, :min => 0 %>
+		  		    <%= f.number_field :info_enlist, :min => 0, :class => 'enlist' %>
 		      </div>
 			  <div class="small-9 columns">
 		  		    <span class="left inline">Each Leader will Enlist</span>
@@ -225,10 +225,16 @@
   <hr>
 <% end %> <!-- END FORM -->
 <script>
-	$('input').focusout(function() {
+	$('.enlist').focusout(function() {
 		input_value = $(this).val();
 		if (input_value == "") {
 			$(this).val(0);
+		};
+	});
+	$('.contact_each_enlist').focusout(function() {
+		input_value = $(this).val();
+		if (input_value == "") {
+			$(this).val(1);
 		};
 	});
 </script>
