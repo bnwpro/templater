@@ -151,7 +151,7 @@
 		  </div> <!-- END ROW -->
 		  <div class="row field">
 			  <div class="small-3 columns">
-		  		    <%= f.number_field :contact_each_enlist, :min => 0, :class => "contact_each_enlist" %>
+		  		    <%= f.number_field :contact_each_enlist, :min => 0, :class => "enlist" %>
 		      </div>
 			  <div class="small-9 columns">
 		  		    <span class="left inline">to be Enlisted by each</span>
@@ -229,12 +229,6 @@
 		input_value = $(this).val();
 		if (input_value == "") {
 			$(this).val(0);
-		};
-	});
-	$('.contact_each_enlist').focusout(function() {
-		input_value = $(this).val();
-		if (input_value == "") {
-			$(this).val(1);
 		};
 	});
 </script>
