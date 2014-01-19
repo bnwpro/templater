@@ -154,7 +154,7 @@
 		<ul class="page_data">
 			<li>Train any assistants who were not able to attend Contact Team Training (Your consultant will give instructions as to the training process)</li>
 			<li>Begin Call #1 to your assigned households on <strong><%= formatted_date(@campaign.event.info_calls_dates) %></strong>, completing the calls within the given timeframe</li>
-			<li>Turn in the “Focus on Prayer” response sheets to the parish office</li>
+			<li>Turn in the "Focus on Prayer" response sheets to the parish office</li>
 		</ul>
 	</div>
 	<br>
@@ -176,7 +176,8 @@
 		</ul>
 	</div>
 	<br><br>
-	<h2><%= formatted_datetime(@campaign.event.ac_gather_1) %></h2>
+	<h2><%= formatted_date(@campaign.event.ac_gather_1) %><br><br>
+		<%= formatted_time(@campaign.event.ac_gather_1) %>
 	<h3>Advance Commitment Gathering</h3>
 	<ul class="page_data">
 		<li>Plan to attend Advance Commitment Gathering</li>

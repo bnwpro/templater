@@ -27,7 +27,7 @@
 				<li>Move/manage assigned prospects through the following steps:
 					<ol>
 						<li>Get the appointment</li>
-						<li>Make “the ask”</li>
+						<li>Make "the ask"</li>
 						<li>Engage in follow-up conversations</li>
 						<li>Receive the commitment cards</li>
 						<li>Send thank you notes</li>
@@ -205,11 +205,12 @@
 			<li>Continue making pacesetter visits</li>
 			<li>Continue tracking of Pacesetter Prospects</li>
 			<li>Finalize plans for pacesetters who are out of town/unreachable</li>
-			<li>Send personal “thank-you” notes to each pacesetter visited (Appendix G)</li>
+			<li>Send personal "thank-you" notes to each pacesetter visited (Appendix G)</li>
 		</ul>
 	</div>
 	<br><br>
-	<h2><%= formatted_datetime(@campaign.event.ac_gather_1) %></h2>
+	<h2><%= formatted_date(@campaign.event.ac_gather_1) %><br><br>
+		<%= formatted_time(@campaign.event.ac_gather_1) %>
 	<h3>Advance Commitment Gathering</h3>
 	<ul class="page_data">
 		<li>Plan to attend Advance Commitment Gathering</li>

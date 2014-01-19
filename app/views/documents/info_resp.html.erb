@@ -150,7 +150,8 @@
 <div id="page_4" class="print-page" data-mercury="full">
 	<hr><%= image_tag get_image_path, :alt => 'logo', :class => 'logo' %>
 	<br><br>
-	<h2><%= formatted_datetime(@campaign.event.ac_gather_1) %></h2>
+	<h2><%= formatted_date(@campaign.event.ac_gather_1) %><br><br>
+		<%= formatted_time(@campaign.event.ac_gather_1) %>
 	<h3>Advance Commitment Gathering</h3>
 	<ul class="page_data">
 		<li>Plan to attend Advance Commitment Gathering</li>

@@ -76,7 +76,7 @@
 		<li>Attend Involvement Leader Training with Consultant and Campaign Administrator - <strong><%= formatted_time(@campaign.event.involvement_ldr_trng) %></strong></li>
 		<li>Attend Leadership Team Training - <strong><%= formatted_time(@campaign.event.leadership_team_trng) %></strong>
 			<ul>
-				<li>Before the Leadership Team Training session, secure a copy of the Master Involvement List from the parish staff. Provide a copy of this list to be used as a “working list,” available for each evening of meetings. Be sure and verify that all Leadership Team Leader names have been crossed out</li>
+				<li>Before the Leadership Team Training session, secure a copy of the Master Involvement List from the parish staff. Provide a copy of this list to be used as a "working list," available for each evening of meetings. Be sure and verify that all Leadership Team Leader names have been crossed out</li>
 			</ul>
 		</li>
 		<li>Review your workbook and place the dates and times of the meetings you will attend on your personal calendar</li>
@@ -182,7 +182,8 @@
 		<li>Pick up Master Involvement List after all meetings are over</li>
 	</ul>
 	<br>
-	<h2><%= formatted_datetime(@campaign.event.ac_gather_1) %></h2>
+	<h2><%= formatted_date(@campaign.event.ac_gather_1) %><br><br>
+		<%= formatted_time(@campaign.event.ac_gather_1) %>
 	<h3>Advance Commitment Gathering</h3>
 	<ul class="page_data">
 		<li>Plan to attend Advance Commitment Gathering</li>

@@ -5,7 +5,7 @@
 <div id="page_1" class="print-page" data-mercury="full">
 	<hr><%= image_tag get_image_path, :alt => 'logo', :class => 'logo' %>
 	<h2>PRINT COMMUNICATIONS LEADER</h2>
-	<p>The Print Communications Leader is responsible for producing various print and promotional materials used in the Capital Stewardship Campaign. This may be a “start to finish” process or a process that utilizes the print plan developed by the archdiocese.</p>
+	<p>The Print Communications Leader is responsible for producing various print and promotional materials used in the Capital Stewardship Campaign. This may be a "start to finish" process or a process that utilizes the print plan developed by the archdiocese.</p>
 	<p>A basic print communications strategy may have been developed by the Communications Team of your archdiocese. This strategy may include:
 		<ul>
 			<li>Campaign theme—logo, title, and color scheme</li>
@@ -157,8 +157,8 @@
 				<li>Be prepared to report on the status of your team's plans</li>
 			</ul>
 		</li>
-		<li>Contact the Parish-Wide Event Leader for a “fact sheet” description of the Parish- Wide Event</li>
-		<li>Contact the Children's Activity Leader for a “fact sheet” description of the Children's Activities</li>
+		<li>Contact the Parish-Wide Event Leader for a "fact sheet" description of the Parish- Wide Event</li>
+		<li>Contact the Children's Activity Leader for a "fact sheet" description of the Children's Activities</li>
 		<li>Gather details of other teams' plans so you can promote their activities.</li>
 	</ul>
 	<br><br>
@@ -189,7 +189,8 @@
 		<li>Gather details of other teams' plans so you can promote their activities</li>
 	</ul>
 	<br>
-	<h2><%= formatted_datetime(@campaign.event.ac_gather_1) %></h2>
+	<h2><%= formatted_date(@campaign.event.ac_gather_1) %><br><br>
+		<%= formatted_time(@campaign.event.ac_gather_1) %>
 	<h3>Advance Commitment Gathering</h3>
 	<ul class="page_data">
 		<li>Plan to attend Advance Commitment Gathering</li>
