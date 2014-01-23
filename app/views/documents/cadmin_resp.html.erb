@@ -101,7 +101,7 @@ room assignments:</li>
 	<div id="date_list" class="border-box-radius">
 		<h4>**MEETINGS YOU SHOULD ATTEND**</h4>
 
-		<div class="left-column">
+		<div class="left-column" data-mercury="full">
 			<%= formatted_date(@campaign.event.campaign_admin_trng) %><br>
 			<%= formatted_date(@campaign.event.involvement_ldr_trng) %><br>
 			<%= formatted_date(@campaign.event.leadership_team_trng) %><br>
@@ -124,7 +124,7 @@ room assignments:</li>
 			<%= formatted_date_to_tomorrow(@campaign.event.weekend_4_dates) %>
 		</div>
 		
-		<div class="center-column">
+		<div class="center-column" data-mercury="full">
 			<%= formatted_time(@campaign.event.campaign_admin_trng) %><br>
 			<%= formatted_time(@campaign.event.involvement_ldr_trng) %><br>
 			<%= formatted_time(@campaign.event.leadership_team_trng) %><br>
@@ -146,7 +146,7 @@ room assignments:</li>
 			<%= formatted_time(@campaign.event.ac_gather_1) %><br>
 		</div>
 
-		<div id="list_data" class="right-column">
+		<div id="list_data" class="right-column" data-mercury="full">
 			<span>Campaign Administrator Training</span><br>
 			<span>Involvement Leader Training</span><br>
 			<span>Leadership Team Training</span><br>
