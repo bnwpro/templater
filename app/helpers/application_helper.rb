@@ -6,15 +6,27 @@ module ApplicationHelper
     d.strftime("%B %d, %Y") unless !d
   end
   def formatted_date_to_tomorrow(d) # Januaury 01 - 02, 2013
-    tomorrow = d.tomorrow.strftime('%d, %Y') unless !d
-    d.strftime("%B %d - #{tomorrow}") unless !d
+    tomorrow = d.tomorrow#.strftime('%B %d, %Y') unless !d
+    #d.strftime("%B %d - #{tomorrow}") unless !d
+    formatted_date_range(begin_date: d, end_date: tomorrow)
   end
-  def formatted_date_vari_begin(d) # Use in VARI Date range
-    d.strftime('%B %d') unless !d
+  def formatted_date_range(options = {}) # Removes duplicate Months
+    begin_date = options[:begin_date]
+    end_date = options[:end_date]
+    b = begin_date.strftime('%B %d') unless !begin_date
+    e = end_date.strftime('%B %d, %Y') unless !end_date
+    result = "#{b} - #{e}".split(" ").uniq
+    result.join(" ")
   end
-  def formatted_date_vari_end(d) # Use in VARI Date range
-    d.strftime('%d, %Y') unless !d
-  end
+  
+  # DEPRECTAED
+  #def formatted_date_vari_begin(d) # Use in VARI Date range
+  #  d.strftime('%B %d') unless !d
+  #end
+  #def formatted_date_vari_end(d) # Use in VARI Date range
+  #  d.strftime('%d, %Y') unless !d
+  #end
+  
   def formatted_smalldate(d) # Mon, Januaury 01
     d.strftime('%b, %d') unless !d
   end

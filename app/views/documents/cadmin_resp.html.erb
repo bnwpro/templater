@@ -328,7 +328,7 @@ Leadership Team roster. E-mail them to your consultant: <strong><%= @user.email 
 	<br><br>
 	<div class="border-box">
 		<h3 class="left">At Beginning of Week of Information Calls (Calls #1),<br>
-			<%= formatted_date_vari_begin(@campaign.event.info_calls_dates) %> - <%= formatted_date_vari_end(@campaign.event.info_calls_end) %>
+			<%= formatted_date_range(begin_date: @campaign.event.info_calls_dates, end_date: @campaign.event.info_calls_end) %>
 		</h3>
 		<ul>
 			<li>Work with the Information Team to assemble packets for Information Distribution Weekend (Appendix E, F)</li>

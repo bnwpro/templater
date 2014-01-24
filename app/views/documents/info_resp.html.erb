@@ -126,7 +126,7 @@
 	</div>
 	<br><br><br>
 	<div class="border-box">
-		<h3 class="left">Information Distribution Weekend, <%= formatted_date_vari_begin(@campaign.event.information_act_dates) %> - <%= formatted_date_vari_end(@campaign.event.information_act_end) %>, <br>
+		<h3 class="left">Information Distribution Weekend, <%= formatted_date_range(begin_date: @campaign.event.information_act_dates, end_date: @campaign.event.information_act_end) %> <br>
 			and Following</h3>
 		<ul class="page_data">
 			<li>Distribute the Information packets following every Mass during Information Distribution Weekend(s) <strong><%= formatted_date(@campaign.event.weekend_1_dates) %></strong></li>

@@ -174,7 +174,8 @@
 	<div class="border-box">
 		<h3 class="left">Be Prepared to Utilize the Visual Production as Part of the<br>
 		Information Phase of the Campaign,<br>
-		<%= formatted_date_vari_begin(@campaign.event.information_act_dates) %> - <%= formatted_date_vari_end(@campaign.event.information_act_end) %></h3>
+		<%= formatted_date_range(begin_date: @campaign.event.information_act_dates, end_date: @campaign.event.information_act_end) %>
+		</h3>
 		<ul class="page_data">
 			<li>Work with the Campaign Chair and Pastor to determine the process for showing/displaying the visual production</li>
 			<li>Arrange for any equipment needed for the above process</li>
