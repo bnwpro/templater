@@ -6,7 +6,7 @@ module ApplicationHelper
     d.strftime("%B %d, %Y") unless !d
   end
   def formatted_date_to_tomorrow(d) # Januaury 01 - 02, 2013
-    tomorrow = d.tomorrow#.strftime('%B %d, %Y') unless !d
+    tomorrow = d.tomorrow unless !d#.strftime('%B %d, %Y') unless !d
     #d.strftime("%B %d - #{tomorrow}") unless !d
     formatted_date_range(begin_date: d, end_date: tomorrow)
   end
