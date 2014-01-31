@@ -24,6 +24,7 @@ Templater::Application.routes.draw do
       member do
         #get :generate, to: 'documents'
         match '/generate', to: 'documents#generate', via: :get
+        match '/zip', to: 'documents#zip', via: :get
       end
       #resource :documents, only: :show
       #member { put :mercury_update }

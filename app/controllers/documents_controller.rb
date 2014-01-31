@@ -58,6 +58,9 @@ class DocumentsController < ApplicationController
     end
   end  #end generate
   
+  def zip
+  end
+  
   def show
     user = @user
     campaign = @campaign
