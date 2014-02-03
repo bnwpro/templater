@@ -73,13 +73,13 @@
 				<%= link_to "Visual Communications", user_campaign_event_document_path(@user, @campaign, @event, 'visual_resp') %><br>
 				<%= link_to "Youth", user_campaign_event_document_path(@user, @campaign, @event, 'youth_resp') %><br>
 			</div>
-			<div class="small-6 columns">
+			<div class="large-6 columns">
 				<% if show_pdfs_if_exist_on_s3? %>
-					<table>
+					<table id="S3_docs_table">
 				  	    <thead>
 					       <tr>
 						      <th>PDF Manuals on S3</th>
-							  <!--<th></th>-->
+							  <th>Zip</th>
 					       </tr>
 					    </thead>
 					    <tbody>
@@ -90,16 +90,28 @@
 										<a href="<%= path %>" target="_blank">
 								  	<%= File.basename path %></a>
 								</td>
-								<!--<td>Rebuild</td>-->
+								<td><%= check_box_tag "#{File.basename path}", path, false, class: 'zip-checked', disabled: true %></td>
 							</tr>
 						    <% end %>
 					    </tbody>
 			  	  	</table>
 			    <% end %>
+				<%= link_to 'Zip files' %>
 			</div> <!-- END "small-6 columns" -->
 		</div> <!-- END "document-link" -->
 	</div> <!-- END "small-12 columns" -->
 </div> <!-- END row -->
+<script>
+$(document).ready(function() {
+	/*$('.zip-checked').click(function() {
+		if ($('.zip-checked').prop('checked')) {
+			$('.button_to').css('display', 'true');
+		} else {
+			$('.button_to').css('display', 'none');
+		}
+	})*/
+})
+</script>
 
 <%-# link_to 'Back', user_campaigns_path(@user) -%>
 <%-# link_to 'New Event', new_user_campaign_event_path(@user, @campaign) -%>
