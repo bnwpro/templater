@@ -29,6 +29,6 @@ class Document
   end
   
   def temp
-    @first_two_only = ["prayer_resp", "visual_resp"]
+    @first_two_only = ["ac_resp"]
   end
 end

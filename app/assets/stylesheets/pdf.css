@@ -1,8 +1,10 @@
-// Place all the styles related to the Users controller here.
+/*// Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You can use Sass (SCSS) here: http://sass-lang.com/*/
 .print-page {
-	font-family: "Georgia", Times, serif;
+	/*font-family: "Georgia", Times, serif;*/
+	font-family: "Verdana";
+	font-size: 15px;
 	margin: 0 auto;
 	padding: 10px;
 	/*width: 595px;*/
