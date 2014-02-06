@@ -75,6 +75,7 @@
 			</div>
 			<div class="large-6 columns">
 				<% if show_pdfs_if_exist_on_s3? %>
+				<%= form_tag('/zip', remote: true) %>
 					<table id="S3_docs_table">
 				  	    <thead>
 					       <tr>
@@ -90,13 +91,15 @@
 										<a href="<%= path %>" target="_blank">
 								  	<%= File.basename path %></a>
 								</td>
-								<td><%= check_box_tag "#{File.basename path}", path, false, class: 'zip-checked' %></td>
+								<td><%= check_box_tag("to_zip[]", "#{File.basename path}", false, class: 'zip-check', disabled: false) %></td>
 							</tr>
 						    <% end %>
 					    </tbody>
 			  	  	</table>
 			    <% end %>
-				<%= link_to 'Zip files' %>
+				<%= hidden_field_tag "campaign_name", @campaign.name %>
+				<%= hidden_field_tag "campaign_city", @campaign.city %>
+				<%= submit_tag('Zip files') %>
 			</div> <!-- END "small-6 columns" -->
 		</div> <!-- END "document-link" -->
 	</div> <!-- END "small-12 columns" -->

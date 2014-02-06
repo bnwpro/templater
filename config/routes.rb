@@ -24,7 +24,7 @@ Templater::Application.routes.draw do
       member do
         #get :generate, to: 'documents'
         match '/generate', to: 'documents#generate', via: :get
-        match '/zip', to: 'documents#zip', via: :get
+        
       end
       #resource :documents, only: :show
       #member { put :mercury_update }
@@ -42,7 +42,7 @@ Templater::Application.routes.draw do
   resources :sql_templates
   #resources :campaigns
   match 'campaigns', to: 'users#admin_all', via: :all
-  
+  match '/zip', to: 'documents#zip_selected_resp_docs', via: :post
   #scope 'admin' do
     #resources :users, :campaigns, :sql_templates
     #end

@@ -1,8 +1,10 @@
 class DocumentsController < ApplicationController
+  require 'rubygems'
+  require 'zip'
   #before_action :find_default_or_edited_document_in_db, :except => [:generate]
-  before_action :find_default_or_edited_document_in_db
+  before_action :find_default_or_edited_document_in_db, :except => [:zip_selected_resp_docs]
   
-  before_filter :get_user_campaign_data
+  before_filter :get_user_campaign_data, :except => [:zip_selected_resp_docs]
   
   def respond  # NOT USED because corresponding ROUTE not being used
   render template: "documents/"+params[:page]
@@ -58,7 +60,13 @@ class DocumentsController < ApplicationController
     end
   end  #end generate
   
-  def zip
+  def zip_selected_resp_docs
+    @campaign_name = params[:campaign_name]
+    @campaign_city = params[:campaign_city]
+    @files_to_zip = params[:to_zip]
+    #puts @campaign_name, @campaign_city, @files_to_zip
+    Zip.new.zip_docs(campaign_name: @campaign_name, campaign_city: @campaign_city, selected_files: @files_to_zip)
+    head :ok, :content_type => 'text/html'
   end
   
   def show
