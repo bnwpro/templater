@@ -65,8 +65,9 @@ class DocumentsController < ApplicationController
     @campaign_city = params[:campaign_city]
     @files_to_zip = params[:to_zip]
     #puts @campaign_name, @campaign_city, @files_to_zip
-    Zip.new.zip_docs(campaign_name: @campaign_name, campaign_city: @campaign_city, selected_files: @files_to_zip)
+    ZipDocs.new.zip_docs(campaign_name: @campaign_name, campaign_city: @campaign_city, selected_files: @files_to_zip)
     head :ok, :content_type => 'text/html'
+    #redirect_to :back
   end
   
   def show
