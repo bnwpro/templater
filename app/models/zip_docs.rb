@@ -6,6 +6,7 @@ class ZipDocs
     campaign_name = options[:campaign_name]
     campaign_city = options[:campaign_city]
     files = options[:selected_files]
+    name = options[:name].tr(" ", "_")
     url = "https://s3.amazonaws.com"
     _campaign_name_dir = "#{campaign_name.tr(" ", "_").dup}_#{campaign_city.tr(" ", "_").dup}"
     company_suffix = "_ofwc"
@@ -15,7 +16,7 @@ class ZipDocs
     
     bucket = s3.buckets[s3_campaign_bucket]
     if bucket.exists?
-      temp_zip = File.join("tmp/pdfs.zip")
+      temp_zip = File.join("tmp/#{name}.zip")
       
       # Save files to zip to tmp directory
       files.each do |files_to_zip|

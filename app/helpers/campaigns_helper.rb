@@ -20,20 +20,6 @@ module CampaignsHelper
     args.sum
   end
   
-  def show_if_exists_on_s3?
-    url = "https://s3.amazonaws.com"
-    calendar_bucket = "ofwc_bc_directory"
-    calendar_name = "block_calendar_cid_#{@campaign.id}.pdf"
-    
-    s3 = AWS::S3.new(:region => "us-east-1")
-    
-    calendar = s3.buckets[calendar_bucket].objects[calendar_name]
-    if calendar.exists?
-      return true
-    else
-      return false
-    end
-    #puts calendar
-  end
+  
   
 end
