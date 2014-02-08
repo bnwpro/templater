@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/*/
 .print-page {
-	/*font-family: "Georgia", Times, serif;*/
 	font-family: "Verdana";
 	font-size: 15px;
 	margin: 0 auto;

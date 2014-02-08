@@ -1,6 +1,7 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 .smaller-text {
 	font-size: smaller;
 }
@@ -14,8 +15,12 @@
 }
 #resp-links {
 	float: left;
-	width: 30%;
+	width: 75%;
 	margin-right: 100px;
+}
+#S3_zips_table {
+	width: 75%;
+	clear: both;
 }
 .to-pdf {
 	margin-top: 60px;
@@ -34,7 +39,4 @@
 }
 #S3_docs_table {
 	width: 110%;
-	li {
-		margin-left: 10px;
-	}
 }

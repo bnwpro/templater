@@ -53,28 +53,53 @@
 					<span class="red">(<%= link_to "Block Calendar not uploaded", user_campaign_path(@user, @campaign), :class => 'red' %>)</span>
 				<% end %>
 			</h3>
-			<div id="resp-links" class="small-6 columns panel">
-				<% if File.exist?("pdfs/campaign_docs/#{@campaign.id}/ac_resp.pdf") %>
-					<span class="saved">Saved!</span>
-				<% end %>
-				<%= link_to 'Advance Commitment', user_campaign_event_document_path(@user, @campaign, @event, 'ac_resp') %><br>
-				<%= link_to 'Campaign Admin', user_campaign_event_document_path(@user, @campaign, @event, 'cadmin_resp') %><br>
-				<%= link_to 'Campaign Chair', user_campaign_event_document_path(@user, @campaign, @event, 'chair_resp') %><br>
-				<%= link_to "Children's Activity", user_campaign_event_document_path(@user, @campaign, @event, 'childs_act_resp') %><br>
-				<%= link_to "Contact", user_campaign_event_document_path(@user, @campaign, @event, 'contact_resp') %><br>
-				<%= link_to "Event", user_campaign_event_document_path(@user, @campaign, @event, 'event_resp') %><br>
-				<%= link_to "Follow-up", user_campaign_event_document_path(@user, @campaign, @event, 'follow_resp') %><br>
-				<%= link_to "Information", user_campaign_event_document_path(@user, @campaign, @event, 'info_resp') %><br>
-				<%= link_to "Involvement", user_campaign_event_document_path(@user, @campaign, @event, 'involve_resp') %><br>
-				<%= link_to "Pacesetter", user_campaign_event_document_path(@user, @campaign, @event, 'pacesetter_resp') %><br>
-				<%= link_to "Pastor", user_campaign_event_document_path(@user, @campaign, @event, 'pastor_resp') %><br>
-				<%= link_to "Prayer", user_campaign_event_document_path(@user, @campaign, @event, 'prayer_resp') %><br>
-				<%= link_to "Print Communications", user_campaign_event_document_path(@user, @campaign, @event, 'print_resp') %><br>
-				<%= link_to "Visual Communications", user_campaign_event_document_path(@user, @campaign, @event, 'visual_resp') %><br>
-				<%= link_to "Youth", user_campaign_event_document_path(@user, @campaign, @event, 'youth_resp') %><br>
+			<div class="small-6 columns">
+				<div id="resp-links"  class="panel">
+					<% if File.exist?("pdfs/campaign_docs/#{@campaign.id}/ac_resp.pdf") %>
+						<span class="saved">Saved!</span>
+					<% end %>
+					<%= link_to 'Advance Commitment', user_campaign_event_document_path(@user, @campaign, @event, 'ac_resp') %><br>
+					<%= link_to 'Campaign Admin', user_campaign_event_document_path(@user, @campaign, @event, 'cadmin_resp') %><br>
+					<%= link_to 'Campaign Chair', user_campaign_event_document_path(@user, @campaign, @event, 'chair_resp') %><br>
+					<%= link_to "Children's Activity", user_campaign_event_document_path(@user, @campaign, @event, 'childs_act_resp') %><br>
+					<%= link_to "Contact", user_campaign_event_document_path(@user, @campaign, @event, 'contact_resp') %><br>
+					<%= link_to "Event", user_campaign_event_document_path(@user, @campaign, @event, 'event_resp') %><br>
+					<%= link_to "Follow-up", user_campaign_event_document_path(@user, @campaign, @event, 'follow_resp') %><br>
+					<%= link_to "Information", user_campaign_event_document_path(@user, @campaign, @event, 'info_resp') %><br>
+					<%= link_to "Involvement", user_campaign_event_document_path(@user, @campaign, @event, 'involve_resp') %><br>
+					<%= link_to "Pacesetter", user_campaign_event_document_path(@user, @campaign, @event, 'pacesetter_resp') %><br>
+					<%= link_to "Pastor", user_campaign_event_document_path(@user, @campaign, @event, 'pastor_resp') %><br>
+					<%= link_to "Prayer", user_campaign_event_document_path(@user, @campaign, @event, 'prayer_resp') %><br>
+					<%= link_to "Print Communications", user_campaign_event_document_path(@user, @campaign, @event, 'print_resp') %><br>
+					<%= link_to "Visual Communications", user_campaign_event_document_path(@user, @campaign, @event, 'visual_resp') %><br>
+					<%= link_to "Youth", user_campaign_event_document_path(@user, @campaign, @event, 'youth_resp') %><br>
+				</div>
+				<div>
+					<% if show_zips_if_exist_on_s3? %>
+						<table id="S3_zips_table">
+					  	    <thead>
+						       <tr>
+							      <th>Zip files on S3</th>
+						       </tr>
+						    </thead>
+							<tbody>
+							    <% @files.each do |path| %>
+							  		<tr>
+									  	<td>
+											<li>
+												<a href="<%= path %>" target="_blank">
+										  	<%= File.basename path %></a>
+										</td>
+									</tr>
+							    <% end %>
+							</tbody>
+						</table>
+					<% end %>
+				</div>
 			</div>
 			<div class="large-6 columns">
 				<% if show_pdfs_if_exist_on_s3? %>
+				<%= form_tag('/zip', remote: true, id: 'zip_form') %>
 					<table id="S3_docs_table">
 				  	    <thead>
 					       <tr>
@@ -85,31 +110,59 @@
 					    <tbody>
 						    <% @files.each do |path| %>
 						  		<tr>
-							  	<td>
-									<li>
-										<a href="<%= path %>" target="_blank">
-								  	<%= File.basename path %></a>
-								</td>
-								<td><%= check_box_tag "#{File.basename path}", path, false, class: 'zip-checked', disabled: true %></td>
-							</tr>
+								  	<td>
+										<li>
+											<a href="<%= path %>" target="_blank">
+									  	<%= File.basename path %></a>
+									</td>
+									<td><%= check_box_tag("to_zip[]", "#{File.basename path}", false, class: 'zip-check', disabled: false) %></td>
+								</tr>
 						    <% end %>
 					    </tbody>
 			  	  	</table>
 			    <% end %>
-				<%= link_to 'Zip files' %>
+				<a href="#" id="zip_button" class="button small right push-1" data-reveal-id="zip_name" data-reveal>Zip Files</a>
+				<%= hidden_field_tag "zip_file_name", 'Archive' %>
+				<%= hidden_field_tag "campaign_name", @campaign.name %>
+				<%= hidden_field_tag "campaign_city", @campaign.city %>
+				<div id="zip_name" class="reveal-modal tiny" data-reveal>
+					<h2>Please name the Zip file</h2>
+					<%= text_field_tag 'zip_file_input', 'Archive' %>
+					<%= button_tag "Zip Files", id: 'zip_file_button' %>
+					<a class="close-reveal-modal">&#215;</a>
+				</div>
+				<%= submit_tag('Zip files', id: "zip_submit", hidden: true) %>
 			</div> <!-- END "small-6 columns" -->
 		</div> <!-- END "document-link" -->
 	</div> <!-- END "small-12 columns" -->
 </div> <!-- END row -->
 <script>
 $(document).ready(function() {
-	/*$('.zip-checked').click(function() {
-		if ($('.zip-checked').prop('checked')) {
-			$('.button_to').css('display', 'true');
-		} else {
-			$('.button_to').css('display', 'none');
+	var countChecked = function() {
+		var n = $('input:checked').length;
+		if (n <= 0) {
+			$('#zip_button').bind('click', false);
+			//alert("Please select PDFs to Zip");
+		} else if (n >= 1) {
+			$('#zip_button').unbind('click', false);
 		}
-	})*/
+	}
+	countChecked();
+	
+	$('.zip-check').click(function() {
+		countChecked();
+	})
+		
+	$('#zip_file_button').click(function() {
+		var zip_name = $('#zip_file_input').val();
+		$('#zip_file_name').val(zip_name);
+		$('#zip_form').submit();
+		
+	})
+	if ($('div.document_link span a').hasClass('red')) {
+		//alert('true');
+		$('#pdf-links').hide();
+	}
 })
 </script>
 
