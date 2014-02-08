@@ -121,7 +121,7 @@
 					    </tbody>
 			  	  	</table>
 			    <% end %>
-				<a href="#" class="button small right push-1" data-reveal-id="zip_name" data-reveal>Zip Files</a>
+				<a href="#" id="zip_button" class="button small right push-1" data-reveal-id="zip_name" data-reveal>Zip Files</a>
 				<%= hidden_field_tag "zip_file_name", 'Archive' %>
 				<%= hidden_field_tag "campaign_name", @campaign.name %>
 				<%= hidden_field_tag "campaign_city", @campaign.city %>
@@ -138,19 +138,26 @@
 </div> <!-- END row -->
 <script>
 $(document).ready(function() {
-	/*var n;
-	function countChecked() {
-		var n = $('.zip-check:checked').length;
-		alert(n);
-	}*/
+	var countChecked = function() {
+		var n = $('input:checked').length;
+		if (n <= 0) {
+			$('#zip_button').bind('click', false);
+			//alert("Please select PDFs to Zip");
+		} else if (n >= 1) {
+			$('#zip_button').unbind('click', false);
+		}
+	}
+	countChecked();
 	
-	$('#zip_file_button').click(function() {
-		//countChecked();
+	$('.zip-check').click(function() {
+		countChecked();
+	})
 		
+	$('#zip_file_button').click(function() {
 		var zip_name = $('#zip_file_input').val();
 		$('#zip_file_name').val(zip_name);
-		$('#zip_submit').submit();
-		$('#zip_name').foundation('reveal', 'close');
+		$('#zip_form').submit();
+		
 	})
 	if ($('div.document_link span a').hasClass('red')) {
 		//alert('true');

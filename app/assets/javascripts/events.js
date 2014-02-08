@@ -46,8 +46,9 @@ $(document).ready(function() {
 		}
 		return generate;
 	})
-	$('#to_pdf').on('ajax:error', function(e, data, status, xhr) {
-		alert('There was an error while rendering PDFs.  Make sure the Block Calendar has been uploaded and that the Gift Profile data is complete.');
+	$('#to_pdf').on('ajax:error', function(e, error, status, xhr) {
+		//alert(xhr.responseText);
+		alert('There was an error while rendering PDFs. If this problem persists please contact the Network Administrator.\n'+'ErrorCode:'+ xhr.responseText);
 	})
 	$('#to_pdf').on('ajax:success', function(e, data, status, xhr) {
 		alert('PDFs rendered and saved!');
@@ -57,6 +58,20 @@ $(document).ready(function() {
 		$('#progress-bar').css('width', '10px');
 		clearInterval(interval);
 		progress_bar_width = 10;
+		document.location.reload();
+		//alert('PDFs rendered and saved!');
+	})
+	
+	$('#zip_form').on('ajax:beforeSend', function(e, data, status, xhr) {
+	})
+	$('#zip_form').on('ajax:error', function(e, data, status, xhr) {
+		alert('There was an error creating Zip files. Please make sure there are PDFs selected to Zip. If this problem persists please contact the Network Administrator.');
+	})
+	$('#zip_form').on('ajax:success', function(e, data, status, xhr) {
+		$('#zip_name').foundation('reveal', 'close');
+		alert('Zip files created!');
+	})
+	$('#zip_form').on('ajax:complete', function(e, data, status, xhr) {
 		document.location.reload();
 		//alert('PDFs rendered and saved!');
 	})
