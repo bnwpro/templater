@@ -68,7 +68,6 @@ $(document).ready(function() {
 		alert('There was an error creating Zip files. Please make sure there are PDFs selected to Zip. If this problem persists please contact the Network Administrator.');
 	})
 	$('#zip_form').on('ajax:success', function(e, data, status, xhr) {
-		$('#zip_name').foundation('reveal', 'close');
 		alert('Zip files created!');
 	})
 	$('#zip_form').on('ajax:complete', function(e, data, status, xhr) {
