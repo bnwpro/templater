@@ -3,6 +3,8 @@ class ZipDocs
   require 'zip'
   
   def zip_docs(options = {})
+    tmp_docs_dir = "tmp/documents"
+    FileUtils.mkdir_p(tmp_docs_dir)
     campaign_name = options[:campaign_name]
     campaign_city = options[:campaign_city]
     files = options[:selected_files]
@@ -16,7 +18,7 @@ class ZipDocs
     
     bucket = s3.buckets[s3_campaign_bucket]
     if bucket.exists?
-      temp_zip = File.join("tmp/#{name}.zip")
+      temp_zip = File.join("tmp/documents/#{name}.zip")
       
       # Save files to zip to tmp directory
       files.each do |files_to_zip|
@@ -49,7 +51,7 @@ class ZipDocs
       
       # Delete zip archive from tmp directory
       FileUtils.rm Dir.glob(File.join("tmp/documents/", '*'))
-      FileUtils.rm temp_zip
+      #FileUtils.rm temp_zip
     end
   end
   
