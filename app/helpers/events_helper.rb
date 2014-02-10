@@ -52,11 +52,16 @@ module EventsHelper
     s3_campaign_bucket = @s3_campaign_bucket
     
     if bucket.exists?
+      #@files = {"name" => [], "time" => []}
       @files = []
+      @times = []
       bucket.objects.each do |pdf|
         @files << File.join(url, s3_campaign_bucket, pdf.key) unless pdf.key.end_with?(".pdf")
+        @times << pdf.last_modified unless pdf.key.end_with?(".pdf")
+        #@files["time"] << pdf.last_modified unless pdf.key.end_with?(".pdf")
       end
-      return @files
+      #puts @files
+      return @files, @times
     else
       return
     end

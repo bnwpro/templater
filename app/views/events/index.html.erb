@@ -80,18 +80,21 @@
 					  	    <thead>
 						       <tr>
 							      <th>Zip files on S3</th>
+								  <!--<th>Created on</th>-->
 						       </tr>
 						    </thead>
 							<tbody>
 							    <% @files.each do |path| %>
-							  		<tr>
 									  	<td>
 											<li>
 												<a href="<%= path %>" target="_blank">
 										  	<%= File.basename path %></a>
 										</td>
+								<%# @files["time"].each do |dt| %>
+										<!--<td class="small-date"><%# formatted_datetime(@times.each do |t| end) %></td>-->
+								<%# end %>
 									</tr>
-							    <% end %>
+							   <% end %>
 							</tbody>
 						</table>
 					<% end %>
@@ -118,6 +121,8 @@
 									<td><%= check_box_tag("to_zip[]", "#{File.basename path}", false, class: 'zip-check', disabled: false) %></td>
 								</tr>
 						    <% end %>
+							<td class="right">Select All/None</td>
+							<td><%= check_box_tag 'select_all', 'all', false %></td>
 					    </tbody>
 			  	  	</table>
 			    <% end %>
@@ -127,6 +132,7 @@
 				<%= hidden_field_tag "campaign_city", @campaign.city %>
 				<div id="zip_name" class="reveal-modal tiny" data-reveal>
 					<h2>Please name the Zip file</h2>
+					<p>There are <span id="zip_quantity"></span> files selected to Zip</p>
 					<%= text_field_tag 'zip_file_input', 'Archive' %>
 					<%= button_tag "Zip Files", id: 'zip_file_button' %>
 					<span id="zip_confirm" class="push-2"> Zipping files in progress...</span>
@@ -149,7 +155,9 @@ $(document).ready(function() {
 	showZipButton();
 	
 	var countChecked = function() {
-		var n = $('input:checked').length;
+		var n = $('.zip-check:checked').length;
+		$('#zip_quantity').text(n);
+		//alert(n);
 		if (n <= 0) {
 			$('#zip_button').bind('click', false);
 			//alert("Please select PDFs to Zip");
@@ -158,9 +166,36 @@ $(document).ready(function() {
 		}
 	}
 	countChecked();
+	var toggleYellow = function(check) {
+		var tr = $(check).closest("tr");
+		//alert(tr);
+		if ($(tr).hasClass('yellow')) {
+			$(tr).removeClass('yellow');
+		} else {
+			$(tr).addClass('yellow');
+		}
+	}
 	
 	$('.zip-check').click(function() {
+		toggleYellow(this);
 		countChecked();
+	})
+	$('#select_all').click(function() {
+		//$('.zip-check').prop('checked', true);
+		//$('.zip-check').trigger('click');
+		if (this.checked) {
+			$('.zip-check').each(function() {
+				this.checked = true;
+				toggleYellow(this);
+				countChecked();
+			})
+		} else {
+			$('.zip-check').each(function() {
+				this.checked = false;
+				toggleYellow(this);
+				countChecked();
+			})
+		}
 	})
 		
 	$('#zip_file_button').click(function() {
