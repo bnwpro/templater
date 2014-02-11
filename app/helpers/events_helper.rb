@@ -55,7 +55,7 @@ module EventsHelper
       @files = []
       bucket.objects.each do |pdf|
         @files << File.join(url, s3_campaign_bucket, pdf.key) unless pdf.key.end_with?(".pdf")
-        @files << pdf.last_modified unless pdf.key.end_with?(".pdf")
+        @files << pdf.last_modified.in_time_zone('Eastern Time (US & Canada)') unless pdf.key.end_with?(".pdf")
       end
       return @files
     else
