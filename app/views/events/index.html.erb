@@ -80,19 +80,20 @@
 					  	    <thead>
 						       <tr>
 							      <th>Zip files on S3</th>
-								  <!--<th>Created on</th>-->
+								  <th>Created on</th>
 						       </tr>
 						    </thead>
 							<tbody>
-							    <% @files.each do |path| %>
+							    <% @files.each_slice(2) do |path| %>
+									<tr>
 									  	<td>
 											<li>
-												<a href="<%= path %>" target="_blank">
-										  	<%= File.basename path %></a>
+												<a href="<%= path[0] %>" target="_blank">
+										  	<%= File.basename path[0] %></a>
 										</td>
-								<%# @files["time"].each do |dt| %>
-										<!--<td class="small-date"><%# formatted_datetime(@times.each do |t| end) %></td>-->
-								<%# end %>
+										<td class="small-date"><%= "#{formatted_date(path[1])}" %><br>
+											<%= "#{formatted_time(path[1])}" %>
+										</td
 									</tr>
 							   <% end %>
 							</tbody>
