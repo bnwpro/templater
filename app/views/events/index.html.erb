@@ -167,10 +167,11 @@ $(document).ready(function() {
 		}
 	}
 	countChecked();
+	
 	var toggleYellow = function(check) {
 		var tr = $(check).closest("tr");
 		//alert(tr);
-		if ($(tr).hasClass('yellow')) {
+		if (check.checked == false && $(tr).hasClass('yellow')) {
 			$(tr).removeClass('yellow');
 		} else {
 			$(tr).addClass('yellow');
