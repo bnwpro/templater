@@ -9,7 +9,7 @@
 			<fieldset>
 			  <legend>User Info</legend>
 				<div class="row">
-				  <div class="large-4 small-12 columns">
+				  <div class="large-4 small-12 large-centered columns">
 					  <div class="field">
 				    	  <%= label_tag :email %><br />
 				    	  <%= text_field_tag :email, params[:email] %>
@@ -17,19 +17,18 @@
 				  </div>
 			  </div>
 			  <div class="row">
-				  <div class="large-4 small-12 columns">
+				  <div class="large-4 small-12 large-centered columns">
 					  <div class="field">
 				    	  <%= label_tag :password %><br />
 				    	  <%= password_field_tag :password %>
 					  </div>
+					  <div class="actions">
+					  	<%= button_tag "Log in" %>
+					  </div>
 				  </div>
 			  </div>
 			  <br>
-			  <div class="row">
-				  <div class="actions">
-				  	<%= button_tag "Log in" %>
-				  </div>
-			  </div>
+					  
 				<% end %>
 			</fieldset>
 		</div>
