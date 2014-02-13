@@ -15,22 +15,22 @@
 	  <div class="row">
 		  <%= field_set_tag 'Print Contact Info', :class => '' do %>
 		  <div class="small-12 columns"> <!-- COLUMNS -->
-	  		  <div class="small-1 columns">
+	  		  <div class="large-1 small-3 columns">
 		  		  <%= f.label :print_contact_name, 'Name', :class => 'right inline' %><br>
 			  </div>
-			  <div class="small-4 columns">
+			  <div class="large-4 small-9 columns">
 		  		  <%= f.text_field :print_contact_name, placeholder: 'Enter full name' %>
 	  	      </div>
-	  		  <div class="small-1 columns">
+	  		  <div class="large-1 small-3 columns">
 		  		  <%= f.label :print_contact_phone, 'Phone', :class => 'right inline' %><br>
 			  </div>
-			  <div class="small-2 columns">
+			  <div class="large-2 small-9 columns">
 		  		  <%= f.text_field :print_contact_phone, placeholder: '10 Digits only, no spaces, () or -' %>
 	  	      </div>
-	  		  <div class="small-1 columns">
+	  		  <div class="large-1 small-3 columns">
 		  		  <%= f.label :print_contact_email, 'Email', :class => 'right inline' %><br>
 			  </div>
-			  <div class="small-3 columns">
+			  <div class="large-3 small-9 columns">
 		  		  <%= f.text_field :print_contact_email %>
 	  	      </div>
 			
@@ -46,7 +46,7 @@
   
   <%= field_set_tag 'Manuals', :class => '' do %>
 	  <div class="row">
-		  <div class="small-4 columns"> <!-- LEFT COLUMNS -->
+		  <div class="large-4 small-12 columns"> <!-- LEFT COLUMNS -->
 			  
 		  	  <div class="row field">
 		  		  <div class="small-7 columns">
@@ -92,7 +92,7 @@
 			
 		  </div> <!-- END LEFT COLUMNS -->
 		  
-		  <div class="small-4 columns"> <!-- CENTER COLUMNS -->
+		  <div class="large-4 small-12 columns"> <!-- CENTER COLUMNS -->
 			  
 		  	  <div class="row field">
 		  		  <div class="small-7 columns">
@@ -137,7 +137,7 @@
 			  
 		  </div> <!-- END CENTER COLUMNS -->
 		  
-		  <div class="small-4 columns"> <!-- RIGHT COLUMNS -->
+		  <div class="large-4 small-12 columns"> <!-- RIGHT COLUMNS -->
 			  
 		  	  <div class="row field">
 		  		  <div class="small-7 columns">
@@ -196,26 +196,26 @@
 		  <div class="small-12 columns"> <!-- COLUMNS -->
 			  <%= field_set_tag 'Advance Commitment' do %>
 		  	  <div class="row field">
-		  		  <div class="small-1 columns">
+		  		  <div class="large-1 small-3 columns">
 			  		    <%= f.number_field :ts_ac1, :min => 0 %><br>
 		  	      </div>
-		  		  <div class="small-11 columns">
+		  		  <div class="large-11 small-9 columns">
 			  		    <%= f.label :ts_ac1, 'AC1 - Advance Commitment Team', :class => 'left inline' %>
 		  	      </div>
 			  </div> <!-- END ROW -->
 		  	  <div class="row field">
-		  		  <div class="small-1 columns">
+		  		  <div class="large-1 small-3 columns">
 			  		    <%= f.number_field :ts_ac2, :min => 0 %><br>
 		  	      </div>
-		  		  <div class="small-11 columns">
+		  		  <div class="large-11 small-9 columns">
 			  		    <%= f.label :ts_ac2, 'AC2 - Calls for Advance Commitment Gatherings', :class => 'left inline' %>
 		  	      </div>
 			  </div> <!-- END ROW -->
 		  	  <div class="row field">
-		  		  <div class="small-1 columns">
+		  		  <div class="large-1 small-3 columns">
 			  		    <%= f.number_field :ts_ac3, :min => 0 %><br>
 		  	      </div>
-		  		  <div class="small-11 columns">
+		  		  <div class="large-11 small-9 columns">
 			  		    <%= f.label :ts_ac3, 'AC3 - Advance Commitment Gathering Reservation Sheet', :class => 'left inline' %>
 		  	      </div>
 			  </div> <!-- END ROW -->
@@ -223,58 +223,58 @@
 			  
 			  <%= field_set_tag 'Contact Team' do %>
 		  	  <div class="row field">
-		  		  <div class="small-1 columns">
+		  		  <div class="large-1 small-3 columns">
 			  		    <%= f.number_field :ts_ct1, :min => 0 %><br>
 		  	      </div>
-		  		  <div class="small-11 columns">
+		  		  <div class="large-11 small-9 columns">
 			  		    <%= f.label :ts_ct1, 'CT1 - Contact Team', :class => 'left inline' %>
 		  	      </div>
 			  </div> <!-- END ROW -->
 		  	  <div class="row field">
-		  		  <div class="small-1 columns">
+		  		  <div class="large-1 small-3 columns">
 			  		    <%= f.number_field :ts_ct2, :min => 0 %><br>
 		  	      </div>
-		  		  <div class="small-11 columns">
+		  		  <div class="large-11 small-9 columns">
 			  		    <%= f.label :ts_ct2, 'CT2 - Contact Team Assistant Training Instructions', :class => 'left inline' %>
 		  	      </div>
 			  </div> <!-- END ROW -->
 		  	  <div class="row field">
-		  		  <div class="small-1 columns">
+		  		  <div class="large-1 small-3 columns">
 			  		    <%= f.number_field :ts_ct3, :min => 0 %><br>
 		  	      </div>
-		  		  <div class="small-11 columns">
+		  		  <div class="large-11 small-9 columns">
 			  		    <%= f.label :ts_ct3, 'CT3 - Team Leader\'s Guide for Team Assistant Training', :class => 'left inline' %>
 		  	      </div>
 			  </div> <!-- END ROW -->
 		  	  <div class="row field">
-		  		  <div class="small-1 columns">
+		  		  <div class="large-1 small-3 columns">
 			  		    <%= f.number_field :ts_ct4, :min => 0 %><br>
 		  	      </div>
-		  		  <div class="small-11 columns">
+		  		  <div class="large-11 small-9 columns">
 			  		    <%= f.label :ts_ct4, 'CT4 - Steps to Successful Information Distribution Calls', :class => 'left inline' %>
 		  	      </div>
 			  </div> <!-- END ROW -->
 		  	  <div class="row field">
-		  		  <div class="small-1 columns">
+		  		  <div class="large-1 small-3 columns">
 			  		    <%= f.number_field :ts_ct5, :min => 0 %><br>
 		  	      </div>
-		  		  <div class="small-11 columns">
+		  		  <div class="large-11 small-9 columns">
 			  		    <%= f.label :ts_ct5, 'CT5 - Steps to Successful Special Event Calls', :class => 'left inline' %>
 		  	      </div>
 			  </div> <!-- END ROW -->
 		  	  <div class="row field">
-		  		  <div class="small-1 columns">
+		  		  <div class="large-1 small-3 columns">
 			  		    <%= f.number_field :ts_ct6, :min => 0 %><br>
 		  	      </div>
-		  		  <div class="small-11 columns">
+		  		  <div class="large-11 small-9 columns">
 			  		    <%= f.label :ts_ct6, 'CT6 - Special Event Response Sheet', :class => 'left inline' %>
 		  	      </div>
 			  </div> <!-- END ROW -->
 		  	  <div class="row field">
-		  		  <div class="small-1 columns">
+		  		  <div class="large-1 small-3 columns">
 			  		    <%= f.number_field :ts_ct7, :min => 0 %><br>
 		  	      </div>
-		  		  <div class="small-11 columns">
+		  		  <div class="large-11 small-9 columns">
 			  		    <%= f.label :ts_ct7, 'CT7 - Steps to Successful Celebration Weekend Calls', :class => 'left inline' %>
 		  	      </div>
 			  </div> <!-- END ROW -->
@@ -282,18 +282,18 @@
 			  
 			  <%= field_set_tag 'Information Team' do %>
 		  	  <div class="row field">
-		  		  <div class="small-1 columns">
+		  		  <div class="large-1 small-3 columns">
 			  		    <%= f.number_field :ts_it1, :min => 0 %><br>
 		  	      </div>
-		  		  <div class="small-11 columns">
+		  		  <div class="large-11 small-9 columns">
 			  		    <%= f.label :ts_it1, 'IN1 - Information Distribution Team', :class => 'left inline' %>
 		  	      </div>
 			  </div> <!-- END ROW -->
 		  	  <div class="row field">
-		  		  <div class="small-1 columns">
+		  		  <div class="large-1 small-3 columns">
 			  		    <%= f.number_field :ts_it2, :min => 0 %><br>
 		  	      </div>
-		  		  <div class="small-11 columns">
+		  		  <div class="large-11 small-9 columns">
 			  		    <%= f.label :ts_it2, 'IN2 - Steps to Successful Information Distribution', :class => 'left inline' %>
 		  	      </div>
 			  </div> <!-- END ROW -->

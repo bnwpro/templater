@@ -3,25 +3,25 @@
 	<div class="small-12 columns">
 	<p class="contact_number">Contact <span><%= builder.link_to_remove " (Remove this Contact)" %></span></p>
     </div>
-	<div class="small-4 columns">
+	<div class="large-4 small-12 columns">
 	    <div class="field">
 			<%= builder.label :description %>
 	    	<%= builder.text_field :description %>
 	    </div>
     </div>
-    <div class="small-3 columns">
+    <div class="large-3 small-12 columns">
 	    <div class="field">
 			<%= builder.label :name %>
 			<%= builder.text_field :name, placeholder: 'Enter full name' %>
 	    </div>
     </div>
-    <div class="small-2 columns">
+    <div class="large-2 small-12 columns">
 	    <div class="field">
 			<%= builder.label :phone %>
 			<%= builder.text_field :phone, placeholder: '10 Digits only' %>
 	    </div>
     </div>
-    <div class="small-3 columns">
+    <div class="large-3 small-12 columns">
 	    <div class="field">
 			<%= builder.label :email %>
 			<%= builder.text_field :email %>
@@ -29,25 +29,25 @@
     </div>
 </div> <!-- END ROW -->
 <div class="row">
-    <div class="small-4 columns">
+    <div class="large-4 small-12 columns">
 	    <div class="field">
 			<%= builder.label :address %>
 			<%= builder.text_field :address %>
 	    </div>
     </div>
-    <div class="small-3 columns">
+    <div class="large-3 small-12 columns">
 	    <div class="field">
 			<%= builder.label :city %>
 			<%= builder.text_field :city %>
 	    </div>
     </div>
-    <div class="small-2 columns">
+    <div class="large-2 small-12 columns">
 	    <div class="field">
 			<%= builder.label :state %>
 			<%= builder.select :state, us_states, prompt: 'Select State' %>
 	    </div>
     </div>
-    <div class="small-2 pull-1 columns">
+    <div class="large-2 small-12 pull-1 columns">
 	    <div class="field">
 			<%= builder.label :zip %>
 			<%= builder.text_field :zip %>

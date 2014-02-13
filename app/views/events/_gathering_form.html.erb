@@ -20,11 +20,11 @@
 				  <div class="small-6 columns">
 					    <%= f.label :information_act_dates, "Information Activity", :class => 'right inline' %><br>
 				  </div>
-				   <div class="small-3 columns">
+				   <div class="large-3 small-6 columns">
 					    <%= f.text_field :information_act_dates, :class => 'date-picker', :value => (formatted_smalldate(f.object.information_act_dates) if f.object.information_act_dates) %>
 						<%= f.hidden_field :information_act_dates, :class => 'alt_time_to_db' %>
 				  </div>
-				   <div class="small-3 columns">
+				   <div class="large-3 small-6 columns">
 					    <%= f.text_field :information_act_end, :class => 'date-picker', :value => (formatted_smalldate(f.object.information_act_end) if f.object.information_act_end) %>
 						<%= f.hidden_field :information_act_end, :class => 'alt_time_to_db' %>
 				  </div>
@@ -148,11 +148,11 @@
 				  <div class="small-6 columns">
 					    <%= f.label :information_act_2_dates, "Information Activity #2", :class => 'right inline' %><br>
 				  </div>
-				   <div class="small-3 columns">
+				   <div class="large-3 small-6 columns">
 					    <%= f.text_field :information_act_2_dates, :class => 'date-picker', :value => (formatted_smalldate(f.object.information_act_2_dates) if f.object.information_act_2_dates) %>
 						<%= f.hidden_field :information_act_2_dates, :class => 'alt_time_to_db' %>
 				  </div>
-				   <div class="small-3 columns">
+				   <div class="large-3 small-6 columns">
 					    <%= f.text_field :information_act_2_end, :class => 'date-picker', :value => (formatted_smalldate(f.object.information_act_2_end) if f.object.information_act_2_end) %>
 						<%= f.hidden_field :information_act_2_end, :class => 'alt_time_to_db' %>
 				  </div>

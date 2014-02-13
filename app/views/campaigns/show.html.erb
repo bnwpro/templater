@@ -6,26 +6,28 @@
 	</div>
 </div>
 
-<div class="row panel box-shadow">
-	<div class="small-3 columns">
-		<strong>Diocese: </strong><%= @campaign.diocese %>
-	</div>
-	<div class="small-3 columns">
-		<strong>Primary Contact: </strong><%= @campaign.contact_name %>
-	</div>
-	<div class="small-3 columns">
-		<strong>Phone: </strong><%= number_to_phone(@campaign.phone, area_code: true) %>
-	</div>
-	<div class="small-3 columns">
-		<strong>Email: </strong><%= @campaign.email %>
+<div class="row box-shadow">
+	<div class="small-12 columns panel">
+		<div class="large-3 medium-6 small-12 columns">
+			<strong>Diocese: </strong><%= @campaign.diocese %>
+		</div>
+		<div class="large-3 medium-6 small-12 columns">
+			<strong>Primary Contact: </strong><%= @campaign.contact_name %>
+		</div>
+		<div class="large-3 medium-6 small-12 columns">
+			<strong>Phone: </strong><%= number_to_phone(@campaign.phone, area_code: true) %>
+		</div>
+		<div class="large-3 medium-6 small-12 columns">
+			<strong>Email: </strong><%= @campaign.email %>
+		</div>
 	</div>
 </div>
 <br>
 <hr>
 <div class="row">
 	<%# render partial: "/nav/side_nav" %>
-	<div class="small-10 columns">
-		<table>
+	<div class="large-9 small-12 columns">
+		<table id="contacts_table">
 		    <thead>
 			    <h5>Campaign Contacts:</h5>
 		        <tr>
@@ -53,7 +55,7 @@
 		    </tbody>
 		</table>
 	</div>
-	<div id="upload" class="small-3">
+	<div id="upload" class="large-3 small-12 columns">
 		<%# if File.exist?("pdfs/campaign_docs/#{@campaign.id}/block_calendar.pdf") %>
 		<% if show_if_exists_on_s3? %>
 			<span class="green">Block Clendar has been uploaded!</span>

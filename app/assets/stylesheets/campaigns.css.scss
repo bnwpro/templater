@@ -9,9 +9,13 @@
 td {
 	max-width: 265px;
 }
+#contacts_table {
+	width: 100%;
+}
 #upload {
-	float: right;
-	margin: -100px 0 -50px;
+	/*float: right;
+	margin: -100px 0 -50px;*/
+	margin-top: 50px;
 	font-weight: bold;
 }
 .green {

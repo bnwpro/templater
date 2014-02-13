@@ -137,11 +137,11 @@
 				  <div class="small-6 columns">
 					    <%= f.label :intro_ldrshp_team_dates, 'Introduce Leadership Team', :class => 'right inline' %><br>
 				  </div>
-				   <div class="small-3 columns">
+				   <div class="large-3 small-6 columns">
 					    <%= f.text_field :intro_ldrshp_team_dates, :class => 'date-picker', :value => (formatted_smalldate(f.object.intro_ldrshp_team_dates) if f.object.intro_ldrshp_team_dates) %>
 						<%= f.hidden_field :intro_ldrshp_team_dates, :class => 'alt_time_to_db' %>
 				  </div>
-				   <div class="small-3 columns">
+				   <div class="large-3 small-6 columns">
 					    <%= f.text_field :intro_ldrshp_team_end, :class => 'date-picker', :value => (formatted_smalldate(f.object.intro_ldrshp_team_end) if f.object.intro_ldrshp_team_end) %>
 						<%= f.hidden_field :intro_ldrshp_team_end, :class => 'alt_time_to_db' %>
 				  </div>
