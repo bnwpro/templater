@@ -21,3 +21,4 @@
 /pdfs/campaign_docs/*
 
 #/config/initializers/aws-sdk.rb
+.idea/
