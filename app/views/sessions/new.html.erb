@@ -1,33 +1,37 @@
 <p id="notice"><%= notice %></p>
 <% content_for :title, "Login" %>
-<h3>O'Meara, Ferguson, Whalen and Conway <img id="sessions_logo" src="assets/images/logo_bw.png" alt="logo" /><br>
-	Capital Stewardship Campaign Manual Generation Portal</h3>
-<div class="login_form">
-	<%= form_tag sessions_path do %>
-	<fieldset>
-	  <legend>User Info</legend>
-		<div class="row">
-		  <div class="small-4 columns">
-			  <div class="field">
-		    	  <%= label_tag :email %><br />
-		    	  <%= text_field_tag :email, params[:email] %>
+<div class="row">
+	<div class="large-12 small-10 columns">
+		<h3>O'Meara, Ferguson, Whalen and Conway <img id="sessions_logo" src="assets/images/logo_bw.png" alt="logo" /><br>
+			Capital Stewardship Campaign Manual Generation Portal</h3>
+		<div class="login_form">
+			<%= form_tag sessions_path do %>
+			<fieldset>
+			  <legend>User Info</legend>
+				<div class="row">
+				  <div class="large-4 small-12 columns">
+					  <div class="field">
+				    	  <%= label_tag :email %><br />
+				    	  <%= text_field_tag :email, params[:email] %>
+					  </div>
+				  </div>
 			  </div>
-		  </div>
-	  </div>
-	  <div class="row">
-		  <div class="small-4 columns">
-			  <div class="field">
-		    	  <%= label_tag :password %><br />
-		    	  <%= password_field_tag :password %>
+			  <div class="row">
+				  <div class="large-4 small-12 columns">
+					  <div class="field">
+				    	  <%= label_tag :password %><br />
+				    	  <%= password_field_tag :password %>
+					  </div>
+				  </div>
 			  </div>
-		  </div>
-	  </div>
-	  <br>
-	  <div class="row">
-		  <div class="actions">
-		  	<%= button_tag "Log in" %>
-		  </div>
-	  </div>
-		<% end %>
-	</fieldset>
+			  <br>
+			  <div class="row">
+				  <div class="actions">
+				  	<%= button_tag "Log in" %>
+				  </div>
+			  </div>
+				<% end %>
+			</fieldset>
+		</div>
+	</div>
 </div>
