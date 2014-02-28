@@ -2,7 +2,7 @@
   <tr>
 	  <td><%= subtract(@families_total, @gift_profile.t3_gifts_1) %></td>
 	  <td><%= f.number_field :t3_gifts_1, :min => 0 %></td>
-	  <td><%= f.number_field :t3_gift_amount_1, :min => 0 %></td>
+	  <td><%= f.number_field :t3_gift_amount_1, :min => 0, :id => 'red_border', :class => 'has-tip', :title => 'A non-zero $$ amount is required here', :data => {:tooltip => ''} %></td>
 	  <td><%= number_to_currency(multiply(@gift_profile.t3_gifts_1, @gift_profile.t3_gift_amount_1)) %></td>
 	  <td><%= number_to_currency(total_for_remainder(@running_total, @cumulative_total)) %></td>
   </tr>
