@@ -2,7 +2,8 @@ class Campaign < ActiveRecord::Base
   #has_attached_file :block_calendar, :url => "pdfs/campaign_docs/:id/block_calendar.pdf",
   #  :path => ":rails_root/pdfs/campaign_docs/:id/block_calendar.pdf"
   has_attached_file :block_calendar,
-    :access_key_id => 'AKIAJEKI32SC23T2AMFA', :secret_access_key => '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',
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],#'AKIAJEKI32SC23T2AMFA',
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],#'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',
     :storage => :s3,
     :s3_protocol => 'https',
     :s3_permissions => :public_read,
